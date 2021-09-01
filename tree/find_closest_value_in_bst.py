@@ -1,4 +1,5 @@
 
+# O(n) time | O(n) space
 def find_closest_value_in_bst(tree, target):
     if tree is None:
         return float('inf')
@@ -22,6 +23,8 @@ def find_closest_value_in_bst(tree, target):
     return min_value
 
 
+# Average: O(log(n)) time | O(log(n)) space
+# Worst: O(n) time | O(n) space
 def find_closest_value_in_bst1(tree, target):
     return find_min_diff(tree, target, tree.value)
 
@@ -41,6 +44,8 @@ def find_min_diff(tree, target, closest):
         return closest
 
 
+# Average: O(log(n)) time | O(1) space
+# Worst: O(n) time | O(1) space
 def find_closest_value_in_bst2(tree, target):
 
     closest = tree.value
