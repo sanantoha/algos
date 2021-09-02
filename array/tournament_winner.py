@@ -1,7 +1,7 @@
 
 def tournament_winner(competitions, results):
     winner = ""
-    points = {winner : 0}
+    points = {winner: 0}
 
     for i, competition in enumerate(competitions):
         home_team, away_team = competition

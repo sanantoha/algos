@@ -22,14 +22,14 @@ def two_number_sum1(array, target_sum):
 
 # O(n * log(n)) time | O(1) space
 def two_number_sum2(array, target_sum):
-    sorted_arr = sorted(array)
+    array.sort()
     left = 0
-    right = len(sorted_arr) - 1
+    right = len(array) - 1
 
     while left < right:
-        sum = sorted_arr[left] + sorted_arr[right]
+        sum = array[left] + array[right]
         if sum == target_sum:
-            return [sorted_arr[left], sorted_arr[right]]
+            return [array[left], array[right]]
         elif sum < target_sum:
             left += 1
         else:
