@@ -4,23 +4,23 @@ class Node:
         self.children = []
         self.name = name
 
-    def addChild(self, name):
+    def add_child(self, name):
         self.children.append(Node(name))
         return self
 
     # O(v + e) time | O(v) space
-    def depthFirstSearch(self, array):
+    def depth_first_search(self, array):
         array.append(self.name)
         for child in self.children:
-            child.depthFirstSearch(array)
+            child.depth_first_search(array)
         return array
 
 
 if __name__ == '__main__':
     graph = Node("A")
-    graph.addChild("B").addChild("C").addChild("D")
-    graph.children[0].addChild("E").addChild("F")
-    graph.children[2].addChild("G").addChild("H")
-    graph.children[0].children[1].addChild("I").addChild("J")
-    graph.children[2].children[0].addChild("K")
-    assert graph.depthFirstSearch([]) == ["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
+    graph.add_child("B").add_child("C").add_child("D")
+    graph.children[0].add_child("E").add_child("F")
+    graph.children[2].add_child("G").add_child("H")
+    graph.children[0].children[1].add_child("I").add_child("J")
+    graph.children[2].children[0].add_child("K")
+    assert graph.depth_first_search([]) == ["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
