@@ -1,4 +1,5 @@
 
+# O(n * log(n)) time | O(1) space
 def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
     red_shirt_speed.sort()
     blue_shirt_speed.sort(reverse=fastest)

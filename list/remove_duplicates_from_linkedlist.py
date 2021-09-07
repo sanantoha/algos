@@ -1,6 +1,7 @@
 from list.LinkedList import LinkedList
 
 
+# O(n) time | O(1) space
 def remove_duplicates_from_linked_list(linked_list):
     curr = linked_list
 

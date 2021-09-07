@@ -1,4 +1,5 @@
 
+# O(n) time | O(d) space - where d is the greater depth of "special" arrays in the array
 def product_sum(array, level=1):
     total_sum = 0
 

@@ -1,4 +1,5 @@
 
+# O(n) time | O(n) space
 def get_nth_fib(n):
     return _get_nth_fib(n - 1, 0, 1)
 
@@ -10,6 +11,7 @@ def _get_nth_fib(n, x, y):
         return _get_nth_fib(n - 1, y, x + y)
 
 
+# O(n) time | O(1) space
 def get_nth_fib_iter(n):
     k = n - 1
     x = 0
