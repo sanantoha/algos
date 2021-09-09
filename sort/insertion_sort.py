@@ -1,6 +1,8 @@
-
+# best O(n) time | O(1) space
+# avg O(n ^ 2) time | O(1) space
+# worst O(n ^ 2) time | O(1) space
 # O(n ^ 2) time | O(1) space
-def insert_sort(arr):
+def insertion_sort(arr):
 
     for i in range(1, len(arr)):
         value = arr[i]
@@ -15,7 +17,7 @@ def insert_sort(arr):
 
 
 # O(n ^ 2) time | O(1) space
-def insert_sort2(arr):
+def insertion_sort2(arr):
     for i in range(1, len(arr)):
         j = i
         while j > 0 and arr[j] < arr[j - 1]:
@@ -32,5 +34,5 @@ def swap(arr, i, j):
 if __name__ == '__main__':
     xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
     # xs = [5,2,4,1]
-    print(insert_sort(xs))
-    print(insert_sort2(xs))
+    print(insertion_sort(xs))
+    print(insertion_sort2(xs))
