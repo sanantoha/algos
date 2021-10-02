@@ -4,10 +4,10 @@
 # Feel free to add new properties and methods
 # to the class.
 class BST:
-    def __init__(self, value):
+    def __init__(self, value, left=None, right=None):
         self.value = value
-        self.left = None
-        self.right = None
+        self.left = left
+        self.right = right
 
     # average: O(log(n)) time | O(log(n)) space
     # worst: O(n) time | O(n) space
