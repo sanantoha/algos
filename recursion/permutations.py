@@ -1,5 +1,5 @@
 
-# O(n^2 * n!) time |  O(n*n!) space
+# O(n ^ 2 * n!) time |  O(n * n!) space
 def getPermutations(array):
     res = []
     backtrack(array, 0, [], res)
