@@ -31,7 +31,7 @@ def isDescendant(ancNode, descNode):
 
 
 # ==================================================================
-
+# O(d) time | O(1) space - where d distance between nodeOne and nodeThree
 def validateThreeNodes1(nodeOne, nodeTwo, nodeThree):
     searchOne = nodeOne
     searchTwo = nodeThree
@@ -43,15 +43,27 @@ def validateThreeNodes1(nodeOne, nodeTwo, nodeThree):
             return False
 
         if searchOne is nodeTwo:
-            return isDescendant(nodeTwo, nodeThree)
+            return searchForTarget(nodeTwo, nodeThree)
         elif searchTwo is nodeTwo:
-            return isDescendant(nodeTwo, nodeOne)
+            return searchForTarget(nodeTwo, nodeOne)
 
         if searchOne is not None:
             searchOne = searchOne.left if nodeTwo.value < searchOne.value else searchOne.right
 
         if searchTwo is not None:
             searchTwo = searchTwo.left if nodeTwo.value < searchTwo.value else searchTwo.right
+
+
+def searchForTarget(node, target):
+    curr = node
+    while curr:
+        if target is curr:
+            return True
+        if target.value < curr.value:
+            curr = curr.left
+        else:
+            curr = curr.right
+    return False
 
 
 if __name__ == '__main__':
