@@ -66,6 +66,36 @@ def populateNodesToParents(node, parent, parents):
         populateNodesToParents(node.right, node, parents)
 
 
+# O(n) time | O(n) space
+def findNodesDistanceK1(tree, target, k):
+    if tree is None or k < 0:
+        return []
+
+    parents = {}
+    seen = set()
+    populateNodesToParents(tree, None, parents)
+
+    targetNode = getNodeFromValue(target, tree, parents)
+
+    res = []
+    findNodesDistanceKRec(targetNode, 0, k, parents, seen, res)
+    return res
+
+
+def findNodesDistanceKRec(node, distance, k, parents, seen, res):
+    if node is None or node.value in seen:
+        return
+
+    seen.add(node.value)
+
+    if distance == k:
+        res.append(node.value)
+    else:
+        findNodesDistanceKRec(node.left, distance + 1, k, parents, seen, res)
+        findNodesDistanceKRec(node.right, distance + 1, k, parents, seen, res)
+        findNodesDistanceKRec(parents[node.value], distance + 1, k, parents, seen, res)
+
+
 if __name__ == '__main__':
     root = BinaryTree(1)
     root.left = BinaryTree(2)
@@ -79,6 +109,11 @@ if __name__ == '__main__':
     k = 2
     expected = [2, 7, 8]
     actual = findNodesDistanceK(root, target, k)
+    print(actual)
+    actual.sort()
+    assert actual == expected
+
+    actual = findNodesDistanceK1(root, target, k)
     print(actual)
     actual.sort()
     assert actual == expected
