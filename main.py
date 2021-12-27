@@ -103,8 +103,9 @@ tasks = [
 ]
 
 tasks_done = [
-
+    'permutations.py'
 ]
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
