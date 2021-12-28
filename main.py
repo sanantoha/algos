@@ -103,7 +103,8 @@ tasks = [
 ]
 
 tasks_done = [
-    'permutations.py'
+    'permutations.py',
+    'two_number_sum.py'
 ]
 
 
