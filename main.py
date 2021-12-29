@@ -104,9 +104,9 @@ tasks = [
 
 tasks_done = [
     'permutations.py',
-    'two_number_sum.py'
+    'two_number_sum.py',
+    'reverse_words_in_string.py'
 ]
-
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
