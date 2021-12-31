@@ -106,7 +106,8 @@ tasks_done = [
     'permutations.py',
     'two_number_sum.py',
     'reverse_words_in_string.py',
-    'smallest_difference.py'
+    'smallest_difference.py',
+    'merge_overlapping_intervals.py'
 ]
 
 
