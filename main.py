@@ -107,7 +107,8 @@ tasks_done = [
     'two_number_sum.py',
     'reverse_words_in_string.py',
     'smallest_difference.py',
-    'merge_overlapping_intervals.py'
+    'merge_overlapping_intervals.py',
+    'tournament_winner.py'
 ]
 
 
@@ -115,4 +116,5 @@ if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
+
 

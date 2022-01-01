@@ -1,4 +1,5 @@
 
+# O(n) time | O(k) space - where n is number of competitions and k is number of teams
 def tournament_winner(competitions, results):
     winner = ""
     points = {winner: 0}
