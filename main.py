@@ -99,7 +99,8 @@ tasks = [
     'same_bsts.py',
     'validate_bst.py',
     'validate_tree_nodes.py',
-    'suffix_trie_construction.py'
+    'suffix_trie_construction.py',
+    'water_area.py'
 ]
 
 tasks_done = [
