@@ -109,7 +109,8 @@ tasks_done = [
     'smallest_difference.py',
     'merge_overlapping_intervals.py',
     'tournament_winner.py',
-    'group_anagrams.py'
+    'group_anagrams.py',
+    'task_assignment.py'
 ]
 
 
