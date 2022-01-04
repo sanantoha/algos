@@ -111,7 +111,8 @@ tasks_done = [
     'merge_overlapping_intervals.py',
     'tournament_winner.py',
     'group_anagrams.py',
-    'task_assignment.py'
+    'task_assignment.py',
+    'generate_document.py'
 ]
 
 
