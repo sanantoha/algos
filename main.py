@@ -112,7 +112,8 @@ tasks_done = [
     'tournament_winner.py',
     'group_anagrams.py',
     'task_assignment.py',
-    'generate_document.py'
+    'generate_document.py',
+    'next_greater_element.py'
 ]
 
 
@@ -120,3 +121,4 @@ if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
+
