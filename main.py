@@ -114,7 +114,8 @@ tasks_done = [
     'task_assignment.py',
     'generate_document.py',
     'next_greater_element.py',
-    'get_nth_fib.py'
+    'get_nth_fib.py',
+    'array_of_products.py'
 ]
 
 
