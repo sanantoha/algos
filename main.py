@@ -116,7 +116,8 @@ tasks_done = [
     'next_greater_element.py',
     'get_nth_fib.py',
     'array_of_products.py',
-    'height_balanced_binary_tree.py'
+    'height_balanced_binary_tree.py',
+    'balanced_brackets.py'
 ]
 
 
@@ -124,4 +125,3 @@ if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
-
