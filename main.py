@@ -117,7 +117,8 @@ tasks_done = [
     'get_nth_fib.py',
     'array_of_products.py',
     'height_balanced_binary_tree.py',
-    'balanced_brackets.py'
+    'balanced_brackets.py',
+    'depth_first_search.py'
 ]
 
 
