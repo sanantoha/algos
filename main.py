@@ -118,7 +118,8 @@ tasks_done = [
     'array_of_products.py',
     'height_balanced_binary_tree.py',
     'balanced_brackets.py',
-    'depth_first_search.py'
+    'depth_first_search.py',
+    'longest_increasing_subsequence.py'
 ]
 
 
