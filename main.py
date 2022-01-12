@@ -119,7 +119,8 @@ tasks_done = [
     'height_balanced_binary_tree.py',
     'balanced_brackets.py',
     'depth_first_search.py',
-    'longest_increasing_subsequence.py'
+    'longest_increasing_subsequence.py',
+    'node_depths.py'
 ]
 
 
