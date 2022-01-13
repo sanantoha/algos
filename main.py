@@ -120,7 +120,8 @@ tasks_done = [
     'balanced_brackets.py',
     'depth_first_search.py',
     'longest_increasing_subsequence.py',
-    'node_depths.py'
+    'node_depths.py',
+    'tandem_bicycle.py'
 ]
 
 
