@@ -121,7 +121,8 @@ tasks_done = [
     'depth_first_search.py',
     'longest_increasing_subsequence.py',
     'node_depths.py',
-    'tandem_bicycle.py'
+    'tandem_bicycle.py',
+    'non_constructible_changes.py'
 ]
 
 
