@@ -123,9 +123,9 @@ tasks_done = [
     'node_depths.py',
     'tandem_bicycle.py',
     'non_constructible_changes.py',
-    'powerset.py'
+    'powerset.py',
+    'bst_traversal.py'
 ]
-
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
