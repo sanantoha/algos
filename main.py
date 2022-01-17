@@ -124,7 +124,8 @@ tasks_done = [
     'tandem_bicycle.py',
     'non_constructible_changes.py',
     'powerset.py',
-    'bst_traversal.py'
+    'bst_traversal.py',
+    'four_number_sum.py'
 ]
 
 if __name__ == '__main__':
