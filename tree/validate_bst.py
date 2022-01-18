@@ -1,4 +1,4 @@
-from BST import BST
+from tree.BST import BST
 
 
 def validate_bst(tree):

@@ -1,5 +1,5 @@
 
-from BST import BST
+from tree.BST import BST
 
 
 def pre_order_traverse(tree, arr):

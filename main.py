@@ -125,7 +125,8 @@ tasks_done = [
     'non_constructible_changes.py',
     'powerset.py',
     'bst_traversal.py',
-    'four_number_sum.py'
+    'four_number_sum.py',
+    'min_height_bst.py'
 ]
 
 if __name__ == '__main__':
