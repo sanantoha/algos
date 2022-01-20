@@ -126,7 +126,8 @@ tasks_done = [
     'powerset.py',
     'bst_traversal.py',
     'four_number_sum.py',
-    'min_height_bst.py'
+    'min_height_bst.py',
+    'remove_kth_node_from_end.py'
 ]
 
 if __name__ == '__main__':
