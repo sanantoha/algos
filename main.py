@@ -127,7 +127,8 @@ tasks_done = [
     'bst_traversal.py',
     'four_number_sum.py',
     'min_height_bst.py',
-    'remove_kth_node_from_end.py'
+    'remove_kth_node_from_end.py',
+    'three_number_sum.py'
 ]
 
 if __name__ == '__main__':
