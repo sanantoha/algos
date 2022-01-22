@@ -128,7 +128,8 @@ tasks_done = [
     'four_number_sum.py',
     'min_height_bst.py',
     'remove_kth_node_from_end.py',
-    'three_number_sum.py'
+    'three_number_sum.py',
+    'insertion_sort.py'
 ]
 
 if __name__ == '__main__':
