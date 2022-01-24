@@ -130,7 +130,8 @@ tasks_done = [
     'remove_kth_node_from_end.py',
     'three_number_sum.py',
     'insertion_sort.py',
-    'cycle_in_graph.py'
+    'cycle_in_graph.py',
+    'kadanes_distance.py'
 ]
 
 if __name__ == '__main__':
