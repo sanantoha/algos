@@ -131,7 +131,8 @@ tasks_done = [
     'three_number_sum.py',
     'insertion_sort.py',
     'cycle_in_graph.py',
-    'kadanes_distance.py'
+    'kadanes_distance.py',
+    'same_bsts.py'
 ]
 
 if __name__ == '__main__':
