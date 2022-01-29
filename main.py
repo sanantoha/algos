@@ -133,7 +133,8 @@ tasks_done = [
     'cycle_in_graph.py',
     'kadanes_distance.py',
     'same_bsts.py',
-    'remove_duplicates_from_linkedlist.py'
+    'remove_duplicates_from_linkedlist.py',
+    'sunset_views.py'
 ]
 
 if __name__ == '__main__':
