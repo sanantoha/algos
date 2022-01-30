@@ -134,7 +134,8 @@ tasks_done = [
     'kadanes_distance.py',
     'same_bsts.py',
     'remove_duplicates_from_linkedlist.py',
-    'sunset_views.py'
+    'sunset_views.py',
+    'reconstruct_bst.py'
 ]
 
 if __name__ == '__main__':
