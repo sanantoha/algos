@@ -136,7 +136,8 @@ tasks_done = [
     'remove_duplicates_from_linkedlist.py',
     'sunset_views.py',
     'reconstruct_bst.py',
-    'class_photos.py'
+    'class_photos.py',
+    'spiral_matrix_traverse.py'
 ]
 
 if __name__ == '__main__':
