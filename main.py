@@ -137,7 +137,8 @@ tasks_done = [
     'sunset_views.py',
     'reconstruct_bst.py',
     'class_photos.py',
-    'spiral_matrix_traverse.py'
+    'spiral_matrix_traverse.py',
+    'search_in_sorted_matrix.py'
 ]
 
 if __name__ == '__main__':
