@@ -141,10 +141,13 @@ tasks_done = [
     'spiral_matrix_traverse.py',
     'search_in_sorted_matrix.py',
     'apartment_hunting.py',
-    'first_duplicate_value.py'
+    'first_duplicate_value.py',
+    'bubble_sort.py'
 ]
 
 if __name__ == '__main__':
-    remain = list(set(tasks) - set(tasks_done))
-    random.shuffle(remain)
-    print(remain)
+    # remain = list(set(tasks) - set(tasks_done))
+    # random.shuffle(remain)
+    # print(remain)
+
+    print(bubbleSort([1, 2]))

@@ -7,7 +7,7 @@ def knapsackProblem(items, capacity):
     knapsackValues = [[0 for _ in range(capacity + 1)] for _ in range(len(items) + 1)]
 
     for idx in range(1, len(items) + 1):
-        for cap in range(1, capacity + 1):
+        for cap in range(0, capacity + 1):
             (val, weight) = items[idx - 1]
             if weight > cap:
                 knapsackValues[idx][cap] = knapsackValues[idx - 1][cap]
