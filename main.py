@@ -146,8 +146,7 @@ tasks_done = [
 ]
 
 if __name__ == '__main__':
-    # remain = list(set(tasks) - set(tasks_done))
-    # random.shuffle(remain)
-    # print(remain)
+    remain = list(set(tasks) - set(tasks_done))
+    random.shuffle(remain)
+    print(remain)
 
-    print(bubbleSort([1, 2]))
