@@ -81,7 +81,6 @@ tasks = [
     'run_length_encoding.py',
     'valid_ip_addresses.py',
     'binary_tree_diameter.py',
-    'BinaryTree.py',
     'branch_sums.py',
     'BST.py',
     'bst_construction.py',
@@ -142,7 +141,8 @@ tasks_done = [
     'search_in_sorted_matrix.py',
     'apartment_hunting.py',
     'first_duplicate_value.py',
-    'bubble_sort.py'
+    'bubble_sort.py',
+    'min_rewards.py'
 ]
 
 if __name__ == '__main__':
