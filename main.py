@@ -142,7 +142,8 @@ tasks_done = [
     'apartment_hunting.py',
     'first_duplicate_value.py',
     'bubble_sort.py',
-    'min_rewards.py'
+    'min_rewards.py',
+    'move_element_to_end.py'
 ]
 
 if __name__ == '__main__':
