@@ -143,7 +143,8 @@ tasks_done = [
     'first_duplicate_value.py',
     'bubble_sort.py',
     'min_rewards.py',
-    'move_element_to_end.py'
+    'move_element_to_end.py',
+    'minimum_waiting_time.py'
 ]
 
 if __name__ == '__main__':
