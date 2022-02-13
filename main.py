@@ -146,7 +146,8 @@ tasks_done = [
     'move_element_to_end.py',
     'minimum_waiting_time.py',
     'binary_search.py',
-    'numbers_of_ways_to_traverse_graph.py'
+    'numbers_of_ways_to_traverse_graph.py',
+    'three_number_sort.py'
 ]
 
 if __name__ == '__main__':
