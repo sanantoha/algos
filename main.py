@@ -147,7 +147,8 @@ tasks_done = [
     'minimum_waiting_time.py',
     'binary_search.py',
     'numbers_of_ways_to_traverse_graph.py',
-    'three_number_sort.py'
+    'three_number_sort.py',
+    'find_closest_value_in_bst.py'
 ]
 
 if __name__ == '__main__':
