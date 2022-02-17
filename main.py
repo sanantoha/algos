@@ -150,7 +150,8 @@ tasks_done = [
     'three_number_sort.py',
     'find_closest_value_in_bst.py',
     'breadth_first_search.py',
-    'run_length_encoding.py'
+    'run_length_encoding.py',
+    'find_three_largest_numbers.py'
 ]
 
 if __name__ == '__main__':
