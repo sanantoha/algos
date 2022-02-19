@@ -82,7 +82,6 @@ tasks = [
     'valid_ip_addresses.py',
     'binary_tree_diameter.py',
     'branch_sums.py',
-    'BST.py',
     'bst_construction.py',
     'bst_traversal.py',
     'find_closest_value_in_bst.py',
@@ -151,7 +150,8 @@ tasks_done = [
     'find_closest_value_in_bst.py',
     'breadth_first_search.py',
     'run_length_encoding.py',
-    'find_three_largest_numbers.py'
+    'find_three_largest_numbers.py',
+    'phone_number_mnemonic.py'
 ]
 
 if __name__ == '__main__':
