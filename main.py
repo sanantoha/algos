@@ -151,7 +151,8 @@ tasks_done = [
     'breadth_first_search.py',
     'run_length_encoding.py',
     'find_three_largest_numbers.py',
-    'phone_number_mnemonic.py'
+    'phone_number_mnemonic.py',
+    'find_nodes_distance_k.py'
 ]
 
 if __name__ == '__main__':
