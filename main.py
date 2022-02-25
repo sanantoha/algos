@@ -152,7 +152,8 @@ tasks_done = [
     'run_length_encoding.py',
     'find_three_largest_numbers.py',
     'phone_number_mnemonic.py',
-    'find_nodes_distance_k.py'
+    'find_nodes_distance_k.py',
+    'get_youngest_common_ancestor.py'
 ]
 
 if __name__ == '__main__':
