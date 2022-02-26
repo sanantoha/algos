@@ -153,7 +153,8 @@ tasks_done = [
     'find_three_largest_numbers.py',
     'phone_number_mnemonic.py',
     'find_nodes_distance_k.py',
-    'get_youngest_common_ancestor.py'
+    'get_youngest_common_ancestor.py',
+    'palindrom_check.py'
 ]
 
 if __name__ == '__main__':
