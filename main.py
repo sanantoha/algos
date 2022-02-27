@@ -154,7 +154,8 @@ tasks_done = [
     'phone_number_mnemonic.py',
     'find_nodes_distance_k.py',
     'get_youngest_common_ancestor.py',
-    'palindrom_check.py'
+    'palindrom_check.py',
+    'sorted_squared_array.py'
 ]
 
 if __name__ == '__main__':
