@@ -99,7 +99,8 @@ tasks = [
     'validate_tree_nodes.py',
     'suffix_trie_construction.py',
     'water_area.py',
-    'knapsack_problem.py'
+    'knapsack_problem.py',
+    'disk_stacking.py'
 ]
 
 tasks_done = [
