@@ -157,7 +157,8 @@ tasks_done = [
     'get_youngest_common_ancestor.py',
     'palindrom_check.py',
     'sorted_squared_array.py',
-    'staircase_traversal.py'
+    'staircase_traversal.py',
+    'validate_tree_nodes.py'
 ]
 
 if __name__ == '__main__':
