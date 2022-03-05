@@ -158,7 +158,8 @@ tasks_done = [
     'palindrom_check.py',
     'sorted_squared_array.py',
     'staircase_traversal.py',
-    'validate_tree_nodes.py'
+    'validate_tree_nodes.py',
+    'largest_range.py'
 ]
 
 if __name__ == '__main__':
