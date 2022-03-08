@@ -159,7 +159,8 @@ tasks_done = [
     'sorted_squared_array.py',
     'staircase_traversal.py',
     'validate_tree_nodes.py',
-    'largest_range.py'
+    'largest_range.py',
+    'river_sizes.py'
 ]
 
 if __name__ == '__main__':
