@@ -160,7 +160,8 @@ tasks_done = [
     'staircase_traversal.py',
     'validate_tree_nodes.py',
     'largest_range.py',
-    'river_sizes.py'
+    'river_sizes.py',
+    'sum_of_linked_lists.py'
 ]
 
 if __name__ == '__main__':
