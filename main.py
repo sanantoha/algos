@@ -162,7 +162,8 @@ tasks_done = [
     'largest_range.py',
     'river_sizes.py',
     'sum_of_linked_lists.py',
-    'validate_bst.py'
+    'validate_bst.py',
+    'water_area.py'
 ]
 
 if __name__ == '__main__':
