@@ -163,7 +163,8 @@ tasks_done = [
     'river_sizes.py',
     'sum_of_linked_lists.py',
     'validate_bst.py',
-    'water_area.py'
+    'water_area.py',
+    'longest_common_subsequence.py'
 ]
 
 if __name__ == '__main__':
