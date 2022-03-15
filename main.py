@@ -166,7 +166,8 @@ tasks_done = [
     'water_area.py',
     'longest_common_subsequence.py',
     'product_sum.py',
-    'sort_stack.py'
+    'sort_stack.py',
+    'valid_ip_addresses.py'
 ]
 
 if __name__ == '__main__':
