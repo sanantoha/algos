@@ -169,7 +169,8 @@ tasks_done = [
     'sort_stack.py',
     'valid_ip_addresses.py',
     'max_subset_sum_no_adjucent.py',
-    'a_star_algorithm.py'
+    'a_star_algorithm.py',
+    'min_number_of_coins_for_change.py'
 ]
 
 if __name__ == '__main__':
