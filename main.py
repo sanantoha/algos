@@ -172,7 +172,8 @@ tasks_done = [
     'a_star_algorithm.py',
     'min_number_of_coins_for_change.py',
     'disk_stacking.py',
-    'remove_islands.py'
+    'remove_islands.py',
+    'number_of_ways_to_make_change.py'
 ]
 
 if __name__ == '__main__':
