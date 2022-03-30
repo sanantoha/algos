@@ -175,7 +175,8 @@ tasks_done = [
     'remove_islands.py',
     'number_of_ways_to_make_change.py',
     'levenshtein_distance.py',
-    'monotonic_array.py'
+    'monotonic_array.py',
+    'invert_binary_tree.py'
 ]
 
 if __name__ == '__main__':
