@@ -45,7 +45,6 @@ tasks = [
     'single_cycle_check.py',
     'min_heap_construction.py',
     'linked_list_construction.py',
-    'LinkedList.py',
     'remove_duplicates_from_linkedlist.py',
     'remove_kth_node_from_end.py',
     'sum_of_linked_lists.py',
@@ -176,7 +175,8 @@ tasks_done = [
     'number_of_ways_to_make_change.py',
     'levenshtein_distance.py',
     'monotonic_array.py',
-    'invert_binary_tree.py'
+    'invert_binary_tree.py',
+    'find_kth_largest_value_in_bst.py'
 ]
 
 if __name__ == '__main__':
