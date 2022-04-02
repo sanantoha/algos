@@ -176,7 +176,8 @@ tasks_done = [
     'levenshtein_distance.py',
     'monotonic_array.py',
     'invert_binary_tree.py',
-    'find_kth_largest_value_in_bst.py'
+    'find_kth_largest_value_in_bst.py',
+    'min_max_stack_construction.py'
 ]
 
 if __name__ == '__main__':
