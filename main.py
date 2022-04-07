@@ -179,7 +179,8 @@ tasks_done = [
     'find_kth_largest_value_in_bst.py',
     'min_max_stack_construction.py',
     'min_heap_construction.py',
-    'minimum_passes_of_matrix.py'
+    'minimum_passes_of_matrix.py',
+    'validate_subsequence.py'
 ]
 
 if __name__ == '__main__':
