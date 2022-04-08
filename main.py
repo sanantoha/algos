@@ -180,7 +180,8 @@ tasks_done = [
     'min_max_stack_construction.py',
     'min_heap_construction.py',
     'minimum_passes_of_matrix.py',
-    'validate_subsequence.py'
+    'validate_subsequence.py',
+    'longest_palindromic_substring.py'
 ]
 
 if __name__ == '__main__':
