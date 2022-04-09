@@ -181,7 +181,8 @@ tasks_done = [
     'min_heap_construction.py',
     'minimum_passes_of_matrix.py',
     'validate_subsequence.py',
-    'longest_palindromic_substring.py'
+    'longest_palindromic_substring.py',
+    'branch_sums.py'
 ]
 
 if __name__ == '__main__':
