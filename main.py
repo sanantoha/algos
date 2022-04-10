@@ -182,7 +182,8 @@ tasks_done = [
     'minimum_passes_of_matrix.py',
     'validate_subsequence.py',
     'longest_palindromic_substring.py',
-    'branch_sums.py'
+    'branch_sums.py',
+    'single_cycle_check.py'
 ]
 
 if __name__ == '__main__':
