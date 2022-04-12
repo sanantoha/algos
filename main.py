@@ -183,7 +183,8 @@ tasks_done = [
     'validate_subsequence.py',
     'longest_palindromic_substring.py',
     'branch_sums.py',
-    'single_cycle_check.py'
+    'single_cycle_check.py',
+    'find_successor.py'
 ]
 
 if __name__ == '__main__':
