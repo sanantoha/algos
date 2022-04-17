@@ -184,7 +184,8 @@ tasks_done = [
     'longest_palindromic_substring.py',
     'branch_sums.py',
     'single_cycle_check.py',
-    'find_successor.py'
+    'find_successor.py',
+    'binary_tree_diameter.py'
 ]
 
 if __name__ == '__main__':
