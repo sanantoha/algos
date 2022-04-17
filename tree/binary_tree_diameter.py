@@ -16,7 +16,7 @@ def get_tree_info(tree):
 
     return TreeInfo(height, diameter)
 
-
+# O(n) time | O(h) space
 def binary_tree_diameter(tree):
     return get_tree_info(tree).diameter
 
