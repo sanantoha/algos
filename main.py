@@ -186,7 +186,8 @@ tasks_done = [
     'single_cycle_check.py',
     'find_successor.py',
     'binary_tree_diameter.py',
-    'zigzag_traverse.py'
+    'zigzag_traverse.py',
+    'suffix_trie_construction.py'
 ]
 
 if __name__ == '__main__':
