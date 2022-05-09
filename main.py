@@ -188,6 +188,7 @@ tasks_done = [
     'binary_tree_diameter.py',
     'zigzag_traverse.py',
     'suffix_trie_construction.py'
+    'minimum_characters_for_words.py'
 ]
 
 if __name__ == '__main__':
