@@ -190,7 +190,8 @@ tasks_done = [
     'suffix_trie_construction.py'
     'minimum_characters_for_words.py',
     'longest_peak.py',
-    'suffix_trie_construction.py'
+    'suffix_trie_construction.py',
+    'max_sum_increasing_subsequence.py'
 ]
 
 if __name__ == '__main__':
