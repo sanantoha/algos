@@ -28,7 +28,6 @@ tasks = [
     'levenshtein_distance.py',
     'longest_common_subsequence.py',
     'longest_increasing_subsequence.py',
-    'longest_increasing_subsequence1.py',
     'max_subset_sum_no_adjucent.py',
     'max_sum_increasing_subsequence.py',
     'min_number_of_coins_for_change.py',
@@ -191,7 +190,8 @@ tasks_done = [
     'minimum_characters_for_words.py',
     'longest_peak.py',
     'suffix_trie_construction.py',
-    'max_sum_increasing_subsequence.py'
+    'max_sum_increasing_subsequence.py',
+    'minimum_characters_for_words.py'
 ]
 
 if __name__ == '__main__':
