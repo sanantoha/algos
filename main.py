@@ -191,7 +191,8 @@ tasks_done = [
     'longest_peak.py',
     'suffix_trie_construction.py',
     'max_sum_increasing_subsequence.py',
-    'minimum_characters_for_words.py'
+    'minimum_characters_for_words.py',
+    'valid_starting_city.py'
 ]
 
 if __name__ == '__main__':
