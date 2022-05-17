@@ -192,7 +192,8 @@ tasks_done = [
     'suffix_trie_construction.py',
     'max_sum_increasing_subsequence.py',
     'minimum_characters_for_words.py',
-    'valid_starting_city.py'
+    'valid_starting_city.py',
+    'first_non_repeating_character.py'
 ]
 
 if __name__ == '__main__':
