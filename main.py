@@ -193,7 +193,8 @@ tasks_done = [
     'max_sum_increasing_subsequence.py',
     'minimum_characters_for_words.py',
     'valid_starting_city.py',
-    'first_non_repeating_character.py'
+    'first_non_repeating_character.py',
+    'selection_sort.py'
 ]
 
 if __name__ == '__main__':
