@@ -112,9 +112,11 @@ class BST:
     # worst: O(n) time | O(n) space
     def remove_rec(self, value, parent_node=None):
         if value < self.value:
-            self.left.remove_rec(value, self)
+            if self.left:
+                self.left.remove_rec(value, self)
         elif value > self.value:
-            self.right.remove_rec(value, self)
+            if self.right:
+                self.right.remove_rec(value, self)
         else:
             if self.left is not None and self.right is not None:
                 self.value = self.right.get_min_value()
