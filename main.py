@@ -98,7 +98,9 @@ tasks = [
     'suffix_trie_construction.py',
     'water_area.py',
     'knapsack_problem.py',
-    'disk_stacking.py'
+    'disk_stacking.py',
+    'word_ladder.py',
+    'word_ladder_ii.py'
 ]
 
 tasks_done = [
@@ -194,7 +196,9 @@ tasks_done = [
     'minimum_characters_for_words.py',
     'valid_starting_city.py',
     'first_non_repeating_character.py',
-    'selection_sort.py'
+    'selection_sort.py',
+    'bst_construction.py',
+    'word_ladder.py'
 ]
 
 if __name__ == '__main__':
