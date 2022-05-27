@@ -1,5 +1,6 @@
 from collections import deque
 
+# O(l ^ 2 * n) time | O(l ^ 2 * n)
 def findLadders(beginWord, endWord, wordList):
     if not beginWord or not endWord or endWord not in wordList:
         return []
