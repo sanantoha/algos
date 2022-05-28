@@ -198,7 +198,8 @@ tasks_done = [
     'first_non_repeating_character.py',
     'selection_sort.py',
     'bst_construction.py',
-    'word_ladder.py'
+    'word_ladder.py',
+    'max_sum_in_binary_tree.py'
 ]
 
 if __name__ == '__main__':
