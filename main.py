@@ -199,7 +199,8 @@ tasks_done = [
     'selection_sort.py',
     'bst_construction.py',
     'word_ladder.py',
-    'max_sum_in_binary_tree.py'
+    'max_sum_in_binary_tree.py',
+    'subarray_sort.py'
 ]
 
 if __name__ == '__main__':
