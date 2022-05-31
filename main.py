@@ -201,7 +201,8 @@ tasks_done = [
     'word_ladder.py',
     'max_sum_in_binary_tree.py',
     'subarray_sort.py',
-    'caesar_cipher_encryptor.py'
+    'caesar_cipher_encryptor.py',
+    'knapsack_problem.py'
 ]
 
 if __name__ == '__main__':
