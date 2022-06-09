@@ -100,7 +100,7 @@ tasks = [
     'knapsack_problem.py',
     'disk_stacking.py',
     'word_ladder.py',
-    'word_ladder_ii.py'
+    'word_ladder_ii.py',
 ]
 
 tasks_done = [
@@ -203,11 +203,11 @@ tasks_done = [
     'subarray_sort.py',
     'caesar_cipher_encryptor.py',
     'knapsack_problem.py',
-    'word_ladder_ii.py'
+    'word_ladder_ii.py',
+    'linked_list_construction.py'
 ]
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
-
