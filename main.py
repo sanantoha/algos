@@ -104,7 +104,8 @@ tasks = [
 ]
 
 tasks_done = [
-    "validate_bst.py"
+    "validate_bst.py",
+    "remove_islands.py"
 ]
 
 if __name__ == '__main__':
