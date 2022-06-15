@@ -101,6 +101,7 @@ tasks = [
     'disk_stacking.py',
     'word_ladder.py',
     'word_ladder_ii.py',
+    'serialize_and_deserialize_n_ary_tree.py'
 ]
 
 tasks_done = [
