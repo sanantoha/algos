@@ -108,10 +108,58 @@ tasks_done = [
     "validate_bst.py",
     "remove_islands.py",
     "permutations.py",
-    "number_of_ways_to_make_change.py"
+    "number_of_ways_to_make_change.py",
+    "search_in_sorted_matrix.py",
+    "largest_range.py"
 ]
+
+
+class Node(object):
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+
+    def __repr__(self):
+        return f"Node({self.val} {self.children})"
+
+class Codec:
+
+    def serialize(self, root):
+        pass
+
+
+    def deserialize(self, data):
+        pass
+
+
+class Codec1:
+
+    def serialize(self, root):
+        pass
+
+
+    def deserialize(self, data):
+        return None
+
+
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
+    # root = Node(11, [Node(33, [Node(55), Node(6666)]), Node(22), Node(30)])
+    # print(root)
+    # codec = Codec()
+    # str = codec.serialize(root)
+    # print(str)
+    #
+    # tree = codec.deserialize(str)
+    # print(tree)
+    #
+    # codec1 = Codec1()
+    # str = codec1.serialize(root)
+    # print(str)
+    #
+    # tree = codec1.deserialize(str)
+    # print(tree)
