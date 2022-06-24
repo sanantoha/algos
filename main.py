@@ -110,7 +110,8 @@ tasks_done = [
     "permutations.py",
     "number_of_ways_to_make_change.py",
     "search_in_sorted_matrix.py",
-    "largest_range.py"
+    "largest_range.py",
+    "minimum_characters_for_words.py"
 ]
 
 
@@ -139,8 +140,7 @@ class Codec1:
 
 
     def deserialize(self, data):
-        return None
-
+        pass
 
 
 
@@ -156,7 +156,7 @@ if __name__ == '__main__':
     #
     # tree = codec.deserialize(str)
     # print(tree)
-    #
+    # #
     # codec1 = Codec1()
     # str = codec1.serialize(root)
     # print(str)
