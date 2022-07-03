@@ -113,7 +113,8 @@ tasks_done = [
     "largest_range.py",
     "minimum_characters_for_words.py",
     "cycle_in_graph.py",
-    "tournament_winner.py"
+    "tournament_winner.py",
+    "knapsack_problem.py"
 ]
 
 
@@ -125,22 +126,107 @@ class Node(object):
     def __repr__(self):
         return f"Node({self.val} {self.children})"
 
+
+class Index:
+    def __init__(self, i):
+        self.idx = i
+
+    def increment(self):
+        self.idx += 1
+
 class Codec:
 
     def serialize(self, root):
-        pass
+
+        def helper(root, index, res, parentIdx):
+
+            if not root:
+                return
+
+            res.append(chr(index.idx + 48))
+            res.append(chr(root.val + 48))
+            parentIdx = chr(parentIdx + 48) if parentIdx else 'N'
+            res.append(parentIdx)
+
+            parentIdx = index.idx
+            for child in root.children if root.children else []:
+                index.increment()
+                helper(child, index, res, parentIdx)
+
+        if not root:
+            return ""
+
+        res = []
+        helper(root, Index(1), res, None)
+        return "".join(res)
 
     def deserialize(self, data):
-        pass
+
+        def helper(data):
+
+            nodesMap = {}
+
+            for i in range(0, len(data), 3):
+                idx = ord(data[i]) - 48
+                val = ord(data[i + 1]) - 48
+                node = Node(val, [])
+                nodesMap[idx] = node
+
+            for i in range(3, len(data), 3):
+                idx = ord(data[i]) - 48
+                parentIdx = ord(data[i + 2]) - 48
+
+                parent = nodesMap[parentIdx]
+                parent.children.append(nodesMap[idx])
+
+            return nodesMap[ord(data[0]) - 48]
+
+        if not data:
+            return None
+
+        return helper(data)
 
 
 class Codec1:
 
     def serialize(self, root):
-        pass
+
+        def helper(root, res):
+
+            res.append(chr(root.val + 48))
+            size = len(root.children) if root.children else 0
+            res.append(chr(size + 48))
+
+            for i in range(size):
+                helper(root.children[i], res)
+
+
+        if not root:
+            return ""
+
+        res = []
+        helper(root, res)
+        return "".join(res)
 
     def deserialize(self, data):
-        pass
+
+        def helper(data, index):
+
+            val = ord(data[index.idx]) - 48
+            node = Node(val, [])
+            index.increment()
+            size = ord(data[index.idx]) - 48
+
+            for i in range(size):
+                index.increment()
+                node.children.append(helper(data, index))
+
+            return node
+
+        if not data:
+            return None
+
+        return helper(data, Index(0))
 
 
 if __name__ == '__main__':
@@ -155,10 +241,10 @@ if __name__ == '__main__':
     #
     # tree = codec.deserialize(str)
     # print(tree)
-    # # #
+    # # # #
     # codec1 = Codec1()
     # str = codec1.serialize(root)
     # print(str)
-
+    #
     # tree = codec1.deserialize(str)
     # print(tree)
