@@ -116,7 +116,8 @@ tasks_done = [
     "tournament_winner.py",
     "knapsack_problem.py",
     "balanced_brackets.py"
-    "task_assignment.py"
+    "task_assignment.py",
+    "bubble_sort.py"
 ]
 
 
