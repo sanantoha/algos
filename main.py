@@ -117,7 +117,8 @@ tasks_done = [
     "knapsack_problem.py",
     "balanced_brackets.py"
     "task_assignment.py",
-    "bubble_sort.py"
+    "bubble_sort.py",
+    "depth_first_search.py"
 ]
 
 
@@ -125,3 +126,4 @@ if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
+
