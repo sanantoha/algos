@@ -118,7 +118,8 @@ tasks_done = [
     "balanced_brackets.py"
     "task_assignment.py",
     "bubble_sort.py",
-    "depth_first_search.py"
+    "depth_first_search.py",
+    "min_height_bst.py"
 ]
 
 
