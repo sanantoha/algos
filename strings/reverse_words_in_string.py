@@ -18,9 +18,7 @@ def reverseWordsInString(string):
 
 def reverse(chars, l, r):
     while l < r:
-        c = chars[l]
-        chars[l] = chars[r]
-        chars[r] = c
+        chars[l], chars[r] = chars[r], chars[l]
         l += 1
         r -= 1
 
