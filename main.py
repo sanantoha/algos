@@ -120,7 +120,8 @@ tasks_done = [
     "bubble_sort.py",
     "depth_first_search.py",
     "min_height_bst.py",
-    "reverse_words_in_string.py"
+    "reverse_words_in_string.py",
+    "word_ladder.py"
 ]
 
 
