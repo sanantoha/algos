@@ -121,12 +121,25 @@ tasks_done = [
     "depth_first_search.py",
     "min_height_bst.py",
     "reverse_words_in_string.py",
-    "word_ladder.py"
+    "word_ladder.py",
+    "serialize_and_deserialize_n_ary_tree.py",
+    "two_number_sum.py"
 ]
 
+def two_number_sum(arr, target):
+    pass
+
+def two_number_sum2(arr, target):
+    pass
+
+def two_number_sum3(arr, target):
+    pass
 
 if __name__ == '__main__':
-    remain = list(set(tasks) - set(tasks_done))
-    random.shuffle(remain)
-    print(remain)
+    # remain = list(set(tasks) - set(tasks_done))
+    # random.shuffle(remain)
+    # print(remain)
+    print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum3([3, 5, -4, 8, 11, 1, -1, 6], 10))
 
