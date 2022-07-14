@@ -126,20 +126,8 @@ tasks_done = [
     "two_number_sum.py"
 ]
 
-def two_number_sum(arr, target):
-    pass
-
-def two_number_sum2(arr, target):
-    pass
-
-def two_number_sum3(arr, target):
-    pass
-
 if __name__ == '__main__':
-    # remain = list(set(tasks) - set(tasks_done))
-    # random.shuffle(remain)
-    # print(remain)
-    print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum3([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    remain = list(set(tasks) - set(tasks_done))
+    random.shuffle(remain)
+    print(remain)
 
