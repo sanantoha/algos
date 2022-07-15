@@ -123,11 +123,11 @@ tasks_done = [
     "reverse_words_in_string.py",
     "word_ladder.py",
     "serialize_and_deserialize_n_ary_tree.py",
-    "two_number_sum.py"
+    "two_number_sum.py",
+    "group_anagrams.py"
 ]
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
-
