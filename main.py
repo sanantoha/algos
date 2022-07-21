@@ -129,11 +129,50 @@ tasks_done = [
     "non_constructible_changes.py",
     "kadanes_distance.py",
     "find_closest_value_in_bst.py",
-    "find_successor.py"
+    "find_successor.py",
+    "validate_subsequence.py"
 ]
 
+
+
+# # O(n) time | O(n) space
+# def findTotalImbalance(rank):
+#     if not rank:
+#         return -1
+#
+#     map = {}
+#     for num in rank:
+#         map[num] = True
+#
+#     total = 0
+#
+#     for num in rank:
+#
+#         if not map[num]:
+#             continue
+#
+#         l = num - 1
+#         while l >= 1:
+#             if l not in map or not map[l]:
+#                 total += 1
+#                 break
+#             map[l] = False
+#             l -= 1
+#
+#         r = num + 1
+#         while r <= len(rank):
+#             if r not in map or not map[r]:
+#                 total += 1
+#                 break
+#             map[r] = False
+#             r += 1
+#
+#     return total
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
+
+    # input = [4, 1, 3, 2]
+    # print(findTotalImbalance(input))
