@@ -130,10 +130,9 @@ tasks_done = [
     "kadanes_distance.py",
     "find_closest_value_in_bst.py",
     "find_successor.py",
-    "validate_subsequence.py"
+    "validate_subsequence.py",
+    "phone_number_mnemonic.py"
 ]
-
-
 
 # # O(n) time | O(n) space
 # def findTotalImbalance(rank):
