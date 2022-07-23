@@ -131,7 +131,8 @@ tasks_done = [
     "find_closest_value_in_bst.py",
     "find_successor.py",
     "validate_subsequence.py",
-    "phone_number_mnemonic.py"
+    "phone_number_mnemonic.py",
+    "node_depths.py"
 ]
 
 # # O(n) time | O(n) space
