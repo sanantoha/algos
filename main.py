@@ -132,7 +132,9 @@ tasks_done = [
     "find_successor.py",
     "validate_subsequence.py",
     "phone_number_mnemonic.py",
-    "node_depths.py"
+    "node_depths.py",
+    "three_number_sum.py",
+    "remove_duplicates_from_linkedlist.py"
 ]
 
 # # O(n) time | O(n) space
@@ -169,6 +171,12 @@ tasks_done = [
 #
 #     return total
 
+from list.LinkedList import LinkedList
+
+def remove_duplicates_from_linked_list(linked_list):
+    pass
+
+
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
@@ -176,3 +184,6 @@ if __name__ == '__main__':
 
     # input = [4, 1, 3, 2]
     # print(findTotalImbalance(input))
+
+    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
+    print(remove_duplicates_from_linked_list(test))
