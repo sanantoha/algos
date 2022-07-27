@@ -134,7 +134,8 @@ tasks_done = [
     "phone_number_mnemonic.py",
     "node_depths.py",
     "three_number_sum.py",
-    "remove_duplicates_from_linkedlist.py"
+    "remove_duplicates_from_linkedlist.py",
+    "task_assignment.py"
 ]
 
 # # O(n) time | O(n) space
