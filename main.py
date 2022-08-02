@@ -136,7 +136,8 @@ tasks_done = [
     "three_number_sum.py",
     "remove_duplicates_from_linkedlist.py",
     "task_assignment.py",
-    "binary_tree_diameter.py"
+    "binary_tree_diameter.py",
+    "linked_list_construction.py"
 ]
 
 # # O(n) time | O(n) space
@@ -172,22 +173,6 @@ tasks_done = [
 #             r += 1
 #
 #     return total
-
-from tree.BinaryTree import BinaryTree
-
-# O(n) time | O(h) space
-def binary_tree_diameter(root):
-    return helper(root)[1]
-
-
-def helper(root):
-    if not root:
-        return (0, 0) # height, diameter
-
-    lh, ld = helper(root.left)
-    rh, rd = helper(root.right)
-
-    return (1 + max(lh, rh), max(ld, rd, lh + rh))
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
