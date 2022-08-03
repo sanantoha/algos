@@ -137,7 +137,8 @@ tasks_done = [
     "remove_duplicates_from_linkedlist.py",
     "task_assignment.py",
     "binary_tree_diameter.py",
-    "linked_list_construction.py"
+    "linked_list_construction.py",
+    "invert_binary_tree.py"
 ]
 
 # # O(n) time | O(n) space
