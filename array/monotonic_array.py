@@ -1,4 +1,5 @@
 
+# O(n) time | O(1) space
 def monotonic_array(array):
     if array is None or len(array) <= 2:
         return True
