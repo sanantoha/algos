@@ -139,7 +139,8 @@ tasks_done = [
     "binary_tree_diameter.py",
     "linked_list_construction.py",
     "invert_binary_tree.py",
-    "monotonic_array.py"
+    "monotonic_array.py",
+    "binary_search.py"
 ]
 
 # # O(n) time | O(n) space
