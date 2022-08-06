@@ -140,7 +140,8 @@ tasks_done = [
     "linked_list_construction.py",
     "invert_binary_tree.py",
     "monotonic_array.py",
-    "binary_search.py"
+    "binary_search.py",
+    "max_subset_sum_no_adjucent.py"
 ]
 
 # # O(n) time | O(n) space
