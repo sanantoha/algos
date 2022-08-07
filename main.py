@@ -141,7 +141,8 @@ tasks_done = [
     "invert_binary_tree.py",
     "monotonic_array.py",
     "binary_search.py",
-    "max_subset_sum_no_adjucent.py"
+    "max_subset_sum_no_adjucent.py",
+    "water_area.py"
 ]
 
 # # O(n) time | O(n) space
