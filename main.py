@@ -142,7 +142,8 @@ tasks_done = [
     "monotonic_array.py",
     "binary_search.py",
     "max_subset_sum_no_adjucent.py",
-    "water_area.py"
+    "water_area.py",
+    "bst_traversal.py"
 ]
 
 # # O(n) time | O(n) space
