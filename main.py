@@ -143,7 +143,8 @@ tasks_done = [
     "binary_search.py",
     "max_subset_sum_no_adjucent.py",
     "water_area.py",
-    "bst_traversal.py"
+    "bst_traversal.py",
+    "find_kth_largest_value_in_bst.py"
 ]
 
 # # O(n) time | O(n) space
