@@ -144,7 +144,8 @@ tasks_done = [
     "max_subset_sum_no_adjucent.py",
     "water_area.py",
     "bst_traversal.py",
-    "find_kth_largest_value_in_bst.py"
+    "find_kth_largest_value_in_bst.py",
+    "powerset.py"
 ]
 
 # # O(n) time | O(n) space
