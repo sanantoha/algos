@@ -145,7 +145,8 @@ tasks_done = [
     "water_area.py",
     "bst_traversal.py",
     "find_kth_largest_value_in_bst.py",
-    "powerset.py"
+    "powerset.py",
+    "caesar_cipher_encryptor.py"
 ]
 
 # # O(n) time | O(n) space

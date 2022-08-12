@@ -12,5 +12,5 @@ def caesar_cipher_encryptor(string, key):
 
 
 if __name__ == '__main__':
-    print(caesar_cipher_encryptor("xyz", 2))
-    print(caesar_cipher_encryptor("abc", 52))
+    print(caesar_cipher_encryptor("xyz", 2) == "zab")
+    print(caesar_cipher_encryptor("abc", 52) == "abc")
