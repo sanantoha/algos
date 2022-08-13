@@ -146,7 +146,8 @@ tasks_done = [
     "bst_traversal.py",
     "find_kth_largest_value_in_bst.py",
     "powerset.py",
-    "caesar_cipher_encryptor.py"
+    "caesar_cipher_encryptor.py",
+    "min_heap_construction.py"
 ]
 
 # # O(n) time | O(n) space
