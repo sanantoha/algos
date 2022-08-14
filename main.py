@@ -147,7 +147,8 @@ tasks_done = [
     "find_kth_largest_value_in_bst.py",
     "powerset.py",
     "caesar_cipher_encryptor.py",
-    "min_heap_construction.py"
+    "min_heap_construction.py",
+    "find_nodes_distance_k.py"
 ]
 
 # # O(n) time | O(n) space
@@ -184,6 +185,18 @@ tasks_done = [
 #
 #     return total
 
+def toHex(num: int) -> str:
+    res = []
+
+    mapper = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+
+    while num != 0 and num != -1:
+        modulo = num % 16
+        res.append(mapper[modulo])
+        num //= 16
+
+    return ''.join(reversed(res))
+
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
@@ -191,3 +204,5 @@ if __name__ == '__main__':
 
     # input = [4, 1, 3, 2]
     # print(findTotalImbalance(input))
+
+    # print(toHex(-26))
