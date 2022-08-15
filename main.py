@@ -148,7 +148,8 @@ tasks_done = [
     "powerset.py",
     "caesar_cipher_encryptor.py",
     "min_heap_construction.py",
-    "find_nodes_distance_k.py"
+    "find_nodes_distance_k.py",
+    "longest_common_subsequence.py"
 ]
 
 # # O(n) time | O(n) space
