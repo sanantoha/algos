@@ -150,7 +150,8 @@ tasks_done = [
     "min_heap_construction.py",
     "find_nodes_distance_k.py",
     "longest_common_subsequence.py",
-    "move_element_to_end.py"
+    "move_element_to_end.py",
+    "class_photos.py"
 ]
 
 # # O(n) time | O(n) space
