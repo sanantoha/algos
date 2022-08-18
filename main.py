@@ -151,7 +151,8 @@ tasks_done = [
     "find_nodes_distance_k.py",
     "longest_common_subsequence.py",
     "move_element_to_end.py",
-    "class_photos.py"
+    "class_photos.py",
+    "next_greater_element.py"
 ]
 
 # # O(n) time | O(n) space
@@ -195,5 +196,3 @@ if __name__ == '__main__':
 
     # input = [4, 1, 3, 2]
     # print(findTotalImbalance(input))
-
-    # print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
