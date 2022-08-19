@@ -196,3 +196,4 @@ if __name__ == '__main__':
 
     # input = [4, 1, 3, 2]
     # print(findTotalImbalance(input))
+    # print(first_non_repeating_character("abcdcaf"))
