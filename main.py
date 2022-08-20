@@ -152,7 +152,8 @@ tasks_done = [
     "longest_common_subsequence.py",
     "move_element_to_end.py",
     "class_photos.py",
-    "next_greater_element.py"
+    "next_greater_element.py",
+    "first_duplicate_value.py"
 ]
 
 # # O(n) time | O(n) space
