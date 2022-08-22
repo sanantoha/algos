@@ -154,7 +154,8 @@ tasks_done = [
     "class_photos.py",
     "next_greater_element.py",
     "first_duplicate_value.py",
-    "max_sum_in_binary_tree.py"
+    "max_sum_in_binary_tree.py",
+    "tandem_bicycle.py"
 ]
 
 # # O(n) time | O(n) space
