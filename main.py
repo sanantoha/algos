@@ -157,7 +157,8 @@ tasks_done = [
     "max_sum_in_binary_tree.py",
     "tandem_bicycle.py",
     "valid_ip_addresses.py",
-    "min_max_stack_construction.py"
+    "min_max_stack_construction.py",
+    "validate_tree_nodes.py"
 ]
 
 # # O(n) time | O(n) space
