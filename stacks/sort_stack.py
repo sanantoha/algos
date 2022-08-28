@@ -25,7 +25,7 @@ def insert(stack, elem):
 
 # O(n ^ 2) time | O(n) space
 def sortStack1(stack):
-    if stack or len(stack) == 0:
+    if not stack:
         return stack
 
     top = stack.pop()
@@ -38,7 +38,7 @@ def sortStack1(stack):
 
 
 def insertInSortedOrder(stack, value):
-    if stack or stack[-1] <= value:
+    if not stack or stack[-1] <= value:
         stack.append(value)
         return
 
@@ -53,9 +53,9 @@ if __name__ == '__main__':
     input = [-5, 2, -2, 4, 3, 1]
     expected = [-5, -2, 1, 2, 3, 4]
 
-    actual = sortStack(input)
-    print(actual)
-    assert actual == expected
+    # actual = sortStack(input)
+    # print(actual)
+    # assert actual == expected
 
     actual = sortStack1(input)
     print(actual)
