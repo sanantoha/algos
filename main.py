@@ -161,7 +161,8 @@ tasks_done = [
     "validate_tree_nodes.py",
     "sort_stack.py",
     "longest_palindromic_substring.py",
-    "reconstruct_bst.py"
+    "reconstruct_bst.py",
+    "river_sizes.py"
 ]
 
 
