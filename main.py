@@ -162,7 +162,8 @@ tasks_done = [
     "sort_stack.py",
     "longest_palindromic_substring.py",
     "reconstruct_bst.py",
-    "river_sizes.py"
+    "river_sizes.py",
+    "balanced_brackets.py"
 ]
 
 
@@ -170,3 +171,4 @@ if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
+
