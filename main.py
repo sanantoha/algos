@@ -164,84 +164,24 @@ tasks_done = [
     "reconstruct_bst.py",
     "river_sizes.py",
     "balanced_brackets.py",
-    "numbers_of_ways_to_traverse_graph.py"
+    "numbers_of_ways_to_traverse_graph.py",
+    "sum_of_linked_lists.py",
+    "a_star_algorithm.py",
+    "min_number_of_coins_for_change.py",
+    "find_three_largest_numbers.py"
 ]
 
-# O(2 ^ (w * h)) time | O(w + h) space
-def numbers_of_ways_to_traverse_graph_rec(width, height):
-    if width == 1 or height == 1:
-        return 1
-
-    return numbers_of_ways_to_traverse_graph_rec(width - 1, height) + \
-           numbers_of_ways_to_traverse_graph_rec(width, height - 1)
-
-# O(w * h) time | O(w * h) space
-def numbers_of_ways_to_traverse_graph(width, height):
-
-    dp = [[1 for _ in range(width)] for _ in range(height)]
-
-    for i in range(1, height):
-        for j in range(1, width):
-            dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
-
-    return dp[height - 1][width - 1]
-
-
-def numbers_of_ways_to_traverse_graph_math(width, height):
-    x = width - 1
-    y = height - 1
-    return factorial(x + y) // (factorial(x) * factorial(y))
-
-def factorial(n):
-    if n == 0:
-        return 1
-
-    res = 1
-    for i in range(1, n + 1):
-        res *= i
-
-    return res
-
-
-# This is an input class. Do not edit.
-class LinkedList:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
-
-
-def sumOfLinkedLists(linkedListOne, linkedListTwo):
+def find_three_largest_numbers(arr):
     pass
 
 
-class LinkedList(LinkedList):
-    def addMany(self, values):
-        current = self
-        while current.next is not None:
-            current = current.next
-        for value in values:
-            current.next = LinkedList(value)
-            current = current.next
-        return self
-
-
-def getNodesInArray(output):
-    nodes = []
-    current = output
-    while current is not None:
-        nodes.append(current.value)
-        current = current.next
-    return nodes
+def find_three_largest_numbers1(arr):
+    pass
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    ll1 = LinkedList(2).addMany([4, 7, 1])
-    ll2 = LinkedList(9).addMany([4, 5])
-    expected = LinkedList(1).addMany([9, 2, 2])
-    actual = sumOfLinkedLists(ll1, ll2)
-    print(getNodesInArray(actual))
-    assert getNodesInArray(actual) == getNodesInArray(expected)
-
+    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
