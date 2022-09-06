@@ -51,10 +51,18 @@ def isOutOfOrder(i, num, array):
 
 
 if __name__ == '__main__':
+    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [3, 9]
+
+    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [4, 9]
+
     actual = subarraySort1([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
     print(actual)
-    # assert actual == [3, 9]
+    assert actual == [3, 9]
 
     actual = subarraySort1([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
     print(actual)
-    # assert actual == [4, 9]
+    assert actual == [4, 9]

@@ -168,14 +168,14 @@ tasks_done = [
     "sum_of_linked_lists.py",
     "a_star_algorithm.py",
     "min_number_of_coins_for_change.py",
-    "find_three_largest_numbers.py"
+    "find_three_largest_numbers.py",
+    "subarray_sort.py"
 ]
 
-def find_three_largest_numbers(arr):
+def subarraySort(arr):
     pass
 
-
-def find_three_largest_numbers1(arr):
+def subarraySort1(arr):
     pass
 
 if __name__ == '__main__':
@@ -183,5 +183,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
-    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [3, 9]
+
+    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [4, 9]
+
+    actual = subarraySort1([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [3, 9]
+
+    actual = subarraySort1([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [4, 9]
