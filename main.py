@@ -169,13 +169,12 @@ tasks_done = [
     "a_star_algorithm.py",
     "min_number_of_coins_for_change.py",
     "find_three_largest_numbers.py",
-    "subarray_sort.py"
+    "subarray_sort.py",
+    "selection_sort.py",
+    "palindrom_check.py"
 ]
 
-def subarraySort(arr):
-    pass
-
-def subarraySort1(arr):
+def is_palindrome(str):
     pass
 
 if __name__ == '__main__':
@@ -183,18 +182,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
-    print(actual)
-    assert actual == [3, 9]
-
-    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
-    print(actual)
-    assert actual == [4, 9]
-
-    actual = subarraySort1([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
-    print(actual)
-    assert actual == [3, 9]
-
-    actual = subarraySort1([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
-    print(actual)
-    assert actual == [4, 9]
+    print(is_palindrome("abcdcba"))
