@@ -171,15 +171,31 @@ tasks_done = [
     "find_three_largest_numbers.py",
     "subarray_sort.py",
     "selection_sort.py",
-    "palindrom_check.py"
+    "palindrom_check.py",
+    "valid_starting_city.py"
 ]
 
-def is_palindrome(str):
+
+def valid_starting_city(distances, fuel, mpg):
     pass
+
+def valid_starting_city1(distances, fuel, mpg):
+    pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(is_palindrome("abcdcba"))
+    distances = [5, 25, 15, 10, 15]
+    fuel = [1, 2, 1, 0, 3]
+    mpg = 10
+    expected = 4
+    actual = valid_starting_city(distances, fuel, mpg)
+    print(actual)
+    assert actual == expected
+
+    actual1 = valid_starting_city1(distances, fuel, mpg)
+    print(actual1)
+    assert actual1 == expected
