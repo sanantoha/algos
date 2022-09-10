@@ -172,14 +172,12 @@ tasks_done = [
     "subarray_sort.py",
     "selection_sort.py",
     "palindrom_check.py",
-    "valid_starting_city.py"
+    "valid_starting_city.py",
+    "first_non_repeating_character.py"
 ]
 
 
-def valid_starting_city(distances, fuel, mpg):
-    pass
-
-def valid_starting_city1(distances, fuel, mpg):
+def first_non_repeating_character(str):
     pass
 
 
@@ -188,14 +186,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    distances = [5, 25, 15, 10, 15]
-    fuel = [1, 2, 1, 0, 3]
-    mpg = 10
-    expected = 4
-    actual = valid_starting_city(distances, fuel, mpg)
-    print(actual)
-    assert actual == expected
-
-    actual1 = valid_starting_city1(distances, fuel, mpg)
-    print(actual1)
-    assert actual1 == expected
+    print(first_non_repeating_character("abcdcaf"))
