@@ -173,12 +173,22 @@ tasks_done = [
     "selection_sort.py",
     "palindrom_check.py",
     "valid_starting_city.py",
-    "first_non_repeating_character.py"
+    "first_non_repeating_character.py",
+    "apartment_hunting.py",
+    "four_number_sum.py"
 ]
 
 
-def first_non_repeating_character(str):
+def fourNumberSum(array, targetSum):
     pass
+
+
+def fourNumberSum1(array, targetSum):
+    pass
+
+
+def sortAndStringify(array):
+    return ",".join(sorted(list(map(lambda x: str(x), array))))
 
 
 if __name__ == '__main__':
@@ -186,4 +196,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(first_non_repeating_character("abcdcaf"))
+    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
+    print(output)
+    output = list(map(sortAndStringify, output))
+    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    assert len(output) == 2
+    for quadruplet in quadruplets:
+        assert sortAndStringify(quadruplet) in output
+
+    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
+    print(output)
+    output = list(map(sortAndStringify, output))
+    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    assert len(output) == 2
+    for quadruplet in quadruplets:
+        assert sortAndStringify(quadruplet) in output
