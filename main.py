@@ -175,20 +175,13 @@ tasks_done = [
     "valid_starting_city.py",
     "first_non_repeating_character.py",
     "apartment_hunting.py",
-    "four_number_sum.py"
+    "four_number_sum.py",
+    "product_sum.py"
 ]
 
 
-def fourNumberSum(array, targetSum):
+def product_sum(arr):
     pass
-
-
-def fourNumberSum1(array, targetSum):
-    pass
-
-
-def sortAndStringify(array):
-    return ",".join(sorted(list(map(lambda x: str(x), array))))
 
 
 if __name__ == '__main__':
@@ -196,18 +189,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
-
-    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
