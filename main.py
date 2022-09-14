@@ -176,11 +176,12 @@ tasks_done = [
     "first_non_repeating_character.py",
     "apartment_hunting.py",
     "four_number_sum.py",
-    "product_sum.py"
+    "product_sum.py",
+    "spiral_matrix_traverse.py"
 ]
 
 
-def product_sum(arr):
+def spiral_matrix_traverse(matrix):
     pass
 
 
@@ -189,4 +190,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
+    matrix = [[1, 2, 3, 4],
+              [12, 13, 14, 5],
+              [11, 16, 15, 6],
+              [10, 9, 8, 7]]
+    print(spiral_matrix_traverse(matrix))
