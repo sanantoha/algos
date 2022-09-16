@@ -177,21 +177,21 @@ tasks_done = [
     "apartment_hunting.py",
     "four_number_sum.py",
     "product_sum.py",
-    "spiral_matrix_traverse.py"
+    "spiral_matrix_traverse.py",
+    "three_number_sort.py",
+    "generate_document.py"
 ]
 
-
-def spiral_matrix_traverse(matrix):
+def generate_document(characters, document):
     pass
 
+def generate_document1(characters, document):
+    pass
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    matrix = [[1, 2, 3, 4],
-              [12, 13, 14, 5],
-              [11, 16, 15, 6],
-              [10, 9, 8, 7]]
-    print(spiral_matrix_traverse(matrix))
+    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
