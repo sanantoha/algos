@@ -201,5 +201,5 @@ if __name__ == '__main__':
     print(d)
     assert d == 2
     d1 = levenshtein_distance1("abc", "yabd")
-    print()
+    print(d1)
     assert d1 == 2
