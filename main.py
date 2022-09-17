@@ -179,19 +179,27 @@ tasks_done = [
     "product_sum.py",
     "spiral_matrix_traverse.py",
     "three_number_sort.py",
-    "generate_document.py"
+    "generate_document.py",
+    "levenshtein_distance.py"
 ]
 
-def generate_document(characters, document):
+
+def levenshtein_distance(s1, s2):
     pass
 
-def generate_document1(characters, document):
+
+def levenshtein_distance1(s1, s2):
     pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
-    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    d = levenshtein_distance("abc", "yabd")
+    print(d)
+    assert d == 2
+    d1 = levenshtein_distance1("abc", "yabd")
+    print()
+    assert d1 == 2
