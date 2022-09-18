@@ -180,15 +180,12 @@ tasks_done = [
     "spiral_matrix_traverse.py",
     "three_number_sort.py",
     "generate_document.py",
-    "levenshtein_distance.py"
+    "levenshtein_distance.py",
+    "word_ladder_ii.py"
 ]
 
 
-def levenshtein_distance(s1, s2):
-    pass
-
-
-def levenshtein_distance1(s1, s2):
+def findLadders(begin, end, wordList):
     pass
 
 
@@ -197,9 +194,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    d = levenshtein_distance("abc", "yabd")
-    print(d)
-    assert d == 2
-    d1 = levenshtein_distance1("abc", "yabd")
-    print(d1)
-    assert d1 == 2
+    beginWord = "hit"
+    endWord = "cog"
+    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
+    actual = findLadders(beginWord, endWord, wordList)
+    print(actual)
+    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
