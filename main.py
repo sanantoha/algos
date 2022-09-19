@@ -181,22 +181,16 @@ tasks_done = [
     "three_number_sort.py",
     "generate_document.py",
     "levenshtein_distance.py",
-    "word_ladder_ii.py"
+    "word_ladder_ii.py",
+    "array_of_products.py"
 ]
 
-
-def findLadders(begin, end, wordList):
+def array_of_products(arr):
     pass
-
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = findLadders(beginWord, endWord, wordList)
-    print(actual)
-    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
+    print(array_of_products([1, 2, 3, 4]))
