@@ -182,15 +182,11 @@ tasks_done = [
     "generate_document.py",
     "levenshtein_distance.py",
     "word_ladder_ii.py",
-    "array_of_products.py"
+    "array_of_products.py",
+    "get_nth_fib.py"
 ]
-
-def array_of_products(arr):
-    pass
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
-
-    print(array_of_products([1, 2, 3, 4]))
