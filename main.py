@@ -183,10 +183,13 @@ tasks_done = [
     "levenshtein_distance.py",
     "word_ladder_ii.py",
     "array_of_products.py",
-    "get_nth_fib.py"
+    "get_nth_fib.py",
+    "sorted_squared_array.py"
 ]
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
+
+    print(sorted_squared_array([-3, 1, 2, 3, 5, 6, 8, 9]))
