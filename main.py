@@ -184,12 +184,36 @@ tasks_done = [
     "word_ladder_ii.py",
     "array_of_products.py",
     "get_nth_fib.py",
-    "sorted_squared_array.py"
+    "sorted_squared_array.py",
+    "breadth_first_search.py"
 ]
+
+from collections import deque
+
+
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
+
+    def add_child(self, name):
+        self.children.append(Node(name))
+        return self
+
+    def breadth_first_search(self, array):
+        return array
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(sorted_squared_array([-3, 1, 2, 3, 5, 6, 8, 9]))
+    graph = Node("A")
+    graph.add_child("B").add_child("C").add_child("D")
+    graph.children[0].add_child("E").add_child("F")
+    graph.children[2].add_child("G").add_child("H")
+    graph.children[0].children[1].add_child("I").add_child("J")
+    graph.children[2].children[0].add_child("K")
+
+    print(graph.breadth_first_search([]))
+    assert graph.breadth_first_search([]) == ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
