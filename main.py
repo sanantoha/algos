@@ -186,15 +186,21 @@ tasks_done = [
     "get_nth_fib.py",
     "sorted_squared_array.py",
     "breadth_first_search.py",
-    "run_length_encoding.py"
+    "run_length_encoding.py",
+    "minimum_waiting_time.py"
 ]
 
-def run_length_encoding(string):
+def minimum_waiting_time(queries):
     pass
+
+def minimum_waiting_time1(queries):
+    pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
+    print(minimum_waiting_time([3, 2, 1, 2, 6]))
+    print(minimum_waiting_time1([3, 2, 1, 2, 6]))
