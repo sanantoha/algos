@@ -188,11 +188,12 @@ tasks_done = [
     "breadth_first_search.py",
     "run_length_encoding.py",
     "minimum_waiting_time.py",
-    "zigzag_traverse.py"
+    "zigzag_traverse.py",
+    "smallest_difference.py"
 ]
 
 
-def zigzagTraverse(matrix):
+def smallest_difference(arr1, arr2):
     pass
 
 
@@ -201,7 +202,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = [[1, 3, 4, 10], [2, 5, 9, 11], [6, 8, 12, 15], [7, 13, 14, 16]]
-    actual = zigzagTraverse(test)
-    print(actual)
-    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
