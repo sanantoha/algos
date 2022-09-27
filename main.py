@@ -189,11 +189,12 @@ tasks_done = [
     "run_length_encoding.py",
     "minimum_waiting_time.py",
     "zigzag_traverse.py",
-    "smallest_difference.py"
+    "smallest_difference.py",
+    "longest_peak.py"
 ]
 
 
-def smallest_difference(arr1, arr2):
+def longest_peak(arr):
     pass
 
 
@@ -202,4 +203,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
+    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
