@@ -193,8 +193,10 @@ tasks_done = [
     "longest_peak.py"
 ]
 
+from tree.BinaryTree import BinaryTree
 
-def longest_peak(arr):
+
+def branch_sums(root):
     pass
 
 
@@ -203,4 +205,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
+    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9, 10])
+    print(branch_sums(tree) == [15, 16, 18, 10, 11])
