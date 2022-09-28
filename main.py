@@ -190,7 +190,8 @@ tasks_done = [
     "minimum_waiting_time.py",
     "zigzag_traverse.py",
     "smallest_difference.py",
-    "longest_peak.py"
+    "longest_peak.py",
+    "branch_sums.py"
 ]
 
 from tree.BinaryTree import BinaryTree
