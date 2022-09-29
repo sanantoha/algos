@@ -191,13 +191,14 @@ tasks_done = [
     "zigzag_traverse.py",
     "smallest_difference.py",
     "longest_peak.py",
-    "branch_sums.py"
+    "branch_sums.py",
+    "height_balanced_binary_tree.py"
 ]
 
 from tree.BinaryTree import BinaryTree
 
 
-def branch_sums(root):
+def height_balanced_binary_tree(root):
     pass
 
 
@@ -206,5 +207,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9, 10])
-    print(branch_sums(tree) == [15, 16, 18, 10, 11])
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.right = BinaryTree(3)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right.right = BinaryTree(6)
+    root.left.right.left = BinaryTree(7)
+    root.left.right.right = BinaryTree(8)
+    expected = True
+    actual = height_balanced_binary_tree(root)
+    assert actual == expected
