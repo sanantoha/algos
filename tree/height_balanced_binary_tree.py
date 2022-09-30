@@ -33,7 +33,7 @@ def height_balanced_binary_tree1(tree):
 
 def get_tree_info(tree):
     if tree is None:
-        return TreeInfo(True, -1)
+        return TreeInfo(True, 0)
 
     left_info = get_tree_info(tree.left)
     right_info = get_tree_info(tree.right)

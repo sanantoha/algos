@@ -192,13 +192,14 @@ tasks_done = [
     "smallest_difference.py",
     "longest_peak.py",
     "branch_sums.py",
-    "height_balanced_binary_tree.py"
+    "height_balanced_binary_tree.py",
+    "insertion_sort.py"
 ]
 
-from tree.BinaryTree import BinaryTree
+def insertion_sort(arr):
+    pass
 
-
-def height_balanced_binary_tree(root):
+def insertion_sort2(arr):
     pass
 
 
@@ -207,14 +208,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.left.right.left = BinaryTree(7)
-    root.left.right.right = BinaryTree(8)
-    expected = True
-    actual = height_balanced_binary_tree(root)
-    assert actual == expected
+    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
+    # xs = [5,2,4,1]
+    print(insertion_sort(xs))
+    print(insertion_sort2(xs))
