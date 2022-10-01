@@ -193,14 +193,33 @@ tasks_done = [
     "longest_peak.py",
     "branch_sums.py",
     "height_balanced_binary_tree.py",
-    "insertion_sort.py"
+    "insertion_sort.py",
+    "bst_construction.py"
 ]
 
-def insertion_sort(arr):
-    pass
+class BST:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
 
-def insertion_sort2(arr):
-    pass
+    def insert_rec(self, value):
+        return self
+
+    def insert(self, value):
+        return self
+
+    def contains(self, value):
+        return False
+
+    def contains_rec(self, value):
+        return False
+
+    def remove(self, value):
+        return self
+
+    def remove_rec(self, value):
+        return self
 
 
 if __name__ == '__main__':
@@ -208,7 +227,40 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    # xs = [5,2,4,1]
-    print(insertion_sort(xs))
-    print(insertion_sort2(xs))
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+
+    root.insert(12)
+    assert (root.right.left.left.value == 12)
+    #
+    # root.remove(10)
+    # assert (not root.contains(10))
+    # assert (root.value == 12)
+    #
+    # assert (root.contains(15))
+    #
+    root1 = BST(10)
+    root1.left = BST(5)
+    root1.left.left = BST(2)
+    root1.left.left.left = BST(1)
+    root1.left.right = BST(5)
+    root1.right = BST(15)
+    root1.right.left = BST(13)
+    root1.right.left.right = BST(14)
+    root1.right.right = BST(22)
+
+    root1.insert_rec(12)
+    assert (root1.right.left.left.value == 12)
+    #
+    # root1.remove_rec(10)
+    # assert (not root1.contains_rec(10))
+    # assert (root1.value == 12)
+    #
+    # assert (root1.contains_rec(15))
