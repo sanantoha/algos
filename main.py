@@ -195,11 +195,12 @@ tasks_done = [
     "height_balanced_binary_tree.py",
     "insertion_sort.py",
     "bst_construction.py",
-    "merge_overlapping_intervals.py"
+    "merge_overlapping_intervals.py",
+    "disk_stacking.py"
 ]
 
 
-def merge_overlapping_intervals(intervals):
+def diskStacking(disks):
     pass
 
 
@@ -208,4 +209,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(merge_overlapping_intervals([[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]]))  # [[1, 2], [3, 8], [9, 10]]
+    # input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [2, 2, 1], [4, 4, 5]]
+    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
+    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
+    actual = diskStacking(input)
+    print(actual)
+    assert (actual == expected)
