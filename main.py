@@ -196,22 +196,27 @@ tasks_done = [
     "insertion_sort.py",
     "bst_construction.py",
     "merge_overlapping_intervals.py",
-    "disk_stacking.py"
+    "disk_stacking.py",
+    "sunset_views.py"
 ]
 
-
-def diskStacking(disks):
+def sunsetViews(buildings, direction):
     pass
-
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    # input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [2, 2, 1], [4, 4, 5]]
-    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
-    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
-    actual = diskStacking(input)
+    buildings = [3, 5, 4, 4, 3, 1, 3, 2]
+    direction = "EAST"
+    expected = [1, 3, 6, 7]
+    actual = sunsetViews(buildings, direction)
     print(actual)
-    assert (actual == expected)
+    assert actual == expected
+
+    direction = "WEST"
+    expected = [0, 1]
+    actual = sunsetViews(buildings, direction)
+    print(actual)
+    assert actual == expected
