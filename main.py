@@ -198,30 +198,16 @@ tasks_done = [
     "merge_overlapping_intervals.py",
     "disk_stacking.py",
     "sunset_views.py",
-    "get_youngest_common_ancestor.py"
+    "get_youngest_common_ancestor.py",
+    "longest_increasing_subsequence.py"
 ]
 
-# This is an input class. Do not edit.
-class AncestralTree:
-    def __init__(self, name):
-        self.name = name
-        self.ancestor = None
+
+def longestIncreasingSubsequence(arr):
+    pass
 
 
-class AncestralTree(AncestralTree):
-    def addDescendants(self, *descendants):
-        for descendant in descendants:
-            descendant.ancestor = self
-
-
-def new_trees():
-    ancestralTrees = {}
-    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-        ancestralTrees[letter] = AncestralTree(letter)
-    return ancestralTrees
-
-
-def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
+def longestIncreasingSubsequence1(arr):
     pass
 
 
@@ -230,11 +216,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    trees = new_trees()
-    trees["A"].addDescendants(trees["B"], trees["C"])
-    trees["B"].addDescendants(trees["D"], trees["E"])
-    trees["D"].addDescendants(trees["H"], trees["I"])
-    trees["C"].addDescendants(trees["F"], trees["G"])
+    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
+    expected = [-24, 2, 3, 5, 6, 35]
 
-    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
-    assert yca == trees["B"]
+    actual = longestIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+
+    actual = longestIncreasingSubsequence1(input)
+    print(actual)
+    assert actual == expected
+
