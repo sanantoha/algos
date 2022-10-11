@@ -199,15 +199,20 @@ tasks_done = [
     "disk_stacking.py",
     "sunset_views.py",
     "get_youngest_common_ancestor.py",
-    "longest_increasing_subsequence.py"
+    "longest_increasing_subsequence.py",
+    "min_rewards.py"
 ]
 
 
-def longestIncreasingSubsequence(arr):
+def minRewards(arr):
     pass
 
 
-def longestIncreasingSubsequence1(arr):
+def minRewards1(arr):
+    pass
+
+
+def minRewards2(arr):
     pass
 
 
@@ -216,14 +221,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
-    expected = [-24, 2, 3, 5, 6, 35]
-
-    actual = longestIncreasingSubsequence(input)
+    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
     print(actual)
-    assert actual == expected
+    assert actual == 25
 
-    actual = longestIncreasingSubsequence1(input)
+    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
     print(actual)
-    assert actual == expected
+    assert actual == 25
+
+    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
 
