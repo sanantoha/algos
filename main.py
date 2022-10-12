@@ -200,20 +200,26 @@ tasks_done = [
     "sunset_views.py",
     "get_youngest_common_ancestor.py",
     "longest_increasing_subsequence.py",
-    "min_rewards.py"
+    "min_rewards.py",
+    "suffix_trie_construction.py"
 ]
 
 
-def minRewards(arr):
-    pass
+# Do not edit the class below except for the
+# populateSuffixTrieFrom and contains methods.
+# Feel free to add new properties and methods
+# to the class.
+class SuffixTrie:
+    def __init__(self, string):
+        self.root = {}
+        self.endSymbol = "*"
+        self.populateSuffixTrieFrom(string)
 
+    def populateSuffixTrieFrom(self, string):
+        pass
 
-def minRewards1(arr):
-    pass
-
-
-def minRewards2(arr):
-    pass
+    def contains(self, string):
+        pass
 
 
 if __name__ == '__main__':
@@ -221,15 +227,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
-
-    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
-
-    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
+    trie = SuffixTrie("babc")
+    expected = {
+        "c": {"*": True},
+        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
+        "a": {"b": {"c": {"*": True}}},
+    }
+    assert trie.root == expected
+    assert trie.contains("abc")
 
