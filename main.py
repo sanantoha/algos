@@ -201,38 +201,56 @@ tasks_done = [
     "get_youngest_common_ancestor.py",
     "longest_increasing_subsequence.py",
     "min_rewards.py",
-    "suffix_trie_construction.py"
+    "suffix_trie_construction.py",
+    "remove_kth_node_from_end.py"
 ]
 
+# This is an input class. Do not edit.
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
-# Do not edit the class below except for the
-# populateSuffixTrieFrom and contains methods.
-# Feel free to add new properties and methods
-# to the class.
-class SuffixTrie:
-    def __init__(self, string):
-        self.root = {}
-        self.endSymbol = "*"
-        self.populateSuffixTrieFrom(string)
 
-    def populateSuffixTrieFrom(self, string):
-        pass
+class StartLinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
-    def contains(self, string):
-        pass
 
+linkedListClass = StartLinkedList
+# if hasattr(program, "LinkedList"):
+#     linkedListClass = program.LinkedList
+
+class LinkedList(linkedListClass):
+    def addMany(self, values):
+        current = self
+        while current.next is not None:
+            current = current.next
+        for value in values:
+            current.next = LinkedList(value)
+            current = current.next
+        return self
+
+    def getNodesInArray(self):
+        nodes = []
+        current = self
+        while current is not None:
+            nodes.append(current.value)
+            current = current.next
+        return nodes
+
+
+def remove_kth_node_from_end(head, k):
+    return head
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    trie = SuffixTrie("babc")
-    expected = {
-        "c": {"*": True},
-        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
-        "a": {"b": {"c": {"*": True}}},
-    }
-    assert trie.root == expected
-    assert trie.contains("abc")
-
+    test = LinkedList(0).addMany([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    expected = LinkedList(0).addMany([1, 2, 3, 4, 5, 7, 8, 9])
+    remove_kth_node_from_end(test, 4)
+    print(test.getNodesInArray())
+    assert test.getNodesInArray() == expected.getNodesInArray()
