@@ -203,18 +203,25 @@ tasks_done = [
     "min_rewards.py",
     "suffix_trie_construction.py",
     "remove_kth_node_from_end.py",
-    "single_cycle_check.py"
+    "single_cycle_check.py",
+    "same_bsts.py"
 ]
 
-
-def single_cycle_check(arr):
+def sameBsts(arrayOne, arrayTwo):
     pass
+
+
+def sameBsts1(arrayOne, arrayTwo):
+    pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    array = [2, 3, 1, -4, -4, 2]
-    print(single_cycle_check(array))
-    assert single_cycle_check(array)
+    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
+    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
+    assert sameBsts(arrayOne, arrayTwo)
+
+    assert sameBsts1(arrayOne, arrayTwo)
