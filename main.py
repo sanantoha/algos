@@ -204,14 +204,21 @@ tasks_done = [
     "suffix_trie_construction.py",
     "remove_kth_node_from_end.py",
     "single_cycle_check.py",
-    "same_bsts.py"
+    "same_bsts.py",
+    "staircase_traversal.py"
 ]
 
-def sameBsts(arrayOne, arrayTwo):
+
+def staircaseTraversal(height, maxSteps):
     pass
 
+def staircaseTraversalMemo(height, maxSteps):
+    pass
 
-def sameBsts1(arrayOne, arrayTwo):
+def staircaseTraversalIter(height, maxSteps):
+    pass
+
+def staircaseTraversalWindow(height, maxSteps):
     pass
 
 
@@ -220,8 +227,21 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
-    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
-    assert sameBsts(arrayOne, arrayTwo)
+    stairs = 4
+    maxSteps = 2
+    expected = 5
+    actual = staircaseTraversal(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
 
-    assert sameBsts1(arrayOne, arrayTwo)
+    actual = staircaseTraversalMemo(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
+
+    actual = staircaseTraversalIter(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
+
+    actual = staircaseTraversalWindow(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
