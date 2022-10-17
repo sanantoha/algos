@@ -205,20 +205,11 @@ tasks_done = [
     "remove_kth_node_from_end.py",
     "single_cycle_check.py",
     "same_bsts.py",
-    "staircase_traversal.py"
+    "staircase_traversal.py",
+    "minimum_passes_of_matrix.py"
 ]
 
-
-def staircaseTraversal(height, maxSteps):
-    pass
-
-def staircaseTraversalMemo(height, maxSteps):
-    pass
-
-def staircaseTraversalIter(height, maxSteps):
-    pass
-
-def staircaseTraversalWindow(height, maxSteps):
+def minimum_passes_of_matrix(matrix):
     pass
 
 
@@ -227,21 +218,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stairs = 4
-    maxSteps = 2
-    expected = 5
-    actual = staircaseTraversal(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalMemo(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalIter(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalWindow(stairs, maxSteps)
+    input = [
+        [0, -1, -3, 2, 0],
+        [1, -2, -5, -1, -3],
+        [3, 0, 0, -4, -1],
+    ]
+    expected = 3
+    actual = minimum_passes_of_matrix(input)
     print(actual)
     assert actual == expected
