@@ -105,111 +105,10 @@ tasks = [
 ]
 
 tasks_done = [
-    "validate_bst.py",
-    "remove_islands.py",
-    "permutations.py",
-    "number_of_ways_to_make_change.py",
-    "search_in_sorted_matrix.py",
-    "largest_range.py",
-    "minimum_characters_for_words.py",
-    "cycle_in_graph.py",
-    "tournament_winner.py",
-    "knapsack_problem.py",
-    "balanced_brackets.py"
-    "task_assignment.py",
-    "bubble_sort.py",
-    "depth_first_search.py",
-    "min_height_bst.py",
-    "reverse_words_in_string.py",
-    "word_ladder.py",
-    "serialize_and_deserialize_n_ary_tree.py",
-    "two_number_sum.py",
-    "group_anagrams.py",
-    "max_sum_increasing_subsequence.py",
-    "non_constructible_changes.py",
-    "kadanes_distance.py",
-    "find_closest_value_in_bst.py",
-    "find_successor.py",
-    "validate_subsequence.py",
-    "phone_number_mnemonic.py",
-    "node_depths.py",
-    "three_number_sum.py",
-    "remove_duplicates_from_linkedlist.py",
-    "task_assignment.py",
-    "binary_tree_diameter.py",
-    "linked_list_construction.py",
-    "invert_binary_tree.py",
-    "monotonic_array.py",
-    "binary_search.py",
-    "max_subset_sum_no_adjucent.py",
-    "water_area.py",
-    "bst_traversal.py",
-    "find_kth_largest_value_in_bst.py",
-    "powerset.py",
-    "caesar_cipher_encryptor.py",
-    "min_heap_construction.py",
-    "find_nodes_distance_k.py",
-    "longest_common_subsequence.py",
-    "move_element_to_end.py",
-    "class_photos.py",
-    "next_greater_element.py",
-    "first_duplicate_value.py",
-    "max_sum_in_binary_tree.py",
-    "tandem_bicycle.py",
-    "valid_ip_addresses.py",
-    "min_max_stack_construction.py",
-    "validate_tree_nodes.py",
-    "sort_stack.py",
-    "longest_palindromic_substring.py",
-    "reconstruct_bst.py",
-    "river_sizes.py",
-    "balanced_brackets.py",
-    "numbers_of_ways_to_traverse_graph.py",
-    "sum_of_linked_lists.py",
-    "a_star_algorithm.py",
-    "min_number_of_coins_for_change.py",
-    "find_three_largest_numbers.py",
-    "subarray_sort.py",
-    "selection_sort.py",
-    "palindrom_check.py",
-    "valid_starting_city.py",
-    "first_non_repeating_character.py",
-    "apartment_hunting.py",
-    "four_number_sum.py",
-    "product_sum.py",
-    "spiral_matrix_traverse.py",
-    "three_number_sort.py",
-    "generate_document.py",
-    "levenshtein_distance.py",
-    "word_ladder_ii.py",
-    "array_of_products.py",
-    "get_nth_fib.py",
-    "sorted_squared_array.py",
-    "breadth_first_search.py",
-    "run_length_encoding.py",
-    "minimum_waiting_time.py",
-    "zigzag_traverse.py",
-    "smallest_difference.py",
-    "longest_peak.py",
-    "branch_sums.py",
-    "height_balanced_binary_tree.py",
-    "insertion_sort.py",
-    "bst_construction.py",
-    "merge_overlapping_intervals.py",
-    "disk_stacking.py",
-    "sunset_views.py",
-    "get_youngest_common_ancestor.py",
-    "longest_increasing_subsequence.py",
-    "min_rewards.py",
-    "suffix_trie_construction.py",
-    "remove_kth_node_from_end.py",
-    "single_cycle_check.py",
-    "same_bsts.py",
-    "staircase_traversal.py",
-    "minimum_passes_of_matrix.py"
+    "first_duplicate_value.py"
 ]
 
-def minimum_passes_of_matrix(matrix):
+def first_duplicate_value(array):
     pass
 
 
@@ -218,12 +117,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [0, -1, -3, 2, 0],
-        [1, -2, -5, -1, -3],
-        [3, 0, 0, -4, -1],
-    ]
-    expected = 3
-    actual = minimum_passes_of_matrix(input)
-    print(actual)
-    assert actual == expected
+    array = [2, 1, 5, 2, 3, 3, 4]
+    print(first_duplicate_value(array))
