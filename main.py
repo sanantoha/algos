@@ -111,8 +111,10 @@ tasks_done = [
     "valid_ip_addresses.py"
 ]
 
+
 def validIPAddresses(string):
     pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
