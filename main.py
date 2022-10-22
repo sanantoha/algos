@@ -108,11 +108,14 @@ tasks_done = [
     "first_duplicate_value.py",
     "validate_tree_nodes.py",
     "number_of_ways_to_make_change.py",
-    "valid_ip_addresses.py"
+    "valid_ip_addresses.py",
+    "binary_tree_diameter.py"
 ]
 
+from tree.BinaryTree import BinaryTree
 
-def validIPAddresses(string):
+
+def binary_tree_diameter(root):
     pass
 
 
@@ -121,20 +124,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = "1921680"
-    expected = [
-        "1.9.216.80",
-        "1.92.16.80",
-        "1.92.168.0",
-        "19.2.16.80",
-        "19.2.168.0",
-        "19.21.6.80",
-        "19.21.68.0",
-        "19.216.8.0",
-        "192.1.6.80",
-        "192.1.68.0",
-        "192.16.8.0",
-    ]
-    actual = validIPAddresses(input)
+    root = BinaryTree(1)
+    root.left = BinaryTree(3)
+    root.left.left = BinaryTree(7)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.left.left = BinaryTree(9)
+    root.left.right = BinaryTree(4)
+    root.left.right.right = BinaryTree(5)
+    root.left.right.right.right = BinaryTree(6)
+    root.right = BinaryTree(2)
+    expected = 6
+    actual = binary_tree_diameter(root)
     print(actual)
     assert actual == expected
