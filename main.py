@@ -109,13 +109,11 @@ tasks_done = [
     "validate_tree_nodes.py",
     "number_of_ways_to_make_change.py",
     "valid_ip_addresses.py",
-    "binary_tree_diameter.py"
+    "binary_tree_diameter.py",
+    "longest_peak.py"
 ]
 
-from tree.BinaryTree import BinaryTree
-
-
-def binary_tree_diameter(root):
+def longest_peak(arr):
     pass
 
 
@@ -124,16 +122,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(3)
-    root.left.left = BinaryTree(7)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.left.left = BinaryTree(9)
-    root.left.right = BinaryTree(4)
-    root.left.right.right = BinaryTree(5)
-    root.left.right.right.right = BinaryTree(6)
-    root.right = BinaryTree(2)
-    expected = 6
-    actual = binary_tree_diameter(root)
-    print(actual)
-    assert actual == expected
+    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
