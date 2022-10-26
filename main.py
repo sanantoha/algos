@@ -110,10 +110,15 @@ tasks_done = [
     "number_of_ways_to_make_change.py",
     "valid_ip_addresses.py",
     "binary_tree_diameter.py",
-    "longest_peak.py"
+    "longest_peak.py",
+    "find_kth_largest_value_in_bst.py"
 ]
 
-def longest_peak(arr):
+
+from tree.BST import BST
+
+
+def find_kth_largest_value_in_bst(root, k):
     pass
 
 
@@ -122,4 +127,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
+    root = BST(15)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.left.right = BST(3)
+    root.left.right = BST(5)
+    root.right = BST(20)
+    root.right.left = BST(17)
+    root.right.right = BST(22)
+    k = 3
+    expected = 17
+    actual = find_kth_largest_value_in_bst(root, k)
+    print(actual)
+    assert actual == expected
