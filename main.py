@@ -111,14 +111,12 @@ tasks_done = [
     "valid_ip_addresses.py",
     "binary_tree_diameter.py",
     "longest_peak.py",
-    "find_kth_largest_value_in_bst.py"
+    "find_kth_largest_value_in_bst.py",
+    "minimum_characters_for_words.py"
 ]
 
 
-from tree.BST import BST
-
-
-def find_kth_largest_value_in_bst(root, k):
+def minimumCharactersForWords(arr):
     pass
 
 
@@ -127,17 +125,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(15)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.left.right = BST(3)
-    root.left.right = BST(5)
-    root.right = BST(20)
-    root.right.left = BST(17)
-    root.right.right = BST(22)
-    k = 3
-    expected = 17
-    actual = find_kth_largest_value_in_bst(root, k)
+    input = ["this", "that", "did", "deed", "them!", "a"]
+    expected = ["t", "t", "h", "i", "s", "a", "d", "d", "e", "e", "m", "!"]
+    actual = minimumCharactersForWords(input)
     print(actual)
     assert actual == expected
