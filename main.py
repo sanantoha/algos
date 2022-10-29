@@ -113,11 +113,13 @@ tasks_done = [
     "longest_peak.py",
     "find_kth_largest_value_in_bst.py",
     "minimum_characters_for_words.py",
-    "search_in_sorted_matrix.py"
+    "search_in_sorted_matrix.py",
+    "first_non_repeating_character.py"
 ]
 
-def searchInSortedMatrix(matrix, target):
-    pass
+
+def first_non_repeating_character(data):
+    return -1
 
 
 if __name__ == '__main__':
@@ -125,13 +127,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [1, 4, 7, 12, 15, 1000],
-        [2, 5, 19, 31, 32, 1001],
-        [3, 8, 24, 33, 35, 1002],
-        [40, 41, 42, 44, 45, 1003],
-        [99, 100, 103, 106, 128, 1004],
-    ]
-    actual = searchInSortedMatrix(matrix, 44)
-    print(actual)
-    assert actual == [3, 3]
+    print(first_non_repeating_character("abcdcaf"))
