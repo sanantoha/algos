@@ -114,12 +114,13 @@ tasks_done = [
     "find_kth_largest_value_in_bst.py",
     "minimum_characters_for_words.py",
     "search_in_sorted_matrix.py",
-    "first_non_repeating_character.py"
+    "first_non_repeating_character.py",
+    "task_assignment.py"
 ]
 
 
-def first_non_repeating_character(data):
-    return -1
+def task_assignment(tasks):
+    pass
 
 
 if __name__ == '__main__':
@@ -127,4 +128,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(first_non_repeating_character("abcdcaf"))
+    k = 3
+    tasks = [1, 3, 5, 3, 1, 4]
+    expected = [[4, 2], [0, 5], [3, 1]]
+    actual = task_assignment(k, tasks)
+    print(actual)
+    assert actual == expected
