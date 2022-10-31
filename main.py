@@ -115,11 +115,11 @@ tasks_done = [
     "minimum_characters_for_words.py",
     "search_in_sorted_matrix.py",
     "first_non_repeating_character.py",
-    "task_assignment.py"
+    "task_assignment.py",
+    "phone_number_mnemonic.py"
 ]
 
-
-def task_assignment(k, tasks):
+def phoneNumberMnemonics(phoneNumber):
     pass
 
 
@@ -128,9 +128,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    k = 3
-    tasks = [1, 3, 5, 3, 1, 4]
-    expected = [[4, 2], [0, 5], [3, 1]]
-    actual = task_assignment(k, tasks)
+    phoneNumber = "1905"
+    expected = ["1w0j", "1w0k", "1w0l", "1x0j", "1x0k", "1x0l", "1y0j", "1y0k", "1y0l", "1z0j", "1z0k", "1z0l"]
+    actual = phoneNumberMnemonics(phoneNumber)
     print(actual)
     assert actual == expected
