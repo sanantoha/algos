@@ -117,20 +117,16 @@ tasks_done = [
     "first_non_repeating_character.py",
     "task_assignment.py",
     "phone_number_mnemonic.py",
-    "minimum_waiting_time.py"
+    "minimum_waiting_time.py",
+    "run_length_encoding.py"
 ]
 
-def minimum_waiting_time(queries):
+def run_length_encoding(str):
     pass
-
-def minimum_waiting_time1(queries):
-    pass
-
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(minimum_waiting_time([3, 2, 1, 2, 6]))
-    print(minimum_waiting_time1([3, 2, 1, 2, 6]))
+    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
