@@ -118,15 +118,26 @@ tasks_done = [
     "task_assignment.py",
     "phone_number_mnemonic.py",
     "minimum_waiting_time.py",
-    "run_length_encoding.py"
+    "run_length_encoding.py",
+    "tournament_winner.py"
 ]
 
-def run_length_encoding(str):
+
+def tournament_winner(competitions, results):
     pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
+    competitions = [
+        ["HTML", "C#"],
+        ["C#", "Python"],
+        ["Python", "HTML"]
+    ]
+
+    results = [0, 0, 1]
+
+    print(tournament_winner(competitions, results)) # Python
