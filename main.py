@@ -119,11 +119,12 @@ tasks_done = [
     "phone_number_mnemonic.py",
     "minimum_waiting_time.py",
     "run_length_encoding.py",
-    "tournament_winner.py"
+    "tournament_winner.py",
+    "non_constructible_changes.py"
 ]
 
 
-def tournament_winner(competitions, results):
+def non_constructible_changes(coins):
     pass
 
 
@@ -132,12 +133,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    competitions = [
-        ["HTML", "C#"],
-        ["C#", "Python"],
-        ["Python", "HTML"]
-    ]
-
-    results = [0, 0, 1]
-
-    print(tournament_winner(competitions, results)) # Python
+    coins = [5, 7, 1, 1, 2, 3, 22]
+    print(non_constructible_changes(coins))
