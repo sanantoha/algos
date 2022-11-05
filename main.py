@@ -123,7 +123,6 @@ tasks_done = [
     "non_constructible_changes.py"
 ]
 
-
 def non_constructible_changes(coins):
     pass
 
