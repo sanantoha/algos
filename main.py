@@ -120,17 +120,33 @@ tasks_done = [
     "minimum_waiting_time.py",
     "run_length_encoding.py",
     "tournament_winner.py",
-    "non_constructible_changes.py"
+    "non_constructible_changes.py",
+    "find_closest_value_in_bst.py"
 ]
 
-def non_constructible_changes(coins):
+def find_closest_value_in_bst(root):
     pass
 
+def find_closest_value_in_bst1(root):
+    pass
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    coins = [5, 7, 1, 1, 2, 3, 22]
-    print(non_constructible_changes(coins))
+    from tree.BST import BST
+
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+    expected = 13
+
+    print(find_closest_value_in_bst(root, 12))
+    print(find_closest_value_in_bst1(root, 12))
