@@ -123,25 +123,12 @@ tasks_done = [
     "non_constructible_changes.py",
     "find_closest_value_in_bst.py",
     "validate_subsequence.py",
-    "two_number_sum.py"
+    "two_number_sum.py",
+    "breadth_first_search.py"
 ]
-
-
-def two_number_sum(arr, target):
-    pass
-
-def two_number_sum1(arr, target):
-    pass
-
-def two_number_sum2(arr, target):
-    pass
 
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
-
-    print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
