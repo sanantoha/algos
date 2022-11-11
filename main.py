@@ -125,11 +125,12 @@ tasks_done = [
     "validate_subsequence.py",
     "two_number_sum.py",
     "breadth_first_search.py",
-    "tandem_bicycle.py"
+    "tandem_bicycle.py",
+    "longest_palindromic_substring.py"
 ]
 
 
-def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
+def longestPalindromicSubstring(s):
     pass
 
 
@@ -138,6 +139,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(
-        tandem_bicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True)
-    )
+    actual = longestPalindromicSubstring("abaxyzzyxf")
+    print(actual)
+    assert actual == "xyzzyx"
