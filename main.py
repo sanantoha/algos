@@ -126,11 +126,12 @@ tasks_done = [
     "two_number_sum.py",
     "breadth_first_search.py",
     "tandem_bicycle.py",
-    "longest_palindromic_substring.py"
+    "longest_palindromic_substring.py",
+    "river_sizes.py"
 ]
 
 
-def longestPalindromicSubstring(s):
+def river_sizes(matrix):
     pass
 
 
@@ -139,6 +140,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = longestPalindromicSubstring("abaxyzzyxf")
+    # test_input = [[1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 0, 1, 0, 1], [1, 0, 1, 0, 1], [1, 0, 1, 1, 0]]
+    test_input = [
+        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
+        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
+        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
+        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
+        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
+    ]
+
+    expected = [1, 1, 2, 2, 5, 21]
+    # expected = [1, 2, 2, 2, 5]
+
+    actual = sorted(river_sizes(test_input))
     print(actual)
-    assert actual == "xyzzyx"
+    assert actual == expected
+
