@@ -127,11 +127,12 @@ tasks_done = [
     "breadth_first_search.py",
     "tandem_bicycle.py",
     "longest_palindromic_substring.py",
-    "river_sizes.py"
+    "river_sizes.py",
+    "sorted_squared_array.py"
 ]
 
 
-def river_sizes(matrix):
+def sorted_squared_array(arr):
     pass
 
 
@@ -140,19 +141,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    # test_input = [[1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 0, 1, 0, 1], [1, 0, 1, 0, 1], [1, 0, 1, 1, 0]]
-    test_input = [
-        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
-        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
-        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
-        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
-        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
-    ]
-
-    expected = [1, 1, 2, 2, 5, 21]
-    # expected = [1, 2, 2, 2, 5]
-
-    actual = sorted(river_sizes(test_input))
-    print(actual)
-    assert actual == expected
+    print(sorted_squared_array([-3, 1, 2, 3, 5, 6, 8, 9]))
 
