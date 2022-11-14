@@ -128,18 +128,38 @@ tasks_done = [
     "tandem_bicycle.py",
     "longest_palindromic_substring.py",
     "river_sizes.py",
-    "sorted_squared_array.py"
+    "sorted_squared_array.py",
+    "permutations.py"
 ]
 
-
-def sorted_squared_array(arr):
+def getPermutations(arr):
     pass
 
+def getPermutations1(arr):
+    pass
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(sorted_squared_array([-3, 1, 2, 3, 5, 6, 8, 9]))
+    perms = getPermutations([1, 2, 3])
+    print(perms)
+    assert len(perms) == 6
+    assert [1, 2, 3] in perms
+    assert [1, 3, 2] in perms
+    assert [2, 1, 3] in perms
+    assert [2, 3, 1] in perms
+    assert [3, 1, 2] in perms
+    assert [3, 2, 1] in perms
+
+    perms1 = getPermutations1([1, 2, 3])
+    print(perms1)
+    assert len(perms1) == 6
+    assert [1, 2, 3] in perms1
+    assert [1, 3, 2] in perms1
+    assert [2, 1, 3] in perms1
+    assert [2, 3, 1] in perms1
+    assert [3, 1, 2] in perms1
+    assert [3, 2, 1] in perms1
 
