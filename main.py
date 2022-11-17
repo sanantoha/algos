@@ -131,10 +131,12 @@ tasks_done = [
     "sorted_squared_array.py",
     "permutations.py",
     "subarray_sort.py",
-    "monotonic_array.py"
+    "monotonic_array.py",
+    "selection_sort.py"
 ]
 
-def monotonic_array(arr):
+
+def selection_sort(arr):
     pass
 
 
@@ -143,5 +145,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(monotonic_array([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
-
+    arr = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
+    print(selection_sort(arr))
