@@ -132,11 +132,18 @@ tasks_done = [
     "permutations.py",
     "subarray_sort.py",
     "monotonic_array.py",
-    "selection_sort.py"
+    "selection_sort.py",
+    "numbers_of_ways_to_traverse_graph.py"
 ]
 
 
-def selection_sort(arr):
+def numbers_of_ways_to_traverse_graph_rec(width, height):
+    pass
+
+def numbers_of_ways_to_traverse_graph(width, height):
+    pass
+
+def numbers_of_ways_to_traverse_graph_math(width, height):
     pass
 
 
@@ -145,5 +152,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arr = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    print(selection_sort(arr))
+    assert numbers_of_ways_to_traverse_graph_rec(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph_math(4, 3) == 10
