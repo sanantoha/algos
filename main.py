@@ -133,17 +133,11 @@ tasks_done = [
     "subarray_sort.py",
     "monotonic_array.py",
     "selection_sort.py",
-    "numbers_of_ways_to_traverse_graph.py"
+    "numbers_of_ways_to_traverse_graph.py",
+    "merge_overlapping_intervals.py"
 ]
 
-
-def numbers_of_ways_to_traverse_graph_rec(width, height):
-    pass
-
-def numbers_of_ways_to_traverse_graph(width, height):
-    pass
-
-def numbers_of_ways_to_traverse_graph_math(width, height):
+def merge_overlapping_intervals(intervals):
     pass
 
 
@@ -152,6 +146,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert numbers_of_ways_to_traverse_graph_rec(4, 3) == 10
-    assert numbers_of_ways_to_traverse_graph(4, 3) == 10
-    assert numbers_of_ways_to_traverse_graph_math(4, 3) == 10
+    print(merge_overlapping_intervals([[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]])) # [[1, 2], [3, 8], [9, 10]]
