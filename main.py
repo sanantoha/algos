@@ -134,11 +134,37 @@ tasks_done = [
     "monotonic_array.py",
     "selection_sort.py",
     "numbers_of_ways_to_traverse_graph.py",
-    "merge_overlapping_intervals.py"
+    "merge_overlapping_intervals.py",
+    "min_max_stack_construction.py"
 ]
 
-def merge_overlapping_intervals(intervals):
-    pass
+
+# Feel free to add new properties and methods to the class.
+class MinMaxStack:
+
+    def __init__(self):
+        pass
+
+    def peek(self):
+        return -1
+
+    def pop(self):
+        return -1
+
+    def push(self, number):
+        pass
+
+    def getMin(self):
+        return -1
+
+    def getMax(self):
+        return -1
+
+
+def testMinMaxPeek(min, max, peek, stack):
+    assert stack.getMin() == min
+    assert stack.getMax() == max
+    assert stack.peek() == peek
 
 
 if __name__ == '__main__':
@@ -146,4 +172,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(merge_overlapping_intervals([[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]])) # [[1, 2], [3, 8], [9, 10]]
+    stack = MinMaxStack()
+    stack.push(5)
+    testMinMaxPeek(5, 5, 5, stack)
+    stack.push(7)
+    testMinMaxPeek(5, 7, 7, stack)
+    stack.push(2)
+    testMinMaxPeek(2, 7, 2, stack)
+    assert stack.pop() == 2
+    assert stack.pop() == 7
+    testMinMaxPeek(5, 5, 5, stack)
