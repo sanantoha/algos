@@ -135,36 +135,15 @@ tasks_done = [
     "selection_sort.py",
     "numbers_of_ways_to_traverse_graph.py",
     "merge_overlapping_intervals.py",
-    "min_max_stack_construction.py"
+    "min_max_stack_construction.py",
+    "validate_bst.py"
 ]
 
-
-# Feel free to add new properties and methods to the class.
-class MinMaxStack:
-
-    def __init__(self):
-        pass
-
-    def peek(self):
-        return -1
-
-    def pop(self):
-        return -1
-
-    def push(self, number):
-        pass
-
-    def getMin(self):
-        return -1
-
-    def getMax(self):
-        return -1
+from tree.BST import BST
 
 
-def testMinMaxPeek(min, max, peek, stack):
-    assert stack.getMin() == min
-    assert stack.getMax() == max
-    assert stack.peek() == peek
+def validate_bst(root):
+    pass
 
 
 if __name__ == '__main__':
@@ -172,13 +151,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stack = MinMaxStack()
-    stack.push(5)
-    testMinMaxPeek(5, 5, 5, stack)
-    stack.push(7)
-    testMinMaxPeek(5, 7, 7, stack)
-    stack.push(2)
-    testMinMaxPeek(2, 7, 2, stack)
-    assert stack.pop() == 2
-    assert stack.pop() == 7
-    testMinMaxPeek(5, 5, 5, stack)
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+    print(validate_bst(root))
+    assert validate_bst(root)
