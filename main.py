@@ -138,11 +138,15 @@ tasks_done = [
     "merge_overlapping_intervals.py",
     "min_max_stack_construction.py",
     "validate_bst.py",
-    "caesar_cipher_encryptor.py"
+    "caesar_cipher_encryptor.py",
+    "kadanes_distance.py"
 ]
 
 
-def caesar_cipher_encryptor(string, key):
+def kadanes_distance(arr):
+    pass
+
+def kadanes_distance1(arr):
     pass
 
 
@@ -151,5 +155,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(caesar_cipher_encryptor("xyz", 2) == "zab")
-    print(caesar_cipher_encryptor("abc", 52) == "abc")
+    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    assert kadanes_distance1([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19

@@ -1,24 +1,24 @@
 
 # O(2 ^ N) time | O(N) space
-def allPathsSourceTarget0(self, graph):
+def allPathsSourceTarget0(graph):
     if not graph:
         return []
 
     start = 0
     res = []
     ans = [start]
-    self.dfs(graph, start, ans, res)
+    dfs(graph, start, ans, res)
     return res
 
 
-def dfs(self, graph, v, ans, res):
+def dfs(graph, v, ans, res):
     if v == len(graph) - 1:
         res.append(ans[:])
         return
 
     for u in graph[v]:
         ans.append(u)
-        self.dfs(graph, u, ans, res)
+        dfs(graph, u, ans, res)
         ans.pop()
 
 # O(E + 2^(N-2)*V) time | O(N) space
