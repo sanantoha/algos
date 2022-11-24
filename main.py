@@ -139,14 +139,13 @@ tasks_done = [
     "min_max_stack_construction.py",
     "validate_bst.py",
     "caesar_cipher_encryptor.py",
-    "kadanes_distance.py"
+    "kadanes_distance.py",
+    "remove_duplicates_from_linkedlist.py"
 ]
 
+from list.LinkedList import LinkedList
 
-def kadanes_distance(arr):
-    pass
-
-def kadanes_distance1(arr):
+def remove_duplicates_from_linked_list(head):
     pass
 
 
@@ -155,5 +154,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
-    assert kadanes_distance1([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
+    print(remove_duplicates_from_linked_list(test))
