@@ -140,13 +140,21 @@ tasks_done = [
     "validate_bst.py",
     "caesar_cipher_encryptor.py",
     "kadanes_distance.py",
-    "remove_duplicates_from_linkedlist.py"
+    "remove_duplicates_from_linkedlist.py",
+    "four_number_sum.py"
 ]
 
-from list.LinkedList import LinkedList
 
-def remove_duplicates_from_linked_list(head):
+def fourNumberSum(arr, target):
     pass
+
+
+def fourNumberSum1(arr, target):
+    pass
+
+
+def sortAndStringify(array):
+    return ",".join(sorted(list(map(lambda x: str(x), array))))
 
 
 if __name__ == '__main__':
@@ -154,5 +162,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
-    print(remove_duplicates_from_linked_list(test))
+    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
+    print(output)
+    output = list(map(sortAndStringify, output))
+    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    assert len(output) == 2
+    for quadruplet in quadruplets:
+        assert sortAndStringify(quadruplet) in output
+
+    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
+    print(output)
+    output = list(map(sortAndStringify, output))
+    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    assert len(output) == 2
+    for quadruplet in quadruplets:
+        assert sortAndStringify(quadruplet) in output
