@@ -141,20 +141,32 @@ tasks_done = [
     "caesar_cipher_encryptor.py",
     "kadanes_distance.py",
     "remove_duplicates_from_linkedlist.py",
-    "four_number_sum.py"
+    "four_number_sum.py",
+    "get_youngest_common_ancestor.py"
 ]
 
+# This is an input class. Do not edit.
+class AncestralTree:
+    def __init__(self, name):
+        self.name = name
+        self.ancestor = None
 
-def fourNumberSum(arr, target):
+
+class AncestralTree(AncestralTree):
+    def addDescendants(self, *descendants):
+        for descendant in descendants:
+            descendant.ancestor = self
+
+
+def new_trees():
+    ancestralTrees = {}
+    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+        ancestralTrees[letter] = AncestralTree(letter)
+    return ancestralTrees
+
+
+def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
     pass
-
-
-def fourNumberSum1(arr, target):
-    pass
-
-
-def sortAndStringify(array):
-    return ",".join(sorted(list(map(lambda x: str(x), array))))
 
 
 if __name__ == '__main__':
@@ -162,18 +174,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    trees = new_trees()
+    trees["A"].addDescendants(trees["B"], trees["C"])
+    trees["B"].addDescendants(trees["D"], trees["E"])
+    trees["D"].addDescendants(trees["H"], trees["I"])
+    trees["C"].addDescendants(trees["F"], trees["G"])
 
-    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
+    assert yca == trees["B"]
