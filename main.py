@@ -142,31 +142,25 @@ tasks_done = [
     "kadanes_distance.py",
     "remove_duplicates_from_linkedlist.py",
     "four_number_sum.py",
-    "get_youngest_common_ancestor.py"
+    "get_youngest_common_ancestor.py",
+    "min_height_bst.py"
 ]
 
-# This is an input class. Do not edit.
-class AncestralTree:
-    def __init__(self, name):
-        self.name = name
-        self.ancestor = None
+from tree.validate_bst import validate_bst
+from tree.bst_traversal import in_order_traverse
+from tree.BST import BST
 
 
-class AncestralTree(AncestralTree):
-    def addDescendants(self, *descendants):
-        for descendant in descendants:
-            descendant.ancestor = self
-
-
-def new_trees():
-    ancestralTrees = {}
-    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-        ancestralTrees[letter] = AncestralTree(letter)
-    return ancestralTrees
-
-
-def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
+def min_height_bst(array):
     pass
+
+
+def get_tree_height(tree, height=0):
+    if tree is None:
+        return height
+    left_tree_height = get_tree_height(tree.left, height + 1)
+    right_tree_height = get_tree_height(tree.right, height + 1)
+    return max(left_tree_height, right_tree_height)
 
 
 if __name__ == '__main__':
@@ -174,11 +168,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    trees = new_trees()
-    trees["A"].addDescendants(trees["B"], trees["C"])
-    trees["B"].addDescendants(trees["D"], trees["E"])
-    trees["D"].addDescendants(trees["H"], trees["I"])
-    trees["C"].addDescendants(trees["F"], trees["G"])
+    array = [1, 2, 5, 7, 10, 13, 14, 15, 22]
+    tree = min_height_bst(array)
 
-    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
-    assert yca == trees["B"]
+    assert validate_bst(tree)
+    assert get_tree_height(tree) == 4
+
+    in_order = in_order_traverse(tree, [])
+
+    assert in_order == [1, 2, 5, 7, 10, 13, 14, 15, 22]
