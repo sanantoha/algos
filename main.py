@@ -143,24 +143,17 @@ tasks_done = [
     "remove_duplicates_from_linkedlist.py",
     "four_number_sum.py",
     "get_youngest_common_ancestor.py",
-    "min_height_bst.py"
+    "min_height_bst.py",
+    "valid_starting_city.py"
 ]
 
-from tree.validate_bst import validate_bst
-from tree.bst_traversal import in_order_traverse
-from tree.BST import BST
 
-
-def min_height_bst(array):
+def valid_starting_city(distances, fuel, mpg):
     pass
 
 
-def get_tree_height(tree, height=0):
-    if tree is None:
-        return height
-    left_tree_height = get_tree_height(tree.left, height + 1)
-    right_tree_height = get_tree_height(tree.right, height + 1)
-    return max(left_tree_height, right_tree_height)
+def valid_starting_city1(distances, fuel, mpg):
+    pass
 
 
 if __name__ == '__main__':
@@ -168,12 +161,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [1, 2, 5, 7, 10, 13, 14, 15, 22]
-    tree = min_height_bst(array)
+    distances = [5, 25, 15, 10, 15]
+    fuel = [1, 2, 1, 0, 3]
+    mpg = 10
+    expected = 4
+    actual = valid_starting_city(distances, fuel, mpg)
+    print(actual)
+    assert actual == expected
 
-    assert validate_bst(tree)
-    assert get_tree_height(tree) == 4
-
-    in_order = in_order_traverse(tree, [])
-
-    assert in_order == [1, 2, 5, 7, 10, 13, 14, 15, 22]
+    actual1 = valid_starting_city1(distances, fuel, mpg)
+    print(actual1)
+    assert actual1 == expected
