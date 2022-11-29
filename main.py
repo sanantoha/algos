@@ -144,15 +144,14 @@ tasks_done = [
     "four_number_sum.py",
     "get_youngest_common_ancestor.py",
     "min_height_bst.py",
-    "valid_starting_city.py"
+    "valid_starting_city.py",
+    "branch_sums.py"
 ]
 
-
-def valid_starting_city(distances, fuel, mpg):
-    pass
+from tree.BinaryTree import BinaryTree
 
 
-def valid_starting_city1(distances, fuel, mpg):
+def branch_sums(root):
     pass
 
 
@@ -161,14 +160,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    distances = [5, 25, 15, 10, 15]
-    fuel = [1, 2, 1, 0, 3]
-    mpg = 10
-    expected = 4
-    actual = valid_starting_city(distances, fuel, mpg)
-    print(actual)
-    assert actual == expected
-
-    actual1 = valid_starting_city1(distances, fuel, mpg)
-    print(actual1)
-    assert actual1 == expected
+    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9, 10])
+    print(branch_sums(tree) == [15, 16, 18, 10, 11])
