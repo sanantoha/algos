@@ -147,44 +147,21 @@ tasks_done = [
     "valid_starting_city.py",
     "branch_sums.py",
     "reverse_words_in_string.py",
-    "max_sum_in_binary_tree.py"
+    "max_sum_in_binary_tree.py",
+    "max_subset_sum_no_adjucent.py"
 ]
 
 
-def maxPathSum(tree):
+def max_subset_sum_no_adjucent(arr):
     pass
 
 
-class BinaryTree:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
-
-    def insert(self, values, i=0):
-        if i >= len(values):
-            return
-        queue = [self]
-        while len(queue) > 0:
-            current = queue.pop(0)
-            if current.left is None:
-                current.left = BinaryTree(values[i])
-                break
-            queue.append(current.left)
-            if current.right is None:
-                current.right = BinaryTree(values[i])
-                break
-            queue.append(current.right)
-        self.insert(values, i + 1)
-        return self
+def max_subset_sum_no_adjucent1(arr):
+    pass
 
 
 if __name__ == '__main__':
-    remain = list(set(tasks) - set(tasks_done))
-    random.shuffle(remain)
-    print(remain)
+    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
 
-    test = BinaryTree(1).insert([2, 3, 4, 5, 6, 7])
-    actual = maxPathSum(test)
-    print(actual)
-    assert actual == 18
+    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
+    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
