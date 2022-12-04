@@ -149,14 +149,23 @@ tasks_done = [
     "reverse_words_in_string.py",
     "max_sum_in_binary_tree.py",
     "max_subset_sum_no_adjucent.py",
-    "get_nth_fib.py"
+    "get_nth_fib.py",
+    "node_depths.py"
 ]
 
 
-def get_nth_fib(n):
+from tree.BinaryTree import BinaryTree
+
+
+def node_depths(root):
     pass
 
-def get_nth_fib_iter(n):
+
+def node_depths1(root):
+    pass
+
+
+def node_depths2(root):
     pass
 
 
@@ -165,10 +174,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib(i)))
-
-    print("===================================")
-
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib_iter(i)))
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.right = BinaryTree(9)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    root.right.left = BinaryTree(6)
+    root.right.right = BinaryTree(7)
+    print(node_depths(root) == 16)
+    print(node_depths1(root) == 16)
+    print(node_depths2(root) == 16)
