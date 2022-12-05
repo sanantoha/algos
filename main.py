@@ -150,22 +150,12 @@ tasks_done = [
     "max_sum_in_binary_tree.py",
     "max_subset_sum_no_adjucent.py",
     "get_nth_fib.py",
-    "node_depths.py"
+    "node_depths.py",
+    "array_of_products.py"
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def node_depths(root):
-    pass
-
-
-def node_depths1(root):
-    pass
-
-
-def node_depths2(root):
+def array_of_products(arr):
     pass
 
 
@@ -174,15 +164,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.left.left = BinaryTree(4)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.right = BinaryTree(9)
-    root.left.right = BinaryTree(5)
-    root.right = BinaryTree(3)
-    root.right.left = BinaryTree(6)
-    root.right.right = BinaryTree(7)
-    print(node_depths(root) == 16)
-    print(node_depths1(root) == 16)
-    print(node_depths2(root) == 16)
+    print(array_of_products([1, 2, 3, 4]))
