@@ -151,11 +151,12 @@ tasks_done = [
     "max_subset_sum_no_adjucent.py",
     "get_nth_fib.py",
     "node_depths.py",
-    "array_of_products.py"
+    "array_of_products.py",
+    "sunset_views.py"
 ]
 
 
-def array_of_products(arr):
+def sunsetViews(buildings, direction):
     pass
 
 
@@ -164,4 +165,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(array_of_products([1, 2, 3, 4]))
+    buildings = [3, 5, 4, 4, 3, 1, 3, 2]
+    direction = "EAST"
+    expected = [1, 3, 6, 7]
+    actual = sunsetViews(buildings, direction)
+    print(actual)
+    assert actual == expected
+
+    direction = "WEST"
+    expected = [0, 1]
+    actual = sunsetViews(buildings, direction)
+    print(actual)
+    assert actual == expected
