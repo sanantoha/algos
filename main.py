@@ -152,11 +152,20 @@ tasks_done = [
     "get_nth_fib.py",
     "node_depths.py",
     "array_of_products.py",
-    "sunset_views.py"
+    "sunset_views.py",
+    "find_successor.py"
 ]
 
+# This is an input class. Do not edit.
+class BinaryTree:
+    def __init__(self, value, left=None, right=None, parent=None):
+        self.value = value
+        self.left = left
+        self.right = right
+        self.parent = parent
 
-def sunsetViews(buildings, direction):
+
+def find_successor(tree, node):
     pass
 
 
@@ -165,15 +174,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    buildings = [3, 5, 4, 4, 3, 1, 3, 2]
-    direction = "EAST"
-    expected = [1, 3, 6, 7]
-    actual = sunsetViews(buildings, direction)
-    print(actual)
-    assert actual == expected
-
-    direction = "WEST"
-    expected = [0, 1]
-    actual = sunsetViews(buildings, direction)
-    print(actual)
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.parent = root
+    root.right = BinaryTree(3)
+    root.right.parent = root
+    root.left.left = BinaryTree(4)
+    root.left.left.parent = root.left
+    root.left.right = BinaryTree(5)
+    root.left.right.parent = root.left
+    root.left.left.left = BinaryTree(6)
+    root.left.left.left.parent = root.left.left
+    node = root.left.right
+    expected = root
+    actual = find_successor(root, node)
     assert actual == expected
