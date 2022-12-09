@@ -153,19 +153,12 @@ tasks_done = [
     "node_depths.py",
     "array_of_products.py",
     "sunset_views.py",
-    "find_successor.py"
+    "find_successor.py",
+    "class_photos.py"
 ]
 
-# This is an input class. Do not edit.
-class BinaryTree:
-    def __init__(self, value, left=None, right=None, parent=None):
-        self.value = value
-        self.left = left
-        self.right = right
-        self.parent = parent
 
-
-def find_successor(tree, node):
+def class_photos(red_shirt_heights, blue_shirt_heights):
     pass
 
 
@@ -174,18 +167,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.left.parent = root
-    root.right = BinaryTree(3)
-    root.right.parent = root
-    root.left.left = BinaryTree(4)
-    root.left.left.parent = root.left
-    root.left.right = BinaryTree(5)
-    root.left.right.parent = root.left
-    root.left.left.left = BinaryTree(6)
-    root.left.left.left.parent = root.left.left
-    node = root.left.right
-    expected = root
-    actual = find_successor(root, node)
-    assert actual == expected
+    print(class_photos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5]) == True)
+
+
