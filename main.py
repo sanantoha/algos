@@ -155,29 +155,12 @@ tasks_done = [
     "sunset_views.py",
     "find_successor.py",
     "class_photos.py",
-    "bst_traversal.py"
+    "bst_traversal.py",
+    "max_sum_increasing_subsequence.py"
 ]
 
-from tree.BST import BST
-
-
-def pre_order_traverse(root, arr):
-    return arr
-
-def pre_order_traverse_iter(root, arr):
-    return arr
-
-def in_order_traverse(root, arr):
-    return arr
-
-def in_order_traverse_iter(root, arr):
-    return arr
-
-def post_order_traverse(root, arr):
-    return arr
-
-def post_order_traverse_iter(root, arr):
-    return arr
+def maxSumIncreasingSubsequence(input):
+    pass
 
 
 if __name__ == '__main__':
@@ -185,25 +168,34 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.right = BST(22)
+    input = [-1, 1]
+    expected = [1, [1]]
 
-    in_order = [1, 2, 5, 5, 10, 15, 22]
-    pre_order = [10, 5, 2, 1, 5, 15, 22]
-    post_order = [1, 2, 5, 5, 22, 15, 10]
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
 
-    assert pre_order_traverse(root, []) == pre_order
-    assert pre_order_traverse_iter(root, []) == pre_order
+    input = [10, 70, 20, 30, 50, 11, 30]
+    expected = [110, [10, 20, 30, 50]]
 
-    assert in_order_traverse(root, []) == in_order
-    assert in_order_traverse_iter(root, []) == in_order
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+    #
+    #
+    input = [8, 12, 2, 3, 15, 5, 7]
+    expected = [35, [8, 12, 15]]
 
-    assert post_order_traverse(root, []) == post_order
-    assert post_order_traverse_iter(root, []) == post_order
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+    #
+    #
 
+    input = [-5, -4, -3, -2, -1]
 
+    expected = [-1, [-1]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
