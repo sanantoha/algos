@@ -156,10 +156,12 @@ tasks_done = [
     "find_successor.py",
     "class_photos.py",
     "bst_traversal.py",
-    "max_sum_increasing_subsequence.py"
+    "max_sum_increasing_subsequence.py",
+    "move_element_to_end.py"
 ]
 
-def maxSumIncreasingSubsequence(input):
+
+def move_element_to_end(arr, to_move):
     pass
 
 
@@ -168,34 +170,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [-1, 1]
-    expected = [1, [1]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
-
-    input = [10, 70, 20, 30, 50, 11, 30]
-    expected = [110, [10, 20, 30, 50]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
-    #
-    #
-    input = [8, 12, 2, 3, 15, 5, 7]
-    expected = [35, [8, 12, 15]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
-    #
-    #
-
-    input = [-5, -4, -3, -2, -1]
-
-    expected = [-1, [-1]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
+    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
