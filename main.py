@@ -157,12 +157,25 @@ tasks_done = [
     "class_photos.py",
     "bst_traversal.py",
     "max_sum_increasing_subsequence.py",
-    "move_element_to_end.py"
+    "move_element_to_end.py",
+    "suffix_trie_construction.py"
 ]
 
+# Do not edit the class below except for the
+# populateSuffixTrieFrom and contains methods.
+# Feel free to add new properties and methods
+# to the class.
+class SuffixTrie:
+    def __init__(self, string):
+        self.root = {}
+        self.endSymbol = "*"
+        self.populateSuffixTrieFrom(string)
 
-def move_element_to_end(arr, to_move):
-    pass
+    def populateSuffixTrieFrom(self, string):
+        pass
+
+    def contains(self, string):
+        pass
 
 
 if __name__ == '__main__':
@@ -170,4 +183,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
+    trie = SuffixTrie("babc")
+    expected = {
+        "c": {"*": True},
+        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
+        "a": {"b": {"c": {"*": True}}},
+    }
+    assert trie.root == expected
+    assert trie.contains("abc")
