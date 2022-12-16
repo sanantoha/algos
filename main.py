@@ -158,24 +158,31 @@ tasks_done = [
     "bst_traversal.py",
     "max_sum_increasing_subsequence.py",
     "move_element_to_end.py",
-    "suffix_trie_construction.py"
+    "suffix_trie_construction.py",
+    "generate_document.py",
+    "reconstruct_bst.py"
 ]
 
-# Do not edit the class below except for the
-# populateSuffixTrieFrom and contains methods.
-# Feel free to add new properties and methods
-# to the class.
-class SuffixTrie:
-    def __init__(self, string):
-        self.root = {}
-        self.endSymbol = "*"
-        self.populateSuffixTrieFrom(string)
 
-    def populateSuffixTrieFrom(self, string):
-        pass
+from tree.BST import BST
 
-    def contains(self, string):
-        pass
+
+def reconstruct_bst(preorder):
+    pass
+
+
+def reconstruct_bst1(preorder):
+    pass
+
+
+def get_dfs_order(root, arr):
+    if not root:
+        return
+
+    arr.append(root.value)
+    get_dfs_order(root.left, arr)
+    get_dfs_order(root.right, arr)
+    return arr
 
 
 if __name__ == '__main__':
@@ -183,11 +190,21 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    trie = SuffixTrie("babc")
-    expected = {
-        "c": {"*": True},
-        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
-        "a": {"b": {"c": {"*": True}}},
-    }
-    assert trie.root == expected
-    assert trie.contains("abc")
+    pre_order_traversal_values = [10, 4, 2, 1, 3, 17, 19, 18]
+    tree = BST(10)
+    tree.left = BST(4)
+    tree.left.left = BST(2)
+    tree.left.left.left = BST(1)
+    tree.left.right = BST(3)
+    tree.right = BST(17)
+    tree.right.right = BST(19)
+    tree.right.right.left = BST(18)
+    expected = get_dfs_order(tree, [])
+
+    actual = reconstruct_bst(pre_order_traversal_values)
+    actual_dfs_order = get_dfs_order(actual, [])
+    assert actual_dfs_order == expected
+
+    actual1 = reconstruct_bst1(pre_order_traversal_values)
+    actual_dfs_order1 = get_dfs_order(actual1, [])
+    assert actual_dfs_order1 == expected
