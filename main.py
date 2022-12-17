@@ -160,29 +160,41 @@ tasks_done = [
     "move_element_to_end.py",
     "suffix_trie_construction.py",
     "generate_document.py",
-    "reconstruct_bst.py"
+    "reconstruct_bst.py",
+    "min_heap_construction.py"
 ]
 
 
-from tree.BST import BST
+class MinHeap:
+    def __init__(self, array):
+        # Do not edit the line below.
+        self.heap = self.buildHeap(array)
+
+    def buildHeap(self, array):
+        return array
+
+    def siftDown(self, curr_idx, end_idx, heap):
+        pass
+
+    def siftUp(self, idx, heap):
+        pass
+
+    def peek(self):
+        return -1
+
+    def remove(self):
+        return -1
+
+    def insert(self, value):
+        pass
 
 
-def reconstruct_bst(preorder):
-    pass
-
-
-def reconstruct_bst1(preorder):
-    pass
-
-
-def get_dfs_order(root, arr):
-    if not root:
-        return
-
-    arr.append(root.value)
-    get_dfs_order(root.left, arr)
-    get_dfs_order(root.right, arr)
-    return arr
+def isMinHeapPropertySatisfied(array):
+    for currentIdx in range(1, len(array)):
+        parentIdx = (currentIdx - 1) // 2
+        if array[parentIdx] > array[currentIdx]:
+            return False
+    return True
 
 
 if __name__ == '__main__':
@@ -190,21 +202,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    pre_order_traversal_values = [10, 4, 2, 1, 3, 17, 19, 18]
-    tree = BST(10)
-    tree.left = BST(4)
-    tree.left.left = BST(2)
-    tree.left.left.left = BST(1)
-    tree.left.right = BST(3)
-    tree.right = BST(17)
-    tree.right.right = BST(19)
-    tree.right.right.left = BST(18)
-    expected = get_dfs_order(tree, [])
-
-    actual = reconstruct_bst(pre_order_traversal_values)
-    actual_dfs_order = get_dfs_order(actual, [])
-    assert actual_dfs_order == expected
-
-    actual1 = reconstruct_bst1(pre_order_traversal_values)
-    actual_dfs_order1 = get_dfs_order(actual1, [])
-    assert actual_dfs_order1 == expected
+    minHeap = MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41])
+    minHeap.insert(76)
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == -5
+    assert minHeap.remove() == -5
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == 2
+    assert minHeap.remove() == 2
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == 6
+    minHeap.insert(87)
+    assert isMinHeapPropertySatisfied(minHeap.heap)
