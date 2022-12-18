@@ -161,40 +161,21 @@ tasks_done = [
     "suffix_trie_construction.py",
     "generate_document.py",
     "reconstruct_bst.py",
-    "min_heap_construction.py"
+    "min_heap_construction.py",
+    "staircase_traversal.py"
 ]
 
+def staircaseTraversal(height, maxSteps):
+    pass
 
-class MinHeap:
-    def __init__(self, array):
-        # Do not edit the line below.
-        self.heap = self.buildHeap(array)
+def staircaseTraversalMemo(height, maxSteps):
+    pass
 
-    def buildHeap(self, array):
-        return array
+def staircaseTraversalIter(height, maxSteps):
+    pass
 
-    def siftDown(self, curr_idx, end_idx, heap):
-        pass
-
-    def siftUp(self, idx, heap):
-        pass
-
-    def peek(self):
-        return -1
-
-    def remove(self):
-        return -1
-
-    def insert(self, value):
-        pass
-
-
-def isMinHeapPropertySatisfied(array):
-    for currentIdx in range(1, len(array)):
-        parentIdx = (currentIdx - 1) // 2
-        if array[parentIdx] > array[currentIdx]:
-            return False
-    return True
+def staircaseTraversalWindow(height, maxSteps):
+    pass
 
 
 if __name__ == '__main__':
@@ -202,15 +183,21 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    minHeap = MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41])
-    minHeap.insert(76)
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == -5
-    assert minHeap.remove() == -5
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == 2
-    assert minHeap.remove() == 2
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == 6
-    minHeap.insert(87)
-    assert isMinHeapPropertySatisfied(minHeap.heap)
+    stairs = 4
+    maxSteps = 2
+    expected = 5
+    actual = staircaseTraversal(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
+
+    actual = staircaseTraversalMemo(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
+
+    actual = staircaseTraversalIter(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
+
+    actual = staircaseTraversalWindow(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
