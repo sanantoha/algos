@@ -1,5 +1,6 @@
 import collections
 import random
+from _socket import herror
 
 tasks = [
     'apartment_hunting.py',
@@ -162,42 +163,12 @@ tasks_done = [
     "generate_document.py",
     "reconstruct_bst.py",
     "min_heap_construction.py",
-    "staircase_traversal.py"
+    "staircase_traversal.py",
+    "minimum_passes_of_matrix.py"
 ]
-
-def staircaseTraversal(height, maxSteps):
-    pass
-
-def staircaseTraversalMemo(height, maxSteps):
-    pass
-
-def staircaseTraversalIter(height, maxSteps):
-    pass
-
-def staircaseTraversalWindow(height, maxSteps):
-    pass
 
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
-
-    stairs = 4
-    maxSteps = 2
-    expected = 5
-    actual = staircaseTraversal(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalMemo(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalIter(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalWindow(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
