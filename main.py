@@ -165,36 +165,15 @@ tasks_done = [
     "min_heap_construction.py",
     "staircase_traversal.py",
     "minimum_passes_of_matrix.py",
-    "sum_of_linked_lists.py"
+    "sum_of_linked_lists.py",
+    "longest_increasing_subsequence.py"
 ]
 
-# This is an input class. Do not edit.
-class LinkedList:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
 
-class LinkedList(LinkedList):
-    def addMany(self, values):
-        current = self
-        while current.next is not None:
-            current = current.next
-        for value in values:
-            current.next = LinkedList(value)
-            current = current.next
-        return self
+def longestIncreasingSubsequence(arr):
+    pass
 
-
-def getNodesInArray(output):
-    nodes = []
-    current = output
-    while current is not None:
-        nodes.append(current.value)
-        current = current.next
-    return nodes
-
-
-def sumOfLinkedLists(linkedListOne, linkedListTwo):
+def longestIncreasingSubsequence1(arr):
     pass
 
 
@@ -203,9 +182,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    ll1 = LinkedList(2).addMany([4, 7, 1])
-    ll2 = LinkedList(9).addMany([4, 5])
-    expected = LinkedList(1).addMany([9, 2, 2])
-    actual = sumOfLinkedLists(ll1, ll2)
-    print(getNodesInArray(actual))
-    assert getNodesInArray(actual) == getNodesInArray(expected)
+    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
+
+    actual = longestIncreasingSubsequence(input)
+    print(actual)
+    assert actual == [-24, 2, 3, 5, 6, 35]
+
+    actual = longestIncreasingSubsequence1(input)
+    print(actual)
+    assert actual == [-24, 2, 3, 5, 6, 35]
