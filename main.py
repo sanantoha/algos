@@ -166,14 +166,18 @@ tasks_done = [
     "staircase_traversal.py",
     "minimum_passes_of_matrix.py",
     "sum_of_linked_lists.py",
-    "longest_increasing_subsequence.py"
+    "longest_increasing_subsequence.py",
+    "invert_binary_tree.py"
 ]
 
+from tree.BinaryTree import BinaryTree
+from collections import deque
 
-def longestIncreasingSubsequence(arr):
+
+def invert_binary_tree(root):
     pass
 
-def longestIncreasingSubsequence1(arr):
+def invert_binary_tree_iter(root):
     pass
 
 
@@ -182,12 +186,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
+    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
+    inverted_tree = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
+    invert_binary_tree(tree)
+    assert tree.__eq__(inverted_tree)
 
-    actual = longestIncreasingSubsequence(input)
-    print(actual)
-    assert actual == [-24, 2, 3, 5, 6, 35]
-
-    actual = longestIncreasingSubsequence1(input)
-    print(actual)
-    assert actual == [-24, 2, 3, 5, 6, 35]
+    tree1 = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
+    inverted_tree1 = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
+    invert_binary_tree_iter(tree1)
+    assert tree1.__eq__(inverted_tree1)
