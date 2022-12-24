@@ -168,16 +168,22 @@ tasks_done = [
     "sum_of_linked_lists.py",
     "longest_increasing_subsequence.py",
     "invert_binary_tree.py",
-    "bubble_sort.py"
+    "bubble_sort.py",
+    "insertion_sort.py"
 ]
 
-def bubble_sort(arr):
+def insertion_sort(arr):
     pass
 
+def insertion_sort2(arr):
+    pass
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
+    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
+    # xs = [5,2,4,1]
+    print(insertion_sort(xs))
+    print(insertion_sort2(xs))
