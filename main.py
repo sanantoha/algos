@@ -169,21 +169,76 @@ tasks_done = [
     "longest_increasing_subsequence.py",
     "invert_binary_tree.py",
     "bubble_sort.py",
-    "insertion_sort.py"
+    "insertion_sort.py",
+    "largest_range.py"
 ]
 
-def insertion_sort(arr):
+
+def largestRange(arr):
     pass
 
-def insertion_sort2(arr):
+
+def largestRange1(arr):
     pass
+
+
+from typing import List, Optional
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+# O(2 ^ n) time | O(2 ^ n) space
+def allPossibleFBT(n: int) -> List[Optional[TreeNode]]:
+
+    def fbt(n, memo):
+        if n not in memo:
+            ans = []
+            for i in range(n):
+                j = n - 1 - i
+                for l in fbt(i, memo):
+                    for r in fbt(j, memo):
+                        root = TreeNode(0)
+                        root.left = l
+                        root.right = r
+                        ans.append(root)
+
+            memo[n] = ans
+
+        return memo[n]
+
+    memo = {0: [], 1: [TreeNode(0)]}
+    fbt1 = fbt(n, memo)
+    print(memo)
+    return fbt1
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    # xs = [5,2,4,1]
-    print(insertion_sort(xs))
-    print(insertion_sort2(xs))
+    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
+    actual = largestRange(input)
+    print(actual)
+    assert actual == [0, 7]
+
+    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
+    actual = largestRange(input)
+    print(actual)
+    assert actual == [10, 19]
+
+    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
+    actual = largestRange1(input)
+    print(actual)
+    assert actual == [0, 7]
+
+    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
+    actual = largestRange1(input)
+    print(actual)
+    assert actual == [10, 19]
+
+# print(allPossibleFBT(7))
