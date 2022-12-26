@@ -170,16 +170,13 @@ tasks_done = [
     "invert_binary_tree.py",
     "bubble_sort.py",
     "insertion_sort.py",
-    "largest_range.py"
+    "largest_range.py",
+    "balanced_brackets.py"
 ]
 
-
-def largestRange(arr):
+def balancedBrackets(string):
     pass
 
-
-def largestRange1(arr):
-    pass
 
 
 from typing import List, Optional
@@ -221,24 +218,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-    actual = largestRange(input)
-    print(actual)
-    assert actual == [0, 7]
+    assert balancedBrackets("(a)")
+    assert balancedBrackets("([])")
+    assert balancedBrackets("([])(){}(())()()")
 
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange(input)
-    print(actual)
-    assert actual == [10, 19]
-
-    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [0, 7]
-
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [10, 19]
-
-# print(allPossibleFBT(7))
+    # print(allPossibleFBT(7))
