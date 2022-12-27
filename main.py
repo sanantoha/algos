@@ -171,10 +171,11 @@ tasks_done = [
     "bubble_sort.py",
     "insertion_sort.py",
     "largest_range.py",
-    "balanced_brackets.py"
+    "balanced_brackets.py",
+    "three_number_sort.py"
 ]
 
-def balancedBrackets(string):
+def threeNumberSort(arr, order):
     pass
 
 
@@ -218,8 +219,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert balancedBrackets("(a)")
-    assert balancedBrackets("([])")
-    assert balancedBrackets("([])(){}(())()()")
+    array = [1, 0, 0, -1, -1, 0, 1, 1]
+    order = [0, 1, -1]
+    expected = [0, 0, 0, 1, 1, 1, -1, -1]
+
+    actual = threeNumberSort(array, order)
+    print(actual)
+    assert actual == expected
 
     # print(allPossibleFBT(7))
