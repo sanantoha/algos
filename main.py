@@ -172,12 +172,12 @@ tasks_done = [
     "insertion_sort.py",
     "largest_range.py",
     "balanced_brackets.py",
-    "three_number_sort.py"
+    "three_number_sort.py",
+    "binary_search.py"
 ]
 
-def threeNumberSort(arr, order):
+def binary_search(arr, target):
     pass
-
 
 
 from typing import List, Optional
@@ -214,17 +214,37 @@ def allPossibleFBT(n: int) -> List[Optional[TreeNode]]:
     return fbt1
 
 
+def allPossibleFBT1(n: int) -> List[Optional[TreeNode]]:
+
+    def fbt(n, cache):
+        res = []
+        for i in range(1, n, 2):
+            for left in cache[i]:
+                for right in cache[n - 1 - i]:
+                    root = TreeNode(0)
+                    root.left = left
+                    root.right = right
+                    res.append(root)
+
+        cache[n] = res
+
+
+    if n % 2 == 0:
+        return []
+    cache = {1: [TreeNode(0)]}
+    for i in range(3, n + 1, 2):
+        fbt(i, cache)
+
+    return cache[n]
+
+
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    array = [1, 0, 0, -1, -1, 0, 1, 1]
-    order = [0, 1, -1]
-    expected = [0, 0, 0, 1, 1, 1, -1, -1]
-
-    actual = threeNumberSort(array, order)
-    print(actual)
-    assert actual == expected
+    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
+    print(binary_search(array, 60))
 
     # print(allPossibleFBT(7))
+    # print(allPossibleFBT1(5))
