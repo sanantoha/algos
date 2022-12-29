@@ -173,11 +173,22 @@ tasks_done = [
     "largest_range.py",
     "balanced_brackets.py",
     "three_number_sort.py",
-    "binary_search.py"
+    "binary_search.py",
+    "depth_first_search.py"
 ]
 
-def binary_search(arr, target):
-    pass
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
+
+    def add_child(self, name):
+        self.children.append(Node(name))
+        return self
+
+    # O(v + e) time | O(v) space
+    def depth_first_search(self, array):
+        return array
 
 
 from typing import List, Optional
@@ -243,8 +254,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
-    print(binary_search(array, 60))
+    graph = Node("A")
+    graph.add_child("B").add_child("C").add_child("D")
+    graph.children[0].add_child("E").add_child("F")
+    graph.children[2].add_child("G").add_child("H")
+    graph.children[0].children[1].add_child("I").add_child("J")
+    graph.children[2].children[0].add_child("K")
+    assert graph.depth_first_search([]) == ["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
 
     # print(allPossibleFBT(7))
     # print(allPossibleFBT1(5))
