@@ -175,91 +175,59 @@ tasks_done = [
     "three_number_sort.py",
     "binary_search.py",
     "depth_first_search.py",
-    "group_anagrams.py"
+    "group_anagrams.py",
+    "remove_kth_node_from_end.py"
 ]
 
-def groupAnagrams(words):
+# This is an input class. Do not edit.
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+def remove_kth_node_from_end(head, k):
     pass
 
 
-from typing import List, Optional
+class StartLinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+linkedListClass = StartLinkedList
+# if hasattr(program, "LinkedList"):
+#     linkedListClass = program.LinkedList
 
-# O(2 ^ n) time | O(2 ^ n) space
-def allPossibleFBT(n: int) -> List[Optional[TreeNode]]:
+class LinkedList(linkedListClass):
+    def addMany(self, values):
+        current = self
+        while current.next is not None:
+            current = current.next
+        for value in values:
+            current.next = LinkedList(value)
+            current = current.next
+        return self
 
-    def fbt(n, memo):
-        if n not in memo:
-            ans = []
-            for i in range(n):
-                j = n - 1 - i
-                for l in fbt(i, memo):
-                    for r in fbt(j, memo):
-                        root = TreeNode(0)
-                        root.left = l
-                        root.right = r
-                        ans.append(root)
-
-            memo[n] = ans
-
-        return memo[n]
-
-    memo = {0: [], 1: [TreeNode(0)]}
-    fbt1 = fbt(n, memo)
-    print(memo)
-    return fbt1
-
-
-def allPossibleFBT1(n: int) -> List[Optional[TreeNode]]:
-
-    def fbt(n, cache):
-        res = []
-        for i in range(1, n, 2):
-            for left in cache[i]:
-                for right in cache[n - 1 - i]:
-                    root = TreeNode(0)
-                    root.left = left
-                    root.right = right
-                    res.append(root)
-
-        cache[n] = res
-
-
-    if n % 2 == 0:
-        return []
-    cache = {1: [TreeNode(0)]}
-    for i in range(3, n + 1, 2):
-        fbt(i, cache)
-
-    return cache[n]
-
-def compare(expected, output):
-    if len(expected) == 0:
-        assert output == expected
-        return
-    assert len(expected) == len(output)
-    for group in expected:
-        assert sorted(group) in output
+    def getNodesInArray(self):
+        nodes = []
+        current = self
+        while current is not None:
+            nodes.append(current.value)
+            current = current.next
+        return nodes
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
-    expected = [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
-    output = list(map(lambda x: sorted(x), groupAnagrams(words)))
-    # expected = list(map(lambda x: sorted(x), expected))
-
-    print(output)
-    print(expected)
-    compare(expected, output)
+    test = LinkedList(0).addMany([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    expected = LinkedList(0).addMany([1, 2, 3, 4, 5, 7, 8, 9])
+    remove_kth_node_from_end(test, 4)
+    print(test.getNodesInArray())
+    assert test.getNodesInArray() == expected.getNodesInArray()
 
     # print(allPossibleFBT(7))
     # print(allPossibleFBT1(5))
