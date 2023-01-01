@@ -103,7 +103,8 @@ tasks = [
     'word_ladder.py',
     'word_ladder_ii.py',
     'serialize_and_deserialize_n_ary_tree.py',
-    'all_paths_source_target.py'
+    'all_paths_source_target.py',
+    'semordinal.py'
 ]
 
 tasks_done = [
