@@ -178,11 +178,16 @@ tasks_done = [
     "depth_first_search.py",
     "group_anagrams.py",
     "remove_kth_node_from_end.py",
-    "zigzag_traverse.py"
+    "zigzag_traverse.py",
+    "find_three_largest_numbers.py"
 ]
 
 
-def zigzagTraverse(array):
+def find_three_largest_numbers(arr):
+    pass
+
+
+def find_three_largest_numbers1(arr):
     pass
 
 
@@ -191,7 +196,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = [[1, 3, 4, 10], [2, 5, 9, 11], [6, 8, 12, 15], [7, 13, 14, 16]]
-    actual = zigzagTraverse(test)
-    print(actual)
-    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
