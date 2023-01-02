@@ -179,7 +179,8 @@ tasks_done = [
     "group_anagrams.py",
     "remove_kth_node_from_end.py",
     "zigzag_traverse.py",
-    "find_three_largest_numbers.py"
+    "find_three_largest_numbers.py",
+    "merge_binary_trees.py"
 ]
 
 
