@@ -181,7 +181,8 @@ tasks_done = [
     "zigzag_traverse.py",
     "find_three_largest_numbers.py",
     "merge_binary_trees.py",
-    "smallest_difference.py"
+    "smallest_difference.py",
+    "stable_internships.py"
 ]
 
 
