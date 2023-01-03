@@ -180,15 +180,12 @@ tasks_done = [
     "remove_kth_node_from_end.py",
     "zigzag_traverse.py",
     "find_three_largest_numbers.py",
-    "merge_binary_trees.py"
+    "merge_binary_trees.py",
+    "smallest_difference.py"
 ]
 
 
-def find_three_largest_numbers(arr):
-    pass
-
-
-def find_three_largest_numbers1(arr):
+def smallest_difference(arr_one, arr_two):
     pass
 
 
@@ -197,5 +194,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
-    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
