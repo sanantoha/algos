@@ -104,7 +104,9 @@ tasks = [
     'word_ladder_ii.py',
     'serialize_and_deserialize_n_ary_tree.py',
     'all_paths_source_target.py',
-    'semordinal.py'
+    'semordinal.py',
+    'merge_binary_trees.py',
+    'stable_internships.py'
 ]
 
 tasks_done = [
@@ -180,9 +182,7 @@ tasks_done = [
     "remove_kth_node_from_end.py",
     "zigzag_traverse.py",
     "find_three_largest_numbers.py",
-    "merge_binary_trees.py",
-    "smallest_difference.py",
-    "stable_internships.py"
+    "smallest_difference.py"
 ]
 
 
