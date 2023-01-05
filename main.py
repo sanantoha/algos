@@ -106,7 +106,8 @@ tasks = [
     'all_paths_source_target.py',
     'semordinal.py',
     'merge_binary_trees.py',
-    'stable_internships.py'
+    'stable_internships.py',
+    'unique_pathsIII.py'
 ]
 
 tasks_done = [
@@ -182,11 +183,11 @@ tasks_done = [
     "remove_kth_node_from_end.py",
     "zigzag_traverse.py",
     "find_three_largest_numbers.py",
-    "smallest_difference.py"
+    "smallest_difference.py",
+    "product_sum.py"
 ]
 
-
-def smallest_difference(arr_one, arr_two):
+def product_sum(arr):
     pass
 
 
@@ -195,4 +196,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
+    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
