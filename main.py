@@ -107,7 +107,10 @@ tasks = [
     'semordinal.py',
     'merge_binary_trees.py',
     'stable_internships.py',
-    'unique_pathsIII.py'
+    'unique_pathsIII.py',
+    'zero_sum_subarray.py',
+    'merging_linked_lists.py',
+    'simmetrical_tree.py'
 ]
 
 tasks_done = [
