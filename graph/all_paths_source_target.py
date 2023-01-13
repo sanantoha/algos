@@ -1,6 +1,6 @@
 
-# O(2 ^ N) time | O(N) space
-def allPathsSourceTarget0(graph):
+# O(V * 2 ^ V) time | O(V) space
+def allPathsSourceTarget(graph):
     if not graph:
         return []
 
@@ -21,15 +21,16 @@ def dfs(graph, v, ans, res):
         dfs(graph, u, ans, res)
         ans.pop()
 
-# O(E + 2^(N-2)*V) time | O(N) space
-def allPathsSourceTarget(graph):
+# O(2 ^ V * V ^ 2) time | O(2 ^ V) space
+def allPathsSourceTarget1(graph):
     # edges cases:
     if not graph:
         return []
 
     # apply DFS on DAG
+    start = 0
     n = len(graph)
-    stack = [(0, [0])]  # - store noth the (node, and the path leading to it)
+    stack = [(start, [start])]  # - store noth the (node, and the path leading to it)
     res = []
     while stack:
         node, path = stack.pop()
@@ -55,3 +56,9 @@ if __name__ == '__main__':
     print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [3], [4], []])) # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
     print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [], [4], []])) # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
     print(allPathsSourceTarget([[2], [], [1]])) # [[0, 2]]
+
+    print(allPathsSourceTarget1([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
+    print(allPathsSourceTarget1(
+        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[2], [], [1]]))  # [[0, 2]]
