@@ -194,20 +194,30 @@ tasks_done = [
     "cycle_in_graph.py",
     "merge_binary_trees.py",
     "merging_linked_lists.py",
-    "zero_sum_subarray.py"
+    "zero_sum_subarray.py",
+    "stable_internships.py"
 ]
 
 
-def zeroSumSubarray(arr):
-    return False
+def stableInternships(interns, teams):
+    pass
 
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
-    input = [4, 2, -1, -1, 3]
-    expected = True
-    actual = zeroSumSubarray(input)
+
+    interns = [[0, 1, 2], [0, 2, 1], [1, 2, 0]]
+    teams = [[2, 1, 0], [0, 1, 2], [0, 1, 2]]
+    expected = [[0, 1], [1, 0], [2, 2]]
+    actual = stableInternships(interns, teams)
     print(actual)
-    assert actual == expected
+    assert len(actual) == len(expected)
+
+    for match in expected:
+        containsMatch = False
+        for actualMatch in actual:
+            if actualMatch[0] == match[0] and actualMatch[1] == match[1]:
+                containsMatch = True
+        assert containsMatch
