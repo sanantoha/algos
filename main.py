@@ -196,11 +196,16 @@ tasks_done = [
     "merging_linked_lists.py",
     "zero_sum_subarray.py",
     "stable_internships.py",
-    "semordinal.py"
+    "semordinal.py",
+    "longest_common_subsequence.py"
 ]
 
 
-def semordnilap(words):
+def longestCommonSubsequence(str1, str2):
+    pass
+
+
+def longestCommonSubsequence1(str1, str2):
     pass
 
 
@@ -209,7 +214,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["desserts", "stressed", "hello"]
-    expected = [["desserts", "stressed"]]
-    actual = semordnilap(input)
-    print(actual)  # [['desserts', 'stressed']]
+    output = longestCommonSubsequence("ZXVVYZW", "XKYKZPW")
+    print(output)
+    assert output == ["X", "Y", "Z", "W"]
+
+    output = longestCommonSubsequence1("ZXVVYZW", "XKYKZPW")
+    print(output)
+    assert output == ["X", "Y", "Z", "W"]
