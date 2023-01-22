@@ -110,7 +110,8 @@ tasks = [
     'unique_pathsIII.py',
     'zero_sum_subarray.py',
     'merging_linked_lists.py',
-    'simmetrical_tree.py'
+    'simmetrical_tree.py',
+    'union_find.py'
 ]
 
 tasks_done = [
