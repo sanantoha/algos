@@ -198,15 +198,12 @@ tasks_done = [
     "zero_sum_subarray.py",
     "stable_internships.py",
     "semordinal.py",
-    "longest_common_subsequence.py"
+    "longest_common_subsequence.py",
+    "min_number_of_coins_for_change.py"
 ]
 
 
-def longestCommonSubsequence(str1, str2):
-    pass
-
-
-def longestCommonSubsequence1(str1, str2):
+def min_number_of_coins_for_change(n, denoms):
     pass
 
 
@@ -215,10 +212,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = longestCommonSubsequence("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
-
-    output = longestCommonSubsequence1("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
+    print(min_number_of_coins_for_change(7, [1, 5, 10]))
+    assert min_number_of_coins_for_change(7, [1, 5, 10]) == 3
