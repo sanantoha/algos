@@ -199,18 +199,37 @@ tasks_done = [
     "stable_internships.py",
     "semordinal.py",
     "longest_common_subsequence.py",
-    "min_number_of_coins_for_change.py"
+    "min_number_of_coins_for_change.py",
+    "simmetrical_tree.py"
 ]
 
+from tree.BinaryTree import BinaryTree
 
-def min_number_of_coins_for_change(n, denoms):
+def symmetricalTreeRec(root):
     pass
 
+def symmetricalTree(root):
+    pass
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(min_number_of_coins_for_change(7, [1, 5, 10]))
-    assert min_number_of_coins_for_change(7, [1, 5, 10]) == 3
+    tree = BinaryTree(10)
+    tree.left = BinaryTree(5)
+    tree.right = BinaryTree(5)
+    tree.left.left = BinaryTree(7)
+    tree.left.right = BinaryTree(9)
+    tree.right.left = BinaryTree(9)
+    tree.right.right = BinaryTree(7)
+
+    expected = True
+
+    actual = symmetricalTreeRec(tree)
+    print(actual)
+    assert actual == expected
+
+    actual = symmetricalTree(tree)
+    print(actual)
+    assert actual == expected
