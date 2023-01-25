@@ -200,36 +200,23 @@ tasks_done = [
     "semordinal.py",
     "longest_common_subsequence.py",
     "min_number_of_coins_for_change.py",
-    "simmetrical_tree.py"
+    "simmetrical_tree.py",
+    "three_number_sum.py"
 ]
 
-from tree.BinaryTree import BinaryTree
 
-def symmetricalTreeRec(root):
+def three_number_sum(arr, target):
     pass
 
-def symmetricalTree(root):
+
+def three_number_sum1(arr, target):
     pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(10)
-    tree.left = BinaryTree(5)
-    tree.right = BinaryTree(5)
-    tree.left.left = BinaryTree(7)
-    tree.left.right = BinaryTree(9)
-    tree.right.left = BinaryTree(9)
-    tree.right.right = BinaryTree(7)
-
-    expected = True
-
-    actual = symmetricalTreeRec(tree)
-    print(actual)
-    assert actual == expected
-
-    actual = symmetricalTree(tree)
-    print(actual)
-    assert actual == expected
+    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
