@@ -201,22 +201,35 @@ tasks_done = [
     "longest_common_subsequence.py",
     "min_number_of_coins_for_change.py",
     "simmetrical_tree.py",
-    "three_number_sum.py"
+    "three_number_sum.py",
+    "next_greater_element.py"
 ]
 
 
-def three_number_sum(arr, target):
+def nextGreaterElement(arr):
     pass
 
-
-def three_number_sum1(arr, target):
+def nextGreaterElement1(arr):
     pass
 
+def nextGreaterElement2(arr):
+    pass
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
-    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    input = [2, 5, -3, -4, 6, 7, 2]
+    expected = [5, 6, 6, 6, 7, -1, 5]
+    actual = nextGreaterElement(input)
+    print(actual)
+    assert actual == expected
+
+    actual = nextGreaterElement1(input)
+    print(actual)
+    assert actual == expected
+
+    actual = nextGreaterElement2(input)
+    print(actual)
+    assert actual == expected
