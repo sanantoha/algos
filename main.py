@@ -111,7 +111,8 @@ tasks = [
     'zero_sum_subarray.py',
     'merging_linked_lists.py',
     'simmetrical_tree.py',
-    'union_find.py'
+    'union_find.py',
+    'kruskals_algorithm.py'
 ]
 
 tasks_done = [
