@@ -203,34 +203,36 @@ tasks_done = [
     "min_number_of_coins_for_change.py",
     "simmetrical_tree.py",
     "three_number_sum.py",
-    "next_greater_element.py"
+    "next_greater_element.py",
+    "union_find.py"
 ]
 
 
-def nextGreaterElement(arr):
-    pass
+class UnionFind:
+    def __init__(self):
+        pass
 
-def nextGreaterElement1(arr):
-    pass
+    def createSet(self, value):
+        pass
 
-def nextGreaterElement2(arr):
-    pass
+    def find(self, value):
+        pass
+
+    def union(self, valueOne, valueTwo):
+        pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    input = [2, 5, -3, -4, 6, 7, 2]
-    expected = [5, 6, 6, 6, 7, -1, 5]
-    actual = nextGreaterElement(input)
-    print(actual)
-    assert actual == expected
-
-    actual = nextGreaterElement1(input)
-    print(actual)
-    assert actual == expected
-
-    actual = nextGreaterElement2(input)
-    print(actual)
-    assert actual == expected
+    unionFind = UnionFind()
+    assert unionFind.find(1) == None
+    unionFind.createSet(1)
+    assert unionFind.find(1) == 1
+    unionFind.createSet(5)
+    assert unionFind.find(1) == 1
+    assert unionFind.find(5) == 5
+    unionFind.union(5, 1)
+    assert unionFind.find(5) == unionFind.find(1)
