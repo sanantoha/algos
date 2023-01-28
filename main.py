@@ -204,22 +204,17 @@ tasks_done = [
     "simmetrical_tree.py",
     "three_number_sum.py",
     "next_greater_element.py",
-    "union_find.py"
+    "union_find.py",
+    "levenshtein_distance.py"
 ]
 
 
-class UnionFind:
-    def __init__(self):
-        pass
+def levenshtein_distance(s1, s2):
+    pass
 
-    def createSet(self, value):
-        pass
 
-    def find(self, value):
-        pass
-
-    def union(self, valueOne, valueTwo):
-        pass
+def levenshtein_distance1(s1, s2):
+    pass
 
 
 if __name__ == '__main__':
@@ -227,12 +222,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    unionFind = UnionFind()
-    assert unionFind.find(1) == None
-    unionFind.createSet(1)
-    assert unionFind.find(1) == 1
-    unionFind.createSet(5)
-    assert unionFind.find(1) == 1
-    assert unionFind.find(5) == 5
-    unionFind.union(5, 1)
-    assert unionFind.find(5) == unionFind.find(1)
+    assert levenshtein_distance("abc", "yabd") == 2
+    assert levenshtein_distance1("abc", "yabd") == 2
