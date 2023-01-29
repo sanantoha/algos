@@ -205,16 +205,35 @@ tasks_done = [
     "three_number_sum.py",
     "next_greater_element.py",
     "union_find.py",
-    "levenshtein_distance.py"
+    "levenshtein_distance.py",
+    "serialize_and_deserialize_n_ary_tree.py"
 ]
 
+class Node(object):
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
 
-def levenshtein_distance(s1, s2):
-    pass
+    def __repr__(self):
+        return f"Node({self.val} {self.children})"
 
 
-def levenshtein_distance1(s1, s2):
-    pass
+class Codec:
+
+    def serialize(self, root):
+        pass
+
+    def deserialize(self, data):
+        pass
+
+
+class Codec1:
+
+    def serialize(self, root):
+        pass
+
+    def deserialize(self, data):
+        pass
 
 
 if __name__ == '__main__':
@@ -222,5 +241,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert levenshtein_distance("abc", "yabd") == 2
-    assert levenshtein_distance1("abc", "yabd") == 2
+    root = Node(11, [Node(33, [Node(55), Node(6666)]), Node(22), Node(30)])
+    print(root)
+    codec = Codec()
+    str = codec.serialize(root)
+    print(str)
+
+    tree = codec.deserialize(str)
+    print(tree)
+
+    codec1 = Codec1()
+    str = codec1.serialize(root)
+    print(str)
+
+    tree = codec1.deserialize(str)
+    print(tree)
