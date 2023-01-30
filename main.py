@@ -112,7 +112,8 @@ tasks = [
     'merging_linked_lists.py',
     'simmetrical_tree.py',
     'union_find.py',
-    'kruskals_algorithm.py'
+    'kruskals_algorithm.py',
+    'one_edit.py'
 ]
 
 tasks_done = [
@@ -218,13 +219,62 @@ class Node(object):
         return f"Node({self.val} {self.children})"
 
 
+class Index:
+    def __init__(self, idx):
+        self.idx = idx
+
+    def increment(self):
+        self.idx += 1
+
 class Codec:
 
+    # O(n) time | O(h) space
     def serialize(self, root):
-        pass
 
+        def helper(node, idx, parentIdx, res):
+
+            res.append(chr(idx.idx + 48))
+            res.append(chr(node.val + 48))
+            res.append(chr(parentIdx + 48) if parentIdx else 'N')
+
+            parentIdx = idx.idx
+            for child in node.children if node.children else []:
+                idx.increment()
+                helper(child, idx, parentIdx, res)
+
+        if not root:
+            return ""
+
+        res = []
+        helper(root, Index(1), None, res)
+        return "".join(res)
+
+    # O(n) time | O(n) space
     def deserialize(self, data):
-        pass
+
+        def helper(data):
+
+            nodesAndParents = {}
+
+            for i in range(0, len(data), 3):
+                idx = ord(data[i]) - 48
+                val = ord(data[i + 1]) - 48
+                parentIdx = ord(data[i + 2]) - 48
+                nodesAndParents[idx] = (parentIdx, Node(val, []))
+
+            for i in range(3, len(data), 3):
+                idx = ord(data[i]) - 48
+                parentIdx = ord(data[i + 2]) - 48
+                node = nodesAndParents[idx][1]
+                parent = nodesAndParents[parentIdx][1]
+                parent.children.append(node)
+
+            return nodesAndParents[ord(data[0]) - 48][1]
+
+        if not data:
+            return None
+
+        return helper(data)
 
 
 class Codec1:
