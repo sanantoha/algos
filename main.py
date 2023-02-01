@@ -219,13 +219,6 @@ class Node(object):
         return f"Node({self.val} {self.children})"
 
 
-class Index:
-    def __init__(self, idx):
-        self.idx = idx
-
-    def increment(self):
-        self.idx += 1
-
 class Codec:
 
     def serialize(self, root):
