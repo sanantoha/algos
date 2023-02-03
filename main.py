@@ -207,12 +207,14 @@ tasks_done = [
     "next_greater_element.py",
     "union_find.py",
     "levenshtein_distance.py",
-    "serialize_and_deserialize_n_ary_tree.py"
+    "serialize_and_deserialize_n_ary_tree.py",
+    "single_cycle_check.py",
+    "one_edit.py"
 ]
 
 
-def single_cycle_check(array):
-    pass
+def oneEdit(s1, s2):
+    return False
 
 
 if __name__ == '__main__':
@@ -220,6 +222,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [2, 3, 1, -4, -4, 2]
-    print(single_cycle_check(array))
-    assert single_cycle_check(array)
+    stringOne = "hello"
+    stringTwo = "helo"
+    expected = True
+    actual = oneEdit(stringOne, stringTwo)
+    print(actual)
+    assert actual == expected
