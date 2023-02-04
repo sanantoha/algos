@@ -209,22 +209,24 @@ tasks_done = [
     "levenshtein_distance.py",
     "serialize_and_deserialize_n_ary_tree.py",
     "single_cycle_check.py",
-    "one_edit.py"
+    "one_edit.py",
+    "same_bsts.py"
 ]
 
 
-def oneEdit(s1, s2):
-    return False
+def sameBsts(arr1, arr2):
+    pass
 
+def sameBsts1(arr1, arr2):
+    pass
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    stringOne = "hello"
-    stringTwo = "helo"
-    expected = True
-    actual = oneEdit(stringOne, stringTwo)
-    print(actual)
-    assert actual == expected
+    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
+    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
+    assert sameBsts(arrayOne, arrayTwo)
+
+    assert sameBsts1(arrayOne, arrayTwo)
