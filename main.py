@@ -210,23 +210,20 @@ tasks_done = [
     "serialize_and_deserialize_n_ary_tree.py",
     "single_cycle_check.py",
     "one_edit.py",
-    "same_bsts.py"
+    "same_bsts.py",
+    "unique_pathsIII.py"
 ]
 
-
-def sameBsts(arr1, arr2):
+def uniquePathsIII(grid):
     pass
 
-def sameBsts1(arr1, arr2):
-    pass
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
-    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
-    assert sameBsts(arrayOne, arrayTwo)
-
-    assert sameBsts1(arrayOne, arrayTwo)
+    grid = [[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2, -1]]
+    actual = uniquePathsIII(grid)
+    print(actual)
+    assert actual == 2
