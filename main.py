@@ -211,10 +211,12 @@ tasks_done = [
     "single_cycle_check.py",
     "one_edit.py",
     "same_bsts.py",
-    "unique_pathsIII.py"
+    "unique_pathsIII.py",
+    "spiral_matrix_traverse.py"
 ]
 
-def uniquePathsIII(grid):
+
+def spiral_matrix_traverse(matrix):
     pass
 
 
@@ -223,7 +225,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    grid = [[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2, -1]]
-    actual = uniquePathsIII(grid)
-    print(actual)
-    assert actual == 2
+    matrix = [[1, 2, 3, 4],
+              [12, 13, 14, 5],
+              [11, 16, 15, 6],
+              [10, 9, 8, 7]]
+    print(spiral_matrix_traverse(matrix))
