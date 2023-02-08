@@ -212,11 +212,12 @@ tasks_done = [
     "one_edit.py",
     "same_bsts.py",
     "unique_pathsIII.py",
-    "spiral_matrix_traverse.py"
+    "spiral_matrix_traverse.py",
+    "remove_islands.py"
 ]
 
 
-def spiral_matrix_traverse(matrix):
+def remove_islands(matrix):
     pass
 
 
@@ -225,8 +226,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [[1, 2, 3, 4],
-              [12, 13, 14, 5],
-              [11, 16, 15, 6],
-              [10, 9, 8, 7]]
-    print(spiral_matrix_traverse(matrix))
+    input = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 1, 1, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    expected = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 1, 1],
+        [0, 0, 0, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    actual = remove_islands(input)
+    print(actual)
+    assert actual == expected
