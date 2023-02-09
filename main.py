@@ -213,11 +213,11 @@ tasks_done = [
     "same_bsts.py",
     "unique_pathsIII.py",
     "spiral_matrix_traverse.py",
-    "remove_islands.py"
+    "remove_islands.py",
+    "knapsack_problem.py"
 ]
 
-
-def remove_islands(matrix):
+def knapsackProblem(items, capacity):
     pass
 
 
@@ -226,22 +226,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [1, 0, 0, 0, 0, 0],
-        [0, 1, 0, 1, 1, 1],
-        [0, 0, 1, 0, 1, 0],
-        [1, 1, 0, 0, 1, 0],
-        [1, 0, 1, 1, 0, 0],
-        [1, 0, 0, 0, 0, 1],
-    ]
-    expected = [
-        [1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 1, 1, 1],
-        [0, 0, 0, 0, 1, 0],
-        [1, 1, 0, 0, 1, 0],
-        [1, 0, 0, 0, 0, 0],
-        [1, 0, 0, 0, 0, 1],
-    ]
-    actual = remove_islands(input)
+    items = [[1, 2], [4, 3], [5, 6], [6, 7]]
+    capacity = 10
+    expected = [10, [1, 3]]
+    actual = knapsackProblem(items, capacity)
     print(actual)
     assert actual == expected
