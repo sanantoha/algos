@@ -215,21 +215,11 @@ tasks_done = [
     "spiral_matrix_traverse.py",
     "remove_islands.py",
     "knapsack_problem.py",
-    "find_nodes_distance_k.py"
+    "find_nodes_distance_k.py",
+    "kruskals_algorithm.py"
 ]
 
-# This is an input class. Do not edit.
-class BinaryTree:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
-
-
-def findNodesDistanceK(tree, target, k):
-    pass
-
-def findNodesDistanceK1(tree, target, k):
+def kruskalsAlgorithm(graph):
     pass
 
 
@@ -238,23 +228,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.right.right.left = BinaryTree(7)
-    root.right.right.right = BinaryTree(8)
-    target = 3
-    k = 2
-    expected = [2, 7, 8]
-    actual = findNodesDistanceK(root, target, k)
-    print(actual)
-    actual.sort()
-    assert actual == expected
+    input = [
+        [[1, 3],[2, 5]],
+        [[0, 3],[2, 10],[3, 12]],
+        [[0, 5],[1, 10]],
+        [[1, 12]]
+    ]
 
-    actual = findNodesDistanceK1(root, target, k)
-    print(actual)
-    actual.sort()
+    expected = [
+        [[1, 3],[2, 5]],
+        [[0, 3],[3, 12]],
+        [[0, 5]],
+        [[1, 12]]
+    ]
+    actual = kruskalsAlgorithm(input)
+    print(actual, "     =    ", expected)
     assert actual == expected
