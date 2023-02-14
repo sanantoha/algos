@@ -216,10 +216,20 @@ tasks_done = [
     "remove_islands.py",
     "knapsack_problem.py",
     "find_nodes_distance_k.py",
-    "kruskals_algorithm.py"
+    "kruskals_algorithm.py",
+    "min_rewards.py"
 ]
 
-def kruskalsAlgorithm(graph):
+
+def minRewards(scores):
+    pass
+
+
+def minRewards1(scores):
+    pass
+
+
+def minRewards2(scores):
     pass
 
 
@@ -228,19 +238,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [[1, 3],[2, 5]],
-        [[0, 3],[2, 10],[3, 12]],
-        [[0, 5],[1, 10]],
-        [[1, 12]]
-    ]
+    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
 
-    expected = [
-        [[1, 3],[2, 5]],
-        [[0, 3],[3, 12]],
-        [[0, 5]],
-        [[1, 12]]
-    ]
-    actual = kruskalsAlgorithm(input)
-    print(actual, "     =    ", expected)
-    assert actual == expected
+    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
+
+    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
