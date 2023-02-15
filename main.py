@@ -217,19 +217,16 @@ tasks_done = [
     "knapsack_problem.py",
     "find_nodes_distance_k.py",
     "kruskals_algorithm.py",
-    "min_rewards.py"
+    "min_rewards.py",
+    "powerset.py"
 ]
 
 
-def minRewards(scores):
+def powerset(arr):
     pass
 
 
-def minRewards1(scores):
-    pass
-
-
-def minRewards2(scores):
+def powerset1(arr):
     pass
 
 
@@ -238,14 +235,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
-
-    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
-
-    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
+    print(powerset([1, 2, 3]))
+    print(powerset1([1, 2, 3]))
+    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
+    assert len(output) == 8
+    assert set([]) in output
+    assert set([1]) in output
+    assert set([2]) in output
+    assert set([1, 2]) in output
+    assert set([3]) in output
+    assert set([1, 3]) in output
+    assert set([2, 3]) in output
+    assert set([1, 2, 3]) in output
