@@ -218,15 +218,11 @@ tasks_done = [
     "find_nodes_distance_k.py",
     "kruskals_algorithm.py",
     "min_rewards.py",
-    "powerset.py"
+    "powerset.py",
+    "apartment_hunting.py"
 ]
 
-
-def powerset(arr):
-    pass
-
-
-def powerset1(arr):
+def apartmentHunting(blocks, reqs):
     pass
 
 
@@ -235,15 +231,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(powerset([1, 2, 3]))
-    print(powerset1([1, 2, 3]))
-    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
-    assert len(output) == 8
-    assert set([]) in output
-    assert set([1]) in output
-    assert set([2]) in output
-    assert set([1, 2]) in output
-    assert set([3]) in output
-    assert set([1, 3]) in output
-    assert set([2, 3]) in output
-    assert set([1, 2, 3]) in output
+    blocks = [
+        {"gym": False, "school": True, "store": False},
+        {"gym": True, "school": False, "store": False},
+        {"gym": True, "school": True, "store": False},
+        {"gym": False, "school": True, "store": False},
+        {"gym": False, "school": True, "store": True},
+    ]
+    reqs = ["gym", "school", "store"]
+    assert apartmentHunting(blocks, reqs) == 3
