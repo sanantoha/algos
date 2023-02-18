@@ -219,10 +219,12 @@ tasks_done = [
     "kruskals_algorithm.py",
     "min_rewards.py",
     "powerset.py",
-    "apartment_hunting.py"
+    "apartment_hunting.py",
+    "word_ladder.py"
 ]
 
-def apartmentHunting(blocks, reqs):
+
+def ladderLength(beginWord, endWord, wordList):
     pass
 
 
@@ -231,12 +233,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    blocks = [
-        {"gym": False, "school": True, "store": False},
-        {"gym": True, "school": False, "store": False},
-        {"gym": True, "school": True, "store": False},
-        {"gym": False, "school": True, "store": False},
-        {"gym": False, "school": True, "store": True},
-    ]
-    reqs = ["gym", "school", "store"]
-    assert apartmentHunting(blocks, reqs) == 3
+    beginWord = "hit"
+    endWord = "cog"
+    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
+    actual = ladderLength(beginWord, endWord, wordList)
+    print(actual)
+    assert actual == 5
