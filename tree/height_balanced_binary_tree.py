@@ -27,6 +27,7 @@ class TreeInfo:
         self.height = height
 
 
+# O(n) time | O(h) space
 def height_balanced_binary_tree1(tree):
     return get_tree_info(tree).is_balanced
 
