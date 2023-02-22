@@ -222,11 +222,11 @@ tasks_done = [
     "apartment_hunting.py",
     "word_ladder.py",
     "height_balanced_binary_tree.py",
-    "word_ladder_ii.py"
+    "word_ladder_ii.py",
+    "disk_stacking.py"
 ]
 
-
-def findLadders(beginWord, endWord, wordList):
+def diskStacking(disks):
     pass
 
 
@@ -235,9 +235,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = findLadders(beginWord, endWord, wordList)
+    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
+    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
+    actual = diskStacking(input)
     print(actual)
-    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
+    assert (actual == expected)
