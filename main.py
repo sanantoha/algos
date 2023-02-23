@@ -223,10 +223,16 @@ tasks_done = [
     "word_ladder.py",
     "height_balanced_binary_tree.py",
     "word_ladder_ii.py",
-    "disk_stacking.py"
+    "disk_stacking.py",
+    "water_area.py"
 ]
 
-def diskStacking(disks):
+
+def waterArea(heights):
+    pass
+
+
+def waterArea1(heights):
     pass
 
 
@@ -235,8 +241,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
-    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
-    actual = diskStacking(input)
+    expected = 48
+    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
     print(actual)
-    assert (actual == expected)
+    print(actual == expected)
+
+    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    print(actual)
+    print(actual == expected)
