@@ -53,9 +53,9 @@ if __name__ == '__main__':
     input = [-5, 2, -2, 4, 3, 1]
     expected = [-5, -2, 1, 2, 3, 4]
 
-    # actual = sortStack(input)
-    # print(actual)
-    # assert actual == expected
+    actual = sortStack(input)
+    print(actual)
+    assert actual == expected
 
     actual = sortStack1(input)
     print(actual)

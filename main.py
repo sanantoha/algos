@@ -225,15 +225,12 @@ tasks_done = [
     "word_ladder_ii.py",
     "disk_stacking.py",
     "water_area.py",
-    "sort_stack.py"
+    "sort_stack.py",
+    "a_star_algorithm.py"
 ]
 
 
-def sortStack(arr):
-    pass
-
-
-def sortStack1(arr):
+def a_star_algorithm(start_row, start_col, end_row, end_col, graph):
     pass
 
 
@@ -242,13 +239,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [-5, 2, -2, 4, 3, 1]
-    expected = [-5, -2, 1, 2, 3, 4]
-
-    actual = sortStack(input)
-    print(actual)
-    assert actual == expected
-
-    actual = sortStack1(input)
+    start_row = 0
+    start_col = 1
+    end_row = 4
+    end_col = 3
+    graph = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0], [1, 0, 1, 1, 1], [0, 0, 0, 0, 0]]
+    expected = [[0, 1], [0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [4, 2], [4, 3]]
+    actual = a_star_algorithm(start_row, start_col, end_row, end_col, graph)
     print(actual)
     assert actual == expected
