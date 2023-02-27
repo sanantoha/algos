@@ -226,12 +226,34 @@ tasks_done = [
     "disk_stacking.py",
     "water_area.py",
     "sort_stack.py",
-    "a_star_algorithm.py"
+    "a_star_algorithm.py",
+    "bst_construction.py"
 ]
 
+class BST:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
 
-def a_star_algorithm(start_row, start_col, end_row, end_col, graph):
-    pass
+    def insert_rec(self, value):
+        return self
+
+    def insert(self, value):
+        return self
+
+    def contains(self, value):
+        return self
+
+    def contains_rec(self, value):
+        return self
+
+    def remove(self, value):
+        return self
+
+    def remove_rec(self, value):
+        return self
+
 
 
 if __name__ == '__main__':
@@ -239,12 +261,40 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    start_row = 0
-    start_col = 1
-    end_row = 4
-    end_col = 3
-    graph = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0], [1, 0, 1, 1, 1], [0, 0, 0, 0, 0]]
-    expected = [[0, 1], [0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [4, 2], [4, 3]]
-    actual = a_star_algorithm(start_row, start_col, end_row, end_col, graph)
-    print(actual)
-    assert actual == expected
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+
+    root.insert(12)
+    assert (root.right.left.left.value == 12)
+
+    root.remove(10)
+    assert (not root.contains(10))
+    assert (root.value == 12)
+
+    assert (root.contains(15))
+
+    root1 = BST(10)
+    root1.left = BST(5)
+    root1.left.left = BST(2)
+    root1.left.left.left = BST(1)
+    root1.left.right = BST(5)
+    root1.right = BST(15)
+    root1.right.left = BST(13)
+    root1.right.left.right = BST(14)
+    root1.right.right = BST(22)
+
+    root1.insert_rec(12)
+    assert (root1.right.left.left.value == 12)
+
+    root1.remove_rec(10)
+    assert (not root1.contains_rec(10))
+    assert (root1.value == 12)
+
+    assert (root1.contains_rec(15))
