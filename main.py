@@ -117,143 +117,11 @@ tasks = [
 ]
 
 tasks_done = [
-    "first_duplicate_value.py",
-    "validate_tree_nodes.py",
-    "number_of_ways_to_make_change.py",
-    "valid_ip_addresses.py",
-    "binary_tree_diameter.py",
-    "longest_peak.py",
-    "find_kth_largest_value_in_bst.py",
-    "minimum_characters_for_words.py",
-    "search_in_sorted_matrix.py",
-    "first_non_repeating_character.py",
-    "task_assignment.py",
-    "phone_number_mnemonic.py",
-    "minimum_waiting_time.py",
-    "run_length_encoding.py",
-    "tournament_winner.py",
-    "non_constructible_changes.py",
-    "find_closest_value_in_bst.py",
-    "validate_subsequence.py",
-    "two_number_sum.py",
-    "breadth_first_search.py",
-    "tandem_bicycle.py",
-    "longest_palindromic_substring.py",
-    "river_sizes.py",
-    "sorted_squared_array.py",
-    "permutations.py",
-    "subarray_sort.py",
-    "monotonic_array.py",
-    "selection_sort.py",
-    "numbers_of_ways_to_traverse_graph.py",
-    "merge_overlapping_intervals.py",
-    "min_max_stack_construction.py",
-    "validate_bst.py",
-    "caesar_cipher_encryptor.py",
-    "kadanes_distance.py",
-    "remove_duplicates_from_linkedlist.py",
-    "four_number_sum.py",
-    "get_youngest_common_ancestor.py",
-    "min_height_bst.py",
-    "valid_starting_city.py",
-    "branch_sums.py",
-    "reverse_words_in_string.py",
-    "max_sum_in_binary_tree.py",
-    "max_subset_sum_no_adjucent.py",
-    "get_nth_fib.py",
-    "node_depths.py",
-    "array_of_products.py",
-    "sunset_views.py",
-    "find_successor.py",
-    "class_photos.py",
-    "bst_traversal.py",
-    "max_sum_increasing_subsequence.py",
-    "move_element_to_end.py",
-    "suffix_trie_construction.py",
-    "generate_document.py",
-    "reconstruct_bst.py",
-    "min_heap_construction.py",
-    "staircase_traversal.py",
-    "minimum_passes_of_matrix.py",
-    "sum_of_linked_lists.py",
-    "longest_increasing_subsequence.py",
-    "invert_binary_tree.py",
-    "bubble_sort.py",
-    "insertion_sort.py",
-    "largest_range.py",
-    "balanced_brackets.py",
-    "three_number_sort.py",
-    "binary_search.py",
-    "depth_first_search.py",
-    "group_anagrams.py",
-    "remove_kth_node_from_end.py",
-    "zigzag_traverse.py",
-    "find_three_largest_numbers.py",
-    "smallest_difference.py",
-    "product_sum.py",
-    "linked_list_construction.py",
-    "palindrom_check.py",
-    "all_paths_source_target.py",
-    "cycle_in_graph.py",
-    "merge_binary_trees.py",
-    "merging_linked_lists.py",
-    "zero_sum_subarray.py",
-    "stable_internships.py",
-    "semordinal.py",
-    "longest_common_subsequence.py",
-    "min_number_of_coins_for_change.py",
-    "simmetrical_tree.py",
-    "three_number_sum.py",
-    "next_greater_element.py",
-    "union_find.py",
-    "levenshtein_distance.py",
-    "serialize_and_deserialize_n_ary_tree.py",
-    "single_cycle_check.py",
-    "one_edit.py",
-    "same_bsts.py",
-    "unique_pathsIII.py",
-    "spiral_matrix_traverse.py",
-    "remove_islands.py",
-    "knapsack_problem.py",
-    "find_nodes_distance_k.py",
-    "kruskals_algorithm.py",
-    "min_rewards.py",
-    "powerset.py",
-    "apartment_hunting.py",
-    "word_ladder.py",
-    "height_balanced_binary_tree.py",
-    "word_ladder_ii.py",
-    "disk_stacking.py",
-    "water_area.py",
-    "sort_stack.py",
-    "a_star_algorithm.py",
-    "bst_construction.py"
+    "minimum_characters_for_words.py"
 ]
 
-class BST:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
-
-    def insert_rec(self, value):
-        return self
-
-    def insert(self, value):
-        return self
-
-    def contains(self, value):
-        return self
-
-    def contains_rec(self, value):
-        return self
-
-    def remove(self, value):
-        return self
-
-    def remove_rec(self, value):
-        return self
-
+def minimumCharactersForWords(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -261,40 +129,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-
-    root.insert(12)
-    assert (root.right.left.left.value == 12)
-
-    root.remove(10)
-    assert (not root.contains(10))
-    assert (root.value == 12)
-
-    assert (root.contains(15))
-
-    root1 = BST(10)
-    root1.left = BST(5)
-    root1.left.left = BST(2)
-    root1.left.left.left = BST(1)
-    root1.left.right = BST(5)
-    root1.right = BST(15)
-    root1.right.left = BST(13)
-    root1.right.left.right = BST(14)
-    root1.right.right = BST(22)
-
-    root1.insert_rec(12)
-    assert (root1.right.left.left.value == 12)
-
-    root1.remove_rec(10)
-    assert (not root1.contains_rec(10))
-    assert (root1.value == 12)
-
-    assert (root1.contains_rec(15))
+    input = ["this", "that", "did", "deed", "them!", "a"]
+    expected = ["t", "t", "h", "i", "s", "a", "d", "d", "e", "e", "m", "!"]
+    actual = minimumCharactersForWords(input)
+    print(actual)
+    assert actual == expected
