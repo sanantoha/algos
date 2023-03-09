@@ -117,10 +117,12 @@ tasks = [
 ]
 
 tasks_done = [
-    "minimum_characters_for_words.py"
+    "minimum_characters_for_words.py",
+    "bubble_sort.py"
 ]
 
-def minimumCharactersForWords(arr):
+
+def bubble_sort(arr):
     pass
 
 
@@ -129,8 +131,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["this", "that", "did", "deed", "them!", "a"]
-    expected = ["t", "t", "h", "i", "s", "a", "d", "d", "e", "e", "m", "!"]
-    actual = minimumCharactersForWords(input)
-    print(actual)
-    assert actual == expected
+    print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
