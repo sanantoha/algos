@@ -113,16 +113,21 @@ tasks = [
     'simmetrical_tree.py',
     'union_find.py',
     'kruskals_algorithm.py',
-    'one_edit.py'
+    'one_edit.py',
 ]
 
 tasks_done = [
     "minimum_characters_for_words.py",
     "bubble_sort.py"
+    "three_number_sum.py"
 ]
 
 
-def bubble_sort(arr):
+def three_number_sum(arr, target):
+    pass
+
+
+def three_number_sum1(arr, target):
     pass
 
 
@@ -131,4 +136,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
+    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
