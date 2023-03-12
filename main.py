@@ -119,15 +119,20 @@ tasks = [
 tasks_done = [
     "minimum_characters_for_words.py",
     "bubble_sort.py"
-    "three_number_sum.py"
+    "three_number_sum.py",
+    "numbers_of_ways_to_traverse_graph.py"
 ]
 
 
-def three_number_sum(arr, target):
+def numbers_of_ways_to_traverse_graph_rec(width, height):
     pass
 
 
-def three_number_sum1(arr, target):
+def numbers_of_ways_to_traverse_graph(width, height):
+    pass
+
+
+def numbers_of_ways_to_traverse_graph_math(width, height):
     pass
 
 
@@ -136,5 +141,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
-    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    assert numbers_of_ways_to_traverse_graph_rec(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph_math(4, 3) == 10
