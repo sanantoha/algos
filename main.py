@@ -120,19 +120,12 @@ tasks_done = [
     "minimum_characters_for_words.py",
     "bubble_sort.py"
     "three_number_sum.py",
-    "numbers_of_ways_to_traverse_graph.py"
+    "numbers_of_ways_to_traverse_graph.py",
+    "tandem_bicycle.py"
 ]
 
 
-def numbers_of_ways_to_traverse_graph_rec(width, height):
-    pass
-
-
-def numbers_of_ways_to_traverse_graph(width, height):
-    pass
-
-
-def numbers_of_ways_to_traverse_graph_math(width, height):
+def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
     pass
 
 
@@ -141,6 +134,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert numbers_of_ways_to_traverse_graph_rec(4, 3) == 10
-    assert numbers_of_ways_to_traverse_graph(4, 3) == 10
-    assert numbers_of_ways_to_traverse_graph_math(4, 3) == 10
+    print(
+        tandem_bicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True)
+    )
