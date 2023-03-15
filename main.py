@@ -121,11 +121,12 @@ tasks_done = [
     "bubble_sort.py"
     "three_number_sum.py",
     "numbers_of_ways_to_traverse_graph.py",
-    "tandem_bicycle.py"
+    "tandem_bicycle.py",
+    "product_sum.py"
 ]
 
 
-def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
+def product_sum(arr):
     pass
 
 
@@ -134,6 +135,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(
-        tandem_bicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True)
-    )
+    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
