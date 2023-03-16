@@ -122,17 +122,17 @@ tasks_done = [
     "three_number_sum.py",
     "numbers_of_ways_to_traverse_graph.py",
     "tandem_bicycle.py",
-    "product_sum.py"
+    "product_sum.py",
+    "remove_duplicates_from_linkedlist.py"
 ]
 
+from list.LinkedList import LinkedList
 
-def product_sum(arr):
+
+def remove_duplicates_from_linked_list(linked_list):
     pass
 
 
 if __name__ == '__main__':
-    remain = list(set(tasks) - set(tasks_done))
-    random.shuffle(remain)
-    print(remain)
-
-    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
+    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
+    print(remove_duplicates_from_linked_list(test))
