@@ -123,16 +123,18 @@ tasks_done = [
     "numbers_of_ways_to_traverse_graph.py",
     "tandem_bicycle.py",
     "product_sum.py",
-    "remove_duplicates_from_linkedlist.py"
+    "remove_duplicates_from_linkedlist.py",
+    "smallest_difference.py"
 ]
 
-from list.LinkedList import LinkedList
 
-
-def remove_duplicates_from_linked_list(linked_list):
+def smallest_difference(arr_one, arr_two):
     pass
 
 
 if __name__ == '__main__':
-    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
-    print(remove_duplicates_from_linked_list(test))
+    remain = list(set(tasks) - set(tasks_done))
+    random.shuffle(remain)
+    print(remain)
+
+    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
