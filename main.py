@@ -124,11 +124,32 @@ tasks_done = [
     "tandem_bicycle.py",
     "product_sum.py",
     "remove_duplicates_from_linkedlist.py",
-    "smallest_difference.py"
+    "smallest_difference.py",
+    "get_youngest_common_ancestor.py"
 ]
 
+# This is an input class. Do not edit.
+class AncestralTree:
+    def __init__(self, name):
+        self.name = name
+        self.ancestor = None
 
-def smallest_difference(arr_one, arr_two):
+
+class AncestralTree(AncestralTree):
+    def addDescendants(self, *descendants):
+        for descendant in descendants:
+            descendant.ancestor = self
+
+
+def new_trees():
+    ancestralTrees = {}
+    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+        ancestralTrees[letter] = AncestralTree(letter)
+    return ancestralTrees
+
+
+# O(h) time | O(1) space
+def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
     pass
 
 
@@ -137,4 +158,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
+    trees = new_trees()
+    trees["A"].addDescendants(trees["B"], trees["C"])
+    trees["B"].addDescendants(trees["D"], trees["E"])
+    trees["D"].addDescendants(trees["H"], trees["I"])
+    trees["C"].addDescendants(trees["F"], trees["G"])
+
+    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
+    assert yca == trees["B"]
