@@ -125,31 +125,18 @@ tasks_done = [
     "product_sum.py",
     "remove_duplicates_from_linkedlist.py",
     "smallest_difference.py",
-    "get_youngest_common_ancestor.py"
+    "get_youngest_common_ancestor.py",
+    "min_rewards.py"
 ]
 
-# This is an input class. Do not edit.
-class AncestralTree:
-    def __init__(self, name):
-        self.name = name
-        self.ancestor = None
 
+def minRewards(arr):
+    pass
 
-class AncestralTree(AncestralTree):
-    def addDescendants(self, *descendants):
-        for descendant in descendants:
-            descendant.ancestor = self
+def minRewards1(arr):
+    pass
 
-
-def new_trees():
-    ancestralTrees = {}
-    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-        ancestralTrees[letter] = AncestralTree(letter)
-    return ancestralTrees
-
-
-# O(h) time | O(1) space
-def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
+def minRewards2(arr):
     pass
 
 
@@ -158,11 +145,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    trees = new_trees()
-    trees["A"].addDescendants(trees["B"], trees["C"])
-    trees["B"].addDescendants(trees["D"], trees["E"])
-    trees["D"].addDescendants(trees["H"], trees["I"])
-    trees["C"].addDescendants(trees["F"], trees["G"])
+    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
 
-    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
-    assert yca == trees["B"]
+    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
+
+    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
