@@ -126,33 +126,16 @@ tasks_done = [
     "remove_duplicates_from_linkedlist.py",
     "smallest_difference.py",
     "get_youngest_common_ancestor.py",
-    "min_rewards.py"
+    "min_rewards.py",
+    "palindrom_check.py"
 ]
 
-
-def minRewards(arr):
+def is_palindrome(str):
     pass
-
-def minRewards1(arr):
-    pass
-
-def minRewards2(arr):
-    pass
-
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
-
-    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
-
-    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
+    print(is_palindrome("abcdcba"))
