@@ -127,15 +127,26 @@ tasks_done = [
     "smallest_difference.py",
     "get_youngest_common_ancestor.py",
     "min_rewards.py",
-    "palindrom_check.py"
+    "palindrom_check.py",
+    "two_number_sum.py"
 ]
 
-def is_palindrome(str):
+
+def two_number_sum(array, target_sum):
     pass
+
+def two_number_sum1(array, target_sum):
+    pass
+
+def two_number_sum2(array, target_sum):
+    pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(is_palindrome("abcdcba"))
+    print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
