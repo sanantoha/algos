@@ -146,6 +146,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
+
     assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
 
     assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
