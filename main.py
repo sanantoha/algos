@@ -129,15 +129,16 @@ tasks_done = [
     "min_rewards.py",
     "palindrom_check.py",
     "two_number_sum.py",
-    "max_subset_sum_no_adjucent.py"
+    "max_subset_sum_no_adjucent.py",
+    "get_nth_fib.py"
 ]
 
 
-def max_subset_sum_no_adjucent(arr):
+def get_nth_fib(n):
     pass
 
 
-def max_subset_sum_no_adjucent1(arr):
+def get_nth_fib_iter(n):
     pass
 
 
@@ -146,8 +147,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
+    for i in range(1, 10):
+        print(str(i) + "=" + str(get_nth_fib(i)))
 
-    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
+    print("===================================")
 
-    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
-    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
+    for i in range(1, 10):
+        print(str(i) + "=" + str(get_nth_fib_iter(i)))
