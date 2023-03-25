@@ -130,15 +130,16 @@ tasks_done = [
     "palindrom_check.py",
     "two_number_sum.py",
     "max_subset_sum_no_adjucent.py",
-    "get_nth_fib.py"
+    "get_nth_fib.py",
+    "generate_document.py"
 ]
 
 
-def get_nth_fib(n):
+def generate_document(characters, document):
     pass
 
 
-def get_nth_fib_iter(n):
+def generate_document1(characters, document):
     pass
 
 
@@ -147,10 +148,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib(i)))
-
-    print("===================================")
-
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib_iter(i)))
+    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
