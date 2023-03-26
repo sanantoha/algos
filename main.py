@@ -131,15 +131,12 @@ tasks_done = [
     "two_number_sum.py",
     "max_subset_sum_no_adjucent.py",
     "get_nth_fib.py",
-    "generate_document.py"
+    "generate_document.py",
+    "min_number_of_coins_for_change.py"
 ]
 
 
-def generate_document(characters, document):
-    pass
-
-
-def generate_document1(characters, document):
+def min_number_of_coins_for_change(n, denoms):
     pass
 
 
@@ -148,5 +145,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
-    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    print(min_number_of_coins_for_change(7, [1, 5, 10]))
+    assert min_number_of_coins_for_change(7, [1, 5, 10]) == 3
