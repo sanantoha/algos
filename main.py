@@ -133,32 +133,12 @@ tasks_done = [
     "get_nth_fib.py",
     "generate_document.py",
     "min_number_of_coins_for_change.py",
-    "bst_traversal.py"
+    "bst_traversal.py",
+    "valid_ip_addresses.py"
 ]
 
-from tree.BST import BST
 
-
-def pre_order_traverse(root, arr):
-    pass
-
-
-def pre_order_traverse_iter(root, arr):
-    pass
-
-
-def in_order_traverse(root, arr):
-    pass
-
-
-def in_order_traverse_iter(root, arr):
-    pass
-
-
-def post_order_traverse(root, arr):
-    pass
-
-def post_order_traverse_iter(root, arr):
+def validIPAddresses(str):
     pass
 
 
@@ -167,23 +147,20 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.right = BST(22)
-
-    in_order = [1, 2, 5, 5, 10, 15, 22]
-    pre_order = [10, 5, 2, 1, 5, 15, 22]
-    post_order = [1, 2, 5, 5, 22, 15, 10]
-
-    assert pre_order_traverse(root, []) == pre_order
-    assert pre_order_traverse_iter(root, []) == pre_order
-
-    assert in_order_traverse(root, []) == in_order
-    assert in_order_traverse_iter(root, []) == in_order
-
-    assert post_order_traverse(root, []) == post_order
-    assert post_order_traverse_iter(root, []) == post_order
+    input = "1921680"
+    expected = [
+        "1.9.216.80",
+        "1.92.16.80",
+        "1.92.168.0",
+        "19.2.16.80",
+        "19.2.168.0",
+        "19.21.6.80",
+        "19.21.68.0",
+        "19.216.8.0",
+        "192.1.6.80",
+        "192.1.68.0",
+        "192.16.8.0",
+    ]
+    actual = validIPAddresses(input)
+    print(actual)
+    assert actual == expected
