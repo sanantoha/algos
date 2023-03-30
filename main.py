@@ -135,11 +135,15 @@ tasks_done = [
     "min_number_of_coins_for_change.py",
     "bst_traversal.py",
     "valid_ip_addresses.py",
-    "word_ladder.py"
+    "word_ladder.py",
+    "permutations.py"
 ]
 
 
-def ladderLength(beginWord, endWord, wordList):
+def getPermutations(arr):
+    pass
+
+def getPermutations1(arr):
     pass
 
 
@@ -148,9 +152,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = ladderLength(beginWord, endWord, wordList)
-    print(actual)
-    assert actual == 5
+    perms = getPermutations([1, 2, 3])
+    print(perms)
+    assert len(perms) == 6
+    assert [1, 2, 3] in perms
+    assert [1, 3, 2] in perms
+    assert [2, 1, 3] in perms
+    assert [2, 3, 1] in perms
+    assert [3, 1, 2] in perms
+    assert [3, 2, 1] in perms
+
+    perms1 = getPermutations1([1, 2, 3])
+    print(perms1)
+    assert len(perms1) == 6
+    assert [1, 2, 3] in perms1
+    assert [1, 3, 2] in perms1
+    assert [2, 1, 3] in perms1
+    assert [2, 3, 1] in perms1
+    assert [3, 1, 2] in perms1
+    assert [3, 2, 1] in perms1
