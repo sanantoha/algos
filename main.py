@@ -137,11 +137,14 @@ tasks_done = [
     "valid_ip_addresses.py",
     "word_ladder.py",
     "permutations.py",
-    "sunset_views.py"
+    "sunset_views.py",
+    "find_kth_largest_value_in_bst.py"
 ]
 
+from tree.BST import BST
 
-def sunsetViews(buildings, direction):
+
+def find_kth_largest_value_in_bst(tree, k):
     pass
 
 
@@ -150,15 +153,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    buildings = [3, 5, 4, 4, 3, 1, 3, 2]
-    direction = "EAST"
-    expected = [1, 3, 6, 7]
-    actual = sunsetViews(buildings, direction)
-    print(actual)
-    assert actual == expected
-
-    direction = "WEST"
-    expected = [0, 1]
-    actual = sunsetViews(buildings, direction)
+    root = BST(15)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.left.right = BST(3)
+    root.left.right = BST(5)
+    root.right = BST(20)
+    root.right.left = BST(17)
+    root.right.right = BST(22)
+    k = 3
+    expected = 17
+    actual = find_kth_largest_value_in_bst(root, k)
     print(actual)
     assert actual == expected
