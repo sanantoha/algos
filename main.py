@@ -114,6 +114,7 @@ tasks = [
     'union_find.py',
     'kruskals_algorithm.py',
     'one_edit.py',
+    'two_colorable.py'
 ]
 
 tasks_done = [
