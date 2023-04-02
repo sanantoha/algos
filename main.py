@@ -138,13 +138,14 @@ tasks_done = [
     "word_ladder.py",
     "permutations.py",
     "sunset_views.py",
-    "find_kth_largest_value_in_bst.py"
+    "find_kth_largest_value_in_bst.py",
+    "binary_tree_diameter.py"
 ]
 
-from tree.BST import BST
+from tree.BinaryTree import BinaryTree
 
 
-def find_kth_largest_value_in_bst(tree, k):
+def binary_tree_diameter(root):
     pass
 
 
@@ -153,17 +154,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(15)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.left.right = BST(3)
-    root.left.right = BST(5)
-    root.right = BST(20)
-    root.right.left = BST(17)
-    root.right.right = BST(22)
-    k = 3
-    expected = 17
-    actual = find_kth_largest_value_in_bst(root, k)
+    root = BinaryTree(1)
+    root.left = BinaryTree(3)
+    root.left.left = BinaryTree(7)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.left.left = BinaryTree(9)
+    root.left.right = BinaryTree(4)
+    root.left.right.right = BinaryTree(5)
+    root.left.right.right.right = BinaryTree(6)
+    root.right = BinaryTree(2)
+    expected = 6
+    actual = binary_tree_diameter(root)
     print(actual)
     assert actual == expected
