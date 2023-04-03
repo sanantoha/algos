@@ -140,13 +140,18 @@ tasks_done = [
     "permutations.py",
     "sunset_views.py",
     "find_kth_largest_value_in_bst.py",
-    "binary_tree_diameter.py"
+    "binary_tree_diameter.py",
+    "find_closest_value_in_bst.py"
 ]
 
-from tree.BinaryTree import BinaryTree
+from tree.BST import BST
 
 
-def binary_tree_diameter(root):
+def find_closest_value_in_bst(root, target):
+    pass
+
+
+def find_closest_value_in_bst1(root, target):
     pass
 
 
@@ -155,16 +160,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(3)
-    root.left.left = BinaryTree(7)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.left.left = BinaryTree(9)
-    root.left.right = BinaryTree(4)
-    root.left.right.right = BinaryTree(5)
-    root.left.right.right.right = BinaryTree(6)
-    root.right = BinaryTree(2)
-    expected = 6
-    actual = binary_tree_diameter(root)
-    print(actual)
-    assert actual == expected
+
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+    expected = 13
+
+    print(find_closest_value_in_bst(root, 12))
+    print(find_closest_value_in_bst1(root, 12))
