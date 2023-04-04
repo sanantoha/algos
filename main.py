@@ -141,17 +141,16 @@ tasks_done = [
     "sunset_views.py",
     "find_kth_largest_value_in_bst.py",
     "binary_tree_diameter.py",
-    "find_closest_value_in_bst.py"
+    "find_closest_value_in_bst.py",
+    "find_three_largest_numbers.py"
 ]
 
-from tree.BST import BST
 
-
-def find_closest_value_in_bst(root, target):
+def find_three_largest_numbers(arr):
     pass
 
 
-def find_closest_value_in_bst1(root, target):
+def find_three_largest_numbers1(arr):
     pass
 
 
@@ -160,17 +159,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-    expected = 13
-
-    print(find_closest_value_in_bst(root, 12))
-    print(find_closest_value_in_bst1(root, 12))
+    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
