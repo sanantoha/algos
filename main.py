@@ -142,15 +142,15 @@ tasks_done = [
     "find_kth_largest_value_in_bst.py",
     "binary_tree_diameter.py",
     "find_closest_value_in_bst.py",
-    "find_three_largest_numbers.py"
+    "find_three_largest_numbers.py",
+    "insertion_sort.py"
 ]
 
 
-def find_three_largest_numbers(arr):
+def insertion_sort(arr):
     pass
 
-
-def find_three_largest_numbers1(arr):
+def insertion_sort2(arr):
     pass
 
 
@@ -159,5 +159,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
-    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
+    print(insertion_sort(xs))
+    print(insertion_sort2(xs))
