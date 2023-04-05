@@ -150,6 +150,7 @@ tasks_done = [
 def insertion_sort(arr):
     pass
 
+
 def insertion_sort2(arr):
     pass
 
