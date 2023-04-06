@@ -143,15 +143,12 @@ tasks_done = [
     "binary_tree_diameter.py",
     "find_closest_value_in_bst.py",
     "find_three_largest_numbers.py",
-    "insertion_sort.py"
+    "insertion_sort.py",
+    "number_of_ways_to_make_change.py"
 ]
 
 
-def insertion_sort(arr):
-    pass
-
-
-def insertion_sort2(arr):
+def number_of_ways_to_make_change(n, denoms):
     pass
 
 
@@ -160,6 +157,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    print(insertion_sort(xs))
-    print(insertion_sort2(xs))
+    print(number_of_ways_to_make_change(6, [1, 5]))
+    assert number_of_ways_to_make_change(6, [1, 5]) == 2
