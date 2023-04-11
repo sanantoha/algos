@@ -147,11 +147,12 @@ tasks_done = [
     "number_of_ways_to_make_change.py",
     "merge_binary_trees.py",
     "phone_number_mnemonic.py",
-    "merge_overlapping_intervals.py"
+    "merge_overlapping_intervals.py",
+    "bubble_sort.py"
 ]
 
 
-def merge_overlapping_intervals(intervals):
+def bubble_sort(arr):
     pass
 
 
@@ -160,4 +161,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(merge_overlapping_intervals([[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]])) # [[1, 2], [3, 8], [9, 10]]
+    print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
