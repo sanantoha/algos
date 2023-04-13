@@ -150,14 +150,16 @@ tasks_done = [
     "phone_number_mnemonic.py",
     "merge_overlapping_intervals.py",
     "bubble_sort.py",
-    "height_balanced_binary_tree.py"
+    "height_balanced_binary_tree.py",
+    "valid_starting_city.py"
 ]
 
 
-from tree.BinaryTree import BinaryTree
+def valid_starting_city(distances, fuel, mpg):
+    pass
 
 
-def height_balanced_binary_tree(root):
+def valid_starting_city1(distances, fuel, mpg):
     pass
 
 
@@ -166,14 +168,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.left.right.left = BinaryTree(7)
-    root.left.right.right = BinaryTree(8)
-    expected = True
-    actual = height_balanced_binary_tree(root)
+    distances = [5, 25, 15, 10, 15]
+    fuel = [1, 2, 1, 0, 3]
+    mpg = 10
+    expected = 4
+    actual = valid_starting_city(distances, fuel, mpg)
+    print(actual)
     assert actual == expected
+
+    actual1 = valid_starting_city1(distances, fuel, mpg)
+    print(actual1)
+    assert actual1 == expected
