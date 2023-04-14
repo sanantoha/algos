@@ -151,15 +151,12 @@ tasks_done = [
     "merge_overlapping_intervals.py",
     "bubble_sort.py",
     "height_balanced_binary_tree.py",
-    "valid_starting_city.py"
+    "valid_starting_city.py",
+    "move_element_to_end.py"
 ]
 
 
-def valid_starting_city(distances, fuel, mpg):
-    pass
-
-
-def valid_starting_city1(distances, fuel, mpg):
+def move_element_to_end(arr):
     pass
 
 
@@ -168,14 +165,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    distances = [5, 25, 15, 10, 15]
-    fuel = [1, 2, 1, 0, 3]
-    mpg = 10
-    expected = 4
-    actual = valid_starting_city(distances, fuel, mpg)
-    print(actual)
-    assert actual == expected
-
-    actual1 = valid_starting_city1(distances, fuel, mpg)
-    print(actual1)
-    assert actual1 == expected
+    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
