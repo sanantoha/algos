@@ -156,7 +156,7 @@ tasks_done = [
 ]
 
 
-def move_element_to_end(arr):
+def run_length_encoding(string):
     pass
 
 
@@ -165,4 +165,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
+    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
