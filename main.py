@@ -152,11 +152,12 @@ tasks_done = [
     "bubble_sort.py",
     "height_balanced_binary_tree.py",
     "valid_starting_city.py",
-    "move_element_to_end.py"
+    "move_element_to_end.py",
+    "minimum_passes_of_matrix.py"
 ]
 
 
-def run_length_encoding(string):
+def minimum_passes_of_matrix(matrix):
     pass
 
 
@@ -165,4 +166,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
+    input = [
+        [0, -1, -3, 2, 0],
+        [1, -2, -5, -1, -3],
+        [3, 0, 0, -4, -1],
+    ]
+    expected = 3
+    actual = minimum_passes_of_matrix(input)
+    print(actual)
+    assert actual == expected
