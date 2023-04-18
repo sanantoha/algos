@@ -153,12 +153,22 @@ tasks_done = [
     "height_balanced_binary_tree.py",
     "valid_starting_city.py",
     "move_element_to_end.py",
-    "minimum_passes_of_matrix.py"
+    "minimum_passes_of_matrix.py",
+    "group_anagrams.py"
 ]
 
 
-def minimum_passes_of_matrix(matrix):
+def groupAnagrams(words):
     pass
+
+
+def compare(expected, output):
+    if len(expected) == 0:
+        assert output == expected
+        return
+    assert len(expected) == len(output)
+    for group in expected:
+        assert sorted(group) in output
 
 
 if __name__ == '__main__':
@@ -166,12 +176,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [0, -1, -3, 2, 0],
-        [1, -2, -5, -1, -3],
-        [3, 0, 0, -4, -1],
-    ]
-    expected = 3
-    actual = minimum_passes_of_matrix(input)
-    print(actual)
-    assert actual == expected
+    words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
+    expected = [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
+    output = list(map(lambda x: sorted(x), groupAnagrams(words)))
+    # expected = list(map(lambda x: sorted(x), expected))
+
+    print(output)
+    print(expected)
+    compare(expected, output)
