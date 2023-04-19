@@ -154,21 +154,48 @@ tasks_done = [
     "valid_starting_city.py",
     "move_element_to_end.py",
     "minimum_passes_of_matrix.py",
-    "group_anagrams.py"
+    "group_anagrams.py",
+    "remove_kth_node_from_end.py"
 ]
 
+# This is an input class. Do not edit.
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
-def groupAnagrams(words):
+
+def remove_kth_node_from_end(head, k):
     pass
 
 
-def compare(expected, output):
-    if len(expected) == 0:
-        assert output == expected
-        return
-    assert len(expected) == len(output)
-    for group in expected:
-        assert sorted(group) in output
+class StartLinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+linkedListClass = StartLinkedList
+# if hasattr(program, "LinkedList"):
+#     linkedListClass = program.LinkedList
+
+class LinkedList(linkedListClass):
+    def addMany(self, values):
+        current = self
+        while current.next is not None:
+            current = current.next
+        for value in values:
+            current.next = LinkedList(value)
+            current = current.next
+        return self
+
+    def getNodesInArray(self):
+        nodes = []
+        current = self
+        while current is not None:
+            nodes.append(current.value)
+            current = current.next
+        return nodes
 
 
 if __name__ == '__main__':
@@ -176,11 +203,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
-    expected = [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
-    output = list(map(lambda x: sorted(x), groupAnagrams(words)))
-    # expected = list(map(lambda x: sorted(x), expected))
-
-    print(output)
-    print(expected)
-    compare(expected, output)
+    test = LinkedList(0).addMany([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    expected = LinkedList(0).addMany([1, 2, 3, 4, 5, 7, 8, 9])
+    remove_kth_node_from_end(test, 4)
+    print(test.getNodesInArray())
+    assert test.getNodesInArray() == expected.getNodesInArray()
