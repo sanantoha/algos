@@ -156,11 +156,12 @@ tasks_done = [
     "minimum_passes_of_matrix.py",
     "group_anagrams.py",
     "remove_kth_node_from_end.py",
-    "unique_pathsIII.py"
+    "unique_pathsIII.py",
+    "two_colorable.py"
 ]
 
 
-def uniquePathsIII(grid):
+def twoColorable(graph):
     pass
 
 
@@ -169,7 +170,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    grid = [[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2, -1]]
-    actual = uniquePathsIII(grid)
+    input = [
+        [1, 2, 3],
+        [0, 2],
+        [0, 1],
+        [0]
+    ]
+    actual = twoColorable(input)
     print(actual)
-    assert actual == 2
+    assert not actual
+
+    input = [
+        [2],
+        [2, 3],
+        [0, 1],
+        [1]
+    ]
+
+    actual = twoColorable(input)
+    print(actual)
+    assert actual
