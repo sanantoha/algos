@@ -115,7 +115,8 @@ tasks = [
     'kruskals_algorithm.py',
     'one_edit.py',
     'two_colorable.py',
-    'evaluate_expression_tree.py'
+    'evaluate_expression_tree.py',
+    'find_pivot_index.py'
 ]
 
 tasks_done = [
