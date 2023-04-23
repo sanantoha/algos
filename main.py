@@ -158,12 +158,14 @@ tasks_done = [
     "group_anagrams.py",
     "remove_kth_node_from_end.py",
     "unique_pathsIII.py",
-    "two_colorable.py"
+    "two_colorable.py",
+    "word_ladder_ii.py"
 ]
 
 
-def twoColorable(graph):
+def findLadders(beginWord, endWord, wordList):
     pass
+
 
 
 if __name__ == '__main__':
@@ -171,23 +173,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [1, 2, 3],
-        [0, 2],
-        [0, 1],
-        [0]
-    ]
-    actual = twoColorable(input)
+    beginWord = "hit"
+    endWord = "cog"
+    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
+    actual = findLadders(beginWord, endWord, wordList)
     print(actual)
-    assert not actual
-
-    input = [
-        [2],
-        [2, 3],
-        [0, 1],
-        [1]
-    ]
-
-    actual = twoColorable(input)
-    print(actual)
-    assert actual
+    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
