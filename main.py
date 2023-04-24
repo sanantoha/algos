@@ -159,13 +159,17 @@ tasks_done = [
     "remove_kth_node_from_end.py",
     "unique_pathsIII.py",
     "two_colorable.py",
-    "word_ladder_ii.py"
+    "word_ladder_ii.py",
+    "minimum_waiting_time.py"
 ]
 
 
-def findLadders(beginWord, endWord, wordList):
+def minimum_waiting_time(arr):
     pass
 
+
+def minimum_waiting_time1(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -173,9 +177,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = findLadders(beginWord, endWord, wordList)
-    print(actual)
-    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
+    print(minimum_waiting_time([3, 2, 1, 2, 6]))
+    print(minimum_waiting_time1([3, 2, 1, 2, 6]))
