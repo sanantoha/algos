@@ -160,15 +160,12 @@ tasks_done = [
     "unique_pathsIII.py",
     "two_colorable.py",
     "word_ladder_ii.py",
-    "minimum_waiting_time.py"
+    "minimum_waiting_time.py",
+    "spiral_matrix_traverse.py"
 ]
 
 
-def minimum_waiting_time(arr):
-    pass
-
-
-def minimum_waiting_time1(arr):
+def spiral_matrix_traverse(matrix):
     pass
 
 
@@ -177,5 +174,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(minimum_waiting_time([3, 2, 1, 2, 6]))
-    print(minimum_waiting_time1([3, 2, 1, 2, 6]))
+    matrix = [[1, 2, 3, 4],
+              [12, 13, 14, 5],
+              [11, 16, 15, 6],
+              [10, 9, 8, 7]]
+    print(spiral_matrix_traverse(matrix))
