@@ -161,11 +161,12 @@ tasks_done = [
     "two_colorable.py",
     "word_ladder_ii.py",
     "minimum_waiting_time.py",
-    "spiral_matrix_traverse.py"
+    "spiral_matrix_traverse.py",
+    "single_cycle_check.py"
 ]
 
 
-def spiral_matrix_traverse(matrix):
+def single_cycle_check(arr):
     pass
 
 
@@ -174,8 +175,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [[1, 2, 3, 4],
-              [12, 13, 14, 5],
-              [11, 16, 15, 6],
-              [10, 9, 8, 7]]
-    print(spiral_matrix_traverse(matrix))
+    array = [2, 3, 1, -4, -4, 2]
+    print(single_cycle_check(array))
+    assert single_cycle_check(array)
