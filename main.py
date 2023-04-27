@@ -162,12 +162,22 @@ tasks_done = [
     "word_ladder_ii.py",
     "minimum_waiting_time.py",
     "spiral_matrix_traverse.py",
-    "single_cycle_check.py"
+    "single_cycle_check.py",
+    "depth_first_search.py"
 ]
 
 
-def single_cycle_check(arr):
-    pass
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
+
+    def add_child(self, name):
+        self.children.append(Node(name))
+        return self
+
+    def depth_first_search(self, array):
+        return array
 
 
 if __name__ == '__main__':
@@ -175,6 +185,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [2, 3, 1, -4, -4, 2]
-    print(single_cycle_check(array))
-    assert single_cycle_check(array)
+    graph = Node("A")
+    graph.add_child("B").add_child("C").add_child("D")
+    graph.children[0].add_child("E").add_child("F")
+    graph.children[2].add_child("G").add_child("H")
+    graph.children[0].children[1].add_child("I").add_child("J")
+    graph.children[2].children[0].add_child("K")
+    assert graph.depth_first_search([]) == ["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
