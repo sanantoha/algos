@@ -163,21 +163,23 @@ tasks_done = [
     "minimum_waiting_time.py",
     "spiral_matrix_traverse.py",
     "single_cycle_check.py",
-    "depth_first_search.py"
+    "depth_first_search.py",
+    "union_find.py"
 ]
 
 
-class Node:
-    def __init__(self, name):
-        self.children = []
-        self.name = name
+class UnionFind:
+    def __init__(self):
+        pass
 
-    def add_child(self, name):
-        self.children.append(Node(name))
-        return self
+    def createSet(self, value):
+        pass
 
-    def depth_first_search(self, array):
-        return array
+    def find(self, value):
+        pass
+
+    def union(self, valueOne, valueTwo):
+        pass
 
 
 if __name__ == '__main__':
@@ -185,10 +187,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    graph = Node("A")
-    graph.add_child("B").add_child("C").add_child("D")
-    graph.children[0].add_child("E").add_child("F")
-    graph.children[2].add_child("G").add_child("H")
-    graph.children[0].children[1].add_child("I").add_child("J")
-    graph.children[2].children[0].add_child("K")
-    assert graph.depth_first_search([]) == ["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
+    unionFind = UnionFind()
+    assert unionFind.find(1) == None
+    unionFind.createSet(1)
+    assert unionFind.find(1) == 1
+    unionFind.createSet(5)
+    assert unionFind.find(1) == 1
+    assert unionFind.find(5) == 5
+    unionFind.union(5, 1)
+    assert unionFind.find(5) == unionFind.find(1)
