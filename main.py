@@ -164,22 +164,13 @@ tasks_done = [
     "spiral_matrix_traverse.py",
     "single_cycle_check.py",
     "depth_first_search.py",
-    "union_find.py"
+    "union_find.py",
+    "search_in_sorted_matrix.py"
 ]
 
 
-class UnionFind:
-    def __init__(self):
-        pass
-
-    def createSet(self, value):
-        pass
-
-    def find(self, value):
-        pass
-
-    def union(self, valueOne, valueTwo):
-        pass
+def searchInSortedMatrix(matrix, target):
+    pass
 
 
 if __name__ == '__main__':
@@ -187,12 +178,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    unionFind = UnionFind()
-    assert unionFind.find(1) == None
-    unionFind.createSet(1)
-    assert unionFind.find(1) == 1
-    unionFind.createSet(5)
-    assert unionFind.find(1) == 1
-    assert unionFind.find(5) == 5
-    unionFind.union(5, 1)
-    assert unionFind.find(5) == unionFind.find(1)
+    matrix = [
+        [1, 4, 7, 12, 15, 1000],
+        [2, 5, 19, 31, 32, 1001],
+        [3, 8, 24, 33, 35, 1002],
+        [40, 41, 42, 44, 45, 1003],
+        [99, 100, 103, 106, 128, 1004],
+    ]
+    actual = searchInSortedMatrix(matrix, 44)
+    print(actual)
+    assert actual == [3, 3]
