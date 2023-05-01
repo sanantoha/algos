@@ -2,7 +2,7 @@
 # O(w + h) time | O(1) space
 def searchInSortedMatrix(matrix, target):
     if matrix is None or len(matrix) == 0:
-        return -1
+        return [-1, -1]
 
     row = 0
     col = len(matrix[0]) - 1
