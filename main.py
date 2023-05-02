@@ -166,15 +166,12 @@ tasks_done = [
     "depth_first_search.py",
     "union_find.py",
     "search_in_sorted_matrix.py",
-    "three_number_sum.py"
+    "three_number_sum.py",
+    "binary_search.py"
 ]
 
 
-def three_number_sum(arr, target):
-    pass
-
-
-def three_number_sum1(arr, target):
+def binary_search(arr, target):
     pass
 
 
@@ -183,5 +180,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
-    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
+    print(binary_search(array, 60))
