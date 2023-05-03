@@ -167,11 +167,16 @@ tasks_done = [
     "union_find.py",
     "search_in_sorted_matrix.py",
     "three_number_sum.py",
-    "binary_search.py"
+    "binary_search.py",
+    "subarray_sort.py"
 ]
 
 
-def binary_search(arr, target):
+def subarraySort(arr):
+    pass
+
+
+def subarraySort1(arr):
     pass
 
 
@@ -180,5 +185,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
-    print(binary_search(array, 60))
+    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [3, 9]
+
+    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [4, 9]
+
+    actual = subarraySort1([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [3, 9]
+
+    actual = subarraySort1([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [4, 9]
