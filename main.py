@@ -1,6 +1,5 @@
 import collections
 import random
-from _socket import herror
 
 tasks = [
     'apartment_hunting.py',
@@ -116,7 +115,8 @@ tasks = [
     'one_edit.py',
     'two_colorable.py',
     'evaluate_expression_tree.py',
-    'find_pivot_index.py'
+    'find_pivot_index.py',
+    'middle_node.py'
 ]
 
 tasks_done = [
