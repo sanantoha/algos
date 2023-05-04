@@ -168,15 +168,18 @@ tasks_done = [
     "search_in_sorted_matrix.py",
     "three_number_sum.py",
     "binary_search.py",
-    "subarray_sort.py"
+    "subarray_sort.py",
+    "invert_binary_tree.py"
 ]
 
+from tree.BinaryTree import BinaryTree
 
-def subarraySort(arr):
+
+def invert_binary_tree(root):
     pass
 
 
-def subarraySort1(arr):
+def invert_binary_tree_iter(root):
     pass
 
 
@@ -185,18 +188,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
-    print(actual)
-    assert actual == [3, 9]
+    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
+    inverted_tree = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
+    invert_binary_tree(tree)
+    assert tree.__eq__(inverted_tree)
 
-    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
-    print(actual)
-    assert actual == [4, 9]
-
-    actual = subarraySort1([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
-    print(actual)
-    assert actual == [3, 9]
-
-    actual = subarraySort1([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
-    print(actual)
-    assert actual == [4, 9]
+    tree1 = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
+    inverted_tree1 = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
+    invert_binary_tree_iter(tree1)
+    assert tree1.__eq__(inverted_tree1)
