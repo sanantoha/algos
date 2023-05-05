@@ -169,17 +169,16 @@ tasks_done = [
     "three_number_sum.py",
     "binary_search.py",
     "subarray_sort.py",
-    "invert_binary_tree.py"
+    "invert_binary_tree.py",
+    "three_number_sort.py"
 ]
 
-from tree.BinaryTree import BinaryTree
 
-
-def invert_binary_tree(root):
+def threeNumberSort(arr, order):
     pass
 
 
-def invert_binary_tree_iter(root):
+def threeNumberSort1(arr, order):
     pass
 
 
@@ -188,12 +187,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
-    inverted_tree = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
-    invert_binary_tree(tree)
-    assert tree.__eq__(inverted_tree)
+    array = [1, 0, 0, -1, -1, 0, 1, 1]
+    order = [0, 1, -1]
+    expected = [0, 0, 0, 1, 1, 1, -1, -1]
 
-    tree1 = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
-    inverted_tree1 = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
-    invert_binary_tree_iter(tree1)
-    assert tree1.__eq__(inverted_tree1)
+    actual = threeNumberSort(array, order)
+    print(actual)
+    assert actual == expected
+
+    actual = threeNumberSort1(array, order)
+    print(actual)
+    assert actual == expected
