@@ -170,15 +170,12 @@ tasks_done = [
     "binary_search.py",
     "subarray_sort.py",
     "invert_binary_tree.py",
-    "three_number_sort.py"
+    "three_number_sort.py",
+    "caesar_cipher_encryptor.py"
 ]
 
 
-def threeNumberSort(arr, order):
-    pass
-
-
-def threeNumberSort1(arr, order):
+def caesar_cipher_encryptor(str, k):
     pass
 
 
@@ -187,14 +184,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [1, 0, 0, -1, -1, 0, 1, 1]
-    order = [0, 1, -1]
-    expected = [0, 0, 0, 1, 1, 1, -1, -1]
-
-    actual = threeNumberSort(array, order)
-    print(actual)
-    assert actual == expected
-
-    actual = threeNumberSort1(array, order)
-    print(actual)
-    assert actual == expected
+    print(caesar_cipher_encryptor("xyz", 2) == "zab")
+    print(caesar_cipher_encryptor("abc", 52) == "abc")
