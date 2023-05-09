@@ -175,6 +175,7 @@ tasks_done = [
     "suffix_trie_construction.py"
 ]
 
+
 # Do not edit the class below except for the
 # populateSuffixTrieFrom and contains methods.
 # Feel free to add new properties and methods
