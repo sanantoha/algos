@@ -171,12 +171,26 @@ tasks_done = [
     "subarray_sort.py",
     "invert_binary_tree.py",
     "three_number_sort.py",
-    "caesar_cipher_encryptor.py"
+    "caesar_cipher_encryptor.py",
+    "suffix_trie_construction.py"
 ]
 
+# Do not edit the class below except for the
+# populateSuffixTrieFrom and contains methods.
+# Feel free to add new properties and methods
+# to the class.
+class SuffixTrie:
+    def __init__(self, string):
+        self.root = {}
+        self.endSymbol = "*"
+        self.populateSuffixTrieFrom(string)
 
-def caesar_cipher_encryptor(str, k):
-    pass
+
+    def populateSuffixTrieFrom(self, string):
+        pass
+
+    def contains(self, string):
+        pass
 
 
 if __name__ == '__main__':
@@ -184,5 +198,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(caesar_cipher_encryptor("xyz", 2) == "zab")
-    print(caesar_cipher_encryptor("abc", 52) == "abc")
+    trie = SuffixTrie("babc")
+    expected = {
+        "c": {"*": True},
+        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
+        "a": {"b": {"c": {"*": True}}},
+    }
+    assert trie.root == expected
+    assert trie.contains("abc")
