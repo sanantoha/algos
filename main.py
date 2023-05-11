@@ -172,26 +172,13 @@ tasks_done = [
     "invert_binary_tree.py",
     "three_number_sort.py",
     "caesar_cipher_encryptor.py",
-    "suffix_trie_construction.py"
+    "suffix_trie_construction.py",
+    "a_star_algorithm.py"
 ]
 
 
-# Do not edit the class below except for the
-# populateSuffixTrieFrom and contains methods.
-# Feel free to add new properties and methods
-# to the class.
-class SuffixTrie:
-    def __init__(self, string):
-        self.root = {}
-        self.endSymbol = "*"
-        self.populateSuffixTrieFrom(string)
-
-
-    def populateSuffixTrieFrom(self, string):
-        pass
-
-    def contains(self, string):
-        pass
+def a_star_algorithm(start_row, start_col, end_row, end_col, graph):
+    pass
 
 
 if __name__ == '__main__':
@@ -199,11 +186,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    trie = SuffixTrie("babc")
-    expected = {
-        "c": {"*": True},
-        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
-        "a": {"b": {"c": {"*": True}}},
-    }
-    assert trie.root == expected
-    assert trie.contains("abc")
+    start_row = 0
+    start_col = 1
+    end_row = 4
+    end_col = 3
+    graph = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0], [1, 0, 1, 1, 1], [0, 0, 0, 0, 0]]
+    expected = [[0, 1], [0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [4, 2], [4, 3]]
+    actual = a_star_algorithm(start_row, start_col, end_row, end_col, graph)
+    print(actual)
+    assert actual == expected
