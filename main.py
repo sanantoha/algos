@@ -178,15 +178,32 @@ tasks_done = [
 ]
 
 
-from tree.BinaryTree import BinaryTree
+# Feel free to add new properties and methods to the class.
+class MinMaxStack:
+
+    def __init__(self):
+        pass
+
+    def peek(self):
+        return None
+
+    def pop(self):
+        return None
+
+    def push(self, number):
+        pass
+
+    def getMin(self):
+        return None
+
+    def getMax(self):
+        return None
 
 
-def symmetricalTreeRec(root):
-    pass
-
-
-def symmetricalTree(root):
-    pass
+def testMinMaxPeek(min, max, peek, stack):
+    assert stack.getMin() == min
+    assert stack.getMax() == max
+    assert stack.peek() == peek
 
 
 if __name__ == '__main__':
@@ -194,20 +211,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(10)
-    tree.left = BinaryTree(5)
-    tree.right = BinaryTree(5)
-    tree.left.left = BinaryTree(7)
-    tree.left.right = BinaryTree(9)
-    tree.right.left = BinaryTree(9)
-    tree.right.right = BinaryTree(7)
-
-    expected = True
-
-    actual = symmetricalTreeRec(tree)
-    print(actual)
-    assert actual == expected
-
-    actual = symmetricalTree(tree)
-    print(actual)
-    assert actual == expected
+    stack = MinMaxStack()
+    stack.push(5)
+    testMinMaxPeek(5, 5, 5, stack)
+    stack.push(7)
+    testMinMaxPeek(5, 7, 7, stack)
+    stack.push(2)
+    testMinMaxPeek(2, 7, 2, stack)
+    assert stack.pop() == 2
+    assert stack.pop() == 7
+    testMinMaxPeek(5, 5, 5, stack)
