@@ -174,36 +174,13 @@ tasks_done = [
     "caesar_cipher_encryptor.py",
     "suffix_trie_construction.py",
     "a_star_algorithm.py",
-    "simmetrical_tree.py"
+    "simmetrical_tree.py",
+    "max_sum_increasing_subsequence.py"
 ]
 
 
-# Feel free to add new properties and methods to the class.
-class MinMaxStack:
-
-    def __init__(self):
-        pass
-
-    def peek(self):
-        return None
-
-    def pop(self):
-        return None
-
-    def push(self, number):
-        pass
-
-    def getMin(self):
-        return None
-
-    def getMax(self):
-        return None
-
-
-def testMinMaxPeek(min, max, peek, stack):
-    assert stack.getMin() == min
-    assert stack.getMax() == max
-    assert stack.peek() == peek
+def maxSumIncreasingSubsequence(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -211,13 +188,34 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stack = MinMaxStack()
-    stack.push(5)
-    testMinMaxPeek(5, 5, 5, stack)
-    stack.push(7)
-    testMinMaxPeek(5, 7, 7, stack)
-    stack.push(2)
-    testMinMaxPeek(2, 7, 2, stack)
-    assert stack.pop() == 2
-    assert stack.pop() == 7
-    testMinMaxPeek(5, 5, 5, stack)
+    input = [-1, 1]
+    expected = [1, [1]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    # assert actual == expected
+
+    input = [10, 70, 20, 30, 50, 11, 30]
+    expected = [110, [10, 20, 30, 50]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    # assert actual == expected
+    #
+    #
+    input = [8, 12, 2, 3, 15, 5, 7]
+    expected = [35, [8, 12, 15]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    # assert actual == expected
+    #
+    #
+
+    input = [-5, -4, -3, -2, -1]
+
+    expected = [-1, [-1]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected

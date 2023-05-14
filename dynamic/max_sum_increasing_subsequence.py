@@ -44,18 +44,15 @@ if __name__ == '__main__':
 
     actual = maxSumIncreasingSubsequence(input)
     print(actual)
-    # assert actual == expected
-    #
-    #
+    assert actual == expected
+
+
     input = [8, 12, 2, 3, 15, 5, 7]
     expected = [35, [8, 12, 15]]
 
     actual = maxSumIncreasingSubsequence(input)
     print(actual)
-    # assert actual == expected
-    #
-    #
-
+    assert actual == expected
 
 
     input = [-5, -4, -3, -2, -1]
