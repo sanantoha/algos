@@ -175,11 +175,16 @@ tasks_done = [
     "suffix_trie_construction.py",
     "a_star_algorithm.py",
     "simmetrical_tree.py",
-    "max_sum_increasing_subsequence.py"
+    "max_sum_increasing_subsequence.py",
+    "same_bsts.py"
 ]
 
 
-def maxSumIncreasingSubsequence(arr):
+def sameBsts(arrayOne, arrayTwo):
+    pass
+
+
+def sameBsts1(arrayOne, arrayTwo):
     pass
 
 
@@ -188,34 +193,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [-1, 1]
-    expected = [1, [1]]
+    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
+    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
+    assert sameBsts(arrayOne, arrayTwo)
 
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    # assert actual == expected
-
-    input = [10, 70, 20, 30, 50, 11, 30]
-    expected = [110, [10, 20, 30, 50]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    # assert actual == expected
-    #
-    #
-    input = [8, 12, 2, 3, 15, 5, 7]
-    expected = [35, [8, 12, 15]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    # assert actual == expected
-    #
-    #
-
-    input = [-5, -4, -3, -2, -1]
-
-    expected = [-1, [-1]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
+    assert sameBsts1(arrayOne, arrayTwo)
