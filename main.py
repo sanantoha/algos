@@ -176,15 +176,12 @@ tasks_done = [
     "a_star_algorithm.py",
     "simmetrical_tree.py",
     "max_sum_increasing_subsequence.py",
-    "same_bsts.py"
+    "same_bsts.py",
+    "river_sizes.py"
 ]
 
 
-def sameBsts(arrayOne, arrayTwo):
-    pass
-
-
-def sameBsts1(arrayOne, arrayTwo):
+def river_sizes(matrix):
     pass
 
 
@@ -193,8 +190,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
-    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
-    assert sameBsts(arrayOne, arrayTwo)
+    # test_input = [[1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 0, 1, 0, 1], [1, 0, 1, 0, 1], [1, 0, 1, 1, 0]]
+    test_input = [
+        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
+        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
+        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
+        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
+        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
+    ]
 
-    assert sameBsts1(arrayOne, arrayTwo)
+    expected = [1, 1, 2, 2, 5, 21]
+    # expected = [1, 2, 2, 2, 5]
+
+    actual = sorted(river_sizes(test_input))
+    print(actual)
+    assert actual == expected
