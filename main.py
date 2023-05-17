@@ -177,11 +177,21 @@ tasks_done = [
     "simmetrical_tree.py",
     "max_sum_increasing_subsequence.py",
     "same_bsts.py",
-    "river_sizes.py"
+    "river_sizes.py",
+    "find_successor.py"
 ]
 
 
-def river_sizes(matrix):
+# This is an input class. Do not edit.
+class BinaryTree:
+    def __init__(self, value, left=None, right=None, parent=None):
+        self.value = value
+        self.left = left
+        self.right = right
+        self.parent = parent
+
+
+def find_successor(tree, node):
     pass
 
 
@@ -190,18 +200,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    # test_input = [[1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 0, 1, 0, 1], [1, 0, 1, 0, 1], [1, 0, 1, 1, 0]]
-    test_input = [
-        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
-        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
-        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
-        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
-        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
-    ]
-
-    expected = [1, 1, 2, 2, 5, 21]
-    # expected = [1, 2, 2, 2, 5]
-
-    actual = sorted(river_sizes(test_input))
-    print(actual)
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.parent = root
+    root.right = BinaryTree(3)
+    root.right.parent = root
+    root.left.left = BinaryTree(4)
+    root.left.left.parent = root.left
+    root.left.right = BinaryTree(5)
+    root.left.right.parent = root.left
+    root.left.left.left = BinaryTree(6)
+    root.left.left.left.parent = root.left.left
+    node = root.left.right
+    expected = root
+    actual = find_successor(root, node)
     assert actual == expected
