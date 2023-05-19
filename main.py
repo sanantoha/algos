@@ -179,12 +179,22 @@ tasks_done = [
     "same_bsts.py",
     "river_sizes.py",
     "find_successor.py",
-    "zero_sum_subarray.py"
+    "zero_sum_subarray.py",
+    "breadth_first_search.py"
 ]
 
 
-def zeroSumSubarray(nums):
-    pass
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
+
+    def add_child(self, name):
+        self.children.append(Node(name))
+        return self
+
+    def breadth_first_search(self, arr):
+        return arr
 
 
 if __name__ == '__main__':
@@ -192,8 +202,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [4, 2, -1, -1, 3]
-    expected = True
-    actual = zeroSumSubarray(input)
-    print(actual)
-    assert actual == expected
+    graph = Node("A")
+    graph.add_child("B").add_child("C").add_child("D")
+    graph.children[0].add_child("E").add_child("F")
+    graph.children[2].add_child("G").add_child("H")
+    graph.children[0].children[1].add_child("I").add_child("J")
+    graph.children[2].children[0].add_child("K")
+
+    print(graph.breadth_first_search([]))
+    assert graph.breadth_first_search([]) == ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
