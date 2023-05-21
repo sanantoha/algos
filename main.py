@@ -181,12 +181,17 @@ tasks_done = [
     "find_successor.py",
     "zero_sum_subarray.py",
     "breadth_first_search.py",
-    "longest_palindromic_substring.py"
+    "longest_palindromic_substring.py",
+    "validate_subsequence.py"
 ]
 
 
-def longestPalindromicSubstring(str):
-    pass
+def is_valid_subsequence(arr, seq):
+    return False
+
+
+def is_valid_subsequence1(arr, seq):
+    return False
 
 
 if __name__ == '__main__':
@@ -194,6 +199,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = longestPalindromicSubstring("abaxyzzyxf")
-    print(actual)
-    assert actual == "xyzzyx"
+    array = [5, 1, 22, 25, 6, -1, 8, 10]
+    sequence = [1, 6, -1, 10]
+    print(is_valid_subsequence(array, sequence))
+    print(is_valid_subsequence1(array, sequence))
