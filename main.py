@@ -182,16 +182,17 @@ tasks_done = [
     "zero_sum_subarray.py",
     "breadth_first_search.py",
     "longest_palindromic_substring.py",
-    "validate_subsequence.py"
+    "validate_subsequence.py",
+    "largest_range.py"
 ]
 
 
-def is_valid_subsequence(arr, seq):
-    return False
+def largestRange(arr):
+    pass
 
 
-def is_valid_subsequence1(arr, seq):
-    return False
+def largestRange1(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -199,7 +200,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [5, 1, 22, 25, 6, -1, 8, 10]
-    sequence = [1, 6, -1, 10]
-    print(is_valid_subsequence(array, sequence))
-    print(is_valid_subsequence1(array, sequence))
+    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
+    actual = largestRange(input)
+    print(actual)
+    assert actual == [10, 19]
+
+    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
+    actual = largestRange1(input)
+    print(actual)
+    assert actual == [0, 7]
+
+    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
+    actual = largestRange1(input)
+    print(actual)
+    assert actual == [10, 19]
