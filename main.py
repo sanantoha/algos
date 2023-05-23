@@ -183,15 +183,12 @@ tasks_done = [
     "breadth_first_search.py",
     "longest_palindromic_substring.py",
     "validate_subsequence.py",
-    "largest_range.py"
+    "largest_range.py",
+    "longest_peak.py"
 ]
 
 
-def largestRange(arr):
-    pass
-
-
-def largestRange1(arr):
+def longest_peak(arr):
     pass
 
 
@@ -200,17 +197,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange(input)
-    print(actual)
-    assert actual == [10, 19]
-
-    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [0, 7]
-
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [10, 19]
+    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
