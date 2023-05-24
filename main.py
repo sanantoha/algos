@@ -184,12 +184,13 @@ tasks_done = [
     "longest_palindromic_substring.py",
     "validate_subsequence.py",
     "largest_range.py",
-    "longest_peak.py"
+    "longest_peak.py",
+    "cycle_in_graph.py"
 ]
 
 
-def longest_peak(arr):
-    pass
+def cycle_in_graph(graph):
+    return False
 
 
 if __name__ == '__main__':
@@ -197,4 +198,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
+    input = [[1, 3], [2, 3, 4], [0], [], [2, 5], []]
+    expected = True
+    actual = cycle_in_graph(input)
+    print(actual)
+    assert actual == expected
