@@ -185,12 +185,13 @@ tasks_done = [
     "validate_subsequence.py",
     "largest_range.py",
     "longest_peak.py",
-    "cycle_in_graph.py"
+    "cycle_in_graph.py",
+    "non_constructible_changes.py"
 ]
 
 
-def cycle_in_graph(graph):
-    return False
+def non_constructible_changes(coins):
+    return -1
 
 
 if __name__ == '__main__':
@@ -198,8 +199,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[1, 3], [2, 3, 4], [0], [], [2, 5], []]
-    expected = True
-    actual = cycle_in_graph(input)
-    print(actual)
-    assert actual == expected
+    coins = [5, 7, 1, 1, 2, 3, 22]
+    print(non_constructible_changes(coins) == 20)
