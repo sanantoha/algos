@@ -186,12 +186,16 @@ tasks_done = [
     "largest_range.py",
     "longest_peak.py",
     "cycle_in_graph.py",
-    "non_constructible_changes.py"
+    "non_constructible_changes.py",
+    "merging_linked_lists.py"
 ]
 
 
-def non_constructible_changes(coins):
-    return -1
+from list.LinkedList import LinkedList
+
+
+def mergingLinkedLists(linkedListOne, linkedListTwo):
+    pass
 
 
 if __name__ == '__main__':
@@ -199,5 +203,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    coins = [5, 7, 1, 1, 2, 3, 22]
-    print(non_constructible_changes(coins) == 20)
+    l1 = LinkedList(1)
+    l1.next = LinkedList(2)
+    l1.next.next = LinkedList(3)
+    l1.next.next.next = LinkedList(4)
+
+    l2 = LinkedList(10)
+    l2.next = LinkedList(20)
+    l2.next.next = l1.next.next
+
+    actual = mergingLinkedLists(l1, l2)
+    print(actual)
+    assert actual.getNodesInArray() == [3, 4]
