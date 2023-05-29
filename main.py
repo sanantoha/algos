@@ -187,14 +187,12 @@ tasks_done = [
     "longest_peak.py",
     "cycle_in_graph.py",
     "non_constructible_changes.py",
-    "merging_linked_lists.py"
+    "merging_linked_lists.py",
+    "balanced_brackets.py"
 ]
 
 
-from list.LinkedList import LinkedList
-
-
-def mergingLinkedLists(linkedListOne, linkedListTwo):
+def balancedBrackets(input):
     pass
 
 
@@ -203,15 +201,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    l1 = LinkedList(1)
-    l1.next = LinkedList(2)
-    l1.next.next = LinkedList(3)
-    l1.next.next.next = LinkedList(4)
-
-    l2 = LinkedList(10)
-    l2.next = LinkedList(20)
-    l2.next.next = l1.next.next
-
-    actual = mergingLinkedLists(l1, l2)
-    print(actual)
-    assert actual.getNodesInArray() == [3, 4]
+    assert balancedBrackets("(a)")
+    assert balancedBrackets("([])")
+    assert balancedBrackets("([])(){}(())()()")
