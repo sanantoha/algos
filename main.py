@@ -188,11 +188,16 @@ tasks_done = [
     "cycle_in_graph.py",
     "non_constructible_changes.py",
     "merging_linked_lists.py",
-    "balanced_brackets.py"
+    "balanced_brackets.py",
+    "kadanes_distance.py"
 ]
 
 
-def balancedBrackets(input):
+def kadanes_distance(arr):
+    pass
+
+
+def kadanes_distance1(arr):
     pass
 
 
@@ -201,6 +206,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert balancedBrackets("(a)")
-    assert balancedBrackets("([])")
-    assert balancedBrackets("([])(){}(())()()")
+    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    assert kadanes_distance1([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
