@@ -189,15 +189,23 @@ tasks_done = [
     "non_constructible_changes.py",
     "merging_linked_lists.py",
     "balanced_brackets.py",
-    "kadanes_distance.py"
+    "kadanes_distance.py",
+    "validate_tree_nodes.py"
 ]
 
+# This is an input class. Do not edit.
+class BST:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
 
-def kadanes_distance(arr):
+
+def validateThreeNodes(nodeOne, nodeTwo, nodeThree):
     pass
 
 
-def kadanes_distance1(arr):
+def validateThreeNodes1(nodeOne, nodeTwo, nodeThree):
     pass
 
 
@@ -206,5 +214,24 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
-    assert kadanes_distance1([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    root = BST(5)
+    root.left = BST(2)
+    root.right = BST(7)
+    root.left.left = BST(1)
+    root.left.right = BST(4)
+    root.right.left = BST(6)
+    root.right.right = BST(8)
+    root.left.left.left = BST(0)
+    root.left.right.left = BST(3)
+
+    nodeOne = root
+    nodeTwo = root.left
+    nodeThree = root.left.right.left
+    expected = True
+    actual = validateThreeNodes(nodeOne, nodeTwo, nodeThree)
+    print(actual)
+    assert actual == expected
+
+    actual = validateThreeNodes1(nodeOne, nodeTwo, nodeThree)
+    print(actual)
+    assert actual == expected
