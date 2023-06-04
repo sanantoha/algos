@@ -191,11 +191,12 @@ tasks_done = [
     "balanced_brackets.py",
     "kadanes_distance.py",
     "validate_tree_nodes.py",
-    "sorted_squared_array.py"
+    "sorted_squared_array.py",
+    "one_edit.py"
 ]
 
 
-def sorted_squared_array(array):
+def oneEdit(s1, s2):
     pass
 
 
@@ -204,4 +205,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(sorted_squared_array([-3, 1, 2, 3, 5, 6, 8, 9]))
+    stringOne = "hello"
+    stringTwo = "helo"
+    expected = True
+    actual = oneEdit(stringOne, stringTwo)
+    print(actual)
+    assert actual == expected
