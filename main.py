@@ -192,11 +192,16 @@ tasks_done = [
     "kadanes_distance.py",
     "validate_tree_nodes.py",
     "sorted_squared_array.py",
-    "one_edit.py"
+    "one_edit.py",
+    "next_greater_element.py"
 ]
 
 
-def oneEdit(s1, s2):
+def nextGreaterElement(arr):
+    pass
+
+
+def nextGreaterElement1(arr):
     pass
 
 
@@ -205,9 +210,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stringOne = "hello"
-    stringTwo = "helo"
-    expected = True
-    actual = oneEdit(stringOne, stringTwo)
+    input = [2, 5, -3, -4, 6, 7, 2]
+    expected = [5, 6, 6, 6, 7, -1, 5]
+    actual = nextGreaterElement(input)
     print(actual)
     assert actual == expected
+
+    actual = nextGreaterElement1(input)
+    print(actual)
+    assert actual == expected
+
