@@ -194,14 +194,15 @@ tasks_done = [
     "sorted_squared_array.py",
     "one_edit.py",
     "next_greater_element.py",
-    "branch_sums.py"
+    "branch_sums.py",
+    "validate_bst.py"
 ]
 
-from tree.BinaryTree import BinaryTree
+from tree.BST import BST
 
 
-def branch_sums(root):
-    pass
+def validate_bst(root):
+    return False
 
 
 if __name__ == '__main__':
@@ -209,5 +210,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9, 10])
-    print(branch_sums(tree) == [15, 16, 18, 10, 11])
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+    print(validate_bst(root))
+    assert validate_bst(root)
