@@ -195,14 +195,13 @@ tasks_done = [
     "one_edit.py",
     "next_greater_element.py",
     "branch_sums.py",
-    "validate_bst.py"
+    "validate_bst.py",
+    "semordinal.py"
 ]
 
-from tree.BST import BST
 
-
-def validate_bst(root):
-    return False
+def semordnilap(words):
+    pass
 
 
 if __name__ == '__main__':
@@ -210,14 +209,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-    print(validate_bst(root))
-    assert validate_bst(root)
+    input = ["desserts", "stressed", "hello"]
+    expected = [["desserts", "stressed"]]
+    actual = semordnilap(input)
+    print(actual)  # [['desserts', 'stressed']]
