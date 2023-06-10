@@ -116,7 +116,8 @@ tasks = [
     'two_colorable.py',
     'evaluate_expression_tree.py',
     'find_pivot_index.py',
-    'middle_node.py'
+    'middle_node.py',
+    'transpose_matrix.py'
 ]
 
 tasks_done = [
