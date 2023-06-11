@@ -117,7 +117,8 @@ tasks = [
     'evaluate_expression_tree.py',
     'find_pivot_index.py',
     'middle_node.py',
-    'transpose_matrix.py'
+    'transpose_matrix.py',
+    'common_characters.py'
 ]
 
 tasks_done = [
