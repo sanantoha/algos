@@ -199,14 +199,13 @@ tasks_done = [
     "branch_sums.py",
     "validate_bst.py",
     "semordinal.py",
-    "longest_increasing_subsequence.py"
+    "longest_increasing_subsequence.py",
+    "first_non_repeating_character.py"
 ]
 
-def longestIncreasingSubsequence(arr):
-    pass
 
-def longestIncreasingSubsequence1(arr):
-    pass
+def first_non_repeating_character(string):
+    return -1
 
 
 if __name__ == '__main__':
@@ -214,12 +213,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
-
-    actual = longestIncreasingSubsequence(input)
-    print(actual)
-    assert actual == [-24, 2, 3, 5, 6, 35]
-
-    actual = longestIncreasingSubsequence1(input)
-    print(actual)
-    assert actual == [-24, 2, 3, 5, 6, 35]
+    print(first_non_repeating_character("abcdcaf"))
