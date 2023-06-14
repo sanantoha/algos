@@ -200,12 +200,17 @@ tasks_done = [
     "validate_bst.py",
     "semordinal.py",
     "longest_increasing_subsequence.py",
-    "first_non_repeating_character.py"
+    "first_non_repeating_character.py",
+    "first_duplicate_value.py"
 ]
 
 
-def first_non_repeating_character(string):
-    return -1
+def first_duplicate_value0(arr):
+    pass
+
+
+def first_duplicate_value(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -213,4 +218,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(first_non_repeating_character("abcdcaf"))
+    array = [2, 1, 5, 2, 3, 3, 4]
+    print(first_duplicate_value0(array))
+    print(first_duplicate_value(array))
