@@ -202,15 +202,12 @@ tasks_done = [
     "longest_increasing_subsequence.py",
     "first_non_repeating_character.py",
     "first_duplicate_value.py",
-    "powerset.py"
+    "powerset.py",
+    "array_of_products.py"
 ]
 
 
-def powerset(arr):
-    pass
-
-
-def powerset1(arr):
+def array_of_products(arr):
     pass
 
 
@@ -219,15 +216,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(powerset([1, 2, 3]))
-    print(powerset1([1, 2, 3]))
-    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
-    assert len(output) == 8
-    assert set([]) in output
-    assert set([1]) in output
-    assert set([2]) in output
-    assert set([1, 2]) in output
-    assert set([3]) in output
-    assert set([1, 3]) in output
-    assert set([2, 3]) in output
-    assert set([1, 2, 3]) in output
+    print(array_of_products([1, 2, 3, 4]))
