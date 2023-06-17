@@ -203,11 +203,12 @@ tasks_done = [
     "first_non_repeating_character.py",
     "first_duplicate_value.py",
     "powerset.py",
-    "array_of_products.py"
+    "array_of_products.py",
+    "reverse_words_in_string.py"
 ]
 
 
-def array_of_products(arr):
+def reverseWordsInString(arr):
     pass
 
 
@@ -216,4 +217,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(array_of_products([1, 2, 3, 4]))
+    input = "AlgoExpert is the best!"
+    expected = "best! the is AlgoExpert"
+    actual = reverseWordsInString(input)
+    print(actual)
+    assert actual == expected
