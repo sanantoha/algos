@@ -205,34 +205,16 @@ tasks_done = [
     "powerset.py",
     "array_of_products.py",
     "reverse_words_in_string.py",
-    "max_sum_in_binary_tree.py"
+    "max_sum_in_binary_tree.py",
+    "all_paths_source_target.py"
 ]
 
-class BinaryTree:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
 
-    def insert(self, values, i=0):
-        if i >= len(values):
-            return
-        queue = [self]
-        while len(queue) > 0:
-            current = queue.pop(0)
-            if current.left is None:
-                current.left = BinaryTree(values[i])
-                break
-            queue.append(current.left)
-            if current.right is None:
-                current.right = BinaryTree(values[i])
-                break
-            queue.append(current.right)
-        self.insert(values, i + 1)
-        return self
+def allPathsSourceTarget(graph):
+    pass
 
 
-def maxPathSum(root):
+def allPathsSourceTarget1(graph):
     pass
 
 
@@ -241,7 +223,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = BinaryTree(1).insert([2, 3, 4, 5, 6, 7])
-    actual = maxPathSum(test)
-    print(actual)
-    assert actual == 18
+    print(allPathsSourceTarget([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
+    print(allPathsSourceTarget(
+        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget([[2], [], [1]]))  # [[0, 2]]
+
+    print(allPathsSourceTarget1([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
+    print(allPathsSourceTarget1(
+        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[2], [], [1]]))  # [[0, 2]]
