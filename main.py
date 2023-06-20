@@ -118,7 +118,8 @@ tasks = [
     'find_pivot_index.py',
     'middle_node.py',
     'transpose_matrix.py',
-    'common_characters.py'
+    'common_characters.py',
+    'best_digits.py'
 ]
 
 tasks_done = [
