@@ -207,15 +207,12 @@ tasks_done = [
     "array_of_products.py",
     "reverse_words_in_string.py",
     "max_sum_in_binary_tree.py",
-    "all_paths_source_target.py"
+    "all_paths_source_target.py",
+    "class_photos.pyf"
 ]
 
 
-def allPathsSourceTarget(graph):
-    pass
-
-
-def allPathsSourceTarget1(graph):
+def class_photos(red_shirt_heights, blue_shirt_heights):
     pass
 
 
@@ -224,14 +221,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(allPathsSourceTarget([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
-    print(allPathsSourceTarget(
-        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget([[2], [], [1]]))  # [[0, 2]]
-
-    print(allPathsSourceTarget1([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
-    print(allPathsSourceTarget1(
-        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget1([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget1([[2], [], [1]]))  # [[0, 2]]
+    print(class_photos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5])) # True
