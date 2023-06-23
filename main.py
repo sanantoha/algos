@@ -208,11 +208,25 @@ tasks_done = [
     "reverse_words_in_string.py",
     "max_sum_in_binary_tree.py",
     "all_paths_source_target.py",
-    "class_photos.pyf"
+    "class_photos.pyf",
+    "find_pivot_index.py"
 ]
 
 
-def class_photos(red_shirt_heights, blue_shirt_heights):
+# Given an array of integers nums, calculate the pivot index of this array.
+# The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
+# If the index is on the left edge of the array, then the left sum is 0 because there are no elements to the left. This also applies to the right edge of the array.
+# Return the leftmost pivot index. If no such index exists, return -1.
+
+# Input: nums = [1,7,3,6,5,6]
+# Output: 3
+# Explanation:
+# The pivot index is 3.
+# Left sum = nums[0] + nums[1] + nums[2] = 1 + 7 + 3 = 11
+# Right sum = nums[4] + nums[5] = 5 + 6 = 11
+
+
+def pivotIndex(arr):
     pass
 
 
@@ -221,4 +235,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(class_photos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5])) # True
+    actual = pivotIndex([1, 7, 3, 6, 5, 6])
+    print(actual)
+    assert actual == 3
+    assert pivotIndex([1, 2, 3]) == -1
+    assert pivotIndex([2, 1, -1]) == 0
