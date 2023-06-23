@@ -119,7 +119,8 @@ tasks = [
     'middle_node.py',
     'transpose_matrix.py',
     'common_characters.py',
-    'best_digits.py'
+    'best_digits.py',
+    'best_seats.py'
 ]
 
 tasks_done = [
