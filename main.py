@@ -210,25 +210,51 @@ tasks_done = [
     "max_sum_in_binary_tree.py",
     "all_paths_source_target.py",
     "class_photos.pyf",
-    "find_pivot_index.py"
+    "find_pivot_index.py",
+    "min_heap_construction.py"
 ]
 
 
-# Given an array of integers nums, calculate the pivot index of this array.
-# The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
-# If the index is on the left edge of the array, then the left sum is 0 because there are no elements to the left. This also applies to the right edge of the array.
-# Return the leftmost pivot index. If no such index exists, return -1.
+class MinHeap:
+    def __init__(self, array):
+        # Do not edit the line below.
+        self.heap = self.buildHeap(array)
 
-# Input: nums = [1,7,3,6,5,6]
-# Output: 3
-# Explanation:
-# The pivot index is 3.
-# Left sum = nums[0] + nums[1] + nums[2] = 1 + 7 + 3 = 11
-# Right sum = nums[4] + nums[5] = 5 + 6 = 11
+    def buildHeap(self, array):
+        pass
+
+    def siftDown(self, curr_idx, end_idx, heap):
+        pass
 
 
-def pivotIndex(arr):
-    pass
+    def siftUp(self, idx, heap):
+        pass
+
+    def peek(self):
+        return -1
+
+    def remove(self):
+        return -1
+
+    def insert(self, value):
+        pass
+
+    def left(self, i):
+        return -1
+
+    def right(self, i):
+        return -1
+
+    def parent(self, i):
+        return -1
+
+
+def isMinHeapPropertySatisfied(array):
+    for currentIdx in range(1, len(array)):
+        parentIdx = (currentIdx - 1) // 2
+        if array[parentIdx] > array[currentIdx]:
+            return False
+    return True
 
 
 if __name__ == '__main__':
@@ -236,8 +262,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = pivotIndex([1, 7, 3, 6, 5, 6])
-    print(actual)
-    assert actual == 3
-    assert pivotIndex([1, 2, 3]) == -1
-    assert pivotIndex([2, 1, -1]) == 0
+    minHeap = MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41])
+    minHeap.insert(76)
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == -5
+    assert minHeap.remove() == -5
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == 2
+    assert minHeap.remove() == 2
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == 6
+    minHeap.insert(87)
+    assert isMinHeapPropertySatisfied(minHeap.heap)
