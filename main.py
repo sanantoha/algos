@@ -211,6 +211,7 @@ tasks_done = [
     "all_paths_source_target.py",
     "class_photos.pyf",
     "find_pivot_index.py",
+    "tournament_winner.py",
     "min_heap_construction.py"
 ]
 
