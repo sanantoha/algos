@@ -212,6 +212,7 @@ tasks_done = [
     "class_photos.pyf",
     "find_pivot_index.py",
     "tournament_winner.py",
+    "transpose_matrix.py",
     "min_heap_construction.py"
 ]
 
