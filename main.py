@@ -214,12 +214,17 @@ tasks_done = [
     "tournament_winner.py",
     "transpose_matrix.py",
     "min_heap_construction.py",
-    "common_characters.py"
+    "common_characters.py",
+    "water_area.py"
 ]
 
 
-def commonCharacters(strings):
-    pass
+def waterArea(heights):
+    return -1
+
+
+def waterArea1(heights):
+    return -1
 
 
 if __name__ == '__main__':
@@ -227,9 +232,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["abc", "bcd", "cbad"]
-    expected = ["b", "c"]
-    actual = commonCharacters(input)
-    actual.sort()
+    expected = 48
+
+    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
     print(actual)
-    assert actual == expected
+    print(actual == expected)
+
+    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    print(actual)
+    print(actual == expected)
