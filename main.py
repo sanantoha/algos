@@ -215,16 +215,12 @@ tasks_done = [
     "transpose_matrix.py",
     "min_heap_construction.py",
     "common_characters.py",
-    "water_area.py"
+    "water_area.py",
+    "remove_islands.py"
 ]
 
-
-def waterArea(heights):
-    return -1
-
-
-def waterArea1(heights):
-    return -1
+def remove_islands(matrix):
+    pass
 
 
 if __name__ == '__main__':
@@ -232,12 +228,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    expected = 48
-
-    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    input = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 1, 1, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    expected = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 1, 1],
+        [0, 0, 0, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    actual = remove_islands(input)
     print(actual)
-    print(actual == expected)
-
-    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
-    print(actual)
-    print(actual == expected)
+    assert actual == expected
