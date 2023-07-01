@@ -216,13 +216,37 @@ tasks_done = [
     "min_heap_construction.py",
     "common_characters.py",
     "water_area.py",
-    "remove_islands.py"
+    "remove_islands.py",
+    "serialize_and_deserialize_n_ary_tree.py"
 ]
 
-from tree.BinaryTree import BinaryTree
+class Node(object):
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
 
-def evaluateExpressionTree(root):
-    pass
+    def __repr__(self):
+        return f"Node({self.val} {self.children})"
+
+
+class Codec:
+
+    def serialize(self, root):
+        pass
+
+
+    def deserialize(self, data):
+        pass
+
+
+class Codec1:
+
+    def serialize(self, root):
+        pass
+
+
+    def deserialize(self, data):
+        pass
 
 
 if __name__ == '__main__':
@@ -230,17 +254,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(-1)
-    tree.left = BinaryTree(-2)
-    tree.left.left = BinaryTree(-4)
-    tree.left.right = BinaryTree(2)
-    tree.left.left.left = BinaryTree(3)
-    tree.left.left.right = BinaryTree(2)
+    root = Node(11, [Node(33, [Node(55), Node(6666)]), Node(22), Node(30)])
+    print(root)
+    codec = Codec()
+    str = codec.serialize(root)
+    print(str)
 
-    tree.right = BinaryTree(-3)
-    tree.right.left = BinaryTree(8)
-    tree.right.right = BinaryTree(3)
-    expected = 6
-    actual = evaluateExpressionTree(tree)
-    print(actual)
-    assert actual == expected
+    tree = codec.deserialize(str)
+    print(tree)
+
+    codec1 = Codec1()
+    str = codec1.serialize(root)
+    print(str)
+
+    tree = codec1.deserialize(str)
+    print(tree)
