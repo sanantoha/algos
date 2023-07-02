@@ -228,15 +228,65 @@ class Node(object):
     def __repr__(self):
         return f"Node({self.val} {self.children})"
 
+class Index:
+    def __init__(self, idx):
+        self.idx = idx
+
+    def inc(self):
+        self.idx += 1
 
 class Codec:
 
     def serialize(self, root):
-        pass
+
+        def helper(root, idx, parentIdx, res):
+            if not root:
+                return
+
+            res.append(chr(idx.idx + 48))
+            res.append(chr(root.val + 48))
+            res.append(chr(parentIdx + 48) if parentIdx else 'N')
+
+            parentIdx = idx.idx
+            for child in root.children if root.children else []:
+                idx.inc()
+                helper(child, idx, parentIdx, res)
+
+        res = []
+
+        if not root:
+            return ''
+
+        helper(root, Index(1), None, res)
+
+        return ''.join(res)
 
 
     def deserialize(self, data):
-        pass
+
+        def helper(data):
+
+            nodesAndParents = {}
+
+            for i in range(0, len(data), 3):
+                idx = ord(data[i]) - 48
+                val = ord(data[i + 1]) - 48
+                node = Node(val, [])
+                nodesAndParents[idx] = node
+
+            for i in range(3, len(data), 3):
+                idx = ord(data[i]) - 48
+                parentIdx = ord(data[i + 2]) - 48
+                node = nodesAndParents[idx]
+                parent = nodesAndParents[parentIdx]
+                parent.children.append(node)
+
+            return root
+
+        if not data:
+            return None
+
+        return helper(data)
 
 
 class Codec1:
