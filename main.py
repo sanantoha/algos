@@ -217,86 +217,13 @@ tasks_done = [
     "common_characters.py",
     "water_area.py",
     "remove_islands.py",
-    "serialize_and_deserialize_n_ary_tree.py"
+    "serialize_and_deserialize_n_ary_tree.py",
+    "selection_sort.py"
 ]
 
-class Node(object):
-    def __init__(self, val=None, children=None):
-        self.val = val
-        self.children = children
 
-    def __repr__(self):
-        return f"Node({self.val} {self.children})"
-
-class Indexer:
-    def __init__(self, idx):
-        self.idx = idx
-
-    def increment(self):
-        self.idx += 1
-
-class Codec:
-
-    def serialize(self, root):
-
-        def helper(root, indexer, parentIdx, res):
-            if not root:
-                return
-
-            res.append(chr(indexer.idx + 48))
-            res.append(chr(root.val + 48))
-            res.append(chr(parentIdx + 48) if parentIdx else 'N')
-
-            parentIdx = indexer.idx
-            for child in root.children if root.children else []:
-                indexer.increment()
-                helper(child, indexer, parentIdx, res)
-
-        if not root:
-            return ""
-
-        res = []
-        helper(root, Indexer(1), None, res)
-        return ''.join(res)
-
-
-    def deserialize(self, data):
-
-        def helper(data):
-
-            nodes = {}
-
-            for i in range(0, len(data), 3):
-                idx = ord(data[i]) - 48
-                val = ord(data[i + 1]) - 48
-                node = Node(val, [])
-                nodes[idx] = node
-
-            for i in range(3, len(data), 3):
-                idx = ord(data[i]) - 48
-                node = nodes[idx]
-                parentIdx = ord(data[i + 2]) - 48
-                parent = nodes[parentIdx]
-                parent.children.append(node)
-
-            return nodes[ord(data[0]) - 48]
-
-        if not data:
-            return None
-
-        return helper(data)
-
-
-class Codec1:
-
-    def serialize(self, root):
-        pass
-
-
-
-
-    def deserialize(self, data):
-        pass
+def selection_sort(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -304,18 +231,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = Node(11, [Node(33, [Node(55), Node(6666)]), Node(22), Node(30)])
-    print(root)
-    codec = Codec()
-    str = codec.serialize(root)
-    print(str)
-
-    tree = codec.deserialize(str)
-    print(tree)
-
-    codec1 = Codec1()
-    str = codec1.serialize(root)
-    print(str)
-
-    tree = codec1.deserialize(str)
-    print(tree)
+    arr = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
+    print(selection_sort(arr))
