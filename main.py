@@ -218,11 +218,16 @@ tasks_done = [
     "water_area.py",
     "remove_islands.py",
     "serialize_and_deserialize_n_ary_tree.py",
-    "selection_sort.py"
+    "selection_sort.py",
+    "levenshtein_distance.py"
 ]
 
 
-def selection_sort(arr):
+def levenshtein_distance(str1, str2):
+    pass
+
+
+def levenshtein_distance1(str1, str2):
     pass
 
 
@@ -231,5 +236,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arr = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    print(selection_sort(arr))
+    assert levenshtein_distance("abc", "yabd") == 2
+    assert levenshtein_distance1("abc", "yabd") == 2
