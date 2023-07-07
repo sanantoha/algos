@@ -219,15 +219,15 @@ tasks_done = [
     "remove_islands.py",
     "serialize_and_deserialize_n_ary_tree.py",
     "selection_sort.py",
-    "levenshtein_distance.py"
+    "levenshtein_distance.py",
+    "evaluate_expression_tree.py"
 ]
 
 
-def levenshtein_distance(str1, str2):
-    pass
+from tree.BinaryTree import BinaryTree
 
 
-def levenshtein_distance1(str1, str2):
+def evaluateExpressionTree(tree):
     pass
 
 
@@ -236,5 +236,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert levenshtein_distance("abc", "yabd") == 2
-    assert levenshtein_distance1("abc", "yabd") == 2
+    tree = BinaryTree(-1)
+    tree.left = BinaryTree(-2)
+    tree.left.left = BinaryTree(-4)
+    tree.left.right = BinaryTree(2)
+    tree.left.left.left = BinaryTree(3)
+    tree.left.left.right = BinaryTree(2)
+
+    tree.right = BinaryTree(-3)
+    tree.right.left = BinaryTree(8)
+    tree.right.right = BinaryTree(3)
+    expected = 6
+    actual = evaluateExpressionTree(tree)
+    print(actual)
+    assert actual == expected
