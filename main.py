@@ -220,15 +220,27 @@ tasks_done = [
     "serialize_and_deserialize_n_ary_tree.py",
     "selection_sort.py",
     "levenshtein_distance.py",
-    "evaluate_expression_tree.py"
+    "evaluate_expression_tree.py",
+    "reconstruct_bst.py"
 ]
 
 
-from tree.BinaryTree import BinaryTree
+from tree.BST import BST
 
-
-def evaluateExpressionTree(tree):
+def reconstruct_bst(pre_order_traversal_values):
     pass
+
+def reconstruct_bst1(pre_order_traversal_values):
+    pass
+
+
+def get_dfs_order(node, values):
+    if node is None:
+        return
+    values.append(node.value)
+    get_dfs_order(node.left, values)
+    get_dfs_order(node.right, values)
+    return values
 
 
 if __name__ == '__main__':
@@ -236,17 +248,21 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(-1)
-    tree.left = BinaryTree(-2)
-    tree.left.left = BinaryTree(-4)
-    tree.left.right = BinaryTree(2)
-    tree.left.left.left = BinaryTree(3)
-    tree.left.left.right = BinaryTree(2)
+    pre_order_traversal_values = [10, 4, 2, 1, 3, 17, 19, 18]
+    tree = BST(10)
+    tree.left = BST(4)
+    tree.left.left = BST(2)
+    tree.left.left.left = BST(1)
+    tree.left.right = BST(3)
+    tree.right = BST(17)
+    tree.right.right = BST(19)
+    tree.right.right.left = BST(18)
+    expected = get_dfs_order(tree, [])
 
-    tree.right = BinaryTree(-3)
-    tree.right.left = BinaryTree(8)
-    tree.right.right = BinaryTree(3)
-    expected = 6
-    actual = evaluateExpressionTree(tree)
-    print(actual)
-    assert actual == expected
+    actual = reconstruct_bst(pre_order_traversal_values)
+    actual_dfs_order = get_dfs_order(actual, [])
+    assert actual_dfs_order == expected
+
+    actual1 = reconstruct_bst1(pre_order_traversal_values)
+    actual_dfs_order1 = get_dfs_order(actual1, [])
+    assert actual_dfs_order1 == expected
