@@ -121,7 +121,8 @@ tasks = [
     'common_characters.py',
     'best_digits.py',
     'best_seats.py',
-    'missing_numbers.py'
+    'missing_numbers.py',
+    'reverse_polish_notation.py'
 ]
 
 tasks_done = [
@@ -238,23 +239,49 @@ def fourNumberSum1(array, target):
 def sortAndStringify(array):
     return ",".join(sorted(list(map(lambda x: str(x), array))))
 
+
+def reversePolishNotation(tokens):
+    stack = []
+
+    for s in tokens:
+        if s.isnumeric():
+            stack.append(int(s))
+        else:
+            sv = stack.pop()
+            fv = stack.pop()
+            res = 0
+            if s == "+":
+                res = fv + sv
+            elif s == "-":
+                res = fv - sv
+            elif s == "/":
+                res = fv / sv
+            else:
+                res = fv * sv
+            print(res)
+            stack.append(res)
+
+    return stack.pop()
+
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    print(reversePolishNotation(["10", "-5", "*"]))
 
-    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    # output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
+    # print(output)
+    # output = list(map(sortAndStringify, output))
+    # quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    # assert len(output) == 2
+    # for quadruplet in quadruplets:
+    #     assert sortAndStringify(quadruplet) in output
+    #
+    # output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
+    # print(output)
+    # output = list(map(sortAndStringify, output))
+    # quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    # assert len(output) == 2
+    # for quadruplet in quadruplets:
+    #     assert sortAndStringify(quadruplet) in output
