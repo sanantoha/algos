@@ -120,7 +120,8 @@ tasks = [
     'transpose_matrix.py',
     'common_characters.py',
     'best_digits.py',
-    'best_seats.py'
+    'best_seats.py',
+    'missing_numbers.py'
 ]
 
 tasks_done = [
