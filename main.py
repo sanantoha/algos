@@ -224,64 +224,18 @@ tasks_done = [
     "levenshtein_distance.py",
     "evaluate_expression_tree.py",
     "reconstruct_bst.py",
-    "four_number_sum.py"
+    "four_number_sum.py",
+    "run_length_encoding"
 ]
 
 
-def fourNumberSum(array, target):
+def run_length_encoding(string):
     pass
 
-
-def fourNumberSum1(array, target):
-    pass
-
-
-def sortAndStringify(array):
-    return ",".join(sorted(list(map(lambda x: str(x), array))))
-
-
-def reversePolishNotation(tokens):
-    stack = []
-
-    for s in tokens:
-        if s.isnumeric():
-            stack.append(int(s))
-        else:
-            sv = stack.pop()
-            fv = stack.pop()
-            res = 0
-            if s == "+":
-                res = fv + sv
-            elif s == "-":
-                res = fv - sv
-            elif s == "/":
-                res = fv / sv
-            else:
-                res = fv * sv
-            print(res)
-            stack.append(res)
-
-    return stack.pop()
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    print(reversePolishNotation(["10", "-5", "*"]))
-
-    # output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
-    # print(output)
-    # output = list(map(sortAndStringify, output))
-    # quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    # assert len(output) == 2
-    # for quadruplet in quadruplets:
-    #     assert sortAndStringify(quadruplet) in output
-    #
-    # output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
-    # print(output)
-    # output = list(map(sortAndStringify, output))
-    # quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    # assert len(output) == 2
-    # for quadruplet in quadruplets:
-    #     assert sortAndStringify(quadruplet) in output
+    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
