@@ -4,16 +4,15 @@ def majorityElement(arr):
     if not arr:
         return None
 
-    curr = arr[0]
-    count = 1
+    curr = None
+    count = 0
 
-    for i in range(1, len(arr)):
-        num = arr[i]
+    for num in arr:
+        if count == 0:
+            curr = num
 
         if curr == num:
             count += 1
-        elif count == 0:
-            curr = num
         else:
             count -= 1
 
