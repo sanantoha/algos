@@ -226,11 +226,12 @@ tasks_done = [
     "evaluate_expression_tree.py",
     "reconstruct_bst.py",
     "four_number_sum.py",
-    "run_length_encoding"
+    "run_length_encoding",
+    "stable_internships.py"
 ]
 
 
-def run_length_encoding(string):
+def stableInternships(interns, teams):
     pass
 
 
@@ -239,4 +240,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
+    interns = [[0, 1, 2], [0, 2, 1], [1, 2, 0]]
+    teams = [[2, 1, 0], [0, 1, 2], [0, 1, 2]]
+    expected = [[0, 1], [1, 0], [2, 2]]
+    actual = stableInternships(interns, teams)
+    print(actual)
+    assert len(actual) == len(expected)
+
+    for match in expected:
+        containsMatch = False
+        for actualMatch in actual:
+            if actualMatch[0] == match[0] and actualMatch[1] == match[1]:
+                containsMatch = True
+        assert containsMatch
