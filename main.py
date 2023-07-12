@@ -227,11 +227,12 @@ tasks_done = [
     "reconstruct_bst.py",
     "four_number_sum.py",
     "run_length_encoding",
-    "stable_internships.py"
+    "stable_internships.py",
+    "monotonic_array.py"
 ]
 
 
-def stableInternships(interns, teams):
+def monotonic_array(arr):
     pass
 
 
@@ -240,16 +241,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    interns = [[0, 1, 2], [0, 2, 1], [1, 2, 0]]
-    teams = [[2, 1, 0], [0, 1, 2], [0, 1, 2]]
-    expected = [[0, 1], [1, 0], [2, 2]]
-    actual = stableInternships(interns, teams)
-    print(actual)
-    assert len(actual) == len(expected)
-
-    for match in expected:
-        containsMatch = False
-        for actualMatch in actual:
-            if actualMatch[0] == match[0] and actualMatch[1] == match[1]:
-                containsMatch = True
-        assert containsMatch
+    print(monotonic_array([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
