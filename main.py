@@ -232,7 +232,7 @@ tasks_done = [
 ]
 
 
-def monotonic_array(arr):
+def bestDigits(str):
     pass
 
 
@@ -241,4 +241,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(monotonic_array([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
+    number = "462839"
+    numDigits = 2
+
+    actual = bestDigits(number, numDigits)
+    print(actual)
+    assert actual == "6839"
+
+    actual = bestDigits("648239", numDigits)
+    print(actual)
+    assert actual == "8239"
+
+    actual = bestDigits("988762", numDigits)
+    print(actual)
+    assert actual == "9887"
