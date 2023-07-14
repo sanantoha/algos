@@ -232,7 +232,7 @@ tasks_done = [
 ]
 
 
-def bestDigits(str):
+def bestDigits(str, numDigits):
     pass
 
 
