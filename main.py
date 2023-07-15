@@ -228,11 +228,16 @@ tasks_done = [
     "four_number_sum.py",
     "run_length_encoding",
     "stable_internships.py",
-    "monotonic_array.py"
+    "monotonic_array.py",
+    "sort_stack.py"
 ]
 
 
-def bestDigits(str, numDigits):
+def sortStack(stack):
+    pass
+
+
+def sortStack1(stack):
     pass
 
 
@@ -241,17 +246,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    number = "462839"
-    numDigits = 2
+    input = [-5, 2, -2, 4, 3, 1]
+    expected = [-5, -2, 1, 2, 3, 4]
 
-    actual = bestDigits(number, numDigits)
+    actual = sortStack(input)
     print(actual)
-    assert actual == "6839"
+    assert actual == expected
 
-    actual = bestDigits("648239", numDigits)
+    actual = sortStack1(input)
     print(actual)
-    assert actual == "8239"
-
-    actual = bestDigits("988762", numDigits)
-    print(actual)
-    assert actual == "9887"
+    assert actual == expected
