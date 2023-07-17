@@ -229,15 +229,16 @@ tasks_done = [
     "run_length_encoding",
     "stable_internships.py",
     "monotonic_array.py",
-    "sort_stack.py"
+    "sort_stack.py",
+    "missing_numbers.py"
 ]
 
 
-def sortStack(stack):
+def missingNumbers(arr):
     pass
 
 
-def sortStack1(stack):
+def missingNumbers1(arr):
     pass
 
 
@@ -246,13 +247,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [-5, 2, -2, 4, 3, 1]
-    expected = [-5, -2, 1, 2, 3, 4]
-
-    actual = sortStack(input)
+    input = [4, 5, 1, 3]
+    expected = [2, 6]
+    actual = missingNumbers(input)
     print(actual)
     assert actual == expected
 
-    actual = sortStack1(input)
+    actual = missingNumbers1(input)
     print(actual)
     assert actual == expected
