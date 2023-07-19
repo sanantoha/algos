@@ -230,15 +230,12 @@ tasks_done = [
     "stable_internships.py",
     "monotonic_array.py",
     "sort_stack.py",
-    "missing_numbers.py"
+    "missing_numbers.py",
+    "class_photos.py"
 ]
 
 
-def missingNumbers(arr):
-    pass
-
-
-def missingNumbers1(arr):
+def class_photos(red_shirt_heights, blue_shirt_heights):
     pass
 
 
@@ -247,12 +244,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [4, 5, 1, 3]
-    expected = [2, 6]
-    actual = missingNumbers(input)
-    print(actual)
-    assert actual == expected
-
-    actual = missingNumbers1(input)
-    print(actual)
-    assert actual == expected
+    print(class_photos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5]))
