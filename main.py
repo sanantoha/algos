@@ -232,24 +232,13 @@ tasks_done = [
     "sort_stack.py",
     "missing_numbers.py",
     "class_photos.py",
-    "min_height_bst.py"
+    "min_height_bst.py",
+    "best_seats.py"
 ]
 
-from tree.validate_bst import validate_bst
-from tree.bst_traversal import in_order_traverse
-from tree.BST import BST
 
-
-def min_height_bst(arr):
+def bestSeat(arr):
     pass
-
-
-def get_tree_height(tree, height=0):
-    if tree is None:
-        return height
-    left_tree_height = get_tree_height(tree.left, height + 1)
-    right_tree_height = get_tree_height(tree.right, height + 1)
-    return max(left_tree_height, right_tree_height)
 
 
 if __name__ == '__main__':
@@ -257,12 +246,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [1, 2, 5, 7, 10, 13, 14, 15, 22]
-    tree = min_height_bst(array)
+    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
+    assert actual == 4
 
-    assert validate_bst(tree)
-    assert get_tree_height(tree) == 4
+    actual = bestSeat([1])
+    assert actual == -1
 
-    in_order = in_order_traverse(tree, [])
+    actual = bestSeat([1, 0, 1])
+    assert actual == 1
 
-    assert in_order == [1, 2, 5, 7, 10, 13, 14, 15, 22]
+    actual = bestSeat([1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 1, 1])
+    assert actual == -1
+
+    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
+    assert actual == 3
