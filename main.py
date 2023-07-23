@@ -233,11 +233,12 @@ tasks_done = [
     "missing_numbers.py",
     "class_photos.py",
     "min_height_bst.py",
-    "best_seats.py"
+    "best_seats.py",
+    "run_length_encoding.py"
 ]
 
 
-def bestSeat(arr):
+def run_length_encoding(arr):
     pass
 
 
@@ -246,23 +247,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
-    assert actual == 4
-
-    actual = bestSeat([1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 1, 1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
-    assert actual == 3
+    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
