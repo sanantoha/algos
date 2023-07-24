@@ -234,11 +234,12 @@ tasks_done = [
     "class_photos.py",
     "min_height_bst.py",
     "best_seats.py",
-    "run_length_encoding.py"
+    "run_length_encoding.py",
+    "majority_element.py"
 ]
 
 
-def run_length_encoding(arr):
+def majorityElement(arr):
     pass
 
 
@@ -247,4 +248,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
+    input = [1, 2, 3, 2, 2, 1, 2]
+    expected = 2
+    actual = majorityElement(input)
+    print(actual)
+    assert actual == expected
+
+    input = [3, 3, 1]
+    expected = 3
+    actual = majorityElement(input)
+    print(actual)
+    assert actual == expected
