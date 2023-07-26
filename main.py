@@ -239,7 +239,7 @@ tasks_done = [
 ]
 
 
-def majorityElement(arr):
+def kruskalsAlgorithm(graph):
     pass
 
 
@@ -248,14 +248,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [1, 2, 3, 2, 2, 1, 2]
-    expected = 2
-    actual = majorityElement(input)
-    print(actual)
-    assert actual == expected
+    input = [
+        [[1, 3], [2, 5]],
+        [[0, 3], [2, 10], [3, 12]],
+        [[0, 5], [1, 10]],
+        [[1, 12]]
+    ]
 
-    input = [3, 3, 1]
-    expected = 3
-    actual = majorityElement(input)
-    print(actual)
+    expected = [
+        [[1, 3], [2, 5]],
+        [[0, 3], [3, 12]],
+        [[0, 5]],
+        [[1, 12]]
+    ]
+    actual = kruskalsAlgorithm(input)
+    print(actual, "     =    ", expected)
     assert actual == expected
