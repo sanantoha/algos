@@ -235,11 +235,13 @@ tasks_done = [
     "min_height_bst.py",
     "best_seats.py",
     "run_length_encoding.py",
-    "majority_element.py"
+    "majority_element.py",
+    "middle_node.py"
 ]
 
+from list.LinkedList import LinkedList
 
-def kruskalsAlgorithm(graph):
+def middleNode(head):
     pass
 
 
@@ -248,19 +250,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [[1, 3], [2, 5]],
-        [[0, 3], [2, 10], [3, 12]],
-        [[0, 5], [1, 10]],
-        [[1, 12]]
-    ]
+    list = LinkedList(1)
+    list.next = LinkedList(2)
+    list.next.next = LinkedList(3)
+    list.next.next.next = LinkedList(4)
 
-    expected = [
-        [[1, 3], [2, 5]],
-        [[0, 3], [3, 12]],
-        [[0, 5]],
-        [[1, 12]]
-    ]
-    actual = kruskalsAlgorithm(input)
-    print(actual, "     =    ", expected)
-    assert actual == expected
+    res = middleNode(list)
+    print(res)
+    assert res == list.next.next
