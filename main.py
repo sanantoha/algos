@@ -236,13 +236,24 @@ tasks_done = [
     "best_seats.py",
     "run_length_encoding.py",
     "majority_element.py",
-    "middle_node.py"
+    "middle_node.py",
+    "sum_of_linked_lists.py"
 ]
 
 from list.LinkedList import LinkedList
 
-def middleNode(head):
+
+def sumOfLinkedLists(ll1, ll2):
     pass
+
+
+def getNodesInArray(output):
+    nodes = []
+    current = output
+    while current is not None:
+        nodes.append(current.value)
+        current = current.next
+    return nodes
 
 
 if __name__ == '__main__':
@@ -250,11 +261,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    list = LinkedList(1)
-    list.next = LinkedList(2)
-    list.next.next = LinkedList(3)
-    list.next.next.next = LinkedList(4)
-
-    res = middleNode(list)
-    print(res)
-    assert res == list.next.next
+    ll1 = LinkedList(2).addMany([4, 7, 1])
+    ll2 = LinkedList(9).addMany([4, 5])
+    expected = LinkedList(1).addMany([9, 2, 2])
+    actual = sumOfLinkedLists(ll1, ll2)
+    print(getNodesInArray(actual))
+    assert getNodesInArray(actual) == getNodesInArray(expected)
