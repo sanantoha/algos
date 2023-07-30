@@ -237,23 +237,17 @@ tasks_done = [
     "run_length_encoding.py",
     "majority_element.py",
     "middle_node.py",
-    "sum_of_linked_lists.py"
+    "sum_of_linked_lists.py",
+    "longest_common_subsequence.py"
 ]
 
-from list.LinkedList import LinkedList
 
-
-def sumOfLinkedLists(ll1, ll2):
+def longestCommonSubsequence(str1, str2):
     pass
 
 
-def getNodesInArray(output):
-    nodes = []
-    current = output
-    while current is not None:
-        nodes.append(current.value)
-        current = current.next
-    return nodes
+def longestCommonSubsequence1(str1, str2):
+    pass
 
 
 if __name__ == '__main__':
@@ -261,9 +255,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    ll1 = LinkedList(2).addMany([4, 7, 1])
-    ll2 = LinkedList(9).addMany([4, 5])
-    expected = LinkedList(1).addMany([9, 2, 2])
-    actual = sumOfLinkedLists(ll1, ll2)
-    print(getNodesInArray(actual))
-    assert getNodesInArray(actual) == getNodesInArray(expected)
+    output = longestCommonSubsequence("ZXVVYZW", "XKYKZPW")
+    print(output)
+    assert output == ["X", "Y", "Z", "W"]
+
+    output = longestCommonSubsequence1("ZXVVYZW", "XKYKZPW")
+    print(output)
+    assert output == ["X", "Y", "Z", "W"]
