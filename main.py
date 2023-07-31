@@ -238,15 +238,12 @@ tasks_done = [
     "majority_element.py",
     "middle_node.py",
     "sum_of_linked_lists.py",
-    "longest_common_subsequence.py"
+    "longest_common_subsequence.py",
+    "reverse_polish_notation.py"
 ]
 
 
-def longestCommonSubsequence(str1, str2):
-    pass
-
-
-def longestCommonSubsequence1(str1, str2):
+def reversePolishNotation(tokens):
     pass
 
 
@@ -255,10 +252,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = longestCommonSubsequence("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
-
-    output = longestCommonSubsequence1("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
+    input = ["3", "2", "+", "7", "*"]
+    expected = 35
+    actual = reversePolishNotation(input)
+    print(actual)
+    assert actual == expected
