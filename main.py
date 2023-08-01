@@ -123,7 +123,8 @@ tasks = [
     'best_seats.py',
     'missing_numbers.py',
     'reverse_polish_notation.py',
-    'majority_element.py'
+    'majority_element.py',
+    'optimal_freelancing.py'
 ]
 
 tasks_done = [
