@@ -240,11 +240,23 @@ tasks_done = [
     "middle_node.py",
     "sum_of_linked_lists.py",
     "longest_common_subsequence.py",
-    "reverse_polish_notation.py"
+    "reverse_polish_notation.py",
+    "find_nodes_distance_k.py"
 ]
 
+# This is an input class. Do not edit.
+class BinaryTree:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
 
-def reversePolishNotation(tokens):
+
+def findNodesDistanceK(root, target, k):
+    pass
+
+
+def findNodesDistanceK1(root, target, k):
     pass
 
 
@@ -253,8 +265,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["3", "2", "+", "7", "*"]
-    expected = 35
-    actual = reversePolishNotation(input)
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.right = BinaryTree(3)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right.right = BinaryTree(6)
+    root.right.right.left = BinaryTree(7)
+    root.right.right.right = BinaryTree(8)
+    target = 3
+    k = 2
+    expected = [2, 7, 8]
+    actual = findNodesDistanceK(root, target, k)
     print(actual)
+    actual.sort()
+    assert actual == expected
+
+    actual = findNodesDistanceK1(root, target, k)
+    print(actual)
+    actual.sort()
     assert actual == expected
