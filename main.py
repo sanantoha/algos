@@ -242,23 +242,36 @@ tasks_done = [
     "sum_of_linked_lists.py",
     "longest_common_subsequence.py",
     "reverse_polish_notation.py",
-    "find_nodes_distance_k.py"
+    "find_nodes_distance_k.py",
+    "min_max_stack_construction.py"
 ]
 
-# This is an input class. Do not edit.
-class BinaryTree:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
+# Feel free to add new properties and methods to the class.
+class MinMaxStack:
+
+    def __init__(self):
+        pass
+
+    def peek(self):
+        return -1
+
+    def pop(self):
+        return -1
+
+    def push(self, number):
+        pass
+
+    def getMin(self):
+        return -1
+
+    def getMax(self):
+        return -1
 
 
-def findNodesDistanceK(root, target, k):
-    pass
-
-
-def findNodesDistanceK1(root, target, k):
-    pass
+def testMinMaxPeek(min, max, peek, stack):
+    assert stack.getMin() == min
+    assert stack.getMax() == max
+    assert stack.peek() == peek
 
 
 if __name__ == '__main__':
@@ -266,23 +279,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.right.right.left = BinaryTree(7)
-    root.right.right.right = BinaryTree(8)
-    target = 3
-    k = 2
-    expected = [2, 7, 8]
-    actual = findNodesDistanceK(root, target, k)
-    print(actual)
-    actual.sort()
-    assert actual == expected
-
-    actual = findNodesDistanceK1(root, target, k)
-    print(actual)
-    actual.sort()
-    assert actual == expected
+    stack = MinMaxStack()
+    stack.push(5)
+    testMinMaxPeek(5, 5, 5, stack)
+    stack.push(7)
+    testMinMaxPeek(5, 7, 7, stack)
+    stack.push(2)
+    testMinMaxPeek(2, 7, 2, stack)
+    assert stack.pop() == 2
+    assert stack.pop() == 7
+    testMinMaxPeek(5, 5, 5, stack)
