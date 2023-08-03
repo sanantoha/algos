@@ -125,7 +125,8 @@ tasks = [
     'reverse_polish_notation.py',
     'majority_element.py',
     'optimal_freelancing.py',
-    'median_of_two_sorted_arrays.py'
+    'median_of_two_sorted_arrays.py',
+    'blackjack_probability.py'
 ]
 
 tasks_done = [
