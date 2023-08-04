@@ -244,35 +244,13 @@ tasks_done = [
     "longest_common_subsequence.py",
     "reverse_polish_notation.py",
     "find_nodes_distance_k.py",
-    "min_max_stack_construction.py"
+    "min_max_stack_construction.py",
+    "blackjack_probability.py"
 ]
 
-# Feel free to add new properties and methods to the class.
-class MinMaxStack:
 
-    def __init__(self):
-        pass
-
-    def peek(self):
-        return -1
-
-    def pop(self):
-        return -1
-
-    def push(self, number):
-        pass
-
-    def getMin(self):
-        return -1
-
-    def getMax(self):
-        return -1
-
-
-def testMinMaxPeek(min, max, peek, stack):
-    assert stack.getMin() == min
-    assert stack.getMax() == max
-    assert stack.peek() == peek
+def blackjackProbability(target, currentHand):
+    pass
 
 
 if __name__ == '__main__':
@@ -280,13 +258,30 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stack = MinMaxStack()
-    stack.push(5)
-    testMinMaxPeek(5, 5, 5, stack)
-    stack.push(7)
-    testMinMaxPeek(5, 7, 7, stack)
-    stack.push(2)
-    testMinMaxPeek(2, 7, 2, stack)
-    assert stack.pop() == 2
-    assert stack.pop() == 7
-    testMinMaxPeek(5, 5, 5, stack)
+    actual = blackjackProbability(21, 15)
+    print(actual)
+    assert actual == 0.45
+
+    actual = blackjackProbability(21, 21)
+    print(actual)
+    assert actual == 0
+
+    actual = blackjackProbability(21, 20)
+    print(actual)
+    assert actual == 0
+
+    actual = blackjackProbability(21, 17)
+    print(actual)
+    assert actual == 0
+
+    actual = blackjackProbability(21, 12)
+    print(actual)
+    assert actual == 0.268
+
+    actual = blackjackProbability(21, 5)
+    print(actual)
+    assert actual == 0.295
+
+    actual = blackjackProbability(30, 25)
+    print(actual)
+    assert actual == 0.5
