@@ -245,11 +245,12 @@ tasks_done = [
     "reverse_polish_notation.py",
     "find_nodes_distance_k.py",
     "min_max_stack_construction.py",
-    "blackjack_probability.py"
+    "blackjack_probability.py",
+    "task_assignment.py"
 ]
 
 
-def blackjackProbability(target, currentHand):
+def task_assignment(k, tasks):
     pass
 
 
@@ -258,30 +259,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = blackjackProbability(21, 15)
+    k = 3
+    tasks = [1, 3, 5, 3, 1, 4]
+    expected = [[4, 2], [0, 5], [3, 1]]
+    actual = task_assignment(k, tasks)
     print(actual)
-    assert actual == 0.45
-
-    actual = blackjackProbability(21, 21)
-    print(actual)
-    assert actual == 0
-
-    actual = blackjackProbability(21, 20)
-    print(actual)
-    assert actual == 0
-
-    actual = blackjackProbability(21, 17)
-    print(actual)
-    assert actual == 0
-
-    actual = blackjackProbability(21, 12)
-    print(actual)
-    assert actual == 0.268
-
-    actual = blackjackProbability(21, 5)
-    print(actual)
-    assert actual == 0.295
-
-    actual = blackjackProbability(30, 25)
-    print(actual)
-    assert actual == 0.5
+    assert actual == expected
