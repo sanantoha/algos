@@ -246,11 +246,12 @@ tasks_done = [
     "find_nodes_distance_k.py",
     "min_max_stack_construction.py",
     "blackjack_probability.py",
-    "task_assignment.py"
+    "task_assignment.py",
+    "kruskals_algorithm.py"
 ]
 
 
-def task_assignment(k, tasks):
+def kruskalsAlgorithm(graph):
     pass
 
 
@@ -259,9 +260,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    k = 3
-    tasks = [1, 3, 5, 3, 1, 4]
-    expected = [[4, 2], [0, 5], [3, 1]]
-    actual = task_assignment(k, tasks)
-    print(actual)
+    input = [
+        [[1, 3], [2, 5]],
+        [[0, 3], [2, 10], [3, 12]],
+        [[0, 5], [1, 10]],
+        [[1, 12]]
+    ]
+
+    expected = [
+        [[1, 3], [2, 5]],
+        [[0, 3], [3, 12]],
+        [[0, 5]],
+        [[1, 12]]
+    ]
+    actual = kruskalsAlgorithm(input)
+    print(actual, "     =    ", expected)
     assert actual == expected
