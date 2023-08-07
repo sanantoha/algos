@@ -247,11 +247,12 @@ tasks_done = [
     "min_max_stack_construction.py",
     "blackjack_probability.py",
     "task_assignment.py",
-    "kruskals_algorithm.py"
+    "kruskals_algorithm.py",
+    "optimal_freelancing.py"
 ]
 
 
-def kruskalsAlgorithm(graph):
+def optimalFreelancing(jobs):
     pass
 
 
@@ -260,19 +261,41 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [[1, 3], [2, 5]],
-        [[0, 3], [2, 10], [3, 12]],
-        [[0, 5], [1, 10]],
-        [[1, 12]]
-    ]
+    input = [{"deadline": 1, "payment": 1}]
+    actual = optimalFreelancing(input)
+    print(actual)
+    assert actual == 1
 
-    expected = [
-        [[1, 3], [2, 5]],
-        [[0, 3], [3, 12]],
-        [[0, 5]],
-        [[1, 12]]
+    input = [
+        {
+            "deadline": 2,
+            "payment": 2
+        },
+        {
+            "deadline": 4,
+            "payment": 3
+        },
+        {
+            "deadline": 5,
+            "payment": 1
+        },
+        {
+            "deadline": 7,
+            "payment": 2
+        },
+        {
+            "deadline": 3,
+            "payment": 1
+        },
+        {
+            "deadline": 3,
+            "payment": 2
+        },
+        {
+            "deadline": 1,
+            "payment": 3
+        }
     ]
-    actual = kruskalsAlgorithm(input)
-    print(actual, "     =    ", expected)
-    assert actual == expected
+    actual = optimalFreelancing(input)
+    print(actual)
+    assert actual == 13
