@@ -248,11 +248,12 @@ tasks_done = [
     "blackjack_probability.py",
     "task_assignment.py",
     "kruskals_algorithm.py",
-    "optimal_freelancing.py"
+    "optimal_freelancing.py",
+    "best_digits.py"
 ]
 
 
-def optimalFreelancing(jobs):
+def bestDigits(number, numDigits):
     pass
 
 
@@ -261,41 +262,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [{"deadline": 1, "payment": 1}]
-    actual = optimalFreelancing(input)
-    print(actual)
-    assert actual == 1
+    number = "462839"
+    numDigits = 2
 
-    input = [
-        {
-            "deadline": 2,
-            "payment": 2
-        },
-        {
-            "deadline": 4,
-            "payment": 3
-        },
-        {
-            "deadline": 5,
-            "payment": 1
-        },
-        {
-            "deadline": 7,
-            "payment": 2
-        },
-        {
-            "deadline": 3,
-            "payment": 1
-        },
-        {
-            "deadline": 3,
-            "payment": 2
-        },
-        {
-            "deadline": 1,
-            "payment": 3
-        }
-    ]
-    actual = optimalFreelancing(input)
+    actual = bestDigits(number, numDigits)
     print(actual)
-    assert actual == 13
+    assert actual == "6839"
+
+    actual = bestDigits("648239", numDigits)
+    print(actual)
+    assert actual == "8239"
+
+    actual = bestDigits("988762", numDigits)
+    print(actual)
+    assert actual == "9887"
