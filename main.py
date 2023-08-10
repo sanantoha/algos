@@ -249,11 +249,24 @@ tasks_done = [
     "task_assignment.py",
     "kruskals_algorithm.py",
     "optimal_freelancing.py",
-    "best_digits.py"
+    "best_digits.py",
+    "staircase_traversal.py"
 ]
 
 
-def bestDigits(number, numDigits):
+def staircaseTraversal(height, maxSteps):
+    pass
+
+
+def staircaseTraversalMemo(height, maxSteps):
+    pass
+
+
+def staircaseTraversalIter(height, maxSteps):
+    pass
+
+
+def staircaseTraversalWindow(height, maxSteps):
     pass
 
 
@@ -262,17 +275,21 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    number = "462839"
-    numDigits = 2
-
-    actual = bestDigits(number, numDigits)
+    stairs = 4
+    maxSteps = 2
+    expected = 5
+    actual = staircaseTraversal(stairs, maxSteps)
     print(actual)
-    assert actual == "6839"
+    assert actual == expected
 
-    actual = bestDigits("648239", numDigits)
+    actual = staircaseTraversalMemo(stairs, maxSteps)
     print(actual)
-    assert actual == "8239"
+    assert actual == expected
 
-    actual = bestDigits("988762", numDigits)
+    actual = staircaseTraversalIter(stairs, maxSteps)
     print(actual)
-    assert actual == "9887"
+    assert actual == expected
+
+    actual = staircaseTraversalWindow(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
