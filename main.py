@@ -250,23 +250,12 @@ tasks_done = [
     "kruskals_algorithm.py",
     "optimal_freelancing.py",
     "best_digits.py",
-    "staircase_traversal.py"
+    "staircase_traversal.py",
+    "zigzag_traverse.py"
 ]
 
 
-def staircaseTraversal(height, maxSteps):
-    pass
-
-
-def staircaseTraversalMemo(height, maxSteps):
-    pass
-
-
-def staircaseTraversalIter(height, maxSteps):
-    pass
-
-
-def staircaseTraversalWindow(height, maxSteps):
+def zigzagTraverse(matrix):
     pass
 
 
@@ -275,21 +264,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stairs = 4
-    maxSteps = 2
-    expected = 5
-    actual = staircaseTraversal(stairs, maxSteps)
+    test = [[1, 3, 4, 10], [2, 5, 9, 11], [6, 8, 12, 15], [7, 13, 14, 16]]
+    actual = zigzagTraverse(test)
     print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalMemo(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalIter(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalWindow(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
+    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
