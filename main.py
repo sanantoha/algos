@@ -251,11 +251,12 @@ tasks_done = [
     "optimal_freelancing.py",
     "best_digits.py",
     "staircase_traversal.py",
-    "zigzag_traverse.py"
+    "zigzag_traverse.py",
+    "median_of_two_sorted_arrays.py"
 ]
 
 
-def zigzagTraverse(matrix):
+def medianOfTwoSortedArrays(arr1, arr2):
     pass
 
 
@@ -264,7 +265,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = [[1, 3, 4, 10], [2, 5, 9, 11], [6, 8, 12, 15], [7, 13, 14, 16]]
-    actual = zigzagTraverse(test)
+    arrayOne = [1, 3, 4, 5]
+    arrayTwo = [2, 3, 6, 7]
+    actual = medianOfTwoSortedArrays(arrayOne, arrayTwo)
     print(actual)
-    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    assert actual == 3.5
+
+    actual = medianOfTwoSortedArrays([6, 7, 8, 9], [1, 3, 4, 5])
+    print(actual)
+    assert actual == 5.5
