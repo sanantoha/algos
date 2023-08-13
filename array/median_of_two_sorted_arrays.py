@@ -1,5 +1,5 @@
 
-# O(min(a1, a2)) time | O(1) space
+# O(log(min(a1, a2))) time | O(1) space
 def medianOfTwoSortedArrays(arr1, arr2):
     if not arr1:
         return median(arr2)

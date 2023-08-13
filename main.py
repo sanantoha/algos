@@ -252,11 +252,21 @@ tasks_done = [
     "best_digits.py",
     "staircase_traversal.py",
     "zigzag_traverse.py",
-    "median_of_two_sorted_arrays.py"
+    "median_of_two_sorted_arrays.py",
+    "node_depths.py"
 ]
 
+from tree.BinaryTree import BinaryTree
 
-def medianOfTwoSortedArrays(arr1, arr2):
+def node_depths(root):
+    pass
+
+
+def node_depths1(root):
+    pass
+
+
+def node_depths2(root):
     pass
 
 
@@ -265,12 +275,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arrayOne = [1, 3, 4, 5]
-    arrayTwo = [2, 3, 6, 7]
-    actual = medianOfTwoSortedArrays(arrayOne, arrayTwo)
-    print(actual)
-    assert actual == 3.5
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.right = BinaryTree(9)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    root.right.left = BinaryTree(6)
+    root.right.right = BinaryTree(7)
 
-    actual = medianOfTwoSortedArrays([6, 7, 8, 9], [1, 3, 4, 5])
-    print(actual)
-    assert actual == 5.5
+    print(node_depths(root) == 16)
+    print(node_depths1(root) == 16)
+    print(node_depths2(root) == 16)
