@@ -254,11 +254,12 @@ tasks_done = [
     "zigzag_traverse.py",
     "median_of_two_sorted_arrays.py",
     "node_depths.py",
-    "knapsack_problem.py"
+    "knapsack_problem.py",
+    "disk_stacking.py"
 ]
 
 
-def knapsackProblem(items, capacity):
+def diskStacking(disks):
     pass
 
 
@@ -267,9 +268,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    items = [[1, 2], [4, 3], [5, 6], [6, 7]]
-    capacity = 10
-    expected = [10, [1, 3]]
-    actual = knapsackProblem(items, capacity)
+    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
+    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
+    actual = diskStacking(input)
     print(actual)
-    assert actual == expected
+    assert (actual == expected)
