@@ -255,11 +255,12 @@ tasks_done = [
     "median_of_two_sorted_arrays.py",
     "node_depths.py",
     "knapsack_problem.py",
-    "disk_stacking.py"
+    "disk_stacking.py",
+    "apartment_hunting.py"
 ]
 
 
-def diskStacking(disks):
+def apartmentHunting(blocks, reqs):
     pass
 
 
@@ -268,8 +269,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
-    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
-    actual = diskStacking(input)
-    print(actual)
-    assert (actual == expected)
+    blocks = [
+        {"gym": False, "school": True, "store": False},
+        {"gym": True, "school": False, "store": False},
+        {"gym": True, "school": True, "store": False},
+        {"gym": False, "school": True, "store": False},
+        {"gym": False, "school": True, "store": True},
+    ]
+    reqs = ["gym", "school", "store"]
+    assert apartmentHunting(blocks, reqs) == 3
