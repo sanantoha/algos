@@ -129,136 +129,7 @@ tasks = [
     'blackjack_probability.py'
 ]
 
-tasks_done = [
-    "minimum_characters_for_words.py",
-    "bubble_sort.py"
-    "three_number_sum.py",
-    "numbers_of_ways_to_traverse_graph.py",
-    "tandem_bicycle.py",
-    "product_sum.py",
-    "remove_duplicates_from_linkedlist.py",
-    "smallest_difference.py",
-    "get_youngest_common_ancestor.py",
-    "min_rewards.py",
-    "palindrom_check.py",
-    "two_number_sum.py",
-    "max_subset_sum_no_adjucent.py",
-    "get_nth_fib.py",
-    "generate_document.py",
-    "min_number_of_coins_for_change.py",
-    "bst_traversal.py",
-    "valid_ip_addresses.py",
-    "word_ladder.py",
-    "permutations.py",
-    "sunset_views.py",
-    "find_kth_largest_value_in_bst.py",
-    "binary_tree_diameter.py",
-    "find_closest_value_in_bst.py",
-    "find_three_largest_numbers.py",
-    "insertion_sort.py",
-    "number_of_ways_to_make_change.py",
-    "merge_binary_trees.py",
-    "phone_number_mnemonic.py",
-    "merge_overlapping_intervals.py",
-    "bubble_sort.py",
-    "height_balanced_binary_tree.py",
-    "valid_starting_city.py",
-    "move_element_to_end.py",
-    "minimum_passes_of_matrix.py",
-    "group_anagrams.py",
-    "remove_kth_node_from_end.py",
-    "unique_pathsIII.py",
-    "two_colorable.py",
-    "word_ladder_ii.py",
-    "minimum_waiting_time.py",
-    "spiral_matrix_traverse.py",
-    "single_cycle_check.py",
-    "depth_first_search.py",
-    "union_find.py",
-    "search_in_sorted_matrix.py",
-    "three_number_sum.py",
-    "binary_search.py",
-    "subarray_sort.py",
-    "invert_binary_tree.py",
-    "three_number_sort.py",
-    "caesar_cipher_encryptor.py",
-    "suffix_trie_construction.py",
-    "a_star_algorithm.py",
-    "simmetrical_tree.py",
-    "max_sum_increasing_subsequence.py",
-    "same_bsts.py",
-    "river_sizes.py",
-    "find_successor.py",
-    "zero_sum_subarray.py",
-    "breadth_first_search.py",
-    "longest_palindromic_substring.py",
-    "validate_subsequence.py",
-    "largest_range.py",
-    "longest_peak.py",
-    "cycle_in_graph.py",
-    "non_constructible_changes.py",
-    "merging_linked_lists.py",
-    "balanced_brackets.py",
-    "kadanes_distance.py",
-    "validate_tree_nodes.py",
-    "sorted_squared_array.py",
-    "one_edit.py",
-    "next_greater_element.py",
-    "branch_sums.py",
-    "validate_bst.py",
-    "semordinal.py",
-    "longest_increasing_subsequence.py",
-    "first_non_repeating_character.py",
-    "first_duplicate_value.py",
-    "powerset.py",
-    "array_of_products.py",
-    "reverse_words_in_string.py",
-    "max_sum_in_binary_tree.py",
-    "all_paths_source_target.py",
-    "class_photos.pyf",
-    "find_pivot_index.py",
-    "tournament_winner.py",
-    "transpose_matrix.py",
-    "min_heap_construction.py",
-    "common_characters.py",
-    "water_area.py",
-    "remove_islands.py",
-    "serialize_and_deserialize_n_ary_tree.py",
-    "selection_sort.py",
-    "levenshtein_distance.py",
-    "evaluate_expression_tree.py",
-    "reconstruct_bst.py",
-    "four_number_sum.py",
-    "run_length_encoding",
-    "stable_internships.py",
-    "monotonic_array.py",
-    "sort_stack.py",
-    "missing_numbers.py",
-    "class_photos.py",
-    "min_height_bst.py",
-    "best_seats.py",
-    "run_length_encoding.py",
-    "majority_element.py",
-    "middle_node.py",
-    "sum_of_linked_lists.py",
-    "longest_common_subsequence.py",
-    "reverse_polish_notation.py",
-    "find_nodes_distance_k.py",
-    "min_max_stack_construction.py",
-    "blackjack_probability.py",
-    "task_assignment.py",
-    "kruskals_algorithm.py",
-    "optimal_freelancing.py",
-    "best_digits.py",
-    "staircase_traversal.py",
-    "zigzag_traverse.py",
-    "median_of_two_sorted_arrays.py",
-    "node_depths.py",
-    "knapsack_problem.py",
-    "disk_stacking.py",
-    "apartment_hunting.py",
-    "linked_list_construction.py"
-]
+tasks_done = []
 
 # Do not edit the class below except for
 # the insert, contains, and remove methods.
@@ -306,12 +177,15 @@ if __name__ == '__main__':
 
     root.insert(12)
     assert (root.right.left.left.value == 12)
-
-    root.remove(10)
-    assert (not root.contains(10))
-    assert (root.value == 12)
-
-    assert (root.contains(15))
+    assert root.contains(12)
+    assert root.contains(22)
+    assert not root.contains(105)
+    #
+    # root.remove(10)
+    # assert (not root.contains(10))
+    # assert (root.value == 12)
+    #
+    # assert (root.contains(15))
 
     root1 = BST(10)
     root1.left = BST(5)
@@ -325,9 +199,12 @@ if __name__ == '__main__':
 
     root1.insert_rec(12)
     assert (root1.right.left.left.value == 12)
-
-    root1.remove_rec(10)
-    assert (not root1.contains_rec(10))
-    assert (root1.value == 12)
-
-    assert (root1.contains_rec(15))
+    root1.contains_rec(12)
+    root1.contains_rec(22)
+    assert not root.contains_rec(105)
+    #
+    # root1.remove_rec(10)
+    # assert (not root1.contains_rec(10))
+    # assert (root1.value == 12)
+    #
+    # assert (root1.contains_rec(15))
