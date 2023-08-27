@@ -129,35 +129,22 @@ tasks = [
     'blackjack_probability.py'
 ]
 
-tasks_done = []
+tasks_done = [
+    'depth_first_search.py'
+]
 
-# Do not edit the class below except for
-# the insert, contains, and remove methods.
-# Feel free to add new properties and methods
-# to the class.
-class BST:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
 
-    def insert_rec(self, value):
-        pass
+    def add_child(self, name):
+        self.children.append(Node(name))
+        return self
 
-    def insert(self, value):
-        pass
+    def depth_first_search(self, arr):
 
-    def contains_rec(self, value):
-        return False
-
-    def contains(self, value):
-        return False
-
-    def remove_rec(self, value):
-        pass
-
-    def remove(self, value):
-        pass
+        return arr
 
 
 if __name__ == '__main__':
@@ -165,46 +152,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-
-    root.insert(12)
-    assert (root.right.left.left.value == 12)
-    assert root.contains(12)
-    assert root.contains(22)
-    assert not root.contains(105)
-    #
-    # root.remove(10)
-    # assert (not root.contains(10))
-    # assert (root.value == 12)
-    #
-    # assert (root.contains(15))
-
-    root1 = BST(10)
-    root1.left = BST(5)
-    root1.left.left = BST(2)
-    root1.left.left.left = BST(1)
-    root1.left.right = BST(5)
-    root1.right = BST(15)
-    root1.right.left = BST(13)
-    root1.right.left.right = BST(14)
-    root1.right.right = BST(22)
-
-    root1.insert_rec(12)
-    assert (root1.right.left.left.value == 12)
-    root1.contains_rec(12)
-    root1.contains_rec(22)
-    assert not root.contains_rec(105)
-    #
-    # root1.remove_rec(10)
-    # assert (not root1.contains_rec(10))
-    # assert (root1.value == 12)
-    #
-    # assert (root1.contains_rec(15))
+    graph = Node("A")
+    graph.add_child("B").add_child("C").add_child("D")
+    graph.children[0].add_child("E").add_child("F")
+    graph.children[2].add_child("G").add_child("H")
+    graph.children[0].children[1].add_child("I").add_child("J")
+    graph.children[2].children[0].add_child("K")
+    res = graph.depth_first_search([])
+    assert res == ["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
