@@ -130,21 +130,41 @@ tasks = [
 ]
 
 tasks_done = [
-    'depth_first_search.py'
+    'depth_first_search.py',
+    'min_heap_construction.py'
 ]
 
-class Node:
-    def __init__(self, name):
-        self.children = []
-        self.name = name
+class MinHeap:
+    def __init__(self, array):
+        # Do not edit the line below.
+        self.heap = self.buildHeap(array)
 
-    def add_child(self, name):
-        self.children.append(Node(name))
-        return self
+    # O(n) time | O(1) space
+    def buildHeap(self, array):
+        return array
 
-    def depth_first_search(self, arr):
+    def siftDown(self, curr_idx, end_idx, heap):
+        pass
 
-        return arr
+    def siftUp(self, idx, heap):
+        pass
+
+    def peek(self):
+        return -1
+
+    def remove(self):
+        return -1
+
+    def insert(self, value):
+        pass
+
+
+def isMinHeapPropertySatisfied(array):
+    for currentIdx in range(1, len(array)):
+        parentIdx = (currentIdx - 1) // 2
+        if array[parentIdx] > array[currentIdx]:
+            return False
+    return True
 
 
 if __name__ == '__main__':
@@ -152,11 +172,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    graph = Node("A")
-    graph.add_child("B").add_child("C").add_child("D")
-    graph.children[0].add_child("E").add_child("F")
-    graph.children[2].add_child("G").add_child("H")
-    graph.children[0].children[1].add_child("I").add_child("J")
-    graph.children[2].children[0].add_child("K")
-    res = graph.depth_first_search([])
-    assert res == ["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
+    minHeap = MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41])
+    minHeap.insert(76)
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == -5
+    assert minHeap.remove() == -5
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == 2
+    assert minHeap.remove() == 2
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == 6
+    minHeap.insert(87)
+    assert isMinHeapPropertySatisfied(minHeap.heap)
