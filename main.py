@@ -131,40 +131,13 @@ tasks = [
 
 tasks_done = [
     'depth_first_search.py',
-    'min_heap_construction.py'
+    'min_heap_construction.py',
+    'min_number_of_coins_for_change.py'
 ]
 
-class MinHeap:
-    def __init__(self, array):
-        # Do not edit the line below.
-        self.heap = self.buildHeap(array)
 
-    # O(n) time | O(1) space
-    def buildHeap(self, array):
-        return array
-
-    def siftDown(self, curr_idx, end_idx, heap):
-        pass
-
-    def siftUp(self, idx, heap):
-        pass
-
-    def peek(self):
-        return -1
-
-    def remove(self):
-        return -1
-
-    def insert(self, value):
-        pass
-
-
-def isMinHeapPropertySatisfied(array):
-    for currentIdx in range(1, len(array)):
-        parentIdx = (currentIdx - 1) // 2
-        if array[parentIdx] > array[currentIdx]:
-            return False
-    return True
+def min_number_of_coins_for_change(n, denoms):
+    pass
 
 
 if __name__ == '__main__':
@@ -172,15 +145,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    minHeap = MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41])
-    minHeap.insert(76)
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == -5
-    assert minHeap.remove() == -5
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == 2
-    assert minHeap.remove() == 2
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == 6
-    minHeap.insert(87)
-    assert isMinHeapPropertySatisfied(minHeap.heap)
+    print(min_number_of_coins_for_change(7, [1, 5, 10]))
+    assert min_number_of_coins_for_change(7, [1, 5, 10]) == 3
