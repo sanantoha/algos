@@ -132,11 +132,16 @@ tasks = [
 tasks_done = [
     'depth_first_search.py',
     'min_heap_construction.py',
-    'min_number_of_coins_for_change.py'
+    'min_number_of_coins_for_change.py',
+    'minimum_waiting_time.py'
 ]
 
 
-def min_number_of_coins_for_change(n, denoms):
+def minimum_waiting_time(arr):
+    pass
+
+
+def minimum_waiting_time1(arr):
     pass
 
 
@@ -145,5 +150,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(min_number_of_coins_for_change(7, [1, 5, 10]))
-    assert min_number_of_coins_for_change(7, [1, 5, 10]) == 3
+    print(minimum_waiting_time([3, 2, 1, 2, 6]))
+    print(minimum_waiting_time1([3, 2, 1, 2, 6]))
