@@ -133,16 +133,25 @@ tasks_done = [
     'depth_first_search.py',
     'min_heap_construction.py',
     'min_number_of_coins_for_change.py',
-    'minimum_waiting_time.py'
+    'minimum_waiting_time.py',
+    'suffix_trie_construction.py'
 ]
 
+# Do not edit the class below except for the
+# populateSuffixTrieFrom and contains methods.
+# Feel free to add new properties and methods
+# to the class.
+class SuffixTrie:
+    def __init__(self, string):
+        self.root = {}
+        self.endSymbol = "*"
+        self.populateSuffixTrieFrom(string)
 
-def minimum_waiting_time(arr):
-    pass
+    def populateSuffixTrieFrom(self, string):
+        pass
 
-
-def minimum_waiting_time1(arr):
-    pass
+    def contains(self, string):
+        pass
 
 
 if __name__ == '__main__':
@@ -150,5 +159,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(minimum_waiting_time([3, 2, 1, 2, 6]))
-    print(minimum_waiting_time1([3, 2, 1, 2, 6]))
+    trie = SuffixTrie("babc")
+    expected = {
+        "c": {"*": True},
+        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
+        "a": {"b": {"c": {"*": True}}},
+    }
+    assert trie.root == expected
+    assert trie.contains("abc")
