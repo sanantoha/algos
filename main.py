@@ -135,35 +135,12 @@ tasks_done = [
     'min_number_of_coins_for_change.py',
     'minimum_waiting_time.py',
     'suffix_trie_construction.py',
-    'max_sum_in_binary_tree.py'
+    'max_sum_in_binary_tree.py',
+    'selection_sort.py'
 ]
 
-class BinaryTree:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
 
-    def insert(self, values, i=0):
-        if i >= len(values):
-            return
-        queue = [self]
-        while len(queue) > 0:
-            current = queue.pop(0)
-            if current.left is None:
-                current.left = BinaryTree(values[i])
-                break
-            queue.append(current.left)
-            if current.right is None:
-                current.right = BinaryTree(values[i])
-                break
-            queue.append(current.right)
-        self.insert(values, i + 1)
-        return self
-
-
-
-def maxPathSum(root):
+def selection_sort(arr):
     pass
 
 
@@ -172,7 +149,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = BinaryTree(1).insert([2, 3, 4, 5, 6, 7])
-    actual = maxPathSum(test)
-    print(actual)
-    assert actual == 18
+    arr = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
+    print(selection_sort(arr))
