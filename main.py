@@ -136,11 +136,14 @@ tasks_done = [
     'minimum_waiting_time.py',
     'suffix_trie_construction.py',
     'max_sum_in_binary_tree.py',
-    'selection_sort.py'
+    'selection_sort.py',
+    'binary_tree_diameter.py'
 ]
 
+from tree.BinaryTree import BinaryTree
 
-def selection_sort(arr):
+
+def binary_tree_diameter(root):
     pass
 
 
@@ -149,5 +152,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arr = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    print(selection_sort(arr))
+    root = BinaryTree(1)
+    root.left = BinaryTree(3)
+    root.left.left = BinaryTree(7)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.left.left = BinaryTree(9)
+    root.left.right = BinaryTree(4)
+    root.left.right.right = BinaryTree(5)
+    root.left.right.right.right = BinaryTree(6)
+    root.right = BinaryTree(2)
+    expected = 6
+    actual = binary_tree_diameter(root)
+    print(actual)
+    assert actual == expected
