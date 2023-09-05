@@ -137,14 +137,27 @@ tasks_done = [
     'suffix_trie_construction.py',
     'max_sum_in_binary_tree.py',
     'selection_sort.py',
-    'binary_tree_diameter.py'
+    'binary_tree_diameter.py',
+    'smallest_difference.py'
 ]
 
-from tree.BinaryTree import BinaryTree
 
-
-def binary_tree_diameter(root):
+def smallest_difference(arr1, arr2):
     pass
+
+
+def helper(root):
+    if not root:
+        return (0, 0)
+
+    ld, lh = helper(root.left)
+    rd, rh = helper(root.right)
+
+    height = max(lh, rh) + 1
+
+    diameter = max(ld, rd, lh + rh)
+
+    return (diameter, height)
 
 
 if __name__ == '__main__':
@@ -152,16 +165,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(3)
-    root.left.left = BinaryTree(7)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.left.left = BinaryTree(9)
-    root.left.right = BinaryTree(4)
-    root.left.right.right = BinaryTree(5)
-    root.left.right.right.right = BinaryTree(6)
-    root.right = BinaryTree(2)
-    expected = 6
-    actual = binary_tree_diameter(root)
-    print(actual)
-    assert actual == expected
+    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
