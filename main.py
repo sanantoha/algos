@@ -146,20 +146,6 @@ def smallest_difference(arr1, arr2):
     pass
 
 
-def helper(root):
-    if not root:
-        return (0, 0)
-
-    ld, lh = helper(root.left)
-    rd, rh = helper(root.right)
-
-    height = max(lh, rh) + 1
-
-    diameter = max(ld, rd, lh + rh)
-
-    return (diameter, height)
-
-
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
