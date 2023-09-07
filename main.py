@@ -138,12 +138,12 @@ tasks_done = [
     'max_sum_in_binary_tree.py',
     'selection_sort.py',
     'binary_tree_diameter.py',
-    'smallest_difference.py'
+    'smallest_difference.py',
+    'river_sizes.py'
 ]
 
-
-def smallest_difference(arr1, arr2):
-    pass
+def river_sizes(matrix):
+    return []
 
 
 if __name__ == '__main__':
@@ -151,4 +151,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
+    test_input = [
+        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
+        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
+        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
+        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
+        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
+    ]
+
+    expected = [1, 1, 2, 2, 5, 21]
+    # expected = [1, 2, 2, 2, 5]
+
+    actual = sorted(river_sizes(test_input))
+    print(actual)
+    assert actual == expected
