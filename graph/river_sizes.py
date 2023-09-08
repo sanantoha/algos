@@ -11,19 +11,19 @@ def river_sizes(matrix):
     for row in range(len(matrix)):
         for col in range(len(matrix[row])):
             if not visited[row][col] and matrix[row][col] == 1:
-                res.append(dfs(matrix, visited, row, col, 0))
+                res.append(dfs(matrix, visited, row, col))
 
     return res
 
 
-def dfs(matrix, visited, row, col, count):
+def dfs(matrix, visited, row, col):
     visited[row][col] = True
-    count += 1
+    count = 1
     next_steps = get_next_steps(matrix, row, col)
 
     for (next_row, next_col) in next_steps:
         if not visited[next_row][next_col] and matrix[next_row][next_col] == 1:
-            count = dfs(matrix, visited, next_row, next_col, count)
+            count += dfs(matrix, visited, next_row, next_col)
 
     return count
 

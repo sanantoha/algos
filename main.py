@@ -139,11 +139,21 @@ tasks_done = [
     'selection_sort.py',
     'binary_tree_diameter.py',
     'smallest_difference.py',
-    'river_sizes.py'
+    'river_sizes.py',
+    'two_number_sum.py'
 ]
 
-def river_sizes(matrix):
-    return []
+
+def two_number_sum(arr, target):
+    pass
+
+
+def two_number_sum1(arr, target):
+    pass
+
+
+def two_number_sum2(arr, target):
+    pass
 
 
 if __name__ == '__main__':
@@ -151,17 +161,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test_input = [
-        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
-        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
-        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
-        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
-        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
-    ]
-
-    expected = [1, 1, 2, 2, 5, 21]
-    # expected = [1, 2, 2, 2, 5]
-
-    actual = sorted(river_sizes(test_input))
-    print(actual)
-    assert actual == expected
+    print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
