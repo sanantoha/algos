@@ -140,19 +140,16 @@ tasks_done = [
     'binary_tree_diameter.py',
     'smallest_difference.py',
     'river_sizes.py',
-    'two_number_sum.py'
+    'two_number_sum.py',
+    'validate_subsequence.py'
 ]
 
 
-def two_number_sum(arr, target):
+def is_valid_subsequence(arr, seq):
     pass
 
 
-def two_number_sum1(arr, target):
-    pass
-
-
-def two_number_sum2(arr, target):
+def is_valid_subsequence1(arr, seq):
     pass
 
 
@@ -161,6 +158,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    array = [5, 1, 22, 25, 6, -1, 8, 10]
+    sequence = [1, 6, -1, 10]
+    print(is_valid_subsequence(array, sequence))
+    print(is_valid_subsequence1(array, sequence))
