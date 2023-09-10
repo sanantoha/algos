@@ -141,15 +141,14 @@ tasks_done = [
     'smallest_difference.py',
     'river_sizes.py',
     'two_number_sum.py',
-    'validate_subsequence.py'
+    'validate_subsequence.py',
+    'find_kth_largest_value_in_bst.py'
 ]
 
-
-def is_valid_subsequence(arr, seq):
-    pass
+from tree.BST import BST
 
 
-def is_valid_subsequence1(arr, seq):
+def find_kth_largest_value_in_bst(root, k):
     pass
 
 
@@ -158,7 +157,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [5, 1, 22, 25, 6, -1, 8, 10]
-    sequence = [1, 6, -1, 10]
-    print(is_valid_subsequence(array, sequence))
-    print(is_valid_subsequence1(array, sequence))
+    root = BST(15)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.left.right = BST(3)
+    root.left.right = BST(5)
+    root.right = BST(20)
+    root.right.left = BST(17)
+    root.right.right = BST(22)
+    k = 3
+    expected = 17
+    actual = find_kth_largest_value_in_bst(root, k)
+    print(actual)
+    assert actual == expected
