@@ -143,15 +143,16 @@ tasks_done = [
     'two_number_sum.py',
     'validate_subsequence.py',
     'find_kth_largest_value_in_bst.py',
-    'kadanes_distance.py'
+    'kadanes_distance.py',
+    'all_paths_source_target.py'
 ]
 
 
-def kadanes_distance(arr):
+def allPathsSourceTarget(graph):
     pass
 
 
-def kadanes_distance1(arr):
+def allPathsSourceTarget1(graph):
     pass
 
 
@@ -160,5 +161,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
-    assert kadanes_distance1([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    print(allPathsSourceTarget([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
+    print(allPathsSourceTarget(
+        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget([[2], [], [1]]))  # [[0, 2]]
+
+    print(allPathsSourceTarget1([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
+    print(allPathsSourceTarget1(
+        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[2], [], [1]]))  # [[0, 2]]
