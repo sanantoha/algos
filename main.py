@@ -144,11 +144,19 @@ tasks_done = [
     'validate_subsequence.py',
     'find_kth_largest_value_in_bst.py',
     'kadanes_distance.py',
-    'number_of_ways_to_make_change.py'
+    'number_of_ways_to_make_change.py',
+    'node_depths.py'
 ]
 
 
-def number_of_ways_to_make_change(n, denoms):
+from tree.BinaryTree import BinaryTree
+
+
+def node_depths(root):
+    pass
+
+
+def node_depths1(root):
     pass
 
 
@@ -157,5 +165,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(number_of_ways_to_make_change(6, [1, 5]))
-    assert number_of_ways_to_make_change(6, [1, 5]) == 2
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.right = BinaryTree(9)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    root.right.left = BinaryTree(6)
+    root.right.right = BinaryTree(7)
+    print(node_depths(root) == 16)
+    print(node_depths1(root) == 16)
