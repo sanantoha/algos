@@ -147,11 +147,12 @@ tasks_done = [
     'number_of_ways_to_make_change.py',
     'node_depths.py',
     'breadth_first_search.py',
-    'minimum_passes_of_matrix.py'
+    'minimum_passes_of_matrix.py',
+    'unique_pathsIII.py'
 ]
 
 
-def minimum_passes_of_matrix(matrix):
+def uniquePathsIII(grid):
     pass
 
 
@@ -160,12 +161,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [0, -1, -3, 2, 0],
-        [1, -2, -5, -1, -3],
-        [3, 0, 0, -4, -1],
-    ]
-    expected = 3
-    actual = minimum_passes_of_matrix(input)
+    grid = [[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2, -1]]
+    actual = uniquePathsIII(grid)
     print(actual)
-    assert actual == expected
+    assert actual == 2
