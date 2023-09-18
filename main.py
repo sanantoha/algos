@@ -148,11 +148,12 @@ tasks_done = [
     'node_depths.py',
     'breadth_first_search.py',
     'minimum_passes_of_matrix.py',
-    'unique_pathsIII.py'
+    'unique_pathsIII.py',
+    'first_non_repeating_character.py'
 ]
 
 
-def uniquePathsIII(grid):
+def first_non_repeating_character(str):
     pass
 
 
@@ -161,7 +162,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    grid = [[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2, -1]]
-    actual = uniquePathsIII(grid)
-    print(actual)
-    assert actual == 2
+    print(first_non_repeating_character("abcdcaf"))
