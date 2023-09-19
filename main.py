@@ -149,11 +149,12 @@ tasks_done = [
     'breadth_first_search.py',
     'minimum_passes_of_matrix.py',
     'unique_pathsIII.py',
-    'first_non_repeating_character.py'
+    'first_non_repeating_character.py',
+    'reverse_polish_notation.py'
 ]
 
 
-def first_non_repeating_character(str):
+def reversePolishNotation(tokens):
     pass
 
 
@@ -162,4 +163,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(first_non_repeating_character("abcdcaf"))
+    input = ["3", "2", "+", "7", "*"]
+    expected = 35
+    actual = reversePolishNotation(input)
+    print(actual)
+    assert actual == expected
