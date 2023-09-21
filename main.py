@@ -150,11 +150,12 @@ tasks_done = [
     'minimum_passes_of_matrix.py',
     'unique_pathsIII.py',
     'first_non_repeating_character.py',
-    'reverse_polish_notation.py'
+    'reverse_polish_notation.py',
+    'minimum_characters_for_words.py'
 ]
 
 
-def reversePolishNotation(tokens):
+def minimumCharactersForWords(words):
     pass
 
 
@@ -163,8 +164,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["3", "2", "+", "7", "*"]
-    expected = 35
-    actual = reversePolishNotation(input)
+    input = ["this", "that", "did", "deed", "them!", "a"]
+    expected = ["t", "t", "h", "i", "s", "a", "d", "d", "e", "e", "m", "!"]
+    actual = minimumCharactersForWords(input)
     print(actual)
     assert actual == expected
