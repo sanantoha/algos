@@ -151,11 +151,12 @@ tasks_done = [
     'unique_pathsIII.py',
     'first_non_repeating_character.py',
     'reverse_polish_notation.py',
-    'minimum_characters_for_words.py'
+    'minimum_characters_for_words.py',
+    'task_assignment.py'
 ]
 
 
-def minimumCharactersForWords(words):
+def task_assignment(k, tasks):
     pass
 
 
@@ -164,8 +165,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["this", "that", "did", "deed", "them!", "a"]
-    expected = ["t", "t", "h", "i", "s", "a", "d", "d", "e", "e", "m", "!"]
-    actual = minimumCharactersForWords(input)
+    k = 3
+    tasks = [1, 3, 5, 3, 1, 4]
+    expected = [[4, 2], [0, 5], [3, 1]]
+    actual = task_assignment(k, tasks)
     print(actual)
     assert actual == expected
