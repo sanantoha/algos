@@ -152,11 +152,16 @@ tasks_done = [
     'first_non_repeating_character.py',
     'reverse_polish_notation.py',
     'minimum_characters_for_words.py',
-    'task_assignment.py'
+    'task_assignment.py',
+    'first_duplicate_value.py'
 ]
 
 
-def task_assignment(k, tasks):
+def first_duplicate_value0(arr):
+    pass
+
+
+def first_duplicate_value(arr):
     pass
 
 
@@ -165,9 +170,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    k = 3
-    tasks = [1, 3, 5, 3, 1, 4]
-    expected = [[4, 2], [0, 5], [3, 1]]
-    actual = task_assignment(k, tasks)
-    print(actual)
-    assert actual == expected
+    array = [2, 1, 5, 2, 3, 3, 4]
+    print(first_duplicate_value0(array))
+    print(first_duplicate_value(array))
