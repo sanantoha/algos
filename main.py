@@ -155,11 +155,24 @@ tasks_done = [
     'task_assignment.py',
     'first_duplicate_value.py',
     'merge_binary_trees.py',
-    'insertion_sort.py'
+    'insertion_sort.py',
+    'validate_tree_nodes.py'
 ]
 
 
-def insertion_sort(arr):
+# This is an input class. Do not edit.
+class BST:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+
+def validateThreeNodes(nodeOne, nodeTwo, nodeThree):
+    pass
+
+
+def validateThreeNodes1(nodeOne, nodeTwo, nodeThree):
     pass
 
 
@@ -168,6 +181,24 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    # xs = [5,2,4,1]
-    print(insertion_sort(xs))
+    root = BST(5)
+    root.left = BST(2)
+    root.right = BST(7)
+    root.left.left = BST(1)
+    root.left.right = BST(4)
+    root.right.left = BST(6)
+    root.right.right = BST(8)
+    root.left.left.left = BST(0)
+    root.left.right.left = BST(3)
+
+    nodeOne = root
+    nodeTwo = root.left
+    nodeThree = root.left.right.left
+    expected = True
+    actual = validateThreeNodes(nodeOne, nodeTwo, nodeThree)
+    print(actual)
+    assert actual == expected
+
+    actual = validateThreeNodes1(nodeOne, nodeTwo, nodeThree)
+    print(actual)
+    assert actual == expected
