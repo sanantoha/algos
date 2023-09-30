@@ -156,24 +156,17 @@ tasks_done = [
     'first_duplicate_value.py',
     'merge_binary_trees.py',
     'insertion_sort.py',
-    'validate_tree_nodes.py'
+    'validate_tree_nodes.py',
+    'generate_document.py'
 ]
 
 
-# This is an input class. Do not edit.
-class BST:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
+def generate_document(characters, document):
+    return False
 
 
-def validateThreeNodes(nodeOne, nodeTwo, nodeThree):
-    pass
-
-
-def validateThreeNodes1(nodeOne, nodeTwo, nodeThree):
-    pass
+def generate_document1(characters, document):
+    return False
 
 
 if __name__ == '__main__':
@@ -181,24 +174,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(5)
-    root.left = BST(2)
-    root.right = BST(7)
-    root.left.left = BST(1)
-    root.left.right = BST(4)
-    root.right.left = BST(6)
-    root.right.right = BST(8)
-    root.left.left.left = BST(0)
-    root.left.right.left = BST(3)
-
-    nodeOne = root
-    nodeTwo = root.left
-    nodeThree = root.left.right.left
-    expected = True
-    actual = validateThreeNodes(nodeOne, nodeTwo, nodeThree)
-    print(actual)
-    assert actual == expected
-
-    actual = validateThreeNodes1(nodeOne, nodeTwo, nodeThree)
-    print(actual)
-    assert actual == expected
+    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
