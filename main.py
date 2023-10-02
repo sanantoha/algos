@@ -157,16 +157,17 @@ tasks_done = [
     'merge_binary_trees.py',
     'insertion_sort.py',
     'validate_tree_nodes.py',
-    'generate_document.py'
+    'generate_document.py',
+    'permutations.py'
 ]
 
 
-def generate_document(characters, document):
-    return False
+def getPermutations(arr):
+    pass
 
 
-def generate_document1(characters, document):
-    return False
+def getPermutations1(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -174,5 +175,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
-    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    perms = getPermutations([1, 2, 3])
+    print(perms)
+    assert len(perms) == 6
+    assert [1, 2, 3] in perms
+    assert [1, 3, 2] in perms
+    assert [2, 1, 3] in perms
+    assert [2, 3, 1] in perms
+    assert [3, 1, 2] in perms
+    assert [3, 2, 1] in perms
+
+    perms1 = getPermutations1([1, 2, 3])
+    print(perms1)
+    assert len(perms1) == 6
+    assert [1, 2, 3] in perms1
+    assert [1, 3, 2] in perms1
+    assert [2, 1, 3] in perms1
+    assert [2, 3, 1] in perms1
+    assert [3, 1, 2] in perms1
+    assert [3, 2, 1] in perms1
