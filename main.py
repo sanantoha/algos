@@ -158,16 +158,47 @@ tasks_done = [
     'insertion_sort.py',
     'validate_tree_nodes.py',
     'generate_document.py',
-    'permutations.py'
+    'permutations.py',
+    'remove_kth_node_from_end.py'
 ]
 
+# This is an input class. Do not edit.
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
-def getPermutations(arr):
+class StartLinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+linkedListClass = StartLinkedList
+
+class LinkedList(linkedListClass):
+    def addMany(self, values):
+        current = self
+        while current.next is not None:
+            current = current.next
+        for value in values:
+            current.next = LinkedList(value)
+            current = current.next
+        return self
+
+    def getNodesInArray(self):
+        nodes = []
+        current = self
+        while current is not None:
+            nodes.append(current.value)
+            current = current.next
+        return nodes
+
+
+
+def remove_kth_node_from_end(head, k):
     pass
 
-
-def getPermutations1(arr):
-    pass
 
 
 if __name__ == '__main__':
@@ -175,22 +206,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    perms = getPermutations([1, 2, 3])
-    print(perms)
-    assert len(perms) == 6
-    assert [1, 2, 3] in perms
-    assert [1, 3, 2] in perms
-    assert [2, 1, 3] in perms
-    assert [2, 3, 1] in perms
-    assert [3, 1, 2] in perms
-    assert [3, 2, 1] in perms
-
-    perms1 = getPermutations1([1, 2, 3])
-    print(perms1)
-    assert len(perms1) == 6
-    assert [1, 2, 3] in perms1
-    assert [1, 3, 2] in perms1
-    assert [2, 1, 3] in perms1
-    assert [2, 3, 1] in perms1
-    assert [3, 1, 2] in perms1
-    assert [3, 2, 1] in perms1
+    test = LinkedList(0).addMany([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    expected = LinkedList(0).addMany([1, 2, 3, 4, 5, 7, 8, 9])
+    remove_kth_node_from_end(test, 4)
+    print(test.getNodesInArray())
+    assert test.getNodesInArray() == expected.getNodesInArray()
