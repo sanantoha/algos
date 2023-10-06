@@ -159,46 +159,17 @@ tasks_done = [
     'validate_tree_nodes.py',
     'generate_document.py',
     'permutations.py',
-    'remove_kth_node_from_end.py'
+    'remove_kth_node_from_end.py',
+    'valid_starting_city.py'
 ]
 
-# This is an input class. Do not edit.
-class LinkedList:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
 
-class StartLinkedList:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
-
-
-linkedListClass = StartLinkedList
-
-class LinkedList(linkedListClass):
-    def addMany(self, values):
-        current = self
-        while current.next is not None:
-            current = current.next
-        for value in values:
-            current.next = LinkedList(value)
-            current = current.next
-        return self
-
-    def getNodesInArray(self):
-        nodes = []
-        current = self
-        while current is not None:
-            nodes.append(current.value)
-            current = current.next
-        return nodes
-
-
-
-def remove_kth_node_from_end(head, k):
+def valid_starting_city(distances, fuel, mpg):
     pass
 
+
+def valid_starting_city1(distances, fuel, mpg):
+    pass
 
 
 if __name__ == '__main__':
@@ -206,8 +177,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = LinkedList(0).addMany([1, 2, 3, 4, 5, 6, 7, 8, 9])
-    expected = LinkedList(0).addMany([1, 2, 3, 4, 5, 7, 8, 9])
-    remove_kth_node_from_end(test, 4)
-    print(test.getNodesInArray())
-    assert test.getNodesInArray() == expected.getNodesInArray()
+    distances = [5, 25, 15, 10, 15]
+    fuel = [1, 2, 1, 0, 3]
+    mpg = 10
+    expected = 4
+    actual = valid_starting_city(distances, fuel, mpg)
+    print(actual)
+    assert actual == expected
+
+    actual1 = valid_starting_city1(distances, fuel, mpg)
+    print(actual1)
+    assert actual1 == expected
