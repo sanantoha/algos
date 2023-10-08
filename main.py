@@ -160,15 +160,16 @@ tasks_done = [
     'generate_document.py',
     'permutations.py',
     'remove_kth_node_from_end.py',
-    'valid_starting_city.py'
+    'valid_starting_city.py',
+    'sort_stack.py'
 ]
 
 
-def valid_starting_city(distances, fuel, mpg):
+def sortStack(stack):
     pass
 
 
-def valid_starting_city1(distances, fuel, mpg):
+def sortStack1(stack):
     pass
 
 
@@ -177,14 +178,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    distances = [5, 25, 15, 10, 15]
-    fuel = [1, 2, 1, 0, 3]
-    mpg = 10
-    expected = 4
-    actual = valid_starting_city(distances, fuel, mpg)
+    input = [-5, 2, -2, 4, 3, 1]
+    expected = [-5, -2, 1, 2, 3, 4]
+
+    actual = sortStack(input)
     print(actual)
     assert actual == expected
 
-    actual1 = valid_starting_city1(distances, fuel, mpg)
-    print(actual1)
-    assert actual1 == expected
+    actual = sortStack1(input)
+    print(actual)
+    assert actual == expected
