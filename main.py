@@ -161,15 +161,14 @@ tasks_done = [
     'permutations.py',
     'remove_kth_node_from_end.py',
     'valid_starting_city.py',
-    'sort_stack.py'
+    'sort_stack.py',
+    'middle_node.py'
 ]
 
-
-def sortStack(stack):
-    pass
+from list.LinkedList import LinkedList
 
 
-def sortStack1(stack):
+def middleNode(lst):
     pass
 
 
@@ -178,13 +177,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [-5, 2, -2, 4, 3, 1]
-    expected = [-5, -2, 1, 2, 3, 4]
+    list = LinkedList(1)
+    list.next = LinkedList(2)
+    list.next.next = LinkedList(3)
+    list.next.next.next = LinkedList(4)
 
-    actual = sortStack(input)
-    print(actual)
-    assert actual == expected
-
-    actual = sortStack1(input)
-    print(actual)
-    assert actual == expected
+    res = middleNode(list)
+    print(res)
+    assert res == list.next.next
