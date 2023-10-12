@@ -165,10 +165,13 @@ tasks_done = [
     'middle_node.py'
 ]
 
-from list.LinkedList import LinkedList
+from tree.BinaryTree import BinaryTree
+
+def symmetricalTreeRec(tree):
+    pass
 
 
-def middleNode(lst):
+def symmetricalTree(tree):
     pass
 
 
@@ -177,11 +180,20 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    list = LinkedList(1)
-    list.next = LinkedList(2)
-    list.next.next = LinkedList(3)
-    list.next.next.next = LinkedList(4)
+    tree = BinaryTree(10)
+    tree.left = BinaryTree(5)
+    tree.right = BinaryTree(5)
+    tree.left.left = BinaryTree(7)
+    tree.left.right = BinaryTree(9)
+    tree.right.left = BinaryTree(9)
+    tree.right.right = BinaryTree(7)
 
-    res = middleNode(list)
-    print(res)
-    assert res == list.next.next
+    expected = True
+
+    actual = symmetricalTreeRec(tree)
+    print(actual)
+    assert actual == expected
+
+    actual = symmetricalTree(tree)
+    print(actual)
+    assert actual == expected
