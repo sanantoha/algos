@@ -162,16 +162,12 @@ tasks_done = [
     'remove_kth_node_from_end.py',
     'valid_starting_city.py',
     'sort_stack.py',
-    'middle_node.py'
+    'middle_node.py',
+    'monotonic_array.py'
 ]
 
-from tree.BinaryTree import BinaryTree
 
-def symmetricalTreeRec(tree):
-    pass
-
-
-def symmetricalTree(tree):
+def monotonic_array(arr):
     pass
 
 
@@ -180,20 +176,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(10)
-    tree.left = BinaryTree(5)
-    tree.right = BinaryTree(5)
-    tree.left.left = BinaryTree(7)
-    tree.left.right = BinaryTree(9)
-    tree.right.left = BinaryTree(9)
-    tree.right.right = BinaryTree(7)
-
-    expected = True
-
-    actual = symmetricalTreeRec(tree)
-    print(actual)
-    assert actual == expected
-
-    actual = symmetricalTree(tree)
-    print(actual)
-    assert actual == expected
+    print(monotonic_array([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
