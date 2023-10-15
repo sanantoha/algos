@@ -166,7 +166,7 @@ tasks_done = [
     'monotonic_array.py'
 ]
 
-from tree import BST
+from tree.BST import BST
 
 
 def get_dfs_order(node, values):
