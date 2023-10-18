@@ -163,11 +163,12 @@ tasks_done = [
     'valid_starting_city.py',
     'sort_stack.py',
     'middle_node.py',
-    'monotonic_array.py'
+    'monotonic_array.py',
+    'find_pivot_index.py'
 ]
 
 
-def bestSeat(arr):
+def pivotIndex(arr):
     pass
 
 
@@ -176,23 +177,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
-    assert actual == 4
-
-    actual = bestSeat([1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 1, 1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
+    actual = pivotIndex([1, 7, 3, 6, 5, 6])
+    print(actual)
     assert actual == 3
+    assert pivotIndex([1, 2, 3]) == -1
+    assert pivotIndex([2, 1, -1]) == 0
