@@ -168,7 +168,7 @@ tasks_done = [
 ]
 
 
-def pivotIndex(arr):
+def product_sum(arr):
     pass
 
 
@@ -177,8 +177,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = pivotIndex([1, 7, 3, 6, 5, 6])
-    print(actual)
-    assert actual == 3
-    assert pivotIndex([1, 2, 3]) == -1
-    assert pivotIndex([2, 1, -1]) == 0
+    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
