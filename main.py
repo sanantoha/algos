@@ -164,11 +164,12 @@ tasks_done = [
     'sort_stack.py',
     'middle_node.py',
     'monotonic_array.py',
-    'find_pivot_index.py'
+    'find_pivot_index.py',
+    'longest_palindromic_substring.py'
 ]
 
 
-def product_sum(arr):
+def longestPalindromicSubstring(str):
     pass
 
 
@@ -177,4 +178,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
+    actual = longestPalindromicSubstring("abaxyzzyxf")
+    print(actual)
+    assert actual == "xyzzyx"
