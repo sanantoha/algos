@@ -4,15 +4,14 @@ def longestPalindromicSubstring(string):
     if string is None or len(string) == 0:
         return ""
 
-    currLongest = (0, 0)
+    longest = (0, 0)
 
     for i in range(len(string)):
         fst = getLongestPalindrom(string, i, i)
         snd = getLongestPalindrom(string, i, i + 1)
-        longest = max(fst, snd, key=lambda x: x[1] - x[0])
-        currLongest = max(currLongest, longest, key=lambda x: x[1] - x[0])
+        longest = max(longest, fst, snd, key=lambda x: x[1] - x[0])
 
-    return string[currLongest[0]: currLongest[1]]
+    return string[longest[0]: longest[1]]
 
 
 def getLongestPalindrom(str, l, r):
