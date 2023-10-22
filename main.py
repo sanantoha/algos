@@ -166,31 +166,16 @@ tasks_done = [
     'monotonic_array.py',
     'find_pivot_index.py',
     'longest_palindromic_substring.py',
-    'get_youngest_common_ancestor.py'
+    'get_youngest_common_ancestor.py',
+    'three_number_sort.py'
 ]
 
 
-# This is an input class. Do not edit.
-class AncestralTree:
-    def __init__(self, name):
-        self.name = name
-        self.ancestor = None
+def threeNumberSort(arr, order):
+    pass
 
 
-class AncestralTree(AncestralTree):
-    def addDescendants(self, *descendants):
-        for descendant in descendants:
-            descendant.ancestor = self
-
-
-def new_trees():
-    ancestralTrees = {}
-    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-        ancestralTrees[letter] = AncestralTree(letter)
-    return ancestralTrees
-
-
-def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
+def threeNumberSort1(arr, order):
     pass
 
 
@@ -199,11 +184,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    trees = new_trees()
-    trees["A"].addDescendants(trees["B"], trees["C"])
-    trees["B"].addDescendants(trees["D"], trees["E"])
-    trees["D"].addDescendants(trees["H"], trees["I"])
-    trees["C"].addDescendants(trees["F"], trees["G"])
+    array = [1, 0, 0, -1, -1, 0, 1, 1]
+    order = [0, 1, -1]
+    expected = [0, 0, 0, 1, 1, 1, -1, -1]
 
-    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
-    assert yca == trees["B"]
+    actual = threeNumberSort(array, order)
+    print(actual)
+    assert actual == expected
+
+    actual = threeNumberSort1(array, order)
+    print(actual)
+    assert actual == expected
