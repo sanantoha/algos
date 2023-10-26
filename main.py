@@ -126,7 +126,8 @@ tasks = [
     'majority_element.py',
     'optimal_freelancing.py',
     'median_of_two_sorted_arrays.py',
-    'blackjack_probability.py'
+    'blackjack_probability.py',
+    'number_of_islands.py'
 ]
 
 tasks_done = [
