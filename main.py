@@ -171,7 +171,8 @@ tasks_done = [
     'blackjack_probability.py'
 ]
 
-def blackjackProbability(target, staringHand):
+
+def bestDigits(number, numDigits):
     pass
 
 
@@ -180,30 +181,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = blackjackProbability(21, 15)
-    print(actual)
-    assert actual == 0.45
+    number = "462839"
+    numDigits = 2
 
-    actual = blackjackProbability(21, 21)
+    actual = bestDigits(number, numDigits)
     print(actual)
-    assert actual == 0
+    assert actual == "6839"
 
-    actual = blackjackProbability(21, 20)
+    actual = bestDigits("648239", numDigits)
     print(actual)
-    assert actual == 0
+    assert actual == "8239"
 
-    actual = blackjackProbability(21, 17)
+    actual = bestDigits("988762", numDigits)
     print(actual)
-    assert actual == 0
-
-    actual = blackjackProbability(21, 12)
-    print(actual)
-    assert actual == 0.268
-
-    actual = blackjackProbability(21, 5)
-    print(actual)
-    assert actual == 0.295
-
-    actual = blackjackProbability(30, 25)
-    print(actual)
-    assert actual == 0.5
+    assert actual == "9887"
