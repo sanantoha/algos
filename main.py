@@ -170,7 +170,8 @@ tasks_done = [
     'longest_palindromic_substring.py',
     'get_youngest_common_ancestor.py',
     'three_number_sort.py',
-    'blackjack_probability.py'
+    'blackjack_probability.py',
+    'best_digits.py'
 ]
 
 
