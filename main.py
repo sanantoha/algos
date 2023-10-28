@@ -175,7 +175,7 @@ tasks_done = [
 ]
 
 
-def bestDigits(number, numDigits):
+def subarraySort(arr):
     pass
 
 
@@ -184,17 +184,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    number = "462839"
-    numDigits = 2
-
-    actual = bestDigits(number, numDigits)
+    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
     print(actual)
-    assert actual == "6839"
+    assert actual == [3, 9]
 
-    actual = bestDigits("648239", numDigits)
+    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
     print(actual)
-    assert actual == "8239"
-
-    actual = bestDigits("988762", numDigits)
-    print(actual)
-    assert actual == "9887"
+    assert actual == [4, 9]
