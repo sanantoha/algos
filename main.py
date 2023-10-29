@@ -171,11 +171,13 @@ tasks_done = [
     'get_youngest_common_ancestor.py',
     'three_number_sort.py',
     'blackjack_probability.py',
-    'best_digits.py'
+    'best_digits.py',
+    'subarray_sort.py',
+    'non_constructible_changes.py'
 ]
 
 
-def subarraySort(arr):
+def non_constructible_changes(coins):
     pass
 
 
@@ -184,10 +186,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
-    print(actual)
-    assert actual == [3, 9]
-
-    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
-    print(actual)
-    assert actual == [4, 9]
+    coins = [5, 7, 1, 1, 2, 3, 22]
+    print(non_constructible_changes(coins))
