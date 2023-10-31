@@ -173,11 +173,12 @@ tasks_done = [
     'blackjack_probability.py',
     'best_digits.py',
     'subarray_sort.py',
-    'non_constructible_changes.py'
+    'non_constructible_changes.py',
+    'semordinal.py'
 ]
 
 
-def non_constructible_changes(coins):
+def semordnilap(words):
     pass
 
 
@@ -186,5 +187,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    coins = [5, 7, 1, 1, 2, 3, 22]
-    print(non_constructible_changes(coins))
+    input = ["desserts", "stressed", "hello"]
+    expected = [["desserts", "stressed"]]
+    actual = semordnilap(input)
+    print(actual)  # [['desserts', 'stressed']]
