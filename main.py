@@ -174,11 +174,21 @@ tasks_done = [
     'best_digits.py',
     'subarray_sort.py',
     'non_constructible_changes.py',
-    'semordinal.py'
+    'semordinal.py',
+    'find_successor.py'
 ]
 
 
-def semordnilap(words):
+# This is an input class. Do not edit.
+class BinaryTree:
+    def __init__(self, value, left=None, right=None, parent=None):
+        self.value = value
+        self.left = left
+        self.right = right
+        self.parent = parent
+
+
+def find_successor(tree, node):
     pass
 
 
@@ -187,7 +197,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["desserts", "stressed", "hello"]
-    expected = [["desserts", "stressed"]]
-    actual = semordnilap(input)
-    print(actual)  # [['desserts', 'stressed']]
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.parent = root
+    root.right = BinaryTree(3)
+    root.right.parent = root
+    root.left.left = BinaryTree(4)
+    root.left.left.parent = root.left
+    root.left.right = BinaryTree(5)
+    root.left.right.parent = root.left
+    root.left.left.left = BinaryTree(6)
+    root.left.left.left.parent = root.left.left
+    node = root.left.right
+    expected = root
+    actual = find_successor(root, node)
+    print(actual)
+    assert actual == expected
