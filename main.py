@@ -176,11 +176,12 @@ tasks_done = [
     'non_constructible_changes.py',
     'semordinal.py',
     'find_successor.py',
-    'single_cycle_check.py'
+    'single_cycle_check.py',
+    'caesar_cipher_encryptor.py'
 ]
 
 
-def single_cycle_check(array):
+def caesar_cipher_encryptor(str, key):
     pass
 
 
@@ -189,6 +190,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [2, 3, 1, -4, -4, 2]
-    print(single_cycle_check(array))
-    assert single_cycle_check(array)
+    print(caesar_cipher_encryptor("xyz", 2) == "zab")
+    print(caesar_cipher_encryptor("abc", 52) == "abc")
