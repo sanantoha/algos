@@ -177,11 +177,12 @@ tasks_done = [
     'semordinal.py',
     'find_successor.py',
     'single_cycle_check.py',
-    'caesar_cipher_encryptor.py'
+    'caesar_cipher_encryptor.py',
+    'one_edit.py'
 ]
 
 
-def caesar_cipher_encryptor(str, key):
+def oneEdit(s1, s2):
     pass
 
 
@@ -190,5 +191,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(caesar_cipher_encryptor("xyz", 2) == "zab")
-    print(caesar_cipher_encryptor("abc", 52) == "abc")
+    stringOne = "hello"
+    stringTwo = "helo"
+    expected = True
+    actual = oneEdit(stringOne, stringTwo)
+    print(actual)
+    assert actual == expected
