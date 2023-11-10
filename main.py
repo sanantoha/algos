@@ -178,11 +178,16 @@ tasks_done = [
     'find_successor.py',
     'single_cycle_check.py',
     'caesar_cipher_encryptor.py',
-    'one_edit.py'
+    'one_edit.py',
+    'lagest_island.py'
 ]
 
 
-def oneEdit(s1, s2):
+def largestIsland(matrix):
+    pass
+
+
+def largestIsland1(matrix):
     pass
 
 
@@ -191,9 +196,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stringOne = "hello"
-    stringTwo = "helo"
-    expected = True
-    actual = oneEdit(stringOne, stringTwo)
+    matrix = [
+        [1, 0, 1, 0, 0],
+        [0, 0, 1, 1, 0],
+        [0, 1, 1, 1, 1],
+        [1, 0, 1, 0, 0]
+    ]
+    expected = 8
+
+    actual = largestIsland(matrix)
+    print(actual)
+    assert actual == expected
+
+    actual = largestIsland1(matrix)
     print(actual)
     assert actual == expected
