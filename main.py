@@ -179,16 +179,23 @@ tasks_done = [
     'single_cycle_check.py',
     'caesar_cipher_encryptor.py',
     'one_edit.py',
-    'lagest_island.py'
+    'lagest_island.py',
+    'union_find.py'
 ]
 
 
-def largestIsland(matrix):
-    pass
+class UnionFind:
+    def __init__(self):
+        pass
 
+    def createSet(self, value):
+        pass
 
-def largestIsland1(matrix):
-    pass
+    def find(self, value):
+        pass
+
+    def union(self, valueOne, valueTwo):
+        pass
 
 
 if __name__ == '__main__':
@@ -196,18 +203,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [1, 0, 1, 0, 0],
-        [0, 0, 1, 1, 0],
-        [0, 1, 1, 1, 1],
-        [1, 0, 1, 0, 0]
-    ]
-    expected = 8
-
-    actual = largestIsland(matrix)
-    print(actual)
-    assert actual == expected
-
-    actual = largestIsland1(matrix)
-    print(actual)
-    assert actual == expected
+    unionFind = UnionFind()
+    assert unionFind.find(1) == None
+    unionFind.createSet(1)
+    assert unionFind.find(1) == 1
+    unionFind.createSet(5)
+    assert unionFind.find(1) == 1
+    assert unionFind.find(5) == 5
+    unionFind.union(5, 1)
+    assert unionFind.find(5) == unionFind.find(1)
