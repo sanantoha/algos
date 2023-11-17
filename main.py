@@ -183,15 +183,24 @@ tasks_done = [
     'union_find.py',
     'reverse_words_in_string.py',
     'max_subset_sum_no_adjucent.py',
-    'find_three_largest_numbers.py'
+    'find_three_largest_numbers.py',
+    'staircase_traversal.py'
 ]
 
 
-def find_three_largest_numbers(arr):
+def staircaseTraversal(height, maxSteps):
     pass
 
 
-def find_three_largest_numbers1(arr):
+def staircaseTraversalMemo(height, maxSteps):
+    pass
+
+
+def staircaseTraversalIter(height, maxSteps):
+    pass
+
+
+def staircaseTraversalWindow(height, maxSteps):
     pass
 
 
@@ -200,5 +209,21 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
-    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    stairs = 4
+    maxSteps = 2
+    expected = 5
+    actual = staircaseTraversal(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
+
+    actual = staircaseTraversalMemo(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
+
+    actual = staircaseTraversalIter(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
+
+    actual = staircaseTraversalWindow(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
