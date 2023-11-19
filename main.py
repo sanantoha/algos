@@ -184,23 +184,12 @@ tasks_done = [
     'reverse_words_in_string.py',
     'max_subset_sum_no_adjucent.py',
     'find_three_largest_numbers.py',
-    'staircase_traversal.py'
+    'staircase_traversal.py',
+    'merge_overlapping_intervals.py'
 ]
 
 
-def staircaseTraversal(height, maxSteps):
-    pass
-
-
-def staircaseTraversalMemo(height, maxSteps):
-    pass
-
-
-def staircaseTraversalIter(height, maxSteps):
-    pass
-
-
-def staircaseTraversalWindow(height, maxSteps):
+def merge_overlapping_intervals(intervals):
     pass
 
 
@@ -209,21 +198,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stairs = 4
-    maxSteps = 2
-    expected = 5
-    actual = staircaseTraversal(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalMemo(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalIter(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalWindow(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
+    print(merge_overlapping_intervals([[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]])) # [[1, 2], [3, 8], [9, 10]]
