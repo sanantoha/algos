@@ -185,11 +185,12 @@ tasks_done = [
     'max_subset_sum_no_adjucent.py',
     'find_three_largest_numbers.py',
     'staircase_traversal.py',
-    'merge_overlapping_intervals.py'
+    'merge_overlapping_intervals.py',
+    'class_photos.py'
 ]
 
 
-def merge_overlapping_intervals(intervals):
+def class_photos(red_shirt_heights, blue_shirt_heights):
     pass
 
 
@@ -198,4 +199,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(merge_overlapping_intervals([[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]])) # [[1, 2], [3, 8], [9, 10]]
+    print(class_photos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5]))
