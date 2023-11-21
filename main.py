@@ -186,11 +186,12 @@ tasks_done = [
     'find_three_largest_numbers.py',
     'staircase_traversal.py',
     'merge_overlapping_intervals.py',
-    'class_photos.py'
+    'class_photos.py',
+    'number_of_islands.py'
 ]
 
 
-def class_photos(red_shirt_heights, blue_shirt_heights):
+def numberOfIsland(matrix):
     pass
 
 
@@ -199,4 +200,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(class_photos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5]))
+    matrix = [
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1]
+    ]
+    expected = 3
+
+    actual = numberOfIsland(matrix)
+    print(actual)
+    assert actual == expected
