@@ -187,11 +187,12 @@ tasks_done = [
     'staircase_traversal.py',
     'merge_overlapping_intervals.py',
     'class_photos.py',
-    'number_of_islands.py'
+    'number_of_islands.py',
+    'sorted_squared_array.py'
 ]
 
 
-def numberOfIsland(matrix):
+def sorted_squared_array(arr):
     pass
 
 
@@ -200,14 +201,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1]
-    ]
-    expected = 3
-
-    actual = numberOfIsland(matrix)
-    print(actual)
-    assert actual == expected
+    print(sorted_squared_array([-3, 1, 2, 3, 5, 6, 8, 9]))
