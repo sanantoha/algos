@@ -188,11 +188,12 @@ tasks_done = [
     'merge_overlapping_intervals.py',
     'class_photos.py',
     'number_of_islands.py',
-    'sorted_squared_array.py'
+    'sorted_squared_array.py',
+    'balanced_brackets.py'
 ]
 
 
-def sorted_squared_array(arr):
+def balancedBrackets(string):
     pass
 
 
@@ -201,4 +202,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(sorted_squared_array([-3, 1, 2, 3, 5, 6, 8, 9]))
+    assert balancedBrackets("(a)")
+    assert balancedBrackets("([])")
+    assert balancedBrackets("([])(){}(())()()")
