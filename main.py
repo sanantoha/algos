@@ -195,7 +195,7 @@ tasks_done = [
 ]
 
 
-def is_palindrome(str):
+def searchInSortedMatrix(matrix, target):
     pass
 
 
@@ -204,4 +204,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(is_palindrome("abcdcba"))
+    matrix = [
+        [1, 4, 7, 12, 15, 1000],
+        [2, 5, 19, 31, 32, 1001],
+        [3, 8, 24, 33, 35, 1002],
+        [40, 41, 42, 44, 45, 1003],
+        [99, 100, 103, 106, 128, 1004],
+    ]
+    actual = searchInSortedMatrix(matrix, 44)
+    print(actual)
+    assert actual == [3, 3]
