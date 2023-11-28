@@ -192,15 +192,12 @@ tasks_done = [
     'balanced_brackets.py',
     'valid_ip_addresses.py',
     'palindrom_check.py',
-    'longest_increasing_subsequence.py'
+    'longest_increasing_subsequence.py',
+    'transpose_matrix.py'
 ]
 
 
-def longestIncreasingSubsequence(arr):
-    pass
-
-
-def longestIncreasingSubsequence1(arr):
+def transposeMatrix(matrix):
     pass
 
 
@@ -209,13 +206,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
-    expected = [-24, 2, 3, 5, 6, 35]
+    input = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 
-    actual = longestIncreasingSubsequence(input)
+    actual = transposeMatrix(input)
     print(actual)
-    assert actual == expected
 
-    actual = longestIncreasingSubsequence1(input)
-    print(actual)
     assert actual == expected
