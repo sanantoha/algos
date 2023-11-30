@@ -193,11 +193,12 @@ tasks_done = [
     'valid_ip_addresses.py',
     'palindrom_check.py',
     'longest_increasing_subsequence.py',
-    'transpose_matrix.py'
+    'transpose_matrix.py',
+    'bubble_sort.py'
 ]
 
 
-def transposeMatrix(matrix):
+def bubble_sort(arr):
     pass
 
 
@@ -206,10 +207,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
-
-    actual = transposeMatrix(input)
-    print(actual)
-
-    assert actual == expected
+    print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
