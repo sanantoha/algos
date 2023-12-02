@@ -194,11 +194,16 @@ tasks_done = [
     'palindrom_check.py',
     'longest_increasing_subsequence.py',
     'transpose_matrix.py',
-    'bubble_sort.py'
+    'bubble_sort.py',
+    'levenshtein_distance.py'
 ]
 
 
-def bubble_sort(arr):
+def levenshtein_distance(str1, str2):
+    pass
+
+
+def levenshtein_distance1(str1, str2):
     pass
 
 
@@ -207,4 +212,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
+    assert levenshtein_distance("abc", "yabd") == 2
+    assert levenshtein_distance1("abc", "yabd") == 2
