@@ -195,15 +195,20 @@ tasks_done = [
     'longest_increasing_subsequence.py',
     'transpose_matrix.py',
     'bubble_sort.py',
-    'levenshtein_distance.py'
+    'levenshtein_distance.py',
+    'min_rewards.py'
 ]
 
 
-def levenshtein_distance(str1, str2):
+def minRewards(arr):
     pass
 
 
-def levenshtein_distance1(str1, str2):
+def minRewards1(arr):
+    pass
+
+
+def minRewards2(arr):
     pass
 
 
@@ -212,5 +217,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert levenshtein_distance("abc", "yabd") == 2
-    assert levenshtein_distance1("abc", "yabd") == 2
+    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
+
+    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
+
+    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
