@@ -196,19 +196,16 @@ tasks_done = [
     'transpose_matrix.py',
     'bubble_sort.py',
     'levenshtein_distance.py',
-    'min_rewards.py'
+    'min_rewards.py',
+    'remove_duplicates_from_linkedlist.py'
 ]
 
 
-def minRewards(arr):
-    pass
+from list.LinkedList import LinkedList
 
 
-def minRewards1(arr):
-    pass
-
-
-def minRewards2(arr):
+# O(n) time | O(1) space
+def remove_duplicates_from_linked_list(linked_list):
     pass
 
 
@@ -217,14 +214,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
-
-    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
-
-    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
+    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
+    print(remove_duplicates_from_linked_list(test))
