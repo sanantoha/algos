@@ -197,15 +197,12 @@ tasks_done = [
     'bubble_sort.py',
     'levenshtein_distance.py',
     'min_rewards.py',
-    'remove_duplicates_from_linkedlist.py'
+    'remove_duplicates_from_linkedlist.py',
+    'tandem_bicycle.py'
 ]
 
 
-from list.LinkedList import LinkedList
-
-
-# O(n) time | O(1) space
-def remove_duplicates_from_linked_list(linked_list):
+def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
     pass
 
 
@@ -214,5 +211,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
-    print(remove_duplicates_from_linked_list(test))
+    tandem_bicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True)
