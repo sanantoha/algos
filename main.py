@@ -215,7 +215,6 @@ def numbers_of_ways_to_traverse_graph_math(width, height):
     pass
 
 
-
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
