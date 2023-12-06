@@ -198,12 +198,22 @@ tasks_done = [
     'levenshtein_distance.py',
     'min_rewards.py',
     'remove_duplicates_from_linkedlist.py',
-    'tandem_bicycle.py'
+    'tandem_bicycle.py',
+    'numbers_of_ways_to_traverse_graph.py'
 ]
 
 
-def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
+def numbers_of_ways_to_traverse_graph_rec(width, height):
     pass
+
+
+def numbers_of_ways_to_traverse_graph(width, height):
+    pass
+
+
+def numbers_of_ways_to_traverse_graph_math(width, height):
+    pass
+
 
 
 if __name__ == '__main__':
@@ -211,4 +221,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tandem_bicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True)
+    assert numbers_of_ways_to_traverse_graph_rec(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph_math(4, 3) == 10
