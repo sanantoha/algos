@@ -199,19 +199,12 @@ tasks_done = [
     'min_rewards.py',
     'remove_duplicates_from_linkedlist.py',
     'tandem_bicycle.py',
-    'numbers_of_ways_to_traverse_graph.py'
+    'numbers_of_ways_to_traverse_graph.py',
+    'array_of_products.py'
 ]
 
 
-def numbers_of_ways_to_traverse_graph_rec(width, height):
-    pass
-
-
-def numbers_of_ways_to_traverse_graph(width, height):
-    pass
-
-
-def numbers_of_ways_to_traverse_graph_math(width, height):
+def array_of_products(arr):
     pass
 
 
@@ -220,6 +213,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert numbers_of_ways_to_traverse_graph_rec(4, 3) == 10
-    assert numbers_of_ways_to_traverse_graph(4, 3) == 10
-    assert numbers_of_ways_to_traverse_graph_math(4, 3) == 10
+    print(array_of_products([1, 2, 3, 4]))
