@@ -200,11 +200,12 @@ tasks_done = [
     'remove_duplicates_from_linkedlist.py',
     'tandem_bicycle.py',
     'numbers_of_ways_to_traverse_graph.py',
-    'array_of_products.py'
+    'array_of_products.py',
+    'tournament_winner.py'
 ]
 
 
-def array_of_products(arr):
+def tournament_winner(competitions, results):
     pass
 
 
@@ -213,4 +214,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(array_of_products([1, 2, 3, 4]))
+    competitions = [
+        ["HTML", "C#"],
+        ["C#", "Python"],
+        ["Python", "HTML"]
+    ]
+
+    results = [0, 0, 1]
+
+    print(tournament_winner(competitions, results))
