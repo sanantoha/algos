@@ -201,11 +201,12 @@ tasks_done = [
     'tandem_bicycle.py',
     'numbers_of_ways_to_traverse_graph.py',
     'array_of_products.py',
-    'tournament_winner.py'
+    'tournament_winner.py',
+    'move_element_to_end.py'
 ]
 
 
-def tournament_winner(competitions, results):
+def move_element_to_end(arr, elem):
     pass
 
 
@@ -214,12 +215,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    competitions = [
-        ["HTML", "C#"],
-        ["C#", "Python"],
-        ["Python", "HTML"]
-    ]
-
-    results = [0, 0, 1]
-
-    print(tournament_winner(competitions, results))
+    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
