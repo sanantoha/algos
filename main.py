@@ -202,11 +202,19 @@ tasks_done = [
     'numbers_of_ways_to_traverse_graph.py',
     'array_of_products.py',
     'tournament_winner.py',
-    'move_element_to_end.py'
+    'move_element_to_end.py',
+    'invert_binary_tree.py'
 ]
 
 
-def move_element_to_end(arr, elem):
+from tree.BinaryTree import BinaryTree
+
+
+def invert_binary_tree(root):
+    pass
+
+
+def invert_binary_tree_iter(root):
     pass
 
 
@@ -215,4 +223,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
+    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
+    inverted_tree = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
+    invert_binary_tree(tree)
+    assert tree.__eq__(inverted_tree)
+
+    tree1 = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
+    inverted_tree1 = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
+    invert_binary_tree_iter(tree1)
+    assert tree1.__eq__(inverted_tree1)
