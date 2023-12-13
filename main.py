@@ -203,18 +203,12 @@ tasks_done = [
     'array_of_products.py',
     'tournament_winner.py',
     'move_element_to_end.py',
-    'invert_binary_tree.py'
+    'invert_binary_tree.py',
+    'search_in_sorted_matrix.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def invert_binary_tree(root):
-    pass
-
-
-def invert_binary_tree_iter(root):
+def searchInSortedMatrix(matrix, target):
     pass
 
 
@@ -223,12 +217,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
-    inverted_tree = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
-    invert_binary_tree(tree)
-    assert tree.__eq__(inverted_tree)
-
-    tree1 = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
-    inverted_tree1 = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
-    invert_binary_tree_iter(tree1)
-    assert tree1.__eq__(inverted_tree1)
+    matrix = [
+        [1, 4, 7, 12, 15, 1000],
+        [2, 5, 19, 31, 32, 1001],
+        [3, 8, 24, 33, 35, 1002],
+        [40, 41, 42, 44, 45, 1003],
+        [99, 100, 103, 106, 128, 1004],
+    ]
+    actual = searchInSortedMatrix(matrix, 44)
+    print(actual)
+    assert actual == [3, 3]
