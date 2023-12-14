@@ -204,11 +204,12 @@ tasks_done = [
     'tournament_winner.py',
     'move_element_to_end.py',
     'invert_binary_tree.py',
-    'search_in_sorted_matrix.py'
+    'search_in_sorted_matrix.py',
+    'optimal_freelancing.py'
 ]
 
 
-def searchInSortedMatrix(matrix, target):
+def optimalFreelancing(jobs):
     pass
 
 
@@ -217,13 +218,41 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [1, 4, 7, 12, 15, 1000],
-        [2, 5, 19, 31, 32, 1001],
-        [3, 8, 24, 33, 35, 1002],
-        [40, 41, 42, 44, 45, 1003],
-        [99, 100, 103, 106, 128, 1004],
-    ]
-    actual = searchInSortedMatrix(matrix, 44)
+    input = [{"deadline": 1, "payment": 1}]
+    actual = optimalFreelancing(input)
     print(actual)
-    assert actual == [3, 3]
+    assert actual == 1
+
+    input = [
+        {
+            "deadline": 2,
+            "payment": 2
+        },
+        {
+            "deadline": 4,
+            "payment": 3
+        },
+        {
+            "deadline": 5,
+            "payment": 1
+        },
+        {
+            "deadline": 7,
+            "payment": 2
+        },
+        {
+            "deadline": 3,
+            "payment": 1
+        },
+        {
+            "deadline": 3,
+            "payment": 2
+        },
+        {
+            "deadline": 1,
+            "payment": 3
+        }
+    ]
+    actual = optimalFreelancing(input)
+    print(actual)
+    assert actual == 13
