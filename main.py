@@ -205,54 +205,18 @@ tasks_done = [
     'move_element_to_end.py',
     'invert_binary_tree.py',
     'search_in_sorted_matrix.py',
-    'optimal_freelancing.py'
+    'optimal_freelancing.py',
+    'zigzag_traverse.py'
+    # 'binary_search.py'
 ]
 
 
-def optimalFreelancing(jobs):
+def zigzagTraverse(matrix):
     pass
 
 
 if __name__ == '__main__':
-    remain = list(set(tasks) - set(tasks_done))
-    random.shuffle(remain)
-    print(remain)
-
-    input = [{"deadline": 1, "payment": 1}]
-    actual = optimalFreelancing(input)
+    test = [[1, 3, 4, 10], [2, 5, 9, 11], [6, 8, 12, 15], [7, 13, 14, 16]]
+    actual = zigzagTraverse(test)
     print(actual)
-    assert actual == 1
-
-    input = [
-        {
-            "deadline": 2,
-            "payment": 2
-        },
-        {
-            "deadline": 4,
-            "payment": 3
-        },
-        {
-            "deadline": 5,
-            "payment": 1
-        },
-        {
-            "deadline": 7,
-            "payment": 2
-        },
-        {
-            "deadline": 3,
-            "payment": 1
-        },
-        {
-            "deadline": 3,
-            "payment": 2
-        },
-        {
-            "deadline": 1,
-            "payment": 3
-        }
-    ]
-    actual = optimalFreelancing(input)
-    print(actual)
-    assert actual == 13
+    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
