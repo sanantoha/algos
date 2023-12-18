@@ -207,11 +207,16 @@ tasks_done = [
     'search_in_sorted_matrix.py',
     'optimal_freelancing.py',
     'zigzag_traverse.py'
-    'binary_search.py'
+    'binary_search.py',
+    'water_area.py'
 ]
 
 
-def binary_search(arr, target):
+def waterArea(heights):
+    pass
+
+
+def waterArea1(heights):
     pass
 
 
@@ -220,5 +225,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
-    print(binary_search(array, 60))
+    expected = 48
+    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    print(actual)
+    print(actual == expected)
+
+    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    print(actual)
+    print(actual == expected)
