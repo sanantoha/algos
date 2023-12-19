@@ -208,15 +208,16 @@ tasks_done = [
     'optimal_freelancing.py',
     'zigzag_traverse.py'
     'binary_search.py',
-    'water_area.py'
+    'water_area.py',
+    'powerset.py'
 ]
 
 
-def waterArea(heights):
+def powerset(arr):
     pass
 
 
-def waterArea1(heights):
+def powerset1(arr):
     pass
 
 
@@ -225,11 +226,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    expected = 48
-    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
-    print(actual)
-    print(actual == expected)
-
-    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
-    print(actual)
-    print(actual == expected)
+    print(powerset([1, 2, 3]))
+    print(powerset1([1, 2, 3]))
+    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
+    assert len(output) == 8
+    assert set([]) in output
+    assert set([1]) in output
+    assert set([2]) in output
+    assert set([1, 2]) in output
+    assert set([3]) in output
+    assert set([1, 3]) in output
+    assert set([2, 3]) in output
+    assert set([1, 2, 3]) in output
