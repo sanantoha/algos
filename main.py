@@ -209,15 +209,12 @@ tasks_done = [
     'zigzag_traverse.py'
     'binary_search.py',
     'water_area.py',
-    'powerset.py'
+    'powerset.py',
+    'best_seats.py'
 ]
 
 
-def powerset(arr):
-    pass
-
-
-def powerset1(arr):
+def bestSeat(seats):
     pass
 
 
@@ -226,15 +223,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(powerset([1, 2, 3]))
-    print(powerset1([1, 2, 3]))
-    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
-    assert len(output) == 8
-    assert set([]) in output
-    assert set([1]) in output
-    assert set([2]) in output
-    assert set([1, 2]) in output
-    assert set([3]) in output
-    assert set([1, 3]) in output
-    assert set([2, 3]) in output
-    assert set([1, 2, 3]) in output
+    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
+    assert actual == 4
+
+    actual = bestSeat([1])
+    assert actual == -1
+
+    actual = bestSeat([1, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 1, 1])
+    assert actual == -1
+
+    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
+    assert actual == 3
