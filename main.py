@@ -210,11 +210,12 @@ tasks_done = [
     'binary_search.py',
     'water_area.py',
     'powerset.py',
-    'best_seats.py'
+    'best_seats.py',
+    'word_ladder_ii.py'
 ]
 
 
-def bestSeat(seats):
+def findLadders(beginWord, endWord, wordList):
     pass
 
 
@@ -223,23 +224,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
-    assert actual == 4
-
-    actual = bestSeat([1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 1, 1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
-    assert actual == 3
+    beginWord = "hit"
+    endWord = "cog"
+    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
+    actual = findLadders(beginWord, endWord, wordList)
+    print(actual)
+    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
