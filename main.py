@@ -211,12 +211,22 @@ tasks_done = [
     'water_area.py',
     'powerset.py',
     'best_seats.py',
-    'word_ladder_ii.py'
+    'word_ladder_ii.py',
+    'group_anagrams.py'
 ]
 
 
-def findLadders(beginWord, endWord, wordList):
-    pass
+def groupAnagrams(words):
+    return None
+
+
+def compare(expected, output):
+    if len(expected) == 0:
+        assert output == expected
+        return
+    assert len(expected) == len(output)
+    for group in expected:
+        assert sorted(group) in output
 
 
 if __name__ == '__main__':
@@ -224,9 +234,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = findLadders(beginWord, endWord, wordList)
-    print(actual)
-    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
+    words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
+    expected = [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
+    output = list(map(lambda x: sorted(x), groupAnagrams(words)))
+    # expected = list(map(lambda x: sorted(x), expected))
+
+    print(output)
+    print(expected)
+    compare(expected, output)
