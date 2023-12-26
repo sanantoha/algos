@@ -213,15 +213,12 @@ tasks_done = [
     'best_seats.py',
     'word_ladder_ii.py',
     'group_anagrams.py',
-    'longest_common_subsequence.py'
+    'longest_common_subsequence.py',
+    'knapsack_problem.py'
 ]
 
 
-def longestCommonSubsequence(str1, str2):
-    pass
-
-
-def longestCommonSubsequence1(str1, str2):
+def knapsackProblem(items, capacity):
     pass
 
 
@@ -230,10 +227,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = longestCommonSubsequence("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
-
-    output = longestCommonSubsequence1("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
+    items = [[1, 2], [4, 3], [5, 6], [6, 7]] # val 0 and weight 1
+    capacity = 10
+    expected = [10, [1, 3]]
+    actual = knapsackProblem(items, capacity)
+    print(actual)
+    assert actual == expected
