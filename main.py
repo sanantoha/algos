@@ -226,10 +226,11 @@ class BST:
 
 
     def insert_rec(self, value):
-        pass
+        return self
+
 
     def insert(self, value):
-        pass
+        return self
 
 
     def contains_rec(self, value):
@@ -240,12 +241,12 @@ class BST:
         return False
 
 
-    def remove_rec(self, value):
-        pass
+    def remove_rec(self, value, parent=None):
+        return self
 
 
-    def remove(self, value):
-        pass
+    def remove(self, value, parent=None):
+        return self
 
 
 if __name__ == '__main__':
