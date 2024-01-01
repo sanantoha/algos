@@ -215,38 +215,13 @@ tasks_done = [
     'group_anagrams.py',
     'longest_common_subsequence.py',
     'knapsack_problem.py',
-    'bst_construction.py'
+    'bst_construction.py',
+    'two_colorable.py'
 ]
 
-class BST:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
 
-
-    def insert_rec(self, value):
-        return self
-
-
-    def insert(self, value):
-        return self
-
-
-    def contains_rec(self, value):
-        return False
-
-
-    def contains(self, value):
-        return False
-
-
-    def remove_rec(self, value, parent=None):
-        return self
-
-
-    def remove(self, value, parent=None):
-        return self
+def twoColorable(graph):
+    pass
 
 
 if __name__ == '__main__':
@@ -254,40 +229,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
+    input = [
+        [1, 2, 3],
+        [0, 2],
+        [0, 1],
+        [0]
+    ]
+    actual = twoColorable(input)
+    print(actual)
+    assert not actual
 
-    root.insert(12)
-    assert (root.right.left.left.value == 12)
+    input = [
+        [2],
+        [2, 3],
+        [0, 1],
+        [1]
+    ]
 
-    root.remove(10)
-    assert (not root.contains(10))
-    assert (root.value == 12)
-
-    assert (root.contains(15))
-
-    root1 = BST(10)
-    root1.left = BST(5)
-    root1.left.left = BST(2)
-    root1.left.left.left = BST(1)
-    root1.left.right = BST(5)
-    root1.right = BST(15)
-    root1.right.left = BST(13)
-    root1.right.left.right = BST(14)
-    root1.right.right = BST(22)
-
-    root1.insert_rec(12)
-    assert (root1.right.left.left.value == 12)
-
-    root1.remove_rec(10)
-    assert (not root1.contains_rec(10))
-    assert (root1.value == 12)
-
-    assert (root1.contains_rec(15))
+    actual = twoColorable(input)
+    print(actual)
+    assert actual

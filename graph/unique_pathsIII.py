@@ -1,6 +1,6 @@
 
 # https://leetcode.com/problems/unique-paths-iii/description/
-# You are given an m x n integer array grid where grid[i][j] could be:
+# You are given an m x n integer arrays grid where grid[i][j] could be:
 #
 # 1 representing the starting square. There is exactly one starting square.
 # 2 representing the ending square. There is exactly one ending square.
