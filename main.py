@@ -216,11 +216,12 @@ tasks_done = [
     'longest_common_subsequence.py',
     'knapsack_problem.py',
     'bst_construction.py',
-    'two_colorable.py'
+    'two_colorable.py',
+    'median_of_two_sorted_arrays.py'
 ]
 
 
-def twoColorable(graph):
+def medianOfTwoSortedArrays(arr1, arr2):
     pass
 
 
@@ -229,23 +230,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [1, 2, 3],
-        [0, 2],
-        [0, 1],
-        [0]
-    ]
-    actual = twoColorable(input)
+    arrayOne = [1, 3, 4, 5]
+    arrayTwo = [2, 3, 6, 7]
+    actual = medianOfTwoSortedArrays(arrayOne, arrayTwo)
     print(actual)
-    assert not actual
+    assert actual == 3.5
 
-    input = [
-        [2],
-        [2, 3],
-        [0, 1],
-        [1]
-    ]
-
-    actual = twoColorable(input)
+    actual = medianOfTwoSortedArrays([6, 7, 8, 9], [1, 3, 4, 5])
     print(actual)
-    assert actual
+    assert actual == 5.5
