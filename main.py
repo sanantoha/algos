@@ -217,12 +217,21 @@ tasks_done = [
     'knapsack_problem.py',
     'bst_construction.py',
     'two_colorable.py',
-    'median_of_two_sorted_arrays.py'
+    'median_of_two_sorted_arrays.py',
+    'four_number_sum.py'
 ]
 
 
-def medianOfTwoSortedArrays(arr1, arr2):
+def fourNumberSum(arr, target):
     pass
+
+
+def fourNumberSum1(arr, target):
+    pass
+
+
+def sortAndStringify(array):
+    return ",".join(sorted(list(map(lambda x: str(x), array))))
 
 
 if __name__ == '__main__':
@@ -230,12 +239,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arrayOne = [1, 3, 4, 5]
-    arrayTwo = [2, 3, 6, 7]
-    actual = medianOfTwoSortedArrays(arrayOne, arrayTwo)
-    print(actual)
-    assert actual == 3.5
+    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
+    print(output)
+    output = list(map(sortAndStringify, output))
+    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    assert len(output) == 2
+    for quadruplet in quadruplets:
+        assert sortAndStringify(quadruplet) in output
 
-    actual = medianOfTwoSortedArrays([6, 7, 8, 9], [1, 3, 4, 5])
-    print(actual)
-    assert actual == 5.5
+    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
+    print(output)
+    output = list(map(sortAndStringify, output))
+    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    assert len(output) == 2
+    for quadruplet in quadruplets:
+        assert sortAndStringify(quadruplet) in output
