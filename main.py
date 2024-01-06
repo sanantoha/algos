@@ -218,20 +218,35 @@ tasks_done = [
     'bst_construction.py',
     'two_colorable.py',
     'median_of_two_sorted_arrays.py',
-    'four_number_sum.py'
+    'four_number_sum.py',
+    'bst_traversal.py'
 ]
 
+from tree.BST import BST
 
-def fourNumberSum(arr, target):
+
+def pre_order_traverse(root, res):
     pass
 
 
-def fourNumberSum1(arr, target):
+def pre_order_traverse_iter(root, res):
     pass
 
 
-def sortAndStringify(array):
-    return ",".join(sorted(list(map(lambda x: str(x), array))))
+def in_order_traverse(root, res):
+    pass
+
+
+def in_order_traverse_iter(root, res):
+    pass
+
+
+def post_order_traverse(root, res):
+    pass
+
+
+def post_order_traverse_iter(root, res):
+    pass
 
 
 if __name__ == '__main__':
@@ -239,18 +254,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.right = BST(22)
 
-    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    in_order = [1, 2, 5, 5, 10, 15, 22]
+    pre_order = [10, 5, 2, 1, 5, 15, 22]
+    post_order = [1, 2, 5, 5, 22, 15, 10]
+
+    assert pre_order_traverse(root, []) == pre_order
+    assert pre_order_traverse_iter(root, []) == pre_order
+
+    assert in_order_traverse(root, []) == in_order
+    assert in_order_traverse_iter(root, []) == in_order
+
+    assert post_order_traverse(root, []) == post_order
+    assert post_order_traverse_iter(root, []) == post_order
