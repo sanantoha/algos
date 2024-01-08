@@ -219,33 +219,16 @@ tasks_done = [
     'two_colorable.py',
     'median_of_two_sorted_arrays.py',
     'four_number_sum.py',
-    'bst_traversal.py'
+    'bst_traversal.py',
+    'missing_numbers.py'
 ]
 
-from tree.BST import BST
 
-
-def pre_order_traverse(root, res):
+def missingNumbers(arr):
     pass
 
 
-def pre_order_traverse_iter(root, res):
-    pass
-
-
-def in_order_traverse(root, res):
-    pass
-
-
-def in_order_traverse_iter(root, res):
-    pass
-
-
-def post_order_traverse(root, res):
-    pass
-
-
-def post_order_traverse_iter(root, res):
+def missingNumbers1(arr):
     pass
 
 
@@ -254,23 +237,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.right = BST(22)
+    input = [4, 5, 1, 3]
+    expected = [2, 6]
+    actual = missingNumbers(input)
+    print(actual)
+    assert actual == expected
 
-    in_order = [1, 2, 5, 5, 10, 15, 22]
-    pre_order = [10, 5, 2, 1, 5, 15, 22]
-    post_order = [1, 2, 5, 5, 22, 15, 10]
-
-    assert pre_order_traverse(root, []) == pre_order
-    assert pre_order_traverse_iter(root, []) == pre_order
-
-    assert in_order_traverse(root, []) == in_order
-    assert in_order_traverse_iter(root, []) == in_order
-
-    assert post_order_traverse(root, []) == post_order
-    assert post_order_traverse_iter(root, []) == post_order
+    actual = missingNumbers1(input)
+    print(actual)
+    assert actual == expected
