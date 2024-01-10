@@ -220,15 +220,12 @@ tasks_done = [
     'median_of_two_sorted_arrays.py',
     'four_number_sum.py',
     'bst_traversal.py',
-    'missing_numbers.py'
+    'missing_numbers.py',
+    'zero_sum_subarray.py'
 ]
 
 
-def missingNumbers(arr):
-    pass
-
-
-def missingNumbers1(arr):
+def zeroSumSubarray(arr):
     pass
 
 
@@ -237,12 +234,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [4, 5, 1, 3]
-    expected = [2, 6]
-    actual = missingNumbers(input)
-    print(actual)
-    assert actual == expected
-
-    actual = missingNumbers1(input)
+    input = [4, 2, -1, -1, 3]
+    expected = True
+    actual = zeroSumSubarray(input)
     print(actual)
     assert actual == expected
