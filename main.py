@@ -221,11 +221,12 @@ tasks_done = [
     'four_number_sum.py',
     'bst_traversal.py',
     'missing_numbers.py',
-    'zero_sum_subarray.py'
+    'zero_sum_subarray.py',
+    'max_sum_increasing_subsequence.py'
 ]
 
 
-def zeroSumSubarray(arr):
+def maxSumIncreasingSubsequence(arr):
     pass
 
 
@@ -234,8 +235,31 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [4, 2, -1, -1, 3]
-    expected = True
-    actual = zeroSumSubarray(input)
+    input = [-1, 1]
+    expected = [1, [1]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+
+    input = [10, 70, 20, 30, 50, 11, 30]
+    expected = [110, [10, 20, 30, 50]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+
+    input = [8, 12, 2, 3, 15, 5, 7]
+    expected = [35, [8, 12, 15]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+
+    input = [-5, -4, -3, -2, -1]
+
+    expected = [-1, [-1]]
+
+    actual = maxSumIncreasingSubsequence(input)
     print(actual)
     assert actual == expected
