@@ -227,7 +227,7 @@ tasks_done = [
 ]
 
 
-def sunsetViews(buildings, direction)
+def sunsetViews(buildings, direction):
     pass
 
 
