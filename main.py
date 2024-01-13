@@ -223,11 +223,18 @@ tasks_done = [
     'missing_numbers.py',
     'zero_sum_subarray.py',
     'max_sum_increasing_subsequence.py',
-    'sunset_views.py'
+    'sunset_views.py',
+    'reconstruct_bst.py'
 ]
 
 
-def sunsetViews(buildings, direction):
+from tree.BST import BST
+
+def reconstruct_bst(arr):
+    pass
+
+
+def reconstruct_bst1(arr):
     pass
 
 
@@ -236,15 +243,21 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    buildings = [3, 5, 4, 4, 3, 1, 3, 2]
-    direction = "EAST"
-    expected = [1, 3, 6, 7]
-    actual = sunsetViews(buildings, direction)
-    print(actual)
-    assert actual == expected
+    pre_order_traversal_values = [10, 4, 2, 1, 3, 17, 19, 18]
+    tree = BST(10)
+    tree.left = BST(4)
+    tree.left.left = BST(2)
+    tree.left.left.left = BST(1)
+    tree.left.right = BST(3)
+    tree.right = BST(17)
+    tree.right.right = BST(19)
+    tree.right.right.left = BST(18)
+    expected = get_dfs_order(tree, [])
 
-    direction = "WEST"
-    expected = [0, 1]
-    actual = sunsetViews(buildings, direction)
-    print(actual)
-    assert actual == expected
+    actual = reconstruct_bst(pre_order_traversal_values)
+    actual_dfs_order = get_dfs_order(actual, [])
+    assert actual_dfs_order == expected
+
+    actual1 = reconstruct_bst1(pre_order_traversal_values)
+    actual_dfs_order1 = get_dfs_order(actual1, [])
+    assert actual_dfs_order1 == expected
