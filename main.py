@@ -238,6 +238,15 @@ def reconstruct_bst1(arr):
     pass
 
 
+def get_dfs_order(node, values):
+    if node is None:
+        return
+    values.append(node.value)
+    get_dfs_order(node.left, values)
+    get_dfs_order(node.right, values)
+    return values
+
+
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
