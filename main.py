@@ -224,11 +224,15 @@ tasks_done = [
     'zero_sum_subarray.py',
     'max_sum_increasing_subsequence.py',
     'sunset_views.py',
-    'reconstruct_bst.py'
+    'reconstruct_bst.py',
+    'cycle_in_graph.py',
+    'validate_bst.py'
 ]
 
+from tree.BST import BST
 
-def cycle_in_graph(graph):
+
+def validate_bst(root):
     pass
 
 
@@ -237,8 +241,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[1, 3], [2, 3, 4], [0], [], [2, 5], []]
-    expected = True
-    actual = cycle_in_graph(input)
-    print(actual)
-    assert actual == expected
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+    print(validate_bst(root))
+    assert validate_bst(root)
