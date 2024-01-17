@@ -226,13 +226,15 @@ tasks_done = [
     'sunset_views.py',
     'reconstruct_bst.py',
     'cycle_in_graph.py',
-    'validate_bst.py'
+    'validate_bst.py',
+    'evaluate_expression_tree.py'
 ]
 
-from tree.BST import BST
+from tree.BinaryTree import BinaryTree
 
 
-def validate_bst(root):
+# O(n) time | O(h) space
+def evaluateExpressionTree(tree):
     pass
 
 
@@ -241,14 +243,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-    print(validate_bst(root))
-    assert validate_bst(root)
+    tree = BinaryTree(-1)
+    tree.left = BinaryTree(-2)
+    tree.left.left = BinaryTree(-4)
+    tree.left.right = BinaryTree(2)
+    tree.left.left.left = BinaryTree(3)
+    tree.left.left.right = BinaryTree(2)
+
+    tree.right = BinaryTree(-3)
+    tree.right.left = BinaryTree(8)
+    tree.right.right = BinaryTree(3)
+    expected = 6
+    actual = evaluateExpressionTree(tree)
+    print(actual)
+    assert actual == expected
