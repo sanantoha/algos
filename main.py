@@ -227,14 +227,11 @@ tasks_done = [
     'reconstruct_bst.py',
     'cycle_in_graph.py',
     'validate_bst.py',
-    'evaluate_expression_tree.py'
+    'evaluate_expression_tree.py',
+    'spiral_matrix_traverse.py'
 ]
 
-from tree.BinaryTree import BinaryTree
-
-
-# O(n) time | O(h) space
-def evaluateExpressionTree(tree):
+def spiral_matrix_traverse(matrix):
     pass
 
 
@@ -243,17 +240,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(-1)
-    tree.left = BinaryTree(-2)
-    tree.left.left = BinaryTree(-4)
-    tree.left.right = BinaryTree(2)
-    tree.left.left.left = BinaryTree(3)
-    tree.left.left.right = BinaryTree(2)
-
-    tree.right = BinaryTree(-3)
-    tree.right.left = BinaryTree(8)
-    tree.right.right = BinaryTree(3)
-    expected = 6
-    actual = evaluateExpressionTree(tree)
-    print(actual)
-    assert actual == expected
+    matrix = [[1, 2, 3, 4],
+              [12, 13, 14, 5],
+              [11, 16, 15, 6],
+              [10, 9, 8, 7]]
+    print(spiral_matrix_traverse(matrix))
