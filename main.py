@@ -228,10 +228,15 @@ tasks_done = [
     'cycle_in_graph.py',
     'validate_bst.py',
     'evaluate_expression_tree.py',
-    'spiral_matrix_traverse.py'
+    'spiral_matrix_traverse.py',
+    'height_balanced_binary_tree.py'
 ]
 
-def spiral_matrix_traverse(matrix):
+
+from tree.BinaryTree import BinaryTree
+
+
+def height_balanced_binary_tree(root):
     pass
 
 
@@ -240,8 +245,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [[1, 2, 3, 4],
-              [12, 13, 14, 5],
-              [11, 16, 15, 6],
-              [10, 9, 8, 7]]
-    print(spiral_matrix_traverse(matrix))
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.right = BinaryTree(3)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right.right = BinaryTree(6)
+    root.left.right.left = BinaryTree(7)
+    root.left.right.right = BinaryTree(8)
+    expected = True
+    actual = height_balanced_binary_tree(root)
+    assert actual == expected
