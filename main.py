@@ -229,14 +229,14 @@ tasks_done = [
     'validate_bst.py',
     'evaluate_expression_tree.py',
     'spiral_matrix_traverse.py',
-    'height_balanced_binary_tree.py'
+    'height_balanced_binary_tree.py',
+    'merging_linked_lists.py'
 ]
 
+from list.LinkedList import LinkedList
 
-from tree.BinaryTree import BinaryTree
 
-
-def height_balanced_binary_tree(root):
+def mergingLinkedLists(l1, l2):
     pass
 
 
@@ -245,14 +245,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.left.right.left = BinaryTree(7)
-    root.left.right.right = BinaryTree(8)
-    expected = True
-    actual = height_balanced_binary_tree(root)
-    assert actual == expected
+    l1 = LinkedList(1)
+    l1.next = LinkedList(2)
+    l1.next.next = LinkedList(3)
+    l1.next.next.next = LinkedList(4)
+
+    l2 = LinkedList(10)
+    l2.next = LinkedList(20)
+    l2.next.next = l1.next.next
+
+    actual = mergingLinkedLists(l1, l2)
+    print(actual)
+    assert actual.getNodesInArray() == [3, 4]
