@@ -230,13 +230,12 @@ tasks_done = [
     'evaluate_expression_tree.py',
     'spiral_matrix_traverse.py',
     'height_balanced_binary_tree.py',
-    'merging_linked_lists.py'
+    'merging_linked_lists.py',
+    'remove_islands.py'
 ]
 
-from list.LinkedList import LinkedList
 
-
-def mergingLinkedLists(l1, l2):
+def remove_islands(matrix):
     pass
 
 
@@ -245,15 +244,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    l1 = LinkedList(1)
-    l1.next = LinkedList(2)
-    l1.next.next = LinkedList(3)
-    l1.next.next.next = LinkedList(4)
-
-    l2 = LinkedList(10)
-    l2.next = LinkedList(20)
-    l2.next.next = l1.next.next
-
-    actual = mergingLinkedLists(l1, l2)
+    input = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 1, 1, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    expected = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 1, 1],
+        [0, 0, 0, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    actual = remove_islands(input)
     print(actual)
-    assert actual.getNodesInArray() == [3, 4]
+    assert actual == expected
