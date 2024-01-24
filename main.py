@@ -232,25 +232,13 @@ tasks_done = [
     'height_balanced_binary_tree.py',
     'merging_linked_lists.py',
     'remove_islands.py',
-    'min_height_bst.py'
+    'min_height_bst.py',
+    'product_sum.py'
 ]
 
 
-from tree.validate_bst import validate_bst
-from tree.bst_traversal import in_order_traverse
-from tree.BST import BST
-
-
-def min_height_bst(arr):
+def product_sum(arr):
     pass
-
-
-def get_tree_height(tree, height=0):
-    if tree is None:
-        return height
-    left_tree_height = get_tree_height(tree.left, height + 1)
-    right_tree_height = get_tree_height(tree.right, height + 1)
-    return max(left_tree_height, right_tree_height)
 
 
 if __name__ == '__main__':
@@ -258,12 +246,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [1, 2, 5, 7, 10, 13, 14, 15, 22]
-    tree = min_height_bst(array)
-
-    assert validate_bst(tree)
-    assert get_tree_height(tree) == 4
-
-    in_order = in_order_traverse(tree, [])
-
-    assert in_order == [1, 2, 5, 7, 10, 13, 14, 15, 22]
+    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
