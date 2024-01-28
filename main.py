@@ -255,12 +255,15 @@ class DoublyLinkedList:
     def setHead(self, node):
         pass
 
+    # O(1) time | O(1) space
     def setTail(self, node):
         pass
 
     def insertBefore(self, node, nodeToInsert):
         pass
 
+
+    # O(1) time | O(1) space
     def insertAfter(self, node, nodeToInsert):
         pass
 
@@ -268,13 +271,17 @@ class DoublyLinkedList:
         pass
 
 
+
     def removeNodesWithValue(self, value):
         pass
 
     def remove(self, node):
         pass
+
+
+    # O(n) time | O(1) space
     def containsNodeWithValue(self, value):
-        return False
+        pass
 
 
 def bindNodes(nodeOne, nodeTwo):
@@ -330,17 +337,25 @@ if __name__ == '__main__':
     print(getNodeValuesHeadToTail(linkedList))
     linkedList.insertAtPosition(2, one)
     print(getNodeValuesHeadToTail(linkedList))
-
+    #
     linkedList.insertAtPosition(3, one)
     print(getNodeValuesHeadToTail(linkedList))
-
+    #
     linkedList.insertAtPosition(4, one)
     print(getNodeValuesHeadToTail(linkedList))
-
+    #
     linkedList.insertAtPosition(5, one)
     print(getNodeValuesHeadToTail(linkedList))
-
+    #
     linkedList.insertAtPosition(6, one)
+    print(getNodeValuesHeadToTail(linkedList))
+    print(linkedList.containsNodeWithValue(9))
+    print(linkedList.containsNodeWithValue(1))
+    print(linkedList.removeNodesWithValue(1))
+    print(getNodeValuesHeadToTail(linkedList))
+    linkedList.insertBefore(two, one)
+    print(getNodeValuesHeadToTail(linkedList))
+    linkedList.insertBefore(five, one)
     print(getNodeValuesHeadToTail(linkedList))
     # bindNodes(one, two)
     # bindNodes(two, three)
