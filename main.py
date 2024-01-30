@@ -234,76 +234,13 @@ tasks_done = [
     'remove_islands.py',
     'min_height_bst.py',
     'product_sum.py',
-    'linked_list_construction.py'
+    'linked_list_construction.py',
+    'binary_search.py'
 ]
 
-# This is an input class. Do not edit.
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.prev = None
-        self.next = None
 
-
-# Feel free to add new properties and methods to the class.
-class DoublyLinkedList:
-    def __init__(self):
-        self.head = None
-        self.tail = None
-
-    # O(1) time | O(1) space
-    def setHead(self, node):
-        pass
-
-    # O(1) time | O(1) space
-    def setTail(self, node):
-        pass
-
-    def insertBefore(self, node, nodeToInsert):
-        pass
-
-
-    # O(1) time | O(1) space
-    def insertAfter(self, node, nodeToInsert):
-        pass
-
-    def insertAtPosition(self, position, nodeToInsert):
-        pass
-
-
-
-    def removeNodesWithValue(self, value):
-        pass
-
-    def remove(self, node):
-        pass
-
-
-    # O(n) time | O(1) space
-    def containsNodeWithValue(self, value):
-        pass
-
-
-def bindNodes(nodeOne, nodeTwo):
-    nodeOne.next = nodeTwo
-    nodeTwo.prev = nodeOne
-
-
-def getNodeValuesTailToHead(linkedList):
-    values = []
-    node = linkedList.tail
-    while node is not None:
-        values.append(node.value)
-        node = node.prev
-    return values
-
-def getNodeValuesHeadToTail(linkedList):
-    values = []
-    node = linkedList.head
-    while node is not None:
-        values.append(node.value)
-        node = node.next
-    return values
+def binary_search(arr, target):
+    pass
 
 
 if __name__ == '__main__':
@@ -311,85 +248,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    linkedList = DoublyLinkedList()
-    one = Node(1)
-    two = Node(2)
-    three = Node(3)
-    # three2 = Node(3)
-    # three3 = Node(3)
-    four = Node(4)
-    five = Node(5)
-    six = Node(6)
-
-    linkedList.setHead(one)
-    linkedList.insertAfter(one, two)
-    linkedList.insertAfter(two, three)
-    linkedList.insertAfter(three, four)
-    linkedList.insertAfter(four, five)
-    linkedList.insertAfter(five, six)
-    seven = Node(7)
-    linkedList.insertAfter(six, seven)
-    print(getNodeValuesHeadToTail(linkedList))
-
-    linkedList.insertAtPosition(7, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    linkedList.insertAtPosition(1, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    linkedList.insertAtPosition(2, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    #
-    linkedList.insertAtPosition(3, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    #
-    linkedList.insertAtPosition(4, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    #
-    linkedList.insertAtPosition(5, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    #
-    linkedList.insertAtPosition(6, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    print(linkedList.containsNodeWithValue(9))
-    print(linkedList.containsNodeWithValue(1))
-    print(linkedList.removeNodesWithValue(1))
-    print(getNodeValuesHeadToTail(linkedList))
-    linkedList.insertBefore(two, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    linkedList.insertBefore(five, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    # bindNodes(one, two)
-    # bindNodes(two, three)
-    # bindNodes(three, four)
-    # bindNodes(four, five)
-    # linkedList.head = one
-    # linkedList.tail = five
-    #
-    # linkedList.setHead(four)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 2, 3, 5]
-    # assert getNodeValuesTailToHead(linkedList) == [5, 3, 2, 1, 4]
-    #
-    # linkedList.setTail(six)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 2, 3, 5, 6]
-    # assert getNodeValuesTailToHead(linkedList) == [6, 5, 3, 2, 1, 4]
-    #
-    # linkedList.insertBefore(six, three)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 2, 5, 3, 6]
-    # assert getNodeValuesTailToHead(linkedList) == [6, 3, 5, 2, 1, 4]
-    #
-    # linkedList.insertAfter(six, three2)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 2, 5, 3, 6, 3]
-    # assert getNodeValuesTailToHead(linkedList) == [3, 6, 3, 5, 2, 1, 4]
-    #
-    # linkedList.insertAtPosition(1, three3)
-    # assert getNodeValuesHeadToTail(linkedList) == [3, 4, 1, 2, 5, 3, 6, 3]
-    # assert getNodeValuesTailToHead(linkedList) == [3, 6, 3, 5, 2, 1, 4, 3]
-    #
-    # linkedList.removeNodesWithValue(3)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 2, 5, 6]
-    # assert getNodeValuesTailToHead(linkedList) == [6, 5, 2, 1, 4]
-    #
-    # linkedList.remove(two)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 5, 6]
-    # assert getNodeValuesTailToHead(linkedList) == [6, 5, 1, 4]
-    #
-    # assert linkedList.containsNodeWithValue(5)
+    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
+    print(binary_search(array, 60))
