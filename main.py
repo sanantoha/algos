@@ -235,12 +235,42 @@ tasks_done = [
     'min_height_bst.py',
     'product_sum.py',
     'linked_list_construction.py',
-    'binary_search.py'
+    'binary_search.py',
+    'min_max_stack_construction.py'
 ]
 
 
-def binary_search(arr, target):
-    pass
+# Feel free to add new properties and methods to the class.
+class MinMaxStack:
+
+    def __init__(self):
+        pass
+
+
+    def peek(self):
+        pass
+
+
+    def pop(self):
+        pass
+
+
+    def push(self, number):
+        pass
+
+
+    def getMin(self):
+        pass
+
+    # O(1) time | O(1) space
+    def getMax(self):
+        pass
+
+
+def testMinMaxPeek(min, max, peek, stack):
+    assert stack.getMin() == min
+    assert stack.getMax() == max
+    assert stack.peek() == peek
 
 
 if __name__ == '__main__':
@@ -248,5 +278,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
-    print(binary_search(array, 60))
+    stack = MinMaxStack()
+    stack.push(5)
+    testMinMaxPeek(5, 5, 5, stack)
+    stack.push(7)
+    testMinMaxPeek(5, 7, 7, stack)
+    stack.push(2)
+    testMinMaxPeek(2, 7, 2, stack)
+    assert stack.pop() == 2
+    assert stack.pop() == 7
+    testMinMaxPeek(5, 5, 5, stack)
