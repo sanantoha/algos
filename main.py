@@ -237,15 +237,16 @@ tasks_done = [
     'linked_list_construction.py',
     'binary_search.py',
     'min_max_stack_construction.py',
-    'get_nth_fib.py'
+    'get_nth_fib.py',
+    'find_closest_value_in_bst.py'
 ]
 
 
-def get_nth_fib(n):
+def find_closest_value_in_bst(root, target):
     pass
 
 
-def get_nth_fib_iter(n):
+def find_closest_value_in_bst1(root, target):
     pass
 
 
@@ -254,10 +255,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib(i)))
+    from tree.BST import BST
 
-    print("===================================")
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+    expected = 13
 
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib_iter(i)))
+    print(find_closest_value_in_bst(root, 12))
+    print(find_closest_value_in_bst1(root, 12))
