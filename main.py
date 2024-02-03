@@ -238,15 +238,16 @@ tasks_done = [
     'binary_search.py',
     'min_max_stack_construction.py',
     'get_nth_fib.py',
-    'find_closest_value_in_bst.py'
+    'find_closest_value_in_bst.py',
+    'simmetrical_tree.py'
 ]
 
 
-def find_closest_value_in_bst(root, target):
+def symmetricalTreeRec(root):
     pass
 
 
-def find_closest_value_in_bst1(root, target):
+def symmetricalTree(root):
     pass
 
 
@@ -255,18 +256,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BST import BST
+    from tree.BinaryTree import BinaryTree
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-    expected = 13
+    tree = BinaryTree(10)
+    tree.left = BinaryTree(5)
+    tree.right = BinaryTree(5)
+    tree.left.left = BinaryTree(7)
+    tree.left.right = BinaryTree(9)
+    tree.right.left = BinaryTree(9)
+    tree.right.right = BinaryTree(7)
 
-    print(find_closest_value_in_bst(root, 12))
-    print(find_closest_value_in_bst1(root, 12))
+    expected = True
+
+    actual = symmetricalTreeRec(tree)
+    print(actual)
+    assert actual == expected
+
+    actual = symmetricalTree(tree)
+    print(actual)
+    assert actual == expected
