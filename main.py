@@ -239,15 +239,12 @@ tasks_done = [
     'min_max_stack_construction.py',
     'get_nth_fib.py',
     'find_closest_value_in_bst.py',
-    'simmetrical_tree.py'
+    'simmetrical_tree.py',
+    'disk_stacking.py'
 ]
 
 
-def symmetricalTreeRec(root):
-    pass
-
-
-def symmetricalTree(root):
+def diskStacking(disks):
     pass
 
 
@@ -256,22 +253,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BinaryTree import BinaryTree
-
-    tree = BinaryTree(10)
-    tree.left = BinaryTree(5)
-    tree.right = BinaryTree(5)
-    tree.left.left = BinaryTree(7)
-    tree.left.right = BinaryTree(9)
-    tree.right.left = BinaryTree(9)
-    tree.right.right = BinaryTree(7)
-
-    expected = True
-
-    actual = symmetricalTreeRec(tree)
+    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
+    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
+    actual = diskStacking(input)
     print(actual)
-    assert actual == expected
-
-    actual = symmetricalTree(tree)
-    print(actual)
-    assert actual == expected
+    assert (actual == expected)
