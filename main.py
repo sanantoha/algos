@@ -240,11 +240,16 @@ tasks_done = [
     'get_nth_fib.py',
     'find_closest_value_in_bst.py',
     'simmetrical_tree.py',
-    'disk_stacking.py'
+    'disk_stacking.py',
+    'next_greater_element.py'
 ]
 
 
-def diskStacking(disks):
+def nextGreaterElement(arr):
+    pass
+
+
+def nextGreaterElement1(arr):
     pass
 
 
@@ -253,8 +258,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
-    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
-    actual = diskStacking(input)
+    input = [2, 5, -3, -4, 6, 7, 2]
+    expected = [5, 6, 6, 6, 7, -1, 5]
+    actual = nextGreaterElement(input)
     print(actual)
-    assert (actual == expected)
+    assert actual == expected
+
+    actual = nextGreaterElement1(input)
+    print(actual)
+    assert actual == expected
