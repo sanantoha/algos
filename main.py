@@ -241,15 +241,15 @@ tasks_done = [
     'find_closest_value_in_bst.py',
     'simmetrical_tree.py',
     'disk_stacking.py',
-    'next_greater_element.py'
+    'next_greater_element.py',
+    'branch_sums.py'
 ]
 
 
-def nextGreaterElement(arr):
-    pass
+from tree.BinaryTree import BinaryTree
 
 
-def nextGreaterElement1(arr):
+def branch_sums(root):
     pass
 
 
@@ -258,12 +258,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [2, 5, -3, -4, 6, 7, 2]
-    expected = [5, 6, 6, 6, 7, -1, 5]
-    actual = nextGreaterElement(input)
-    print(actual)
-    assert actual == expected
-
-    actual = nextGreaterElement1(input)
-    print(actual)
-    assert actual == expected
+    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9, 10])
+    print(branch_sums(tree) == [15, 16, 18, 10, 11])
