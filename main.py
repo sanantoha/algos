@@ -252,6 +252,9 @@ from tree.BinaryTree import BinaryTree
 def branch_sums(root):
     pass
 
+def branch_sums_iter(root):
+    pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
@@ -260,3 +263,5 @@ if __name__ == '__main__':
 
     tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9, 10])
     print(branch_sums(tree) == [15, 16, 18, 10, 11])
+
+    print(branch_sums_iter(tree) == [15, 16, 18, 10, 11])
