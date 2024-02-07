@@ -242,17 +242,12 @@ tasks_done = [
     'simmetrical_tree.py',
     'disk_stacking.py',
     'next_greater_element.py',
-    'branch_sums.py'
+    'branch_sums.py',
+    'common_characters.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def branch_sums(root):
-    pass
-
-def branch_sums_iter(root):
+def commonCharacters(words):
     pass
 
 
@@ -261,7 +256,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9, 10])
-    print(branch_sums(tree) == [15, 16, 18, 10, 11])
-
-    print(branch_sums_iter(tree) == [15, 16, 18, 10, 11])
+    input = ["abc", "bcd", "cbad"]
+    expected = ["b", "c"]
+    actual = commonCharacters(input)
+    actual.sort()
+    print(actual)
+    assert actual == expected
