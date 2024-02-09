@@ -244,15 +244,23 @@ tasks_done = [
     'next_greater_element.py',
     'branch_sums.py',
     'common_characters.py',
-    'largest_range.py'
+    'largest_range.py',
+    'find_nodes_distance_k.py'
 ]
 
 
-def largestRange(arr):
+class BinaryTree:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+
+def findNodesDistanceK(tree, target, k):
     pass
 
 
-def largestRange1(arr):
+def findNodesDistanceK1(tree, target, k):
     pass
 
 
@@ -261,22 +269,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-    actual = largestRange(input)
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.right = BinaryTree(3)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right.right = BinaryTree(6)
+    root.right.right.left = BinaryTree(7)
+    root.right.right.right = BinaryTree(8)
+    target = 3
+    k = 2
+    expected = [2, 7, 8]
+    actual = findNodesDistanceK(root, target, k)
     print(actual)
-    assert actual == [0, 7]
+    actual.sort()
+    assert actual == expected
 
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange(input)
+    actual = findNodesDistanceK1(root, target, k)
     print(actual)
-    assert actual == [10, 19]
-
-    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [0, 7]
-
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [10, 19]
+    actual.sort()
+    assert actual == expected
