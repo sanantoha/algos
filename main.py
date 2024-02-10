@@ -245,22 +245,12 @@ tasks_done = [
     'branch_sums.py',
     'common_characters.py',
     'largest_range.py',
-    'find_nodes_distance_k.py'
+    'find_nodes_distance_k.py',
+    'stable_internships.py'
 ]
 
 
-class BinaryTree:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
-
-
-def findNodesDistanceK(tree, target, k):
-    pass
-
-
-def findNodesDistanceK1(tree, target, k):
+def stableInternships(interns, teams):
     pass
 
 
@@ -269,23 +259,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.right.right.left = BinaryTree(7)
-    root.right.right.right = BinaryTree(8)
-    target = 3
-    k = 2
-    expected = [2, 7, 8]
-    actual = findNodesDistanceK(root, target, k)
+    interns = [[0, 1, 2], [0, 2, 1], [1, 2, 0]]
+    teams = [[2, 1, 0], [0, 1, 2], [0, 1, 2]]
+    expected = [[0, 1], [1, 0], [2, 2]]
+    actual = stableInternships(interns, teams)
     print(actual)
-    actual.sort()
-    assert actual == expected
+    assert len(actual) == len(expected)
 
-    actual = findNodesDistanceK1(root, target, k)
-    print(actual)
-    actual.sort()
-    assert actual == expected
+    for match in expected:
+        containsMatch = False
+        for actualMatch in actual:
+            if actualMatch[0] == match[0] and actualMatch[1] == match[1]:
+                containsMatch = True
+        assert containsMatch
