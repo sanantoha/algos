@@ -250,7 +250,7 @@ tasks_done = [
 ]
 
 
-def stableInternships(interns, teams):
+def kruskalsAlgorithm(graph):
     pass
 
 
@@ -259,16 +259,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    interns = [[0, 1, 2], [0, 2, 1], [1, 2, 0]]
-    teams = [[2, 1, 0], [0, 1, 2], [0, 1, 2]]
-    expected = [[0, 1], [1, 0], [2, 2]]
-    actual = stableInternships(interns, teams)
-    print(actual)
-    assert len(actual) == len(expected)
+    input = [
+        [[1, 3], [2, 5]],
+        [[0, 3], [2, 10], [3, 12]],
+        [[0, 5], [1, 10]],
+        [[1, 12]]
+    ]
 
-    for match in expected:
-        containsMatch = False
-        for actualMatch in actual:
-            if actualMatch[0] == match[0] and actualMatch[1] == match[1]:
-                containsMatch = True
-        assert containsMatch
+    expected = [
+        [[1, 3], [2, 5]],
+        [[0, 3], [3, 12]],
+        [[0, 5]],
+        [[1, 12]]
+    ]
+    actual = kruskalsAlgorithm(input)
+    print(actual, "     =    ", expected)
+    assert actual == expected
