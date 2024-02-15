@@ -249,16 +249,37 @@ tasks_done = [
     'stable_internships.py',
     'kruskals_algorithm.py',
     'phone_number_mnemonic.py',
-    'three_number_sum.py'
+    'three_number_sum.py',
+    'sum_of_linked_lists.py'
 ]
 
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
-def three_number_sum(arr, target):
-    pass
+class LinkedList(LinkedList):
+    def addMany(self, values):
+        current = self
+        while current.next is not None:
+            current = current.next
+        for value in values:
+            current.next = LinkedList(value)
+            current = current.next
+        return self
 
 
-def three_number_sum1(arr, target):
-    pass
+def getNodesInArray(output):
+    nodes = []
+    current = output
+    while current is not None:
+        nodes.append(current.value)
+        current = current.next
+    return nodes
+
+
+def sumOfLinkedLists(l1, l2):
+    return None
 
 
 if __name__ == '__main__':
@@ -266,5 +287,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
-    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    ll1 = LinkedList(2).addMany([4, 7, 1])
+    ll2 = LinkedList(9).addMany([4, 5])
+    expected = LinkedList(1).addMany([9, 2, 2])
+    actual = sumOfLinkedLists(ll1, ll2)
+    print(getNodesInArray(actual))
+    assert getNodesInArray(actual) == getNodesInArray(expected)
