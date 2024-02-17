@@ -264,4 +264,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
+    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD"))
     print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
