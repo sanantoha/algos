@@ -251,11 +251,12 @@ tasks_done = [
     'phone_number_mnemonic.py',
     'three_number_sum.py',
     'sum_of_linked_lists.py',
-    'run_length_encoding.py'
+    'run_length_encoding.py',
+    'zigzag_traverse.py'
 ]
 
 
-def run_length_encoding(string):
+def zigzagTraverse(matrix):
     pass
 
 
@@ -264,5 +265,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD"))
-    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
+    test = [[1, 3, 4, 10], [2, 5, 9, 11], [6, 8, 12, 15], [7, 13, 14, 16]]
+    actual = zigzagTraverse(test)
+    print(actual)
+    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
