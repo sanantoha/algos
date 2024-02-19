@@ -252,11 +252,12 @@ tasks_done = [
     'three_number_sum.py',
     'sum_of_linked_lists.py',
     'run_length_encoding.py',
-    'zigzag_traverse.py'
+    'zigzag_traverse.py',
+    'longest_peak.py'
 ]
 
 
-def zigzagTraverse(matrix):
+def longest_peak(arr):
     pass
 
 
@@ -265,7 +266,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = [[1, 3, 4, 10], [2, 5, 9, 11], [6, 8, 12, 15], [7, 13, 14, 16]]
-    actual = zigzagTraverse(test)
-    print(actual)
-    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
