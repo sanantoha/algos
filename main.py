@@ -253,11 +253,12 @@ tasks_done = [
     'sum_of_linked_lists.py',
     'run_length_encoding.py',
     'zigzag_traverse.py',
-    'longest_peak.py'
+    'longest_peak.py',
+    'majority_element.py'
 ]
 
 
-def longest_peak(arr):
+def majorityElement(arr):
     pass
 
 
@@ -266,4 +267,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
+    input = [1, 2, 3, 2, 2, 1, 2]
+    expected = 2
+    actual = majorityElement(input)
+    print(actual)
+    assert actual == expected
+
+    input = [3, 3, 1]
+    expected = 3
+    actual = majorityElement(input)
+    print(actual)
+    assert actual == expected
