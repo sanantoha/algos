@@ -254,11 +254,11 @@ tasks_done = [
     'run_length_encoding.py',
     'zigzag_traverse.py',
     'longest_peak.py',
-    'majority_element.py'
+    'majority_element.py',
+    'apartment_hunting.py'
 ]
 
-
-def majorityElement(arr):
+def apartmentHunting(blocks, reqs):
     pass
 
 
@@ -267,14 +267,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [1, 2, 3, 2, 2, 1, 2]
-    expected = 2
-    actual = majorityElement(input)
-    print(actual)
-    assert actual == expected
-
-    input = [3, 3, 1]
-    expected = 3
-    actual = majorityElement(input)
-    print(actual)
-    assert actual == expected
+    blocks = [
+        {"gym": False, "school": True, "store": False},
+        {"gym": True, "school": False, "store": False},
+        {"gym": True, "school": True, "store": False},
+        {"gym": False, "school": True, "store": False},
+        {"gym": False, "school": True, "store": True},
+    ]
+    reqs = ["gym", "school", "store"]
+    assert apartmentHunting(blocks, reqs) == 3
