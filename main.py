@@ -275,4 +275,6 @@ if __name__ == '__main__':
         {"gym": False, "school": True, "store": True},
     ]
     reqs = ["gym", "school", "store"]
-    assert apartmentHunting(blocks, reqs) == 3
+    hunting = apartmentHunting(blocks, reqs)
+    print(hunting)
+    assert hunting == 3
