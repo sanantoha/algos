@@ -256,15 +256,16 @@ tasks_done = [
     'longest_peak.py',
     'majority_element.py',
     'apartment_hunting.py',
-    'all_paths_source_target.py'
+    'all_paths_source_target.py',
+    'same_bsts.py'
 ]
 
 
-def allPathsSourceTarget(graph):
+def sameBsts(arr1, arr2):
     pass
 
 
-def allPathsSourceTarget1(graph):
+def sameBsts1(arr1, arr2):
     pass
 
 
@@ -273,14 +274,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(allPathsSourceTarget([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
-    print(allPathsSourceTarget(
-        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget([[2], [], [1]]))  # [[0, 2]]
+    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
+    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
+    assert sameBsts(arrayOne, arrayTwo)
 
-    print(allPathsSourceTarget1([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
-    print(allPathsSourceTarget1(
-        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget1([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget1([[2], [], [1]]))  # [[0, 2]]
+    assert sameBsts1(arrayOne, arrayTwo)
