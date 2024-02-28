@@ -258,11 +258,12 @@ tasks_done = [
     'apartment_hunting.py',
     'all_paths_source_target.py',
     'same_bsts.py',
-    'word_ladder.py'
+    'word_ladder.py',
+    'a_star_algorithm.py'
 ]
 
 
-def ladderLength(beginWord, endWord, wordList):
+def a_star_algorithm(start_row, start_col, end_row, end_col, graph):
     pass
 
 
@@ -271,9 +272,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = ladderLength(beginWord, endWord, wordList)
+    start_row = 0
+    start_col = 1
+    end_row = 4
+    end_col = 3
+    graph = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0], [1, 0, 1, 1, 1], [0, 0, 0, 0, 0]]
+    expected = [[0, 1], [0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [4, 2], [4, 3]]
+    actual = a_star_algorithm(start_row, start_col, end_row, end_col, graph)
     print(actual)
-    assert actual == 5
+    assert actual == expected
