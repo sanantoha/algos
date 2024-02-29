@@ -259,25 +259,51 @@ tasks_done = [
     'all_paths_source_target.py',
     'same_bsts.py',
     'word_ladder.py',
-    'a_star_algorithm.py'
+    'a_star_algorithm.py',
+    'serialize_and_deserialize_n_ary_tree.py'
 ]
 
+class Node(object):
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
 
-def a_star_algorithm(start_row, start_col, end_row, end_col, graph):
-    pass
+    def __repr__(self):
+        return f"Node({self.val} {self.children})"
 
+
+class Codec:
+    def serialize(self, root):
+        pass
+
+    def deserialize(self, str):
+        pass
+
+
+class Codec1:
+    def serialize(self, root):
+        pass
+
+    def deserialize(self, str):
+        pass
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    start_row = 0
-    start_col = 1
-    end_row = 4
-    end_col = 3
-    graph = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0], [1, 0, 1, 1, 1], [0, 0, 0, 0, 0]]
-    expected = [[0, 1], [0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [4, 2], [4, 3]]
-    actual = a_star_algorithm(start_row, start_col, end_row, end_col, graph)
-    print(actual)
-    assert actual == expected
+    root = Node(11, [Node(33, [Node(55), Node(6666)]), Node(22), Node(30)])
+    print(root)
+    codec = Codec()
+    str = codec.serialize(root)
+    print(str)
+
+    tree = codec.deserialize(str)
+    print(tree)
+
+    codec1 = Codec1()
+    str = codec1.serialize(root)
+    print(str)
+
+    tree = codec1.deserialize(str)
+    print(tree)
