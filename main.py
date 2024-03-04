@@ -128,109 +128,40 @@ tasks = [
     'median_of_two_sorted_arrays.py',
     'blackjack_probability.py',
     'number_of_islands.py',
-    'lagest_island.py'
+    'lagest_island.py',
 ]
 
 tasks_done = [
-
+    'suffix_trie_construction.py'
 ]
 
-class Node(object):
-    def __init__(self, val=None, children=None):
-        self.val = val
-        self.children = children
+# Do not edit the class below except for the
+# populateSuffixTrieFrom and contains methods.
+# Feel free to add new properties and methods
+# to the class.
+class SuffixTrie:
+    def __init__(self, string):
+        self.root = {}
+        self.endSymbol = "*"
+        self.populateSuffixTrieFrom(string)
 
-    def __repr__(self):
-        return f"Node({self.val} {self.children})"
-
-
-class Indexer:
-    def __init__(self, idx):
-        self.idx = idx
-
-    def inc(self):
-        self.idx += 1
-
-class Codec:
-    def serialize(self, root):
-
-        def helper(root, indexer, parentIdx, res):
-
-            if not root:
-                return
-
-            res.append(chr(indexer.idx + 48))
-            res.append(chr(root.val + 48))
-            pId = chr(parentIdx + 48) if parentIdx else 'N'
-            res.append(pId)
-
-            parentIdx = indexer.idx
-            for child in root.children if root.children else []:
-                indexer.inc()
-                helper(child, indexer, parentIdx, res)
-
-
-        if not root:
-            return ""
-        res = []
-        helper(root, Indexer(1), None, res)
-
-        return "".join(res)
-
-    def deserialize(self, str):
-
-        def helper(data):
-            if not data:
-                return None
-
-            nodes = {}
-
-            for i in range(0, len(data), 3):
-                idx = ord(data[i]) - 48
-                val = ord(data[i + 1]) - 48
-                # parentId = ord(data[i + 2]) - 48
-                nodes[idx] = Node(val, [])
-
-            for i in range(3, len(data), 3):
-                idx = ord(data[i]) - 48
-                parentId = ord(data[i + 2]) - 48
-
-                parent = nodes[parentId]
-                parent.children.append(nodes[idx])
-
-            return nodes[ord(data[0]) - 48]
-
-
-        if not str:
-            return None
-
-        return helper(str)
-
-
-class Codec1:
-    def serialize(self, root):
+    def populateSuffixTrieFrom(self, string):
         pass
 
-    def deserialize(self, str):
+    def contains(self, string):
         pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    root = Node(11, [Node(33, [Node(55), Node(6666)]), Node(22), Node(30)])
-    print(root)
-    codec = Codec()
-    str = codec.serialize(root)
-    print(str)
-
-    tree = codec.deserialize(str)
-    print(tree)
-
-    codec1 = Codec1()
-    str = codec1.serialize(root)
-    print(str)
-
-    tree = codec1.deserialize(str)
-    print(tree)
+    trie = SuffixTrie("babc")
+    expected = {
+        "c": {"*": True},
+        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
+        "a": {"b": {"c": {"*": True}}},
+    }
+    assert trie.root == expected
+    assert trie.contains("abc")
