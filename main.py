@@ -163,5 +163,6 @@ if __name__ == '__main__':
         "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
         "a": {"b": {"c": {"*": True}}},
     }
+    print(trie.root)
     assert trie.root == expected
     assert trie.contains("abc")
