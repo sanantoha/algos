@@ -132,24 +132,13 @@ tasks = [
 ]
 
 tasks_done = [
-    'suffix_trie_construction.py'
+    'suffix_trie_construction.py',
+    'find_pivot_index.py'
 ]
 
-# Do not edit the class below except for the
-# populateSuffixTrieFrom and contains methods.
-# Feel free to add new properties and methods
-# to the class.
-class SuffixTrie:
-    def __init__(self, string):
-        self.root = {}
-        self.endSymbol = "*"
-        self.populateSuffixTrieFrom(string)
 
-    def populateSuffixTrieFrom(self, string):
-        pass
-
-    def contains(self, string):
-        pass
+def pivotIndex(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -157,12 +146,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    trie = SuffixTrie("babc")
-    expected = {
-        "c": {"*": True},
-        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
-        "a": {"b": {"c": {"*": True}}},
-    }
-    print(trie.root)
-    assert trie.root == expected
-    assert trie.contains("abc")
+    actual = pivotIndex([1, 7, 3, 6, 5, 6])
+    print(actual)
+    assert actual == 3
+    assert pivotIndex([1, 2, 3]) == -1
+    assert pivotIndex([2, 1, -1]) == 0
