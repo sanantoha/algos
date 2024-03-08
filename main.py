@@ -134,11 +134,12 @@ tasks = [
 tasks_done = [
     'suffix_trie_construction.py',
     'find_pivot_index.py',
-    'subarray_sort.py'
+    'subarray_sort.py',
+    'longest_palindromic_substring.py'
 ]
 
 
-def subarraySort(arr):
+def longestPalindromicSubstring(str):
     pass
 
 
@@ -147,10 +148,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
+    actual = longestPalindromicSubstring("abaxyzzyxf")
     print(actual)
-    assert actual == [3, 9]
-
-    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
-    print(actual)
-    assert actual == [4, 9]
+    assert actual == "xyzzyx"
