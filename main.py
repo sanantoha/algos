@@ -135,11 +135,12 @@ tasks_done = [
     'suffix_trie_construction.py',
     'find_pivot_index.py',
     'subarray_sort.py',
-    'longest_palindromic_substring.py'
+    'longest_palindromic_substring.py',
+    'stable_internships.py'
 ]
 
 
-def longestPalindromicSubstring(str):
+def stableInternships(interns, teams):
     pass
 
 
@@ -148,6 +149,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = longestPalindromicSubstring("abaxyzzyxf")
+    interns = [[0, 1, 2], [0, 2, 1], [1, 2, 0]]
+    teams = [[2, 1, 0], [0, 1, 2], [0, 1, 2]]
+    expected = [[0, 1], [1, 0], [2, 2]]
+    actual = stableInternships(interns, teams)
     print(actual)
-    assert actual == "xyzzyx"
+    assert len(actual) == len(expected)
+
+    for match in expected:
+        containsMatch = False
+        for actualMatch in actual:
+            if actualMatch[0] == match[0] and actualMatch[1] == match[1]:
+                containsMatch = True
+        assert containsMatch
