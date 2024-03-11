@@ -136,11 +136,12 @@ tasks_done = [
     'find_pivot_index.py',
     'subarray_sort.py',
     'longest_palindromic_substring.py',
-    'stable_internships.py'
+    'stable_internships.py',
+    'search_in_sorted_matrix.py'
 ]
 
 
-def stableInternships(interns, teams):
+def searchInSortedMatrix(matrix, target):
     pass
 
 
@@ -149,16 +150,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    interns = [[0, 1, 2], [0, 2, 1], [1, 2, 0]]
-    teams = [[2, 1, 0], [0, 1, 2], [0, 1, 2]]
-    expected = [[0, 1], [1, 0], [2, 2]]
-    actual = stableInternships(interns, teams)
+    matrix = [
+        [1, 4, 7, 12, 15, 1000],
+        [2, 5, 19, 31, 32, 1001],
+        [3, 8, 24, 33, 35, 1002],
+        [40, 41, 42, 44, 45, 1003],
+        [99, 100, 103, 106, 128, 1004],
+    ]
+    actual = searchInSortedMatrix(matrix, 44)
     print(actual)
-    assert len(actual) == len(expected)
-
-    for match in expected:
-        containsMatch = False
-        for actualMatch in actual:
-            if actualMatch[0] == match[0] and actualMatch[1] == match[1]:
-                containsMatch = True
-        assert containsMatch
+    assert actual == [3, 3]
