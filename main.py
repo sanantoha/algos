@@ -138,11 +138,19 @@ tasks_done = [
     'longest_palindromic_substring.py',
     'stable_internships.py',
     'search_in_sorted_matrix.py',
-    'caesar_cipher_encryptor.py'
+    'caesar_cipher_encryptor.py',
+    'branch_sums.py'
 ]
 
 
-def caesar_cipher_encryptor(str, key):
+from tree.BinaryTree import BinaryTree
+
+
+def branch_sums(root):
+    pass
+
+
+def branch_sums_iter(root):
     pass
 
 
@@ -151,5 +159,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(caesar_cipher_encryptor("xyz", 2) == "zab")
-    print(caesar_cipher_encryptor("abc", 52) == "abc")
+    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9, 10])
+    print(sorted(branch_sums(tree)) == sorted([15, 16, 18, 10, 11]))
+
+    print(sorted(branch_sums_iter(tree)) == sorted([15, 16, 18, 10, 11]))
