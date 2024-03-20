@@ -143,14 +143,12 @@ tasks_done = [
     'numbers_of_ways_to_traverse_graph.py',
     'min_height_bst.py',
     'class_photos.py',
-    'merging_linked_lists.py'
+    'merging_linked_lists.py',
+    'array_of_products.py'
 ]
 
 
-from list.LinkedList import LinkedList
-
-
-def mergingLinkedLists(l1, l2):
+def array_of_products(arr):
     pass
 
 
@@ -159,15 +157,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    l1 = LinkedList(1)
-    l1.next = LinkedList(2)
-    l1.next.next = LinkedList(3)
-    l1.next.next.next = LinkedList(4)
-
-    l2 = LinkedList(10)
-    l2.next = LinkedList(20)
-    l2.next.next = l1.next.next
-
-    actual = mergingLinkedLists(l1, l2)
-    print(actual)
-    assert actual.getNodesInArray() == [3, 4]
+    print(array_of_products([1, 2, 3, 4]))
