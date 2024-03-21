@@ -144,11 +144,12 @@ tasks_done = [
     'min_height_bst.py',
     'class_photos.py',
     'merging_linked_lists.py',
-    'array_of_products.py'
+    'array_of_products.py',
+    'one_edit.py'
 ]
 
 
-def array_of_products(arr):
+def oneEdit(stringOne, stringTwo):
     pass
 
 
@@ -157,4 +158,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(array_of_products([1, 2, 3, 4]))
+    stringOne = "hello"
+    stringTwo = "helo"
+    expected = True
+    actual = oneEdit(stringOne, stringTwo)
+    print(actual)
+    assert actual == expected
