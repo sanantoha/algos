@@ -145,11 +145,16 @@ tasks_done = [
     'class_photos.py',
     'merging_linked_lists.py',
     'array_of_products.py',
-    'one_edit.py'
+    'one_edit.py',
+    'longest_common_subsequence.py'
 ]
 
 
-def oneEdit(stringOne, stringTwo):
+def longestCommonSubsequence(str1, str2):
+    pass
+
+
+def longestCommonSubsequence1(str1, str2):
     pass
 
 
@@ -158,9 +163,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stringOne = "hello"
-    stringTwo = "helo"
-    expected = True
-    actual = oneEdit(stringOne, stringTwo)
-    print(actual)
-    assert actual == expected
+    output = longestCommonSubsequence("ZXVVYZW", "XKYKZPW")
+    print(output)
+    assert output == ["X", "Y", "Z", "W"]
+
+    output = longestCommonSubsequence1("ZXVVYZW", "XKYKZPW")
+    print(output)
+    assert output == ["X", "Y", "Z", "W"]
