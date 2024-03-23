@@ -146,15 +146,12 @@ tasks_done = [
     'merging_linked_lists.py',
     'array_of_products.py',
     'one_edit.py',
-    'longest_common_subsequence.py'
+    'longest_common_subsequence.py',
+    'bubble_sort.py'
 ]
 
 
-def longestCommonSubsequence(str1, str2):
-    pass
-
-
-def longestCommonSubsequence1(str1, str2):
+def bubble_sort(arr):
     pass
 
 
@@ -163,10 +160,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = longestCommonSubsequence("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
-
-    output = longestCommonSubsequence1("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
+    print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
