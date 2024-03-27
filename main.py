@@ -148,15 +148,21 @@ tasks_done = [
     'one_edit.py',
     'longest_common_subsequence.py',
     'bubble_sort.py',
-    'find_closest_value_in_bst.py'
+    'find_closest_value_in_bst.py',
+    'find_successor.py'
 ]
 
 
-def find_closest_value_in_bst(root, target):
-    pass
+# This is an input class. Do not edit.
+class BinaryTree:
+    def __init__(self, value, left=None, right=None, parent=None):
+        self.value = value
+        self.left = left
+        self.right = right
+        self.parent = parent
 
 
-def find_closest_value_in_bst1(root, target):
+def find_successor(tree, node):
     pass
 
 
@@ -165,18 +171,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BST import BST
-
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-    expected = 13
-
-    print(find_closest_value_in_bst(root, 12))
-    print(find_closest_value_in_bst1(root, 12))
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.parent = root
+    root.right = BinaryTree(3)
+    root.right.parent = root
+    root.left.left = BinaryTree(4)
+    root.left.left.parent = root.left
+    root.left.right = BinaryTree(5)
+    root.left.right.parent = root.left
+    root.left.left.left = BinaryTree(6)
+    root.left.left.left.parent = root.left.left
+    node = root.left.right
+    expected = root
+    actual = find_successor(root, node)
+    assert actual == expected
