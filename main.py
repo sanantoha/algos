@@ -149,21 +149,36 @@ tasks_done = [
     'longest_common_subsequence.py',
     'bubble_sort.py',
     'find_closest_value_in_bst.py',
-    'find_successor.py'
+    'find_successor.py',
+    'min_max_stack_construction.py'
 ]
 
 
-# This is an input class. Do not edit.
-class BinaryTree:
-    def __init__(self, value, left=None, right=None, parent=None):
-        self.value = value
-        self.left = left
-        self.right = right
-        self.parent = parent
+class MinMaxStack:
+
+    def __init__(self):
+        self.stack = []
+
+    def peek(self):
+        pass
+
+    def pop(self):
+        pass
+
+    def push(self, number):
+        pass
+
+    def getMin(self):
+        pass
+
+    def getMax(self):
+        pass
 
 
-def find_successor(tree, node):
-    pass
+def testMinMaxPeek(min, max, peek, stack):
+    assert stack.getMin() == min
+    assert stack.getMax() == max
+    assert stack.peek() == peek
 
 
 if __name__ == '__main__':
@@ -171,18 +186,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.left.parent = root
-    root.right = BinaryTree(3)
-    root.right.parent = root
-    root.left.left = BinaryTree(4)
-    root.left.left.parent = root.left
-    root.left.right = BinaryTree(5)
-    root.left.right.parent = root.left
-    root.left.left.left = BinaryTree(6)
-    root.left.left.left.parent = root.left.left
-    node = root.left.right
-    expected = root
-    actual = find_successor(root, node)
-    assert actual == expected
+    stack = MinMaxStack()
+    stack.push(5)
+    testMinMaxPeek(5, 5, 5, stack)
+    stack.push(7)
+    testMinMaxPeek(5, 7, 7, stack)
+    stack.push(2)
+    testMinMaxPeek(2, 7, 2, stack)
+    assert stack.pop() == 2
+    assert stack.pop() == 7
+    testMinMaxPeek(5, 5, 5, stack)
