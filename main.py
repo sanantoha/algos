@@ -150,35 +150,13 @@ tasks_done = [
     'bubble_sort.py',
     'find_closest_value_in_bst.py',
     'find_successor.py',
-    'min_max_stack_construction.py'
+    'min_max_stack_construction.py',
+    'minimum_passes_of_matrix.py'
 ]
 
 
-class MinMaxStack:
-
-    def __init__(self):
-        self.stack = []
-
-    def peek(self):
-        pass
-
-    def pop(self):
-        pass
-
-    def push(self, number):
-        pass
-
-    def getMin(self):
-        pass
-
-    def getMax(self):
-        pass
-
-
-def testMinMaxPeek(min, max, peek, stack):
-    assert stack.getMin() == min
-    assert stack.getMax() == max
-    assert stack.peek() == peek
+def minimum_passes_of_matrix(matrix):
+    pass
 
 
 if __name__ == '__main__':
@@ -186,13 +164,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stack = MinMaxStack()
-    stack.push(5)
-    testMinMaxPeek(5, 5, 5, stack)
-    stack.push(7)
-    testMinMaxPeek(5, 7, 7, stack)
-    stack.push(2)
-    testMinMaxPeek(2, 7, 2, stack)
-    assert stack.pop() == 2
-    assert stack.pop() == 7
-    testMinMaxPeek(5, 5, 5, stack)
+    input = [
+        [0, -1, -3, 2, 0],
+        [1, -2, -5, -1, -3],
+        [3, 0, 0, -4, -1],
+    ]
+    expected = 3
+    actual = minimum_passes_of_matrix(input)
+    print(actual)
+    assert actual == expected
