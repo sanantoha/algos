@@ -151,11 +151,12 @@ tasks_done = [
     'find_closest_value_in_bst.py',
     'find_successor.py',
     'min_max_stack_construction.py',
-    'minimum_passes_of_matrix.py'
+    'minimum_passes_of_matrix.py',
+    'semordinal.py'
 ]
 
 
-def minimum_passes_of_matrix(matrix):
+def semordnilap(words):
     pass
 
 
@@ -164,12 +165,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [0, -1, -3, 2, 0],
-        [1, -2, -5, -1, -3],
-        [3, 0, 0, -4, -1],
-    ]
-    expected = 3
-    actual = minimum_passes_of_matrix(input)
-    print(actual)
-    assert actual == expected
+    input = ["desserts", "stressed", "hello"]
+    expected = [["desserts", "stressed"]]
+    actual = semordnilap(input)
+    print(actual)  # [['desserts', 'stressed']]
