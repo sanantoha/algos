@@ -152,11 +152,12 @@ tasks_done = [
     'find_successor.py',
     'min_max_stack_construction.py',
     'minimum_passes_of_matrix.py',
-    'semordinal.py'
+    'semordinal.py',
+    'disk_stacking.py'
 ]
 
 
-def semordnilap(words):
+def diskStacking(disks):
     pass
 
 
@@ -165,7 +166,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["desserts", "stressed", "hello"]
-    expected = [["desserts", "stressed"]]
-    actual = semordnilap(input)
-    print(actual)  # [['desserts', 'stressed']]
+    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
+    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
+    actual = diskStacking(input)
+    print(actual)
+    assert (actual == expected)
