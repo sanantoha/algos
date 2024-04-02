@@ -153,11 +153,12 @@ tasks_done = [
     'min_max_stack_construction.py',
     'minimum_passes_of_matrix.py',
     'semordinal.py',
-    'disk_stacking.py'
+    'disk_stacking.py',
+    'balanced_brackets.py'
 ]
 
 
-def diskStacking(disks):
+def balancedBrackets(str):
     pass
 
 
@@ -166,8 +167,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
-    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
-    actual = diskStacking(input)
-    print(actual)
-    assert (actual == expected)
+    assert balancedBrackets("(a)")
+    assert balancedBrackets("([])")
+    assert balancedBrackets("([])(){}(())()()")
+
+    assert balancedBrackets1("(a)")
+    assert balancedBrackets1("([])")
+    assert balancedBrackets1("([])(){}(())()()")
