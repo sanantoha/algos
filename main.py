@@ -154,11 +154,12 @@ tasks_done = [
     'minimum_passes_of_matrix.py',
     'semordinal.py',
     'disk_stacking.py',
-    'balanced_brackets.py'
+    'balanced_brackets.py',
+    'min_number_of_coins_for_change.py'
 ]
 
 
-def balancedBrackets(str):
+def min_number_of_coins_for_change(n, denoms):
     pass
 
 
@@ -167,10 +168,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert balancedBrackets("(a)")
-    assert balancedBrackets("([])")
-    assert balancedBrackets("([])(){}(())()()")
-
-    assert balancedBrackets1("(a)")
-    assert balancedBrackets1("([])")
-    assert balancedBrackets1("([])(){}(())()()")
+    print(min_number_of_coins_for_change(7, [1, 5, 10]))
+    assert min_number_of_coins_for_change(7, [1, 5, 10]) == 3
