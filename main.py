@@ -155,11 +155,18 @@ tasks_done = [
     'semordinal.py',
     'disk_stacking.py',
     'balanced_brackets.py',
-    'min_number_of_coins_for_change.py'
+    'min_number_of_coins_for_change.py',
+    'invert_binary_tree.py'
 ]
 
+from tree import BinaryTree
 
-def min_number_of_coins_for_change(n, denoms):
+
+def invert_binary_tree(root):
+    pass
+
+
+def invert_binary_tree_iter(root):
     pass
 
 
@@ -168,5 +175,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(min_number_of_coins_for_change(7, [1, 5, 10]))
-    assert min_number_of_coins_for_change(7, [1, 5, 10]) == 3
+    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
+    inverted_tree = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
+    invert_binary_tree(tree)
+    assert tree.__eq__(inverted_tree)
+
+    tree1 = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
+    inverted_tree1 = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
+    invert_binary_tree_iter(tree1)
+    assert tree1.__eq__(inverted_tree1)
