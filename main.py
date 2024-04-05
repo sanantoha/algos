@@ -156,17 +156,12 @@ tasks_done = [
     'disk_stacking.py',
     'balanced_brackets.py',
     'min_number_of_coins_for_change.py',
-    'invert_binary_tree.py'
+    'invert_binary_tree.py',
+    'knapsack_problem.py'
 ]
 
-from tree import BinaryTree
 
-
-def invert_binary_tree(root):
-    pass
-
-
-def invert_binary_tree_iter(root):
+def knapsackProblem(items, capacity):
     pass
 
 
@@ -175,12 +170,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
-    inverted_tree = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
-    invert_binary_tree(tree)
-    assert tree.__eq__(inverted_tree)
-
-    tree1 = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
-    inverted_tree1 = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
-    invert_binary_tree_iter(tree1)
-    assert tree1.__eq__(inverted_tree1)
+    items = [[1, 2], [4, 3], [5, 6], [6, 7]] # [val, weight]
+    capacity = 10
+    expected = [10, [1, 3]]
+    actual = knapsackProblem(items, capacity)
+    print(actual)
+    assert actual == expected
