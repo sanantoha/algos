@@ -157,11 +157,16 @@ tasks_done = [
     'balanced_brackets.py',
     'min_number_of_coins_for_change.py',
     'invert_binary_tree.py',
-    'knapsack_problem.py'
+    'knapsack_problem.py',
+    'cycle_in_graph.py'
 ]
 
 
-def knapsackProblem(items, capacity):
+def cycle_in_graph(graph):
+    pass
+
+
+def cycle_in_graph1(graph):
     pass
 
 
@@ -170,9 +175,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    items = [[1, 2], [4, 3], [5, 6], [6, 7]] # [val, weight]
-    capacity = 10
-    expected = [10, [1, 3]]
-    actual = knapsackProblem(items, capacity)
+    input = [[1, 3], [2, 3, 4], [0], [], [2, 5], []]
+    expected = True
+    actual = cycle_in_graph(input)
+    print(actual)
+    assert actual == expected
+
+    actual = cycle_in_graph1(input)
     print(actual)
     assert actual == expected
