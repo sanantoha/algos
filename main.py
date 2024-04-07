@@ -158,15 +158,12 @@ tasks_done = [
     'min_number_of_coins_for_change.py',
     'invert_binary_tree.py',
     'knapsack_problem.py',
-    'cycle_in_graph.py'
+    'cycle_in_graph.py',
+    'longest_peak.py'
 ]
 
 
-def cycle_in_graph(graph):
-    pass
-
-
-def cycle_in_graph1(graph):
+def longest_peak(arr):
     pass
 
 
@@ -175,12 +172,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[1, 3], [2, 3, 4], [0], [], [2, 5], []]
-    expected = True
-    actual = cycle_in_graph(input)
-    print(actual)
-    assert actual == expected
-
-    actual = cycle_in_graph1(input)
-    print(actual)
-    assert actual == expected
+    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
