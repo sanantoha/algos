@@ -159,11 +159,12 @@ tasks_done = [
     'invert_binary_tree.py',
     'knapsack_problem.py',
     'cycle_in_graph.py',
-    'longest_peak.py'
+    'longest_peak.py',
+    'product_sum.py'
 ]
 
 
-def longest_peak(arr):
+def product_sum(arr):
     pass
 
 
@@ -172,4 +173,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
+    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
