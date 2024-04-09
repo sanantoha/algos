@@ -160,11 +160,15 @@ tasks_done = [
     'knapsack_problem.py',
     'cycle_in_graph.py',
     'longest_peak.py',
-    'product_sum.py'
+    'product_sum.py',
+    'height_balanced_binary_tree.py'
 ]
 
 
-def product_sum(arr):
+from tree.BinaryTree import BinaryTree
+
+
+def height_balanced_binary_tree(root):
     pass
 
 
@@ -173,4 +177,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.right = BinaryTree(3)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right.right = BinaryTree(6)
+    root.left.right.left = BinaryTree(7)
+    root.left.right.right = BinaryTree(8)
+    expected = True
+    actual = height_balanced_binary_tree(root)
+    assert actual == expected
