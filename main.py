@@ -161,14 +161,31 @@ tasks_done = [
     'cycle_in_graph.py',
     'longest_peak.py',
     'product_sum.py',
-    'height_balanced_binary_tree.py'
+    'height_balanced_binary_tree.py',
+    'bst_traversal.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
+def pre_order_traverse(root, arr):
+    pass
 
 
-def height_balanced_binary_tree(root):
+def pre_order_traverse_iter(root, arr):
+    pass
+
+
+def in_order_traverse(root, arr):
+    pass
+
+
+def in_order_traverse_iter(root, arr):
+    pass
+
+
+def post_order_traverse(root, arr):
+    pass
+
+def post_order_traverse_iter(root, arr):
     pass
 
 
@@ -177,14 +194,25 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.left.right.left = BinaryTree(7)
-    root.left.right.right = BinaryTree(8)
-    expected = True
-    actual = height_balanced_binary_tree(root)
-    assert actual == expected
+    from tree.BST import BST
+
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.right = BST(22)
+
+    in_order = [1, 2, 5, 5, 10, 15, 22]
+    pre_order = [10, 5, 2, 1, 5, 15, 22]
+    post_order = [1, 2, 5, 5, 22, 15, 10]
+
+    assert pre_order_traverse(root, []) == pre_order
+    assert pre_order_traverse_iter(root, []) == pre_order
+
+    assert in_order_traverse(root, []) == in_order
+    assert in_order_traverse_iter(root, []) == in_order
+
+    assert post_order_traverse(root, []) == post_order
+    assert post_order_traverse_iter(root, []) == post_order
