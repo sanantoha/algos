@@ -163,15 +163,12 @@ tasks_done = [
     'product_sum.py',
     'height_balanced_binary_tree.py',
     'bst_traversal.py',
-    'largest_range.py'
+    'largest_range.py',
+    'find_kth_largest_value_in_bst.py'
 ]
 
 
-def largestRange(arr):
-    pass
-
-
-def largestRange1(arr):
+def find_kth_largest_value_in_bst(root, k):
     pass
 
 
@@ -180,22 +177,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-    actual = largestRange(input)
-    print(actual)
-    assert actual == [0, 7]
+    from tree.BST import BST
 
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange(input)
+    root = BST(15)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.left.right = BST(3)
+    root.left.right = BST(5)
+    root.right = BST(20)
+    root.right.left = BST(17)
+    root.right.right = BST(22)
+    k = 3
+    expected = 17
+    actual = find_kth_largest_value_in_bst(root, k)
     print(actual)
-    assert actual == [10, 19]
-
-    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [0, 7]
-
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [10, 19]
+    assert actual == expected
