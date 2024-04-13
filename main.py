@@ -164,11 +164,20 @@ tasks_done = [
     'height_balanced_binary_tree.py',
     'bst_traversal.py',
     'largest_range.py',
-    'find_kth_largest_value_in_bst.py'
+    'find_kth_largest_value_in_bst.py',
+    'two_number_sum.py'
 ]
 
 
-def find_kth_largest_value_in_bst(root, k):
+def two_number_sum(arr, target):
+    pass
+
+
+def two_number_sum1(arr, target):
+    pass
+
+
+def two_number_sum2(arr, target):
     pass
 
 
@@ -177,19 +186,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BST import BST
-
-    root = BST(15)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.left.right = BST(3)
-    root.left.right = BST(5)
-    root.right = BST(20)
-    root.right.left = BST(17)
-    root.right.right = BST(22)
-    k = 3
-    expected = 17
-    actual = find_kth_largest_value_in_bst(root, k)
-    print(actual)
-    assert actual == expected
+    print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
