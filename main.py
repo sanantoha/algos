@@ -165,19 +165,12 @@ tasks_done = [
     'bst_traversal.py',
     'largest_range.py',
     'find_kth_largest_value_in_bst.py',
-    'two_number_sum.py'
+    'two_number_sum.py',
+    'max_sum_in_binary_tree.py'
 ]
 
 
-def two_number_sum(arr, target):
-    pass
-
-
-def two_number_sum1(arr, target):
-    pass
-
-
-def two_number_sum2(arr, target):
+def maxPathSum(root):
     pass
 
 
@@ -186,6 +179,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    from tree.BinaryTree import BinaryTree
+
+    test = BinaryTree(1).insert([2, 3, 4, 5, 6, 7])
+    actual = maxPathSum(test)
+    print(actual)
+    assert actual == 18
