@@ -166,11 +166,16 @@ tasks_done = [
     'largest_range.py',
     'find_kth_largest_value_in_bst.py',
     'two_number_sum.py',
-    'max_sum_in_binary_tree.py'
+    'max_sum_in_binary_tree.py',
+    'all_paths_source_target.py'
 ]
 
 
-def maxPathSum(root):
+def allPathsSourceTarget(graph):
+    pass
+
+
+def allPathsSourceTarget1(graph):
     pass
 
 
@@ -179,9 +184,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BinaryTree import BinaryTree
+    print(allPathsSourceTarget([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
+    print(allPathsSourceTarget(
+        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget([[2], [], [1]]))  # [[0, 2]]
 
-    test = BinaryTree(1).insert([2, 3, 4, 5, 6, 7])
-    actual = maxPathSum(test)
-    print(actual)
-    assert actual == 18
+    print(allPathsSourceTarget1([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
+    print(allPathsSourceTarget1(
+        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[2], [], [1]]))  # [[0, 2]]
