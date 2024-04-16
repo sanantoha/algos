@@ -167,15 +167,16 @@ tasks_done = [
     'find_kth_largest_value_in_bst.py',
     'two_number_sum.py',
     'max_sum_in_binary_tree.py',
-    'all_paths_source_target.py'
+    'all_paths_source_target.py',
+    'next_greater_element.py'
 ]
 
 
-def allPathsSourceTarget(graph):
+def nextGreaterElement(arr):
     pass
 
 
-def allPathsSourceTarget1(graph):
+def nextGreaterElement1(arr):
     pass
 
 
@@ -184,14 +185,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(allPathsSourceTarget([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
-    print(allPathsSourceTarget(
-        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget([[2], [], [1]]))  # [[0, 2]]
+    input = [2, 5, -3, -4, 6, 7, 2]
+    expected = [5, 6, 6, 6, 7, -1, 5]
+    actual = nextGreaterElement(input)
+    print(actual)
+    assert actual == expected
 
-    print(allPathsSourceTarget1([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
-    print(allPathsSourceTarget1(
-        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget1([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget1([[2], [], [1]]))  # [[0, 2]]
+    actual = nextGreaterElement1(input)
+    print(actual)
+    assert actual == expected
