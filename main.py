@@ -168,15 +168,12 @@ tasks_done = [
     'two_number_sum.py',
     'max_sum_in_binary_tree.py',
     'all_paths_source_target.py',
-    'next_greater_element.py'
+    'next_greater_element.py',
+    'palindrom_check.py'
 ]
 
 
-def nextGreaterElement(arr):
-    pass
-
-
-def nextGreaterElement1(arr):
+def is_palindrome(str):
     pass
 
 
@@ -185,12 +182,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [2, 5, -3, -4, 6, 7, 2]
-    expected = [5, 6, 6, 6, 7, -1, 5]
-    actual = nextGreaterElement(input)
-    print(actual)
-    assert actual == expected
-
-    actual = nextGreaterElement1(input)
-    print(actual)
-    assert actual == expected
+    print(is_palindrome("abcdcba"))
