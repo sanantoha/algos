@@ -169,11 +169,21 @@ tasks_done = [
     'max_sum_in_binary_tree.py',
     'all_paths_source_target.py',
     'next_greater_element.py',
-    'palindrom_check.py'
+    'palindrom_check.py',
+    'sum_of_linked_lists.py'
 ]
 
 
-def is_palindrome(str):
+def getNodesInArray(output):
+    nodes = []
+    current = output
+    while current is not None:
+        nodes.append(current.value)
+        current = current.next
+    return nodes
+
+
+def sumOfLinkedLists(l1, l2):
     pass
 
 
@@ -182,4 +192,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(is_palindrome("abcdcba"))
+    from list.LinkedList import LinkedList
+
+    ll1 = LinkedList(2).addMany([4, 7, 1])
+    ll2 = LinkedList(9).addMany([4, 5])
+    expected = LinkedList(1).addMany([9, 2, 2])
+    actual = sumOfLinkedLists(ll1, ll2)
+    print(getNodesInArray(actual))
+    assert getNodesInArray(actual) == getNodesInArray(expected)
