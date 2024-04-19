@@ -170,20 +170,12 @@ tasks_done = [
     'all_paths_source_target.py',
     'next_greater_element.py',
     'palindrom_check.py',
-    'sum_of_linked_lists.py'
+    'sum_of_linked_lists.py',
+    'tournament_winner.py'
 ]
 
 
-def getNodesInArray(output):
-    nodes = []
-    current = output
-    while current is not None:
-        nodes.append(current.value)
-        current = current.next
-    return nodes
-
-
-def sumOfLinkedLists(l1, l2):
+def tournament_winner(competitions, results):
     pass
 
 
@@ -192,11 +184,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from list.LinkedList import LinkedList
+    competitions = [
+        ["HTML", "C#"],
+        ["C#", "Python"],
+        ["Python", "HTML"]
+    ]
 
-    ll1 = LinkedList(2).addMany([4, 7, 1])
-    ll2 = LinkedList(9).addMany([4, 5])
-    expected = LinkedList(1).addMany([9, 2, 2])
-    actual = sumOfLinkedLists(ll1, ll2)
-    print(getNodesInArray(actual))
-    assert getNodesInArray(actual) == getNodesInArray(expected)
+    results = [0, 0, 1]
+
+    print(tournament_winner(competitions, results) == 'Python')
