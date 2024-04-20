@@ -171,11 +171,16 @@ tasks_done = [
     'next_greater_element.py',
     'palindrom_check.py',
     'sum_of_linked_lists.py',
-    'tournament_winner.py'
+    'tournament_winner.py',
+    'water_area.py'
 ]
 
 
-def tournament_winner(competitions, results):
+def waterArea(arr):
+    pass
+
+
+def waterArea1(arr):
     pass
 
 
@@ -184,12 +189,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    competitions = [
-        ["HTML", "C#"],
-        ["C#", "Python"],
-        ["Python", "HTML"]
-    ]
+    expected = 48
+    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    print(actual)
+    print(actual == expected)
 
-    results = [0, 0, 1]
-
-    print(tournament_winner(competitions, results) == 'Python')
+    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    print(actual)
+    print(actual == expected)
