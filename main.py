@@ -172,15 +172,16 @@ tasks_done = [
     'palindrom_check.py',
     'sum_of_linked_lists.py',
     'tournament_winner.py',
-    'water_area.py'
+    'water_area.py',
+    'missing_numbers.py'
 ]
 
 
-def waterArea(arr):
+def missingNumbers(arr):
     pass
 
 
-def waterArea1(arr):
+def missingNumbers1(arr):
     pass
 
 
@@ -189,11 +190,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    expected = 48
-    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    input = [4, 5, 1, 3]
+    expected = [2, 6]
+    actual = missingNumbers(input)
     print(actual)
-    print(actual == expected)
+    assert actual == expected
 
-    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    actual = missingNumbers1(input)
     print(actual)
-    print(actual == expected)
+    assert actual == expected
