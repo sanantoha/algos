@@ -173,15 +173,12 @@ tasks_done = [
     'sum_of_linked_lists.py',
     'tournament_winner.py',
     'water_area.py',
-    'missing_numbers.py'
+    'missing_numbers.py',
+    'minimum_characters_for_words.py'
 ]
 
 
-def missingNumbers(arr):
-    pass
-
-
-def missingNumbers1(arr):
+def minimumCharactersForWords(words):
     pass
 
 
@@ -190,12 +187,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [4, 5, 1, 3]
-    expected = [2, 6]
-    actual = missingNumbers(input)
-    print(actual)
-    assert actual == expected
-
-    actual = missingNumbers1(input)
+    input = ["this", "that", "did", "deed", "them!", "a"]
+    expected = ["t", "t", "h", "i", "s", "a", "d", "d", "e", "e", "m", "!"]
+    actual = minimumCharactersForWords(input)
     print(actual)
     assert actual == expected
