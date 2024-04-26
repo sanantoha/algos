@@ -175,11 +175,12 @@ tasks_done = [
     'water_area.py',
     'missing_numbers.py',
     'minimum_characters_for_words.py',
-    'task_assignment.py'
+    'task_assignment.py',
+    'binary_tree_diameter.py'
 ]
 
 
-def task_assignment(k, tasks):
+def binary_tree_diameter(root):
     pass
 
 
@@ -188,9 +189,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    k = 3
-    tasks = [1, 3, 5, 3, 1, 4]
-    expected = [[4, 2], [0, 5], [3, 1]]
-    actual = task_assignment(k, tasks)
+    from tree.BinaryTree import BinaryTree
+
+    root = BinaryTree(1)
+    root.left = BinaryTree(3)
+    root.left.left = BinaryTree(7)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.left.left = BinaryTree(9)
+    root.left.right = BinaryTree(4)
+    root.left.right.right = BinaryTree(5)
+    root.left.right.right.right = BinaryTree(6)
+    root.right = BinaryTree(2)
+    expected = 6
+    actual = binary_tree_diameter(root)
     print(actual)
     assert actual == expected
