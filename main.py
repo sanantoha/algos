@@ -176,11 +176,12 @@ tasks_done = [
     'missing_numbers.py',
     'minimum_characters_for_words.py',
     'task_assignment.py',
-    'binary_tree_diameter.py'
+    'binary_tree_diameter.py',
+    'first_duplicate_value.py'
 ]
 
 
-def binary_tree_diameter(root):
+def first_duplicate_value(arr):
     pass
 
 
@@ -189,18 +190,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BinaryTree import BinaryTree
-
-    root = BinaryTree(1)
-    root.left = BinaryTree(3)
-    root.left.left = BinaryTree(7)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.left.left = BinaryTree(9)
-    root.left.right = BinaryTree(4)
-    root.left.right.right = BinaryTree(5)
-    root.left.right.right.right = BinaryTree(6)
-    root.right = BinaryTree(2)
-    expected = 6
-    actual = binary_tree_diameter(root)
-    print(actual)
-    assert actual == expected
+    array = [2, 1, 5, 2, 3, 3, 4]
+    print(first_duplicate_value(array))
