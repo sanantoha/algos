@@ -177,11 +177,24 @@ tasks_done = [
     'minimum_characters_for_words.py',
     'task_assignment.py',
     'binary_tree_diameter.py',
-    'first_duplicate_value.py'
+    'first_duplicate_value.py',
+    'find_nodes_distance_k.py'
 ]
 
 
-def first_duplicate_value(arr):
+# This is an input class. Do not edit.
+class BinaryTree:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+
+def findNodesDistanceK(root, target, k):
+    pass
+
+
+def findNodesDistanceK1(root, target, k):
     pass
 
 
@@ -190,5 +203,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [2, 1, 5, 2, 3, 3, 4]
-    print(first_duplicate_value(array))
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.right = BinaryTree(3)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right.right = BinaryTree(6)
+    root.right.right.left = BinaryTree(7)
+    root.right.right.right = BinaryTree(8)
+    target = 3
+    k = 2
+    expected = [2, 7, 8]
+    actual = findNodesDistanceK(root, target, k)
+    print(actual)
+    actual.sort()
+    assert actual == expected
+
+    actual = findNodesDistanceK1(root, target, k)
+    print(actual)
+    actual.sort()
+    assert actual == expected
