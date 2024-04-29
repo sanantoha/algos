@@ -178,24 +178,20 @@ tasks_done = [
     'task_assignment.py',
     'binary_tree_diameter.py',
     'first_duplicate_value.py',
-    'find_nodes_distance_k.py'
+    'find_nodes_distance_k.py',
+    'move_element_to_end.py'
 ]
 
 
-# This is an input class. Do not edit.
-class BinaryTree:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
-
-
-def findNodesDistanceK(root, target, k):
+def move_element_to_end(arr, to_move):
     pass
 
 
-def findNodesDistanceK1(root, target, k):
-    pass
+def enrichParents(parents, node, parent):
+    if node:
+        parents[node.value] = parent
+        enrichParents(parents, node.left, node)
+        enrichParents(parents, node.right, node)
 
 
 if __name__ == '__main__':
@@ -203,23 +199,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.right.right.left = BinaryTree(7)
-    root.right.right.right = BinaryTree(8)
-    target = 3
-    k = 2
-    expected = [2, 7, 8]
-    actual = findNodesDistanceK(root, target, k)
-    print(actual)
-    actual.sort()
-    assert actual == expected
-
-    actual = findNodesDistanceK1(root, target, k)
-    print(actual)
-    actual.sort()
-    assert actual == expected
+    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
