@@ -179,19 +179,13 @@ tasks_done = [
     'binary_tree_diameter.py',
     'first_duplicate_value.py',
     'find_nodes_distance_k.py',
-    'move_element_to_end.py'
+    'move_element_to_end.py',
+    'selection_sort.py'
 ]
 
 
-def move_element_to_end(arr, to_move):
+def selection_sort(arr):
     pass
-
-
-def enrichParents(parents, node, parent):
-    if node:
-        parents[node.value] = parent
-        enrichParents(parents, node.left, node)
-        enrichParents(parents, node.right, node)
 
 
 if __name__ == '__main__':
@@ -199,4 +193,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
+    arr = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
+    print(selection_sort(arr))
