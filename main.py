@@ -180,11 +180,12 @@ tasks_done = [
     'first_duplicate_value.py',
     'find_nodes_distance_k.py',
     'move_element_to_end.py',
-    'selection_sort.py'
+    'selection_sort.py',
+    'evaluate_expression_tree.py'
 ]
 
 
-def selection_sort(arr):
+def evaluateExpressionTree(tree):
     pass
 
 
@@ -193,5 +194,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arr = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    print(selection_sort(arr))
+    from tree.BinaryTree import BinaryTree
+
+    tree = BinaryTree(-1)
+    tree.left = BinaryTree(-2)
+    tree.left.left = BinaryTree(-4)
+    tree.left.right = BinaryTree(2)
+    tree.left.left.left = BinaryTree(3)
+    tree.left.left.right = BinaryTree(2)
+
+    tree.right = BinaryTree(-3)
+    tree.right.left = BinaryTree(8)
+    tree.right.right = BinaryTree(3)
+    expected = 6
+    actual = evaluateExpressionTree(tree)
+    print(actual)
+    assert actual == expected
