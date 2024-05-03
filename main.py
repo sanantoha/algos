@@ -190,7 +190,7 @@ def is_valid_subsequence(arr, seq):
     pass
 
 
-def is_valid_subsequence(arr, seq):
+def is_valid_subsequence1(arr, seq):
     pass
 
 
