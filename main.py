@@ -181,11 +181,16 @@ tasks_done = [
     'find_nodes_distance_k.py',
     'move_element_to_end.py',
     'selection_sort.py',
-    'evaluate_expression_tree.py'
+    'evaluate_expression_tree.py',
+    'validate_subsequence.py'
 ]
 
 
-def evaluateExpressionTree(tree):
+def is_valid_subsequence(arr, seq):
+    pass
+
+
+def is_valid_subsequence(arr, seq):
     pass
 
 
@@ -194,19 +199,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BinaryTree import BinaryTree
-
-    tree = BinaryTree(-1)
-    tree.left = BinaryTree(-2)
-    tree.left.left = BinaryTree(-4)
-    tree.left.right = BinaryTree(2)
-    tree.left.left.left = BinaryTree(3)
-    tree.left.left.right = BinaryTree(2)
-
-    tree.right = BinaryTree(-3)
-    tree.right.left = BinaryTree(8)
-    tree.right.right = BinaryTree(3)
-    expected = 6
-    actual = evaluateExpressionTree(tree)
-    print(actual)
-    assert actual == expected
+    array = [5, 1, 22, 25, 6, -1, 8, 10]
+    sequence = [1, 6, -1, 10]
+    print(is_valid_subsequence(array, sequence))
+    print(is_valid_subsequence1(array, sequence))
