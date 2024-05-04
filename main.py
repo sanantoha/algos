@@ -182,15 +182,12 @@ tasks_done = [
     'move_element_to_end.py',
     'selection_sort.py',
     'evaluate_expression_tree.py',
-    'validate_subsequence.py'
+    'validate_subsequence.py',
+    'transpose_matrix.py'
 ]
 
 
-def is_valid_subsequence(arr, seq):
-    pass
-
-
-def is_valid_subsequence1(arr, seq):
+def transposeMatrix(matrix):
     pass
 
 
@@ -199,7 +196,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [5, 1, 22, 25, 6, -1, 8, 10]
-    sequence = [1, 6, -1, 10]
-    print(is_valid_subsequence(array, sequence))
-    print(is_valid_subsequence1(array, sequence))
+    input = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+
+    actual = transposeMatrix(input)
+    print(actual)
+
+    assert actual == expected
