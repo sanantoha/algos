@@ -183,11 +183,16 @@ tasks_done = [
     'selection_sort.py',
     'evaluate_expression_tree.py',
     'validate_subsequence.py',
-    'transpose_matrix.py'
+    'transpose_matrix.py',
+    'simmetrical_tree.py'
 ]
 
 
-def transposeMatrix(matrix):
+def symmetricalTreeRec(root):
+    pass
+
+
+def symmetricalTree(root):
     pass
 
 
@@ -196,10 +201,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+    from tree.BinaryTree import BinaryTree
 
-    actual = transposeMatrix(input)
+    tree = BinaryTree(10)
+    tree.left = BinaryTree(5)
+    tree.right = BinaryTree(5)
+    tree.left.left = BinaryTree(7)
+    tree.left.right = BinaryTree(9)
+    tree.right.left = BinaryTree(9)
+    tree.right.right = BinaryTree(7)
+
+    expected = True
+
+    actual = symmetricalTreeRec(tree)
     print(actual)
+    assert actual == expected
 
+    actual = symmetricalTree(tree)
+    print(actual)
     assert actual == expected
