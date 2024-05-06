@@ -184,15 +184,24 @@ tasks_done = [
     'evaluate_expression_tree.py',
     'validate_subsequence.py',
     'transpose_matrix.py',
-    'simmetrical_tree.py'
+    'simmetrical_tree.py',
+    'validate_tree_nodes.py'
 ]
 
 
-def symmetricalTreeRec(root):
+# This is an input class. Do not edit.
+class BST:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+
+def validateThreeNodes(nodeOne, nodeTwo, nodeThree):
     pass
 
 
-def symmetricalTree(root):
+def validateThreeNodes1(nodeOne, nodeTwo, nodeThree):
     pass
 
 
@@ -201,22 +210,24 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BinaryTree import BinaryTree
+    root = BST(5)
+    root.left = BST(2)
+    root.right = BST(7)
+    root.left.left = BST(1)
+    root.left.right = BST(4)
+    root.right.left = BST(6)
+    root.right.right = BST(8)
+    root.left.left.left = BST(0)
+    root.left.right.left = BST(3)
 
-    tree = BinaryTree(10)
-    tree.left = BinaryTree(5)
-    tree.right = BinaryTree(5)
-    tree.left.left = BinaryTree(7)
-    tree.left.right = BinaryTree(9)
-    tree.right.left = BinaryTree(9)
-    tree.right.right = BinaryTree(7)
-
+    nodeOne = root
+    nodeTwo = root.left
+    nodeThree = root.left.right.left
     expected = True
-
-    actual = symmetricalTreeRec(tree)
+    actual = validateThreeNodes(nodeOne, nodeTwo, nodeThree)
     print(actual)
     assert actual == expected
 
-    actual = symmetricalTree(tree)
+    actual = validateThreeNodes1(nodeOne, nodeTwo, nodeThree)
     print(actual)
     assert actual == expected
