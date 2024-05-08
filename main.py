@@ -185,23 +185,12 @@ tasks_done = [
     'validate_subsequence.py',
     'transpose_matrix.py',
     'simmetrical_tree.py',
-    'validate_tree_nodes.py'
+    'validate_tree_nodes.py',
+    'sorted_squared_array.py'
 ]
 
 
-# This is an input class. Do not edit.
-class BST:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
-
-
-def validateThreeNodes(nodeOne, nodeTwo, nodeThree):
-    pass
-
-
-def validateThreeNodes1(nodeOne, nodeTwo, nodeThree):
+def sorted_squared_array(arr):
     pass
 
 
@@ -210,24 +199,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(5)
-    root.left = BST(2)
-    root.right = BST(7)
-    root.left.left = BST(1)
-    root.left.right = BST(4)
-    root.right.left = BST(6)
-    root.right.right = BST(8)
-    root.left.left.left = BST(0)
-    root.left.right.left = BST(3)
-
-    nodeOne = root
-    nodeTwo = root.left
-    nodeThree = root.left.right.left
-    expected = True
-    actual = validateThreeNodes(nodeOne, nodeTwo, nodeThree)
-    print(actual)
-    assert actual == expected
-
-    actual = validateThreeNodes1(nodeOne, nodeTwo, nodeThree)
-    print(actual)
-    assert actual == expected
+    print(sorted_squared_array([-3, 1, 2, 3, 5, 6, 8, 9]))
