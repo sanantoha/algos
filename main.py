@@ -186,11 +186,12 @@ tasks_done = [
     'transpose_matrix.py',
     'simmetrical_tree.py',
     'validate_tree_nodes.py',
-    'sorted_squared_array.py'
+    'sorted_squared_array.py',
+    'median_of_two_sorted_arrays.py'
 ]
 
 
-def sorted_squared_array(arr):
+def medianOfTwoSortedArrays(arr1, arr2):
     pass
 
 
@@ -199,4 +200,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(sorted_squared_array([-3, 1, 2, 3, 5, 6, 8, 9]))
+    arrayOne = [1, 3, 4, 5]
+    arrayTwo = [2, 3, 6, 7]
+    actual = medianOfTwoSortedArrays(arrayOne, arrayTwo)
+    print(actual)
+    assert actual == 3.5
+
+    actual = medianOfTwoSortedArrays([6, 7, 8, 9], [1, 3, 4, 5])
+    print(actual)
+    assert actual == 5.5
