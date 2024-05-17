@@ -190,11 +190,16 @@ tasks_done = [
     'median_of_two_sorted_arrays.py',
     'majority_element.py',
     'phone_number_mnemonic.py',
-    'spiral_matrix_traverse.py'
+    'spiral_matrix_traverse.py',
+    'valid_starting_city.py'
 ]
 
 
-def non_constructible_changes(coins):
+def valid_starting_city(distances, fuel, mpg):
+    pass
+
+
+def valid_starting_city1(distances, fuel, mpg):
     pass
 
 
@@ -203,5 +208,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    coins = [5, 7, 1, 1, 2, 3, 22]
-    print(non_constructible_changes(coins))
+    distances = [5, 25, 15, 10, 15]
+    fuel = [1, 2, 1, 0, 3]
+    mpg = 10
+    expected = 4
+    actual = valid_starting_city(distances, fuel, mpg)
+    print(actual)
+    assert actual == expected
+
+    actual1 = valid_starting_city1(distances, fuel, mpg)
+    print(actual1)
+    assert actual1 == expected
