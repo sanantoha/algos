@@ -191,15 +191,12 @@ tasks_done = [
     'majority_element.py',
     'phone_number_mnemonic.py',
     'spiral_matrix_traverse.py',
-    'valid_starting_city.py'
+    'valid_starting_city.py',
+    'merge_overlapping_intervals.py'
 ]
 
 
-def valid_starting_city(distances, fuel, mpg):
-    pass
-
-
-def valid_starting_city1(distances, fuel, mpg):
+def merge_overlapping_intervals(intervals):
     pass
 
 
@@ -208,14 +205,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    distances = [5, 25, 15, 10, 15]
-    fuel = [1, 2, 1, 0, 3]
-    mpg = 10
-    expected = 4
-    actual = valid_starting_city(distances, fuel, mpg)
-    print(actual)
-    assert actual == expected
-
-    actual1 = valid_starting_city1(distances, fuel, mpg)
-    print(actual1)
-    assert actual1 == expected
+    print(merge_overlapping_intervals([[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]])) # [[1, 2], [3, 8], [9, 10]]
