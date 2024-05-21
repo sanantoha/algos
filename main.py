@@ -193,15 +193,16 @@ tasks_done = [
     'spiral_matrix_traverse.py',
     'valid_starting_city.py',
     'merge_overlapping_intervals.py',
-    'minimum_waiting_time.py'
+    'minimum_waiting_time.py',
+    'generate_document.py'
 ]
 
 
-def minimum_waiting_time(arr):
+def generate_document(characters, document):
     pass
 
 
-def minimum_waiting_time1(arr):
+def generate_document1(characters, document):
     pass
 
 
@@ -210,5 +211,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(minimum_waiting_time([3, 2, 1, 2, 6]))
-    print(minimum_waiting_time1([3, 2, 1, 2, 6]))
+    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
