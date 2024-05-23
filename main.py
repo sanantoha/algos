@@ -194,15 +194,12 @@ tasks_done = [
     'valid_starting_city.py',
     'merge_overlapping_intervals.py',
     'minimum_waiting_time.py',
-    'generate_document.py'
+    'generate_document.py',
+    'tandem_bicycle.py'
 ]
 
 
-def generate_document(characters, document):
-    pass
-
-
-def generate_document1(characters, document):
+def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
     pass
 
 
@@ -211,5 +208,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
-    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    print(
+        tandem_bicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True)
+    )
