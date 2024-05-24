@@ -195,11 +195,24 @@ tasks_done = [
     'merge_overlapping_intervals.py',
     'minimum_waiting_time.py',
     'generate_document.py',
-    'tandem_bicycle.py'
+    'tandem_bicycle.py',
+    'staircase_traversal.py'
 ]
 
 
-def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
+def staircaseTraversal(height, maxSteps):
+    pass
+
+
+def staircaseTraversalMemo(height, maxSteps):
+    pass
+
+
+def staircaseTraversalIter(height, maxSteps):
+    pass
+
+
+def staircaseTraversalWindow(height, maxSteps):
     pass
 
 
@@ -208,6 +221,21 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(
-        tandem_bicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True)
-    )
+    stairs = 4
+    maxSteps = 2
+    expected = 5
+    actual = staircaseTraversal(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
+
+    actual = staircaseTraversalMemo(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
+
+    actual = staircaseTraversalIter(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
+
+    actual = staircaseTraversalWindow(stairs, maxSteps)
+    print(actual)
+    assert actual == expected
