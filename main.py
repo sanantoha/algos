@@ -196,23 +196,12 @@ tasks_done = [
     'minimum_waiting_time.py',
     'generate_document.py',
     'tandem_bicycle.py',
-    'staircase_traversal.py'
+    'staircase_traversal.py',
+    'apartment_hunting.py'
 ]
 
 
-def staircaseTraversal(height, maxSteps):
-    pass
-
-
-def staircaseTraversalMemo(height, maxSteps):
-    pass
-
-
-def staircaseTraversalIter(height, maxSteps):
-    pass
-
-
-def staircaseTraversalWindow(height, maxSteps):
+def apartmentHunting(blocks, reqs):
     pass
 
 
@@ -221,21 +210,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stairs = 4
-    maxSteps = 2
-    expected = 5
-    actual = staircaseTraversal(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalMemo(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalIter(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalWindow(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
+    blocks = [
+        {"gym": False, "school": True, "store": False},
+        {"gym": True, "school": False, "store": False},
+        {"gym": True, "school": True, "store": False},
+        {"gym": False, "school": True, "store": False},
+        {"gym": False, "school": True, "store": True},
+    ]
+    reqs = ["gym", "school", "store"]
+    assert apartmentHunting(blocks, reqs) == 3
