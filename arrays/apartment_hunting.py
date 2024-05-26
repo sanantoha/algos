@@ -1,5 +1,5 @@
 
-# O(b * r) time | O(b * r) time
+# O(b * r) time | O(b * r) space
 def apartmentHunting(blocks, reqs):
     if blocks is None or reqs is None or len(blocks) == 0 or len(reqs) == 0:
         return -1

@@ -197,11 +197,12 @@ tasks_done = [
     'generate_document.py',
     'tandem_bicycle.py',
     'staircase_traversal.py',
-    'apartment_hunting.py'
+    'apartment_hunting.py',
+    'best_digits.py'
 ]
 
 
-def apartmentHunting(blocks, reqs):
+def bestDigits(number, numDigits):
     pass
 
 
@@ -210,12 +211,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    blocks = [
-        {"gym": False, "school": True, "store": False},
-        {"gym": True, "school": False, "store": False},
-        {"gym": True, "school": True, "store": False},
-        {"gym": False, "school": True, "store": False},
-        {"gym": False, "school": True, "store": True},
-    ]
-    reqs = ["gym", "school", "store"]
-    assert apartmentHunting(blocks, reqs) == 3
+    number = "462839"
+    numDigits = 2
+
+    actual = bestDigits(number, numDigits)
+    print(actual)
+    assert actual == "6839"
+
+    actual = bestDigits("648239", numDigits)
+    print(actual)
+    assert actual == "8239"
+
+    actual = bestDigits("988762", numDigits)
+    print(actual)
+    assert actual == "9887"
