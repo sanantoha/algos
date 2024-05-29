@@ -198,11 +198,12 @@ tasks_done = [
     'tandem_bicycle.py',
     'staircase_traversal.py',
     'apartment_hunting.py',
-    'best_digits.py'
+    'best_digits.py',
+    'run_length_encoding.py'
 ]
 
 
-def bestDigits(number, numDigits):
+def run_length_encoding(string):
     pass
 
 
@@ -211,17 +212,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    number = "462839"
-    numDigits = 2
-
-    actual = bestDigits(number, numDigits)
-    print(actual)
-    assert actual == "6839"
-
-    actual = bestDigits("648239", numDigits)
-    print(actual)
-    assert actual == "8239"
-
-    actual = bestDigits("988762", numDigits)
-    print(actual)
-    assert actual == "9887"
+    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
