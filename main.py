@@ -199,11 +199,12 @@ tasks_done = [
     'staircase_traversal.py',
     'apartment_hunting.py',
     'best_digits.py',
-    'run_length_encoding.py'
+    'run_length_encoding.py',
+    'remove_duplicates_from_linkedlist.py'
 ]
 
 
-def run_length_encoding(string):
+def remove_duplicates_from_linked_list(head):
     pass
 
 
@@ -212,6 +213,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    encoding = run_length_encoding("AAAAAAAAAAAAABBCCCCDD")
-    print(encoding)
-    print(encoding == "9A4A2B4C2D")
+    from list.LinkedList import LinkedList
+
+    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
+    print(remove_duplicates_from_linked_list(test))
