@@ -200,12 +200,37 @@ tasks_done = [
     'apartment_hunting.py',
     'best_digits.py',
     'run_length_encoding.py',
-    'remove_duplicates_from_linkedlist.py'
+    'remove_duplicates_from_linkedlist.py',
+    'serialize_and_deserialize_n_ary_tree.py'
 ]
 
+class Node(object):
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
 
-def remove_duplicates_from_linked_list(head):
-    pass
+    def __repr__(self):
+        return f"Node({self.val} {self.children})"
+
+
+class Codec:
+
+    def serialize(self, root):
+        pass
+
+
+    def deserialize(self, data):
+        pass
+
+
+class Codec1:
+
+    def serialize(self, root):
+        pass
+
+
+    def deserialize(self, data):
+        pass
 
 
 if __name__ == '__main__':
@@ -213,7 +238,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from list.LinkedList import LinkedList
+    root = Node(11, [Node(33, [Node(55), Node(6666)]), Node(22), Node(30)])
+    print(root)
+    codec = Codec()
+    str = codec.serialize(root)
+    print(str)
 
-    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
-    print(remove_duplicates_from_linked_list(test))
+    tree = codec.deserialize(str)
+    print(tree)
+
+    codec1 = Codec1()
+    str = codec1.serialize(root)
+    print(str)
+
+    tree = codec1.deserialize(str)
+    print(tree)
