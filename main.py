@@ -202,11 +202,12 @@ tasks_done = [
     'run_length_encoding.py',
     'remove_duplicates_from_linkedlist.py',
     'serialize_and_deserialize_n_ary_tree.py',
-    'insertion_sort.py'
+    'insertion_sort.py',
+    'optimal_freelancing.py'
 ]
 
 
-def insertion_sort(arr):
+def optimalFreelancing(jobs):
     pass
 
 
@@ -215,6 +216,41 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    # xs = [5,2,4,1]
-    print(insertion_sort(xs))
+    input = [{"deadline": 1, "payment": 1}]
+    actual = optimalFreelancing(input)
+    print(actual)
+    assert actual == 1
+
+    input = [
+        {
+            "deadline": 2,
+            "payment": 2
+        },
+        {
+            "deadline": 4,
+            "payment": 3
+        },
+        {
+            "deadline": 5,
+            "payment": 1
+        },
+        {
+            "deadline": 7,
+            "payment": 2
+        },
+        {
+            "deadline": 3,
+            "payment": 1
+        },
+        {
+            "deadline": 3,
+            "payment": 2
+        },
+        {
+            "deadline": 1,
+            "payment": 3
+        }
+    ]
+    actual = optimalFreelancing(input)
+    print(actual)
+    assert actual == 13
