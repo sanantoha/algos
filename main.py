@@ -203,12 +203,13 @@ tasks_done = [
     'remove_duplicates_from_linkedlist.py',
     'serialize_and_deserialize_n_ary_tree.py',
     'insertion_sort.py',
-    'optimal_freelancing.py'
+    'optimal_freelancing.py',
+    'two_colorable.py'
 ]
 
 
-def optimalFreelancing(jobs):
-    pass
+def twoColorable(edges):
+    return False
 
 
 if __name__ == '__main__':
@@ -216,41 +217,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [{"deadline": 1, "payment": 1}]
-    actual = optimalFreelancing(input)
+    input = [
+        [1, 2, 3],
+        [0, 2],
+        [0, 1],
+        [0]
+    ]
+    actual = twoColorable(input)
     print(actual)
-    assert actual == 1
+    assert not actual
 
     input = [
-        {
-            "deadline": 2,
-            "payment": 2
-        },
-        {
-            "deadline": 4,
-            "payment": 3
-        },
-        {
-            "deadline": 5,
-            "payment": 1
-        },
-        {
-            "deadline": 7,
-            "payment": 2
-        },
-        {
-            "deadline": 3,
-            "payment": 1
-        },
-        {
-            "deadline": 3,
-            "payment": 2
-        },
-        {
-            "deadline": 1,
-            "payment": 3
-        }
+        [2],
+        [2, 3],
+        [0, 1],
+        [1]
     ]
-    actual = optimalFreelancing(input)
+
+    actual = twoColorable(input)
     print(actual)
-    assert actual == 13
+    assert actual
