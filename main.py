@@ -205,21 +205,13 @@ tasks_done = [
     'insertion_sort.py',
     'optimal_freelancing.py',
     'two_colorable.py',
-    'breadth_first_search.py'
+    'breadth_first_search.py',
+    'best_seats.py'
 ]
 
 
-class Node:
-    def __init__(self, name):
-        self.children = []
-        self.name = name
-
-    def add_child(self, name):
-        self.children.append(Node(name))
-        return self
-
-    def breadth_first_search(self, array):
-        pass
+def bestSeat(seats):
+    pass
 
 
 if __name__ == '__main__':
@@ -227,12 +219,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    graph = Node("A")
-    graph.add_child("B").add_child("C").add_child("D")
-    graph.children[0].add_child("E").add_child("F")
-    graph.children[2].add_child("G").add_child("H")
-    graph.children[0].children[1].add_child("I").add_child("J")
-    graph.children[2].children[0].add_child("K")
+    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
+    assert actual == 4
 
-    print(graph.breadth_first_search([]))
-    assert graph.breadth_first_search([]) == ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
+    actual = bestSeat([1])
+    assert actual == -1
+
+    actual = bestSeat([1, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 1, 1])
+    assert actual == -1
+
+    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
+    assert actual == 3
