@@ -206,11 +206,20 @@ tasks_done = [
     'optimal_freelancing.py',
     'two_colorable.py',
     'breadth_first_search.py',
-    'best_seats.py'
+    'best_seats.py',
+    'node_depths.py'
 ]
 
 
-def bestSeat(seats):
+def node_depths(root):
+    pass
+
+
+def node_depths1(root):
+    pass
+
+
+def node_depths2(root):
     pass
 
 
@@ -219,23 +228,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
-    assert actual == 4
+    from tree.BinaryTree import BinaryTree
 
-    actual = bestSeat([1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 1, 1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
-    assert actual == 3
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.right = BinaryTree(9)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    root.right.left = BinaryTree(6)
+    root.right.right = BinaryTree(7)
+    print(node_depths(root) == 16)
+    print(node_depths1(root) == 16)
+    print(node_depths2(root) == 16)
