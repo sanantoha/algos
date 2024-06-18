@@ -211,15 +211,11 @@ tasks_done = [
 ]
 
 
-def node_depths(root):
+def max_subset_sum_no_adjucent(arr):
     pass
 
 
-def node_depths1(root):
-    pass
-
-
-def node_depths2(root):
+def max_subset_sum_no_adjucent1(arr):
     pass
 
 
@@ -228,17 +224,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BinaryTree import BinaryTree
+    print(max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]))
+    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.left.left = BinaryTree(4)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.right = BinaryTree(9)
-    root.left.right = BinaryTree(5)
-    root.right = BinaryTree(3)
-    root.right.left = BinaryTree(6)
-    root.right.right = BinaryTree(7)
-    print(node_depths(root) == 16)
-    print(node_depths1(root) == 16)
-    print(node_depths2(root) == 16)
+    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
+    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
