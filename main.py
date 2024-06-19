@@ -207,16 +207,13 @@ tasks_done = [
     'two_colorable.py',
     'breadth_first_search.py',
     'best_seats.py',
-    'node_depths.py'
+    'node_depths.py',
+    'word_ladder.py'
 ]
 
 
-def max_subset_sum_no_adjucent(arr):
-    pass
-
-
-def max_subset_sum_no_adjucent1(arr):
-    pass
+def ladderLength(beginWord, endWord, wordList):
+    return -1
 
 
 if __name__ == '__main__':
@@ -224,8 +221,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]))
-    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
-
-    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
-    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
+    beginWord = "hit"
+    endWord = "cog"
+    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
+    actual = ladderLength(beginWord, endWord, wordList)
+    print(actual)
+    assert actual == 5
