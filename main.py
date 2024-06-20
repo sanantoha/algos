@@ -208,12 +208,13 @@ tasks_done = [
     'breadth_first_search.py',
     'best_seats.py',
     'node_depths.py',
-    'word_ladder.py'
+    'word_ladder.py',
+    'single_cycle_check.py'
 ]
 
 
-def ladderLength(beginWord, endWord, wordList):
-    return -1
+def single_cycle_check(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -221,9 +222,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = ladderLength(beginWord, endWord, wordList)
-    print(actual)
-    assert actual == 5
+    array = [2, 3, 1, -4, -4, 2]
+    print(single_cycle_check(array))
+    assert single_cycle_check(array)
