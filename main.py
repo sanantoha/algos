@@ -222,11 +222,6 @@ def getPermutations1(arr):
     pass
 
 
-def get_idx(arr, idx):
-    move = arr[idx]
-    nidx = (idx + move) % len(arr)
-    return nidx if nidx >= 0 else nidx + len(arr)
-
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
