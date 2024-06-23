@@ -209,19 +209,45 @@ tasks_done = [
     'best_seats.py',
     'node_depths.py',
     'word_ladder.py',
-    'single_cycle_check.py'
+    'single_cycle_check.py',
+    'permutations.py'
 ]
 
 
-def single_cycle_check(arr):
+def getPermutations(arr):
     pass
 
+
+def getPermutations1(arr):
+    pass
+
+
+def get_idx(arr, idx):
+    move = arr[idx]
+    nidx = (idx + move) % len(arr)
+    return nidx if nidx >= 0 else nidx + len(arr)
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
-    array = [2, 3, 1, -4, -4, 2]
-    print(single_cycle_check(array))
-    assert single_cycle_check(array)
+    perms = getPermutations([1, 2, 3])
+    print(perms)
+    assert len(perms) == 6
+    assert [1, 2, 3] in perms
+    assert [1, 3, 2] in perms
+    assert [2, 1, 3] in perms
+    assert [2, 3, 1] in perms
+    assert [3, 1, 2] in perms
+    assert [3, 2, 1] in perms
+
+    perms1 = getPermutations1([1, 2, 3])
+    print(perms1)
+    assert len(perms1) == 6
+    assert [1, 2, 3] in perms1
+    assert [1, 3, 2] in perms1
+    assert [2, 1, 3] in perms1
+    assert [2, 3, 1] in perms1
+    assert [3, 1, 2] in perms1
+    assert [3, 2, 1] in perms1
