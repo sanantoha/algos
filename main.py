@@ -210,16 +210,24 @@ tasks_done = [
     'node_depths.py',
     'word_ladder.py',
     'single_cycle_check.py',
-    'permutations.py'
+    'permutations.py',
+    'union_find.py'
 ]
 
+class UnionFind:
+    def __init__(self):
+        self.parents = {}
+        self.ranks = {}
 
-def getPermutations(arr):
-    pass
+    def createSet(self, value):
+        pass
 
+    def find(self, value):
+        pass
 
-def getPermutations1(arr):
-    pass
+    # O(1) time | O(1) space - approximate O(1) for both time and space complexity
+    def union(self, valueOne, valueTwo):
+        pass
 
 
 if __name__ == '__main__':
@@ -227,22 +235,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    perms = getPermutations([1, 2, 3])
-    print(perms)
-    assert len(perms) == 6
-    assert [1, 2, 3] in perms
-    assert [1, 3, 2] in perms
-    assert [2, 1, 3] in perms
-    assert [2, 3, 1] in perms
-    assert [3, 1, 2] in perms
-    assert [3, 2, 1] in perms
-
-    perms1 = getPermutations1([1, 2, 3])
-    print(perms1)
-    assert len(perms1) == 6
-    assert [1, 2, 3] in perms1
-    assert [1, 3, 2] in perms1
-    assert [2, 1, 3] in perms1
-    assert [2, 3, 1] in perms1
-    assert [3, 1, 2] in perms1
-    assert [3, 2, 1] in perms1
+    unionFind = UnionFind()
+    assert unionFind.find(1) == None
+    unionFind.createSet(1)
+    assert unionFind.find(1) == 1
+    unionFind.createSet(5)
+    assert unionFind.find(1) == 1
+    assert unionFind.find(5) == 5
+    unionFind.union(5, 1)
+    assert unionFind.find(5) == unionFind.find(1)
