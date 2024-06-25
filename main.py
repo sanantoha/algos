@@ -224,7 +224,6 @@ class UnionFind:
     def find(self, value):
         pass
 
-    # O(1) time | O(1) space - approximate O(1) for both time and space complexity
     def union(self, valueOne, valueTwo):
         pass
 
