@@ -216,8 +216,7 @@ tasks_done = [
 
 class UnionFind:
     def __init__(self):
-        self.parents = {}
-        self.ranks = {}
+        pass
 
     def createSet(self, value):
         pass
