@@ -211,21 +211,13 @@ tasks_done = [
     'word_ladder.py',
     'single_cycle_check.py',
     'permutations.py',
-    'union_find.py'
+    'union_find.py',
+    'number_of_ways_to_make_change.py'
 ]
 
-class UnionFind:
-    def __init__(self):
-        pass
 
-    def createSet(self, value):
-        pass
-
-    def find(self, value):
-        pass
-
-    def union(self, valueOne, valueTwo):
-        pass
+def number_of_ways_to_make_change(n, denoms):
+    pass
 
 
 if __name__ == '__main__':
@@ -233,12 +225,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    unionFind = UnionFind()
-    assert unionFind.find(1) == None
-    unionFind.createSet(1)
-    assert unionFind.find(1) == 1
-    unionFind.createSet(5)
-    assert unionFind.find(1) == 1
-    assert unionFind.find(5) == 5
-    unionFind.union(5, 1)
-    assert unionFind.find(5) == unionFind.find(1)
+    print(number_of_ways_to_make_change(6, [1, 5]))
+    assert number_of_ways_to_make_change(6, [1, 5]) == 2
