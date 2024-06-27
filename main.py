@@ -212,11 +212,16 @@ tasks_done = [
     'single_cycle_check.py',
     'permutations.py',
     'union_find.py',
-    'number_of_ways_to_make_change.py'
+    'number_of_ways_to_make_change.py',
+    'three_number_sort.py'
 ]
 
 
-def number_of_ways_to_make_change(n, denoms):
+def threeNumberSort(arr, ord):
+    pass
+
+
+def threeNumberSort1(arr, ord):
     pass
 
 
@@ -225,5 +230,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(number_of_ways_to_make_change(6, [1, 5]))
-    assert number_of_ways_to_make_change(6, [1, 5]) == 2
+    array = [1, 0, 0, -1, -1, 0, 1, 1]
+    order = [0, 1, -1]
+    expected = [0, 0, 0, 1, 1, 1, -1, -1]
+
+    actual = threeNumberSort(array, order)
+    print(actual)
+    assert actual == expected
+
+    actual = threeNumberSort1(array, order)
+    print(actual)
+    assert actual == expected
