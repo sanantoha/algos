@@ -1,29 +1,22 @@
 # O(n) time | O(1) space
-def threeNumberSort(array, order):
-    fst = 0
-    snd = 0
-    thrd = 0
-    for num in array:
-        if order[0] == num:
-            fst += 1
-        elif order[1] == num:
-            snd += 1
-        else:
-            thrd += 1
+def threeNumberSort(arr, ord):
+    if not arr:
+        return []
+
+    cnt = [0, 0, 0]
+    for num in arr:
+        for i, v in enumerate(ord):
+            if num == v:
+                cnt[i] += 1
+
 
     idx = 0
-    idx = fillArr(array, idx, fst, order[0])
-    idx = fillArr(array, idx, snd, order[1])
-    fillArr(array, idx, thrd, order[2])
-    return array
+    for i, v in enumerate(ord):
+        for _ in range(cnt[i]):
+            arr[idx] = v
+            idx += 1
 
-
-def fillArr(array, idx, count, value):
-    while count > 0:
-        array[idx] = value
-        idx += 1
-        count -= 1
-    return idx
+    return arr
 
 
 # O(n) time | O(1) space
