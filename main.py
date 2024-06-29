@@ -214,15 +214,12 @@ tasks_done = [
     'union_find.py',
     'number_of_ways_to_make_change.py',
     'three_number_sort.py',
-    'lagest_island.py'
+    'lagest_island.py',
+    'reverse_polish_notation.py'
 ]
 
 
-def largestIsland(matrix):
-    pass
-
-
-def largestIsland1(matrix):
+def reversePolishNotation(tokens):
     pass
 
 
@@ -231,18 +228,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [1, 0, 1, 0, 0],
-        [0, 0, 1, 1, 0],
-        [0, 1, 1, 1, 1],
-        [1, 0, 1, 0, 0]
-    ]
-    expected = 8
-
-    actual = largestIsland(matrix)
-    print(actual)
-    assert actual == expected
-
-    actual = largestIsland1(matrix)
+    input = ["3", "2", "+", "7", "*"]
+    expected = 35
+    actual = reversePolishNotation(input)
     print(actual)
     assert actual == expected
