@@ -215,11 +215,16 @@ tasks_done = [
     'number_of_ways_to_make_change.py',
     'three_number_sort.py',
     'lagest_island.py',
-    'reverse_polish_notation.py'
+    'reverse_polish_notation.py',
+    'three_number_sum.py'
 ]
 
 
-def reversePolishNotation(tokens):
+def three_number_sum(arr, target):
+    pass
+
+
+def three_number_sum1(arr, target):
     pass
 
 
@@ -228,8 +233,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["3", "2", "+", "7", "*"]
-    expected = 35
-    actual = reversePolishNotation(input)
-    print(actual)
-    assert actual == expected
+    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
