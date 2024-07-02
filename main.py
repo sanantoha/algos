@@ -216,15 +216,16 @@ tasks_done = [
     'three_number_sort.py',
     'lagest_island.py',
     'reverse_polish_notation.py',
-    'three_number_sum.py'
+    'three_number_sum.py',
+    'get_nth_fib.py'
 ]
 
 
-def three_number_sum(arr, target):
+def get_nth_fib(n):
     pass
 
 
-def three_number_sum1(arr, target):
+def get_nth_fib_iter(n):
     pass
 
 
@@ -233,5 +234,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
-    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    for i in range(1, 10):
+        print(str(i) + "=" + str(get_nth_fib(i)))
+
+    print("===================================")
+
+    for i in range(1, 10):
+        print(str(i) + "=" + str(get_nth_fib_iter(i)))
