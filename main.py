@@ -217,15 +217,12 @@ tasks_done = [
     'lagest_island.py',
     'reverse_polish_notation.py',
     'three_number_sum.py',
-    'get_nth_fib.py'
+    'get_nth_fib.py',
+    'monotonic_array.py'
 ]
 
 
-def get_nth_fib(n):
-    pass
-
-
-def get_nth_fib_iter(n):
+def monotonic_array(arr):
     pass
 
 
@@ -234,10 +231,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib(i)))
-
-    print("===================================")
-
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib_iter(i)))
+    print(monotonic_array([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
