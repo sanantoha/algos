@@ -218,11 +218,12 @@ tasks_done = [
     'reverse_polish_notation.py',
     'three_number_sum.py',
     'get_nth_fib.py',
-    'monotonic_array.py'
+    'monotonic_array.py',
+    'smallest_difference.py'
 ]
 
 
-def monotonic_array(arr):
+def smallest_difference(arr1, arr2):
     pass
 
 
@@ -231,4 +232,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(monotonic_array([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
+    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
