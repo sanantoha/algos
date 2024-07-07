@@ -219,11 +219,12 @@ tasks_done = [
     'three_number_sum.py',
     'get_nth_fib.py',
     'monotonic_array.py',
-    'smallest_difference.py'
+    'smallest_difference.py',
+    'reverse_words_in_string.py'
 ]
 
 
-def smallest_difference(arr1, arr2):
+def reverseWordsInString(str):
     pass
 
 
@@ -232,4 +233,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
+    input = "AlgoExpert is the best!"
+    expected = "best! the is AlgoExpert"
+    actual = reverseWordsInString(input)
+    print(actual)
+    assert actual == expected
