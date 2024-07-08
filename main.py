@@ -220,11 +220,12 @@ tasks_done = [
     'get_nth_fib.py',
     'monotonic_array.py',
     'smallest_difference.py',
-    'reverse_words_in_string.py'
+    'reverse_words_in_string.py',
+    'remove_islands.py'
 ]
 
 
-def reverseWordsInString(str):
+def remove_islands(matrix):
     pass
 
 
@@ -233,8 +234,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = "AlgoExpert is the best!"
-    expected = "best! the is AlgoExpert"
-    actual = reverseWordsInString(input)
+    input = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 1, 1, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    expected = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 1, 1],
+        [0, 0, 0, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    actual = remove_islands(input)
     print(actual)
     assert actual == expected
