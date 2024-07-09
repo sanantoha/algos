@@ -221,11 +221,14 @@ tasks_done = [
     'monotonic_array.py',
     'smallest_difference.py',
     'reverse_words_in_string.py',
-    'remove_islands.py'
+    'remove_islands.py',
+    'validate_bst.py'
 ]
 
+from tree.BST import BST
 
-def remove_islands(matrix):
+
+def validate_bst(root):
     pass
 
 
@@ -234,22 +237,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [1, 0, 0, 0, 0, 0],
-        [0, 1, 0, 1, 1, 1],
-        [0, 0, 1, 0, 1, 0],
-        [1, 1, 0, 0, 1, 0],
-        [1, 0, 1, 1, 0, 0],
-        [1, 0, 0, 0, 0, 1],
-    ]
-    expected = [
-        [1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 1, 1, 1],
-        [0, 0, 0, 0, 1, 0],
-        [1, 1, 0, 0, 1, 0],
-        [1, 0, 0, 0, 0, 0],
-        [1, 0, 0, 0, 0, 1],
-    ]
-    actual = remove_islands(input)
-    print(actual)
-    assert actual == expected
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+    print(validate_bst(root))
+    assert validate_bst(root)
