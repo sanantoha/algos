@@ -222,14 +222,22 @@ tasks_done = [
     'smallest_difference.py',
     'reverse_words_in_string.py',
     'remove_islands.py',
-    'validate_bst.py'
+    'validate_bst.py',
+    'group_anagrams.py'
 ]
 
-from tree.BST import BST
 
-
-def validate_bst(root):
+def groupAnagrams(words):
     pass
+
+
+def compare(expected, output):
+    if len(expected) == 0:
+        assert output == expected
+        return
+    assert len(expected) == len(output)
+    for group in expected:
+        assert sorted(group) in output
 
 
 if __name__ == '__main__':
@@ -237,14 +245,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-    print(validate_bst(root))
-    assert validate_bst(root)
+    words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
+    expected = [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
+    output = list(map(lambda x: sorted(x), groupAnagrams(words)))
+    # expected = list(map(lambda x: sorted(x), expected))
+
+    print(output)
+    print(expected)
+    compare(expected, output)
