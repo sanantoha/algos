@@ -223,21 +223,17 @@ tasks_done = [
     'reverse_words_in_string.py',
     'remove_islands.py',
     'validate_bst.py',
-    'group_anagrams.py'
+    'group_anagrams.py',
+    'max_subset_sum_no_adjucent.py'
 ]
 
 
-def groupAnagrams(words):
+def max_subset_sum_no_adjucent(arr):
     pass
 
 
-def compare(expected, output):
-    if len(expected) == 0:
-        assert output == expected
-        return
-    assert len(expected) == len(output)
-    for group in expected:
-        assert sorted(group) in output
+def max_subset_sum_no_adjucent1(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -245,11 +241,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
-    expected = [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
-    output = list(map(lambda x: sorted(x), groupAnagrams(words)))
-    # expected = list(map(lambda x: sorted(x), expected))
+    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
 
-    print(output)
-    print(expected)
-    compare(expected, output)
+    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
+    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
