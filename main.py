@@ -224,15 +224,12 @@ tasks_done = [
     'remove_islands.py',
     'validate_bst.py',
     'group_anagrams.py',
-    'max_subset_sum_no_adjucent.py'
+    'max_subset_sum_no_adjucent.py',
+    'a_star_algorithm.py'
 ]
 
 
-def max_subset_sum_no_adjucent(arr):
-    pass
-
-
-def max_subset_sum_no_adjucent1(arr):
+def a_star_algorithm(start_row, start_col, end_row, end_col, graph):
     pass
 
 
@@ -241,7 +238,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
-
-    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
-    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
+    start_row = 0
+    start_col = 1
+    end_row = 4
+    end_col = 3
+    graph = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0], [1, 0, 1, 1, 1], [0, 0, 0, 0, 0]]
+    expected = [[0, 1], [0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [4, 2], [4, 3]]
+    actual = a_star_algorithm(start_row, start_col, end_row, end_col, graph)
+    print(actual)
+    assert actual == expected
