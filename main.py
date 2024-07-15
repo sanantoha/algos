@@ -250,6 +250,6 @@ if __name__ == '__main__':
     print(actual)
     assert actual == expected
 
-    actual = sortStack1(input)
+    actual = sortStack1([-5, 2, -2, 4, 3, 1])
     print(actual)
     assert actual == expected
