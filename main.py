@@ -226,15 +226,16 @@ tasks_done = [
     'group_anagrams.py',
     'max_subset_sum_no_adjucent.py',
     'a_star_algorithm.py',
-    'sort_stack.py'
+    'sort_stack.py',
+    'longest_increasing_subsequence.py'
 ]
 
 
-def sortStack(arr):
+def longestIncreasingSubsequence(arr):
     pass
 
 
-def sortStack1(arr):
+def longestIncreasingSubsequence1(arr):
     pass
 
 
@@ -243,13 +244,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [-5, 2, -2, 4, 3, 1]
-    expected = [-5, -2, 1, 2, 3, 4]
+    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
+    expected = [-24, 2, 3, 5, 6, 35]
 
-    actual = sortStack(input)
+    actual = longestIncreasingSubsequence(input)
     print(actual)
     assert actual == expected
 
-    actual = sortStack1([-5, 2, -2, 4, 3, 1])
+    actual = longestIncreasingSubsequence1(input)
     print(actual)
     assert actual == expected
