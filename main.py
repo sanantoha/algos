@@ -227,15 +227,16 @@ tasks_done = [
     'max_subset_sum_no_adjucent.py',
     'a_star_algorithm.py',
     'sort_stack.py',
-    'longest_increasing_subsequence.py'
+    'longest_increasing_subsequence.py',
+    'powerset.py'
 ]
 
 
-def longestIncreasingSubsequence(arr):
+def powerset(arr):
     pass
 
 
-def longestIncreasingSubsequence1(arr):
+def powerset1(arr):
     pass
 
 
@@ -244,13 +245,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
-    expected = [-24, 2, 3, 5, 6, 35]
-
-    actual = longestIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
-
-    actual = longestIncreasingSubsequence1(input)
-    print(actual)
-    assert actual == expected
+    print(powerset([1, 2, 3]))
+    print(powerset1([1, 2, 3]))
+    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
+    assert len(output) == 8
+    assert set([]) in output
+    assert set([1]) in output
+    assert set([2]) in output
+    assert set([1, 2]) in output
+    assert set([3]) in output
+    assert set([1, 3]) in output
+    assert set([2, 3]) in output
+    assert set([1, 2, 3]) in output
