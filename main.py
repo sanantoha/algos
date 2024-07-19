@@ -228,15 +228,12 @@ tasks_done = [
     'a_star_algorithm.py',
     'sort_stack.py',
     'longest_increasing_subsequence.py',
-    'powerset.py'
+    'powerset.py',
+    'kruskals_algorithm.py'
 ]
 
 
-def powerset(arr):
-    pass
-
-
-def powerset1(arr):
+def kruskalsAlgorithm(graph):
     pass
 
 
@@ -245,15 +242,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(powerset([1, 2, 3]))
-    print(powerset1([1, 2, 3]))
-    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
-    assert len(output) == 8
-    assert set([]) in output
-    assert set([1]) in output
-    assert set([2]) in output
-    assert set([1, 2]) in output
-    assert set([3]) in output
-    assert set([1, 3]) in output
-    assert set([2, 3]) in output
-    assert set([1, 2, 3]) in output
+    input = [
+        [[1, 3], [2, 5]],
+        [[0, 3], [2, 10], [3, 12]],
+        [[0, 5], [1, 10]],
+        [[1, 12]]
+    ]
+
+    expected = [
+        [[1, 3], [2, 5]],
+        [[0, 3], [3, 12]],
+        [[0, 5]],
+        [[1, 12]]
+    ]
+    actual = kruskalsAlgorithm(input)
+    print(actual, "     =    ", expected)
+    assert actual == expected
