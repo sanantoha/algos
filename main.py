@@ -229,11 +229,12 @@ tasks_done = [
     'sort_stack.py',
     'longest_increasing_subsequence.py',
     'powerset.py',
-    'kruskals_algorithm.py'
+    'kruskals_algorithm.py',
+    'river_sizes.py'
 ]
 
 
-def kruskalsAlgorithm(graph):
+def river_sizes(matrix):
     pass
 
 
@@ -242,19 +243,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [[1, 3], [2, 5]],
-        [[0, 3], [2, 10], [3, 12]],
-        [[0, 5], [1, 10]],
-        [[1, 12]]
+    # test_input = [[1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 0, 1, 0, 1], [1, 0, 1, 0, 1], [1, 0, 1, 1, 0]]
+    test_input = [
+        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
+        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
+        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
+        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
+        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
     ]
 
-    expected = [
-        [[1, 3], [2, 5]],
-        [[0, 3], [3, 12]],
-        [[0, 5]],
-        [[1, 12]]
-    ]
-    actual = kruskalsAlgorithm(input)
-    print(actual, "     =    ", expected)
+    expected = [1, 1, 2, 2, 5, 21]
+    # expected = [1, 2, 2, 2, 5]
+
+    actual = sorted(river_sizes(test_input))
+    print(actual)
     assert actual == expected
