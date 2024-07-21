@@ -230,11 +230,12 @@ tasks_done = [
     'longest_increasing_subsequence.py',
     'powerset.py',
     'kruskals_algorithm.py',
-    'river_sizes.py'
+    'river_sizes.py',
+    'sunset_views.py'
 ]
 
 
-def river_sizes(matrix):
+def sunsetViews(buildings, direction):
     pass
 
 
@@ -243,18 +244,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    # test_input = [[1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 0, 1, 0, 1], [1, 0, 1, 0, 1], [1, 0, 1, 1, 0]]
-    test_input = [
-        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
-        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
-        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
-        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
-        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
-    ]
+    buildings = [3, 5, 4, 4, 3, 1, 3, 2]
+    direction = "EAST"
+    expected = [1, 3, 6, 7]
+    actual = sunsetViews(buildings, direction)
+    print(actual)
+    assert actual == expected
 
-    expected = [1, 1, 2, 2, 5, 21]
-    # expected = [1, 2, 2, 2, 5]
-
-    actual = sorted(river_sizes(test_input))
+    direction = "WEST"
+    expected = [0, 1]
+    actual = sunsetViews(buildings, direction)
     print(actual)
     assert actual == expected
