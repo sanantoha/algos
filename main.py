@@ -232,21 +232,21 @@ tasks_done = [
     'kruskals_algorithm.py',
     'river_sizes.py',
     'sunset_views.py',
-    'depth_first_search.py'
+    'depth_first_search.py',
+    'four_number_sum.py'
 ]
 
 
-class Node:
-    def __init__(self, name):
-        self.children = []
-        self.name = name
+def fourNumberSum(arr, target):
+    pass
 
-    def add_child(self, name):
-        self.children.append(Node(name))
-        return self
 
-    def depth_first_search(self, array):
-        return array
+def fourNumberSum1(arr, target):
+    pass
+
+
+def sortAndStringify(array):
+    return ",".join(sorted(list(map(lambda x: str(x), array))))
 
 
 if __name__ == '__main__':
@@ -254,10 +254,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    graph = Node("A")
-    graph.add_child("B").add_child("C").add_child("D")
-    graph.children[0].add_child("E").add_child("F")
-    graph.children[2].add_child("G").add_child("H")
-    graph.children[0].children[1].add_child("I").add_child("J")
-    graph.children[2].children[0].add_child("K")
-    assert graph.depth_first_search([]) == ["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
+    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
+    print(output)
+    output = list(map(sortAndStringify, output))
+    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    assert len(output) == 2
+    for quadruplet in quadruplets:
+        assert sortAndStringify(quadruplet) in output
+
+    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
+    print(output)
+    output = list(map(sortAndStringify, output))
+    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    assert len(output) == 2
+    for quadruplet in quadruplets:
+        assert sortAndStringify(quadruplet) in output
