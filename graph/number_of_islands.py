@@ -21,7 +21,6 @@ def dfs(matrix, visited, startRow, startCol):
     stack = [(startRow, startCol)]
 
     while stack:
-        print(len(stack))
         (row, col) = stack.pop()
 
         if visited[row][col]:
@@ -52,18 +51,11 @@ def getNeighbors(matrix, row, col):
 
 
 if __name__ == '__main__':
-    # matrix = [
-    #     [0, 0, 0, 0, 1],
-    #     [1, 1, 0, 0, 0],
-    #     [1, 1, 0, 1, 1],
-    #     [0, 0, 0, 1, 1]
-    # ]
-
     matrix = [
-        [1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1],
-        [1, 1, 1, 1, 1]
+        [0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0],
+        [1, 1, 0, 1, 1],
+        [0, 0, 0, 1, 1]
     ]
     expected = 3
 

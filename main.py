@@ -233,20 +233,14 @@ tasks_done = [
     'river_sizes.py',
     'sunset_views.py',
     'depth_first_search.py',
-    'four_number_sum.py'
+    'four_number_sum.py',
+    'zero_sum_subarray.py',
+    'number_of_islands.py'
 ]
 
 
-def fourNumberSum(arr, target):
+def numberOfIsland(matrix):
     pass
-
-
-def fourNumberSum1(arr, target):
-    pass
-
-
-def sortAndStringify(array):
-    return ",".join(sorted(list(map(lambda x: str(x), array))))
 
 
 if __name__ == '__main__':
@@ -254,18 +248,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    matrix = [
+        [0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0],
+        [1, 1, 0, 1, 1],
+        [0, 0, 0, 1, 1]
+    ]
+    expected = 3
 
-    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    actual = numberOfIsland(matrix)
+    print(actual)
+    assert actual == expected
