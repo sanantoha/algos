@@ -235,11 +235,16 @@ tasks_done = [
     'depth_first_search.py',
     'four_number_sum.py',
     'zero_sum_subarray.py',
-    'number_of_islands.py'
+    'number_of_islands.py',
+    'find_three_largest_numbers.py'
 ]
 
 
-def numberOfIsland(matrix):
+def find_three_largest_numbers(arr):
+    pass
+
+
+def find_three_largest_numbers1(arr):
     pass
 
 
@@ -248,14 +253,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0],
-        [1, 1, 0, 1, 1],
-        [0, 0, 0, 1, 1]
-    ]
-    expected = 3
-
-    actual = numberOfIsland(matrix)
-    print(actual)
-    assert actual == expected
+    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
