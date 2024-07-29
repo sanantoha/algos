@@ -237,11 +237,16 @@ tasks_done = [
     'zero_sum_subarray.py',
     'number_of_islands.py',
     'find_three_largest_numbers.py',
-    'zigzag_traverse.py'
+    'zigzag_traverse.py',
+    'merge_binary_trees.py'
 ]
 
 
-def zigzagTraverse(matrix):
+def mergeBinaryTrees(tree1, tree2):
+    pass
+
+
+def mergeBinaryTreesIter(tree1, tree2):
     pass
 
 
@@ -250,10 +255,48 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[1, 3, 4, 10],
-            [2, 5, 9, 11],
-            [6, 8, 12, 15],
-            [7, 13, 14, 16]]
-    actual = zigzagTraverse(input)
-    print(actual)
-    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    from tree.BinaryTree import BinaryTree
+
+    tree1 = BinaryTree(1)
+    tree1.left = BinaryTree(3)
+    tree1.left.left = BinaryTree(7)
+    tree1.left.right = BinaryTree(4)
+    tree1.right = BinaryTree(2)
+
+    tree2 = BinaryTree(1)
+    tree2.left = BinaryTree(5)
+    tree2.left.left = BinaryTree(2)
+    tree2.right = BinaryTree(9)
+    tree2.right.left = BinaryTree(7)
+    tree2.right.right = BinaryTree(6)
+
+    actual = mergeBinaryTrees(tree1, tree2)
+    assert actual.value == 2
+    assert actual.left.value == 8
+    assert actual.left.left.value == 9
+    assert actual.left.right.value == 4
+    assert actual.right.value == 11
+    assert actual.right.left.value == 7
+    assert actual.right.right.value == 6
+
+    tree3 = BinaryTree(1)
+    tree3.left = BinaryTree(3)
+    tree3.left.left = BinaryTree(7)
+    tree3.left.right = BinaryTree(4)
+    tree3.right = BinaryTree(2)
+
+    tree4 = BinaryTree(1)
+    tree4.left = BinaryTree(5)
+    tree4.left.left = BinaryTree(2)
+    tree4.right = BinaryTree(9)
+    tree4.right.left = BinaryTree(7)
+    tree4.right.right = BinaryTree(6)
+
+    actual = mergeBinaryTreesIter(tree3, tree4)
+    assert actual.value == 2
+    assert actual.left.value == 8
+    assert actual.left.left.value == 9
+    assert actual.left.right.value == 4
+    assert actual.right.value == 11
+    assert actual.right.left.value == 7
+    assert actual.right.right.value == 6
