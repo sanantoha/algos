@@ -238,15 +238,11 @@ tasks_done = [
     'number_of_islands.py',
     'find_three_largest_numbers.py',
     'zigzag_traverse.py',
-    'merge_binary_trees.py'
+    'common_characters.py'
 ]
 
 
-def mergeBinaryTrees(tree1, tree2):
-    pass
-
-
-def mergeBinaryTreesIter(tree1, tree2):
+def commonCharacters(strings):
     pass
 
 
@@ -255,48 +251,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BinaryTree import BinaryTree
-
-    tree1 = BinaryTree(1)
-    tree1.left = BinaryTree(3)
-    tree1.left.left = BinaryTree(7)
-    tree1.left.right = BinaryTree(4)
-    tree1.right = BinaryTree(2)
-
-    tree2 = BinaryTree(1)
-    tree2.left = BinaryTree(5)
-    tree2.left.left = BinaryTree(2)
-    tree2.right = BinaryTree(9)
-    tree2.right.left = BinaryTree(7)
-    tree2.right.right = BinaryTree(6)
-
-    actual = mergeBinaryTrees(tree1, tree2)
-    assert actual.value == 2
-    assert actual.left.value == 8
-    assert actual.left.left.value == 9
-    assert actual.left.right.value == 4
-    assert actual.right.value == 11
-    assert actual.right.left.value == 7
-    assert actual.right.right.value == 6
-
-    tree3 = BinaryTree(1)
-    tree3.left = BinaryTree(3)
-    tree3.left.left = BinaryTree(7)
-    tree3.left.right = BinaryTree(4)
-    tree3.right = BinaryTree(2)
-
-    tree4 = BinaryTree(1)
-    tree4.left = BinaryTree(5)
-    tree4.left.left = BinaryTree(2)
-    tree4.right = BinaryTree(9)
-    tree4.right.left = BinaryTree(7)
-    tree4.right.right = BinaryTree(6)
-
-    actual = mergeBinaryTreesIter(tree3, tree4)
-    assert actual.value == 2
-    assert actual.left.value == 8
-    assert actual.left.left.value == 9
-    assert actual.left.right.value == 4
-    assert actual.right.value == 11
-    assert actual.right.left.value == 7
-    assert actual.right.right.value == 6
+    input = ["abc", "bcd", "cbad"]
+    expected = ["b", "c"]
+    actual = commonCharacters(input)
+    actual.sort()
+    print(actual)
+    assert actual == expected
