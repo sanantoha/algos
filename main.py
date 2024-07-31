@@ -238,11 +238,12 @@ tasks_done = [
     'number_of_islands.py',
     'find_three_largest_numbers.py',
     'zigzag_traverse.py',
-    'common_characters.py'
+    'common_characters.py',
+    'first_non_repeating_character.py'
 ]
 
 
-def commonCharacters(strings):
+def first_non_repeating_character(word):
     pass
 
 
@@ -251,9 +252,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["abc", "bcd", "cbad"]
-    expected = ["b", "c"]
-    actual = commonCharacters(input)
-    actual.sort()
-    print(actual)
-    assert actual == expected
+    print(first_non_repeating_character("abcdcaf"))
