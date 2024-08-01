@@ -239,11 +239,12 @@ tasks_done = [
     'find_three_largest_numbers.py',
     'zigzag_traverse.py',
     'common_characters.py',
-    'first_non_repeating_character.py'
+    'first_non_repeating_character.py',
+    'middle_node.py'
 ]
 
 
-def first_non_repeating_character(word):
+def middleNode(head):
     pass
 
 
@@ -252,4 +253,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(first_non_repeating_character("abcdcaf"))
+    from list.LinkedList import LinkedList
+
+    list = LinkedList(1)
+    list.next = LinkedList(2)
+    list.next.next = LinkedList(3)
+    list.next.next.next = LinkedList(4)
+
+    res = middleNode(list)
+    print(res)
+    assert res == list.next.next
