@@ -241,11 +241,16 @@ tasks_done = [
     'common_characters.py',
     'first_non_repeating_character.py',
     'middle_node.py',
-    'valid_ip_addresses.py'
+    'valid_ip_addresses.py',
+    'same_bsts.py'
 ]
 
 
-def validIPAddresses(string):
+def sameBsts(arrayOne, arrayTwo):
+    pass
+
+
+def sameBsts1(arrayOne, arrayTwo):
     pass
 
 
@@ -254,20 +259,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = "1921680"
-    expected = [
-        "1.9.216.80",
-        "1.92.16.80",
-        "1.92.168.0",
-        "19.2.16.80",
-        "19.2.168.0",
-        "19.21.6.80",
-        "19.21.68.0",
-        "19.216.8.0",
-        "192.1.6.80",
-        "192.1.68.0",
-        "192.16.8.0",
-    ]
-    actual = validIPAddresses(input)
-    print(actual)
-    assert actual == expected
+    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
+    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
+    assert sameBsts(arrayOne, arrayTwo)
+
+    assert sameBsts1(arrayOne, arrayTwo)
