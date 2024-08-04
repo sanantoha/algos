@@ -242,15 +242,20 @@ tasks_done = [
     'first_non_repeating_character.py',
     'middle_node.py',
     'valid_ip_addresses.py',
-    'same_bsts.py'
+    'same_bsts.py',
+    'min_rewards.py'
 ]
 
 
-def sameBsts(arrayOne, arrayTwo):
+def minRewards(scores):
     pass
 
 
-def sameBsts1(arrayOne, arrayTwo):
+def minRewards1(scores):
+    pass
+
+
+def minRewards2(scores):
     pass
 
 
@@ -259,8 +264,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
-    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
-    assert sameBsts(arrayOne, arrayTwo)
+    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
 
-    assert sameBsts1(arrayOne, arrayTwo)
+    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
+
+    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
