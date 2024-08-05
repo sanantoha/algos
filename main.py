@@ -243,19 +243,33 @@ tasks_done = [
     'middle_node.py',
     'valid_ip_addresses.py',
     'same_bsts.py',
-    'min_rewards.py'
+    'min_rewards.py',
+    'get_youngest_common_ancestor.py'
 ]
 
 
-def minRewards(scores):
-    pass
+# This is an input class. Do not edit.
+class AncestralTree:
+    def __init__(self, name):
+        self.name = name
+        self.ancestor = None
 
 
-def minRewards1(scores):
-    pass
+class AncestralTree(AncestralTree):
+    def addDescendants(self, *descendants):
+        for descendant in descendants:
+            descendant.ancestor = self
 
 
-def minRewards2(scores):
+def new_trees():
+    ancestralTrees = {}
+    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+        ancestralTrees[letter] = AncestralTree(letter)
+    return ancestralTrees
+
+
+
+def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
     pass
 
 
@@ -264,14 +278,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
+    trees = new_trees()
+    trees["A"].addDescendants(trees["B"], trees["C"])
+    trees["B"].addDescendants(trees["D"], trees["E"])
+    trees["D"].addDescendants(trees["H"], trees["I"])
+    trees["C"].addDescendants(trees["F"], trees["G"])
 
-    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
-
-    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
+    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
+    assert yca == trees["B"]
