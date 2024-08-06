@@ -245,11 +245,22 @@ tasks_done = [
     'same_bsts.py',
     'min_rewards.py',
     'get_youngest_common_ancestor.py',
-    'kadanes_distance.py'
+    'unique_pathsIII.py'
 ]
 
 
-def kadanes_distance(arr):
+# https://leetcode.com/problems/unique-paths-iii/description/
+# You are given an m x n integer arrays grid where grid[i][j] could be:
+#
+# 1 representing the starting square. There is exactly one starting square.
+# 2 representing the ending square. There is exactly one ending square.
+# 0 representing empty squares we can walk over.
+# -1 representing obstacles that we cannot walk over.
+# Return the number of 4-directional walks from the starting square to the ending square,
+# that walk over every non-obstacle square exactly once.
+
+
+def uniquePathsIII(grid):
     pass
 
 
@@ -258,4 +269,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    grid = [[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2, -1]]
+    actual = uniquePathsIII(grid)
+    print(actual)
+    assert actual == 2
