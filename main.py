@@ -244,32 +244,12 @@ tasks_done = [
     'valid_ip_addresses.py',
     'same_bsts.py',
     'min_rewards.py',
-    'get_youngest_common_ancestor.py'
+    'get_youngest_common_ancestor.py',
+    'kadanes_distance.py'
 ]
 
 
-# This is an input class. Do not edit.
-class AncestralTree:
-    def __init__(self, name):
-        self.name = name
-        self.ancestor = None
-
-
-class AncestralTree(AncestralTree):
-    def addDescendants(self, *descendants):
-        for descendant in descendants:
-            descendant.ancestor = self
-
-
-def new_trees():
-    ancestralTrees = {}
-    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-        ancestralTrees[letter] = AncestralTree(letter)
-    return ancestralTrees
-
-
-
-def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
+def kadanes_distance(arr):
     pass
 
 
@@ -278,11 +258,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    trees = new_trees()
-    trees["A"].addDescendants(trees["B"], trees["C"])
-    trees["B"].addDescendants(trees["D"], trees["E"])
-    trees["D"].addDescendants(trees["H"], trees["I"])
-    trees["C"].addDescendants(trees["F"], trees["G"])
-
-    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
-    assert yca == trees["B"]
+    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
