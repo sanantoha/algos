@@ -250,7 +250,7 @@ tasks_done = [
 ]
 
 
-def kadanes_distance(arr):
+def non_constructible_changes(coins):
     pass
 
 
@@ -259,4 +259,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    coins = [5, 7, 1, 1, 2, 3, 22]
+    print(non_constructible_changes(coins))
