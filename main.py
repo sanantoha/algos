@@ -246,11 +246,13 @@ tasks_done = [
     'min_rewards.py',
     'get_youngest_common_ancestor.py',
     'unique_pathsIII.py',
-    'kadanes_distance.py'
+    'kadanes_distance.py',
+    'non_constructible_changes.py',
+    'word_ladder_ii.py'
 ]
 
 
-def non_constructible_changes(coins):
+def findLadders(beginWord, endWord, wordList):
     pass
 
 
@@ -259,5 +261,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    coins = [5, 7, 1, 1, 2, 3, 22]
-    print(non_constructible_changes(coins))
+    beginWord = "hit"
+    endWord = "cog"
+    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
+    actual = findLadders(beginWord, endWord, wordList)
+    print(actual)
+    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
