@@ -248,11 +248,16 @@ tasks_done = [
     'unique_pathsIII.py',
     'kadanes_distance.py',
     'non_constructible_changes.py',
-    'word_ladder_ii.py'
+    'word_ladder_ii.py',
+    'levenshtein_distance.py'
 ]
 
 
-def findLadders(beginWord, endWord, wordList):
+def levenshtein_distance(str1, str2):
+    pass
+
+
+def levenshtein_distance1(str1, str2):
     pass
 
 
@@ -261,9 +266,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = findLadders(beginWord, endWord, wordList)
-    print(actual)
-    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
+    assert levenshtein_distance("abc", "yabd") == 2
+    assert levenshtein_distance1("abc", "yabd") == 2
