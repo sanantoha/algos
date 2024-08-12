@@ -249,15 +249,12 @@ tasks_done = [
     'kadanes_distance.py',
     'non_constructible_changes.py',
     'word_ladder_ii.py',
-    'levenshtein_distance.py'
+    'levenshtein_distance.py',
+    'blackjack_probability.py'
 ]
 
 
-def levenshtein_distance(str1, str2):
-    pass
-
-
-def levenshtein_distance1(str1, str2):
+def blackjackProbability(target, startingHand):
     pass
 
 
@@ -266,5 +263,30 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert levenshtein_distance("abc", "yabd") == 2
-    assert levenshtein_distance1("abc", "yabd") == 2
+    actual = blackjackProbability(21, 15)
+    print(actual)
+    assert actual == 0.45
+
+    actual = blackjackProbability(21, 21)
+    print(actual)
+    assert actual == 0
+
+    actual = blackjackProbability(21, 20)
+    print(actual)
+    assert actual == 0
+
+    actual = blackjackProbability(21, 17)
+    print(actual)
+    assert actual == 0
+
+    actual = blackjackProbability(21, 12)
+    print(actual)
+    assert actual == 0.268
+
+    actual = blackjackProbability(21, 5)
+    print(actual)
+    assert actual == 0.295
+
+    actual = blackjackProbability(30, 25)
+    print(actual)
+    assert actual == 0.5
