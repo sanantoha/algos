@@ -250,11 +250,18 @@ tasks_done = [
     'non_constructible_changes.py',
     'word_ladder_ii.py',
     'levenshtein_distance.py',
-    'blackjack_probability.py'
+    'blackjack_probability.py',
+    'merge_binary_trees.py'
 ]
 
 
-def blackjackProbability(target, startingHand):
+from tree.BinaryTree import BinaryTree
+
+def mergeBinaryTrees(root1, root2):
+    pass
+
+
+def mergeBinaryTreesIter(root1, root2):
     pass
 
 
@@ -263,30 +270,46 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = blackjackProbability(21, 15)
-    print(actual)
-    assert actual == 0.45
+    tree1 = BinaryTree(1)
+    tree1.left = BinaryTree(3)
+    tree1.left.left = BinaryTree(7)
+    tree1.left.right = BinaryTree(4)
+    tree1.right = BinaryTree(2)
 
-    actual = blackjackProbability(21, 21)
-    print(actual)
-    assert actual == 0
+    tree2 = BinaryTree(1)
+    tree2.left = BinaryTree(5)
+    tree2.left.left = BinaryTree(2)
+    tree2.right = BinaryTree(9)
+    tree2.right.left = BinaryTree(7)
+    tree2.right.right = BinaryTree(6)
 
-    actual = blackjackProbability(21, 20)
-    print(actual)
-    assert actual == 0
+    actual = mergeBinaryTrees(tree1, tree2)
+    assert actual.value == 2
+    assert actual.left.value == 8
+    assert actual.left.left.value == 9
+    assert actual.left.right.value == 4
+    assert actual.right.value == 11
+    assert actual.right.left.value == 7
+    assert actual.right.right.value == 6
 
-    actual = blackjackProbability(21, 17)
-    print(actual)
-    assert actual == 0
+    tree3 = BinaryTree(1)
+    tree3.left = BinaryTree(3)
+    tree3.left.left = BinaryTree(7)
+    tree3.left.right = BinaryTree(4)
+    tree3.right = BinaryTree(2)
 
-    actual = blackjackProbability(21, 12)
-    print(actual)
-    assert actual == 0.268
+    tree4 = BinaryTree(1)
+    tree4.left = BinaryTree(5)
+    tree4.left.left = BinaryTree(2)
+    tree4.right = BinaryTree(9)
+    tree4.right.left = BinaryTree(7)
+    tree4.right.right = BinaryTree(6)
 
-    actual = blackjackProbability(21, 5)
-    print(actual)
-    assert actual == 0.295
-
-    actual = blackjackProbability(30, 25)
-    print(actual)
-    assert actual == 0.5
+    actual = mergeBinaryTreesIter(tree3, tree4)
+    assert actual.value == 2
+    assert actual.left.value == 8
+    assert actual.left.left.value == 9
+    assert actual.left.right.value == 4
+    assert actual.right.value == 11
+    assert actual.right.left.value == 7
+    assert actual.right.right.value == 6
