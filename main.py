@@ -251,17 +251,41 @@ tasks_done = [
     'word_ladder_ii.py',
     'levenshtein_distance.py',
     'blackjack_probability.py',
-    'merge_binary_trees.py'
+    'merge_binary_trees.py',
+    'remove_kth_node_from_end.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
+class StartLinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
-def mergeBinaryTrees(root1, root2):
-    pass
+
+linkedListClass = StartLinkedList
+# if hasattr(program, "LinkedList"):
+#     linkedListClass = program.LinkedList
+
+class LinkedList(linkedListClass):
+    def addMany(self, values):
+        current = self
+        while current.next is not None:
+            current = current.next
+        for value in values:
+            current.next = LinkedList(value)
+            current = current.next
+        return self
+
+    def getNodesInArray(self):
+        nodes = []
+        current = self
+        while current is not None:
+            nodes.append(current.value)
+            current = current.next
+        return nodes
 
 
-def mergeBinaryTreesIter(root1, root2):
+def remove_kth_node_from_end(head, k):
     pass
 
 
@@ -270,46 +294,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree1 = BinaryTree(1)
-    tree1.left = BinaryTree(3)
-    tree1.left.left = BinaryTree(7)
-    tree1.left.right = BinaryTree(4)
-    tree1.right = BinaryTree(2)
-
-    tree2 = BinaryTree(1)
-    tree2.left = BinaryTree(5)
-    tree2.left.left = BinaryTree(2)
-    tree2.right = BinaryTree(9)
-    tree2.right.left = BinaryTree(7)
-    tree2.right.right = BinaryTree(6)
-
-    actual = mergeBinaryTrees(tree1, tree2)
-    assert actual.value == 2
-    assert actual.left.value == 8
-    assert actual.left.left.value == 9
-    assert actual.left.right.value == 4
-    assert actual.right.value == 11
-    assert actual.right.left.value == 7
-    assert actual.right.right.value == 6
-
-    tree3 = BinaryTree(1)
-    tree3.left = BinaryTree(3)
-    tree3.left.left = BinaryTree(7)
-    tree3.left.right = BinaryTree(4)
-    tree3.right = BinaryTree(2)
-
-    tree4 = BinaryTree(1)
-    tree4.left = BinaryTree(5)
-    tree4.left.left = BinaryTree(2)
-    tree4.right = BinaryTree(9)
-    tree4.right.left = BinaryTree(7)
-    tree4.right.right = BinaryTree(6)
-
-    actual = mergeBinaryTreesIter(tree3, tree4)
-    assert actual.value == 2
-    assert actual.left.value == 8
-    assert actual.left.left.value == 9
-    assert actual.left.right.value == 4
-    assert actual.right.value == 11
-    assert actual.right.left.value == 7
-    assert actual.right.right.value == 6
+    test = LinkedList(0).addMany([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    expected = LinkedList(0).addMany([1, 2, 3, 4, 5, 7, 8, 9])
+    remove_kth_node_from_end(test, 4)
+    print(test.getNodesInArray())
+    assert test.getNodesInArray() == expected.getNodesInArray()
