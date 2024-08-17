@@ -252,40 +252,26 @@ tasks_done = [
     'levenshtein_distance.py',
     'blackjack_probability.py',
     'merge_binary_trees.py',
-    'remove_kth_node_from_end.py'
+    'remove_kth_node_from_end.py',
+    'reconstruct_bst.py'
 ]
 
+from tree.BST import BST
 
-class StartLinkedList:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
-
-
-linkedListClass = StartLinkedList
-# if hasattr(program, "LinkedList"):
-#     linkedListClass = program.LinkedList
-
-class LinkedList(linkedListClass):
-    def addMany(self, values):
-        current = self
-        while current.next is not None:
-            current = current.next
-        for value in values:
-            current.next = LinkedList(value)
-            current = current.next
-        return self
-
-    def getNodesInArray(self):
-        nodes = []
-        current = self
-        while current is not None:
-            nodes.append(current.value)
-            current = current.next
-        return nodes
+def get_dfs_order(node, values):
+    if node is None:
+        return
+    values.append(node.value)
+    get_dfs_order(node.left, values)
+    get_dfs_order(node.right, values)
+    return values
 
 
-def remove_kth_node_from_end(head, k):
+def reconstruct_bst(preorder):
+    pass
+
+
+def reconstruct_bst1(preorder):
     pass
 
 
@@ -294,8 +280,21 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = LinkedList(0).addMany([1, 2, 3, 4, 5, 6, 7, 8, 9])
-    expected = LinkedList(0).addMany([1, 2, 3, 4, 5, 7, 8, 9])
-    remove_kth_node_from_end(test, 4)
-    print(test.getNodesInArray())
-    assert test.getNodesInArray() == expected.getNodesInArray()
+    pre_order_traversal_values = [10, 4, 2, 1, 3, 17, 19, 18]
+    tree = BST(10)
+    tree.left = BST(4)
+    tree.left.left = BST(2)
+    tree.left.left.left = BST(1)
+    tree.left.right = BST(3)
+    tree.right = BST(17)
+    tree.right.right = BST(19)
+    tree.right.right.left = BST(18)
+    expected = get_dfs_order(tree, [])
+
+    actual = reconstruct_bst(pre_order_traversal_values)
+    actual_dfs_order = get_dfs_order(actual, [])
+    assert actual_dfs_order == expected
+
+    actual1 = reconstruct_bst1(pre_order_traversal_values)
+    actual_dfs_order1 = get_dfs_order(actual1, [])
+    assert actual_dfs_order1 == expected
