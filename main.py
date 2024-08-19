@@ -253,25 +253,12 @@ tasks_done = [
     'blackjack_probability.py',
     'merge_binary_trees.py',
     'remove_kth_node_from_end.py',
-    'reconstruct_bst.py'
+    'reconstruct_bst.py',
+    'binary_search.py'
 ]
 
-from tree.BST import BST
 
-def get_dfs_order(node, values):
-    if node is None:
-        return
-    values.append(node.value)
-    get_dfs_order(node.left, values)
-    get_dfs_order(node.right, values)
-    return values
-
-
-def reconstruct_bst(preorder):
-    pass
-
-
-def reconstruct_bst1(preorder):
+def binary_search(array, target):
     pass
 
 
@@ -280,21 +267,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    pre_order_traversal_values = [10, 4, 2, 1, 3, 17, 19, 18]
-    tree = BST(10)
-    tree.left = BST(4)
-    tree.left.left = BST(2)
-    tree.left.left.left = BST(1)
-    tree.left.right = BST(3)
-    tree.right = BST(17)
-    tree.right.right = BST(19)
-    tree.right.right.left = BST(18)
-    expected = get_dfs_order(tree, [])
-
-    actual = reconstruct_bst(pre_order_traversal_values)
-    actual_dfs_order = get_dfs_order(actual, [])
-    assert actual_dfs_order == expected
-
-    actual1 = reconstruct_bst1(pre_order_traversal_values)
-    actual_dfs_order1 = get_dfs_order(actual1, [])
-    assert actual_dfs_order1 == expected
+    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
+    print(binary_search(array, 60))
