@@ -254,12 +254,45 @@ tasks_done = [
     'merge_binary_trees.py',
     'remove_kth_node_from_end.py',
     'reconstruct_bst.py',
-    'binary_search.py'
+    'binary_search.py',
+    'min_heap_construction.py'
 ]
 
+class MinHeap:
+    def __init__(self, array):
+        # Do not edit the line below.
+        self.heap = self.buildHeap(array)
 
-def binary_search(array, target):
-    pass
+
+    def buildHeap(self, array):
+        return []
+
+
+    def siftDown(self, curr_idx, end_idx, heap):
+        pass
+
+
+    def siftUp(self, idx, heap):
+        pass
+
+
+    def peek(self):
+        return self.heap[0]
+
+
+    def remove(self):
+        return -1
+
+
+    def insert(self, value):
+        pass
+
+def isMinHeapPropertySatisfied(array):
+    for currentIdx in range(1, len(array)):
+        parentIdx = (currentIdx - 1) // 2
+        if array[parentIdx] > array[currentIdx]:
+            return False
+    return True
 
 
 if __name__ == '__main__':
@@ -267,5 +300,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
-    print(binary_search(array, 60))
+    minHeap = MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41])
+    minHeap.insert(76)
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == -5
+    assert minHeap.remove() == -5
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == 2
+    assert minHeap.remove() == 2
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == 6
+    minHeap.insert(87)
+    assert isMinHeapPropertySatisfied(minHeap.heap)
