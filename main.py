@@ -255,44 +255,13 @@ tasks_done = [
     'remove_kth_node_from_end.py',
     'reconstruct_bst.py',
     'binary_search.py',
-    'min_heap_construction.py'
+    'min_heap_construction.py',
+    'max_sum_increasing_subsequence.py'
 ]
 
-class MinHeap:
-    def __init__(self, array):
-        # Do not edit the line below.
-        self.heap = self.buildHeap(array)
 
-
-    def buildHeap(self, array):
-        return []
-
-
-    def siftDown(self, curr_idx, end_idx, heap):
-        pass
-
-
-    def siftUp(self, idx, heap):
-        pass
-
-
-    def peek(self):
-        return self.heap[0]
-
-
-    def remove(self):
-        return -1
-
-
-    def insert(self, value):
-        pass
-
-def isMinHeapPropertySatisfied(array):
-    for currentIdx in range(1, len(array)):
-        parentIdx = (currentIdx - 1) // 2
-        if array[parentIdx] > array[currentIdx]:
-            return False
-    return True
+def maxSumIncreasingSubsequence(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -300,15 +269,28 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    minHeap = MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41])
-    minHeap.insert(76)
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == -5
-    assert minHeap.remove() == -5
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == 2
-    assert minHeap.remove() == 2
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == 6
-    minHeap.insert(87)
-    assert isMinHeapPropertySatisfied(minHeap.heap)
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    # assert actual == expected
+
+    input = [10, 70, 20, 30, 50, 11, 30]
+    expected = [110, [10, 20, 30, 50]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+
+    input = [8, 12, 2, 3, 15, 5, 7]
+    expected = [35, [8, 12, 15]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+
+    input = [-5, -4, -3, -2, -1]
+
+    expected = [-1, [-1]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected

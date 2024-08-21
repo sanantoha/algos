@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
     actual = maxSumIncreasingSubsequence(input)
     print(actual)
-    # assert actual == expected
+    assert actual == expected
 
 
     input = [10, 70, 20, 30, 50, 11, 30]
