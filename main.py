@@ -256,12 +256,70 @@ tasks_done = [
     'reconstruct_bst.py',
     'binary_search.py',
     'min_heap_construction.py',
-    'max_sum_increasing_subsequence.py'
+    'max_sum_increasing_subsequence.py',
+    'linked_list_construction.py'
 ]
 
+# This is an input class. Do not edit.
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.prev = None
+        self.next = None
 
-def maxSumIncreasingSubsequence(arr):
-    pass
+
+# Feel free to add new properties and methods to the class.
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def setHead(self, node):
+        pass
+
+    def setTail(self, node):
+        pass
+
+    def insertBefore(self, node, nodeToInsert):
+        pass
+
+    def insertAfter(self, node, nodeToInsert):
+        pass
+
+    def insertAtPosition(self, position, nodeToInsert):
+        pass
+
+    def removeNodesWithValue(self, value):
+        pass
+
+    def remove(self, node):
+        pass
+
+    def containsNodeWithValue(self, value):
+        return False
+
+
+def bindNodes(nodeOne, nodeTwo):
+    nodeOne.next = nodeTwo
+    nodeTwo.prev = nodeOne
+
+
+def getNodeValuesTailToHead(linkedList):
+    values = []
+    node = linkedList.tail
+    while node is not None:
+        values.append(node.value)
+        node = node.prev
+    return values
+
+
+def getNodeValuesHeadToTail(linkedList):
+    values = []
+    node = linkedList.head
+    while node is not None:
+        values.append(node.value)
+        node = node.next
+    return values
 
 
 if __name__ == '__main__':
@@ -269,28 +327,41 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    # assert actual == expected
+    linkedList = DoublyLinkedList()
+    one = Node(1)
+    two = Node(2)
+    three = Node(3)
+    # three2 = Node(3)
+    # three3 = Node(3)
+    four = Node(4)
+    five = Node(5)
+    six = Node(6)
 
-    input = [10, 70, 20, 30, 50, 11, 30]
-    expected = [110, [10, 20, 30, 50]]
+    linkedList.setHead(one)
+    linkedList.insertAfter(one, two)
+    linkedList.insertAfter(two, three)
+    linkedList.insertAfter(three, four)
+    linkedList.insertAfter(four, five)
+    linkedList.insertAfter(five, six)
+    seven = Node(7)
+    linkedList.insertAfter(six, seven)
+    print(getNodeValuesHeadToTail(linkedList))
 
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
+    linkedList.insertAtPosition(7, one)
+    print(getNodeValuesHeadToTail(linkedList))
+    linkedList.insertAtPosition(1, one)
+    print(getNodeValuesHeadToTail(linkedList))
+    linkedList.insertAtPosition(2, one)
+    print(getNodeValuesHeadToTail(linkedList))
 
-    input = [8, 12, 2, 3, 15, 5, 7]
-    expected = [35, [8, 12, 15]]
+    linkedList.insertAtPosition(3, one)
+    print(getNodeValuesHeadToTail(linkedList))
 
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
+    linkedList.insertAtPosition(4, one)
+    print(getNodeValuesHeadToTail(linkedList))
 
-    input = [-5, -4, -3, -2, -1]
+    linkedList.insertAtPosition(5, one)
+    print(getNodeValuesHeadToTail(linkedList))
 
-    expected = [-1, [-1]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
+    linkedList.insertAtPosition(6, one)
+    print(getNodeValuesHeadToTail(linkedList))
