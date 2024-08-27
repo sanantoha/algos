@@ -257,69 +257,34 @@ tasks_done = [
     'binary_search.py',
     'min_heap_construction.py',
     'max_sum_increasing_subsequence.py',
-    'linked_list_construction.py'
+    'linked_list_construction.py',
+    'bst_construction.py'
 ]
 
-# This is an input class. Do not edit.
-class Node:
-    def __init__(self, value):
+class BST:
+    def __init__(self, value, left=None, right=None):
         self.value = value
-        self.prev = None
-        self.next = None
+        self.left = left
+        self.right = right
 
-
-# Feel free to add new properties and methods to the class.
-class DoublyLinkedList:
-    def __init__(self):
-        self.head = None
-        self.tail = None
-
-    def setHead(self, node):
+    def contains_rec(self, value):
         pass
 
-    def setTail(self, node):
+    def contains(self, value):
         pass
 
-    def insertBefore(self, node, nodeToInsert):
+    def insert_rec(self, value):
         pass
 
-    def insertAfter(self, node, nodeToInsert):
+    def insert(self, value):
         pass
 
-    def insertAtPosition(self, position, nodeToInsert):
+
+    def remove_rec(self, value):
         pass
 
-    def removeNodesWithValue(self, value):
+    def remove(self, value):
         pass
-
-    def remove(self, node):
-        pass
-
-    def containsNodeWithValue(self, value):
-        return False
-
-
-def bindNodes(nodeOne, nodeTwo):
-    nodeOne.next = nodeTwo
-    nodeTwo.prev = nodeOne
-
-
-def getNodeValuesTailToHead(linkedList):
-    values = []
-    node = linkedList.tail
-    while node is not None:
-        values.append(node.value)
-        node = node.prev
-    return values
-
-
-def getNodeValuesHeadToTail(linkedList):
-    values = []
-    node = linkedList.head
-    while node is not None:
-        values.append(node.value)
-        node = node.next
-    return values
 
 
 if __name__ == '__main__':
@@ -327,41 +292,40 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    linkedList = DoublyLinkedList()
-    one = Node(1)
-    two = Node(2)
-    three = Node(3)
-    # three2 = Node(3)
-    # three3 = Node(3)
-    four = Node(4)
-    five = Node(5)
-    six = Node(6)
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
 
-    linkedList.setHead(one)
-    linkedList.insertAfter(one, two)
-    linkedList.insertAfter(two, three)
-    linkedList.insertAfter(three, four)
-    linkedList.insertAfter(four, five)
-    linkedList.insertAfter(five, six)
-    seven = Node(7)
-    linkedList.insertAfter(six, seven)
-    print(getNodeValuesHeadToTail(linkedList))
+    root.insert(12)
+    assert (root.right.left.left.value == 12)
 
-    linkedList.insertAtPosition(7, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    linkedList.insertAtPosition(1, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    linkedList.insertAtPosition(2, one)
-    print(getNodeValuesHeadToTail(linkedList))
+    root.remove(10)
+    assert (not root.contains(10))
+    assert (root.value == 12)
 
-    linkedList.insertAtPosition(3, one)
-    print(getNodeValuesHeadToTail(linkedList))
+    assert (root.contains(15))
 
-    linkedList.insertAtPosition(4, one)
-    print(getNodeValuesHeadToTail(linkedList))
+    root1 = BST(10)
+    root1.left = BST(5)
+    root1.left.left = BST(2)
+    root1.left.left.left = BST(1)
+    root1.left.right = BST(5)
+    root1.right = BST(15)
+    root1.right.left = BST(13)
+    root1.right.left.right = BST(14)
+    root1.right.right = BST(22)
 
-    linkedList.insertAtPosition(5, one)
-    print(getNodeValuesHeadToTail(linkedList))
+    root1.insert_rec(12)
+    assert (root1.right.left.left.value == 12)
 
-    linkedList.insertAtPosition(6, one)
-    print(getNodeValuesHeadToTail(linkedList))
+    root1.remove_rec(10)
+    assert (not root1.contains_rec(10))
+    assert (root1.value == 12)
+
+    assert (root1.contains_rec(15))
