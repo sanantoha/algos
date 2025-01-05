@@ -137,16 +137,8 @@ tasks_done = [
 ]
 
 
-def fourNumberSum(arr, target):
+def diskStacking(input):
     pass
-
-
-def fourNumberSum1(arr, target):
-    pass
-
-
-def sortAndStringify(array):
-    return ",".join(sorted(list(map(lambda x: str(x), array))))
 
 
 if __name__ == '__main__':
@@ -154,18 +146,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
-
-    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
+    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
+    actual = diskStacking(input)
+    print(actual)
+    assert (actual == expected)
