@@ -133,11 +133,24 @@ tasks = [
 
 tasks_done = [
     'run_length_encoding.py',
-    'four_number_sum.py'
+    'four_number_sum.py',
+    'validate_tree_nodes.py'
 ]
 
 
-def diskStacking(input):
+# This is an input class. Do not edit.
+class BST:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+
+def validateThreeNodes(nodeOne, nodeTwo, nodeThree):
+    pass
+
+
+def validateThreeNodes1(nodeOne, nodeTwo, nodeThree):
     pass
 
 
@@ -146,8 +159,24 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
-    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
-    actual = diskStacking(input)
+    root = BST(5)
+    root.left = BST(2)
+    root.right = BST(7)
+    root.left.left = BST(1)
+    root.left.right = BST(4)
+    root.right.left = BST(6)
+    root.right.right = BST(8)
+    root.left.left.left = BST(0)
+    root.left.right.left = BST(3)
+
+    nodeOne = root
+    nodeTwo = root.left
+    nodeThree = root.left.right.left
+    expected = True
+    actual = validateThreeNodes(nodeOne, nodeTwo, nodeThree)
     print(actual)
-    assert (actual == expected)
+    assert actual == expected
+
+    actual = validateThreeNodes1(nodeOne, nodeTwo, nodeThree)
+    print(actual)
+    assert actual == expected
