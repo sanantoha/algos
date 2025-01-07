@@ -159,6 +159,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
+    # 07.01.2025 - done
     root = BST(5)
     root.left = BST(2)
     root.right = BST(7)
