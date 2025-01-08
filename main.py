@@ -134,23 +134,12 @@ tasks = [
 tasks_done = [
     'run_length_encoding.py',
     'four_number_sum.py',
-    'validate_tree_nodes.py'
+    'validate_tree_nodes.py',
+    'balanced_brackets.py'
 ]
 
 
-# This is an input class. Do not edit.
-class BST:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
-
-
-def validateThreeNodes(nodeOne, nodeTwo, nodeThree):
-    pass
-
-
-def validateThreeNodes1(nodeOne, nodeTwo, nodeThree):
+def balancedBrackets(string):
     pass
 
 
@@ -159,25 +148,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    # 07.01.2025 - done
-    root = BST(5)
-    root.left = BST(2)
-    root.right = BST(7)
-    root.left.left = BST(1)
-    root.left.right = BST(4)
-    root.right.left = BST(6)
-    root.right.right = BST(8)
-    root.left.left.left = BST(0)
-    root.left.right.left = BST(3)
-
-    nodeOne = root
-    nodeTwo = root.left
-    nodeThree = root.left.right.left
-    expected = True
-    actual = validateThreeNodes(nodeOne, nodeTwo, nodeThree)
-    print(actual)
-    assert actual == expected
-
-    actual = validateThreeNodes1(nodeOne, nodeTwo, nodeThree)
-    print(actual)
-    assert actual == expected
+    assert balancedBrackets("(a)")
+    assert balancedBrackets("([])")
+    assert balancedBrackets("([])(){}(())()()")
