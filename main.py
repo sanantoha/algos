@@ -135,11 +135,16 @@ tasks_done = [
     'run_length_encoding.py',
     'four_number_sum.py',
     'validate_tree_nodes.py',
-    'balanced_brackets.py'
+    'balanced_brackets.py',
+    'next_greater_element.py'
 ]
 
 
-def balancedBrackets(string):
+def nextGreaterElement(array):
+    pass
+
+
+def nextGreaterElement1(array):
     pass
 
 
@@ -148,6 +153,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert balancedBrackets("(a)")
-    assert balancedBrackets("([])")
-    assert balancedBrackets("([])(){}(())()()")
+    input = [2, 5, -3, -4, 6, 7, 2]
+    expected = [5, 6, 6, 6, 7, -1, 5]
+    actual = nextGreaterElement(input)
+    print(actual)
+    assert actual == expected
+
+    actual = nextGreaterElement1(input)
+    print(actual)
+    assert actual == expected
