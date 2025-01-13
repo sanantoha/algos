@@ -138,12 +138,12 @@ tasks_done = [
     'balanced_brackets.py',
     'next_greater_element.py',
     'merge_binary_trees.py',
-    'reverse_polish_notation.py'
+    'reverse_polish_notation.py',
+    'palindrom_check.py'
 ]
 
-
-def reversePolishNotation(tokens):
-    pass
+def is_palindrome(str):
+    return False
 
 
 if __name__ == '__main__':
@@ -151,8 +151,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["3", "2", "+", "7", "*"]
-    expected = 35
-    actual = reversePolishNotation(input)
-    print(actual)
-    assert actual == expected
+    print(is_palindrome("abcdcba"))
