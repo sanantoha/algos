@@ -139,11 +139,18 @@ tasks_done = [
     'next_greater_element.py',
     'merge_binary_trees.py',
     'reverse_polish_notation.py',
-    'palindrom_check.py'
+    'palindrom_check.py',
+    'invert_binary_tree.py'
 ]
 
-def is_palindrome(str):
-    return False
+from tree.BinaryTree import BinaryTree
+
+def invert_binary_tree(root):
+    pass
+
+
+def invert_binary_tree_iter(root):
+    pass
 
 
 if __name__ == '__main__':
@@ -151,4 +158,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(is_palindrome("abcdcba"))
+    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
+    inverted_tree = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
+    invert_binary_tree(tree)
+    assert tree.__eq__(inverted_tree)
+
+    tree1 = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
+    inverted_tree1 = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
+    invert_binary_tree_iter(tree1)
+    assert tree1.__eq__(inverted_tree1)
