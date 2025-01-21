@@ -140,15 +140,12 @@ tasks_done = [
     'merge_binary_trees.py',
     'reverse_polish_notation.py',
     'palindrom_check.py',
-    'invert_binary_tree.py'
+    'invert_binary_tree.py',
+    'bubble_sort.py'
 ]
 
 
-def max_subset_sum_no_adjucent(arr):
-    pass
-
-
-def max_subset_sum_no_adjucent1(arr):
+def bubble_sort(arr):
     pass
 
 
@@ -157,7 +154,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
-
-    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
-    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
+    print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
