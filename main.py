@@ -141,11 +141,12 @@ tasks_done = [
     'reverse_polish_notation.py',
     'palindrom_check.py',
     'invert_binary_tree.py',
-    'bubble_sort.py'
+    'bubble_sort.py',
+    'task_assignment.py'
 ]
 
 
-def bubble_sort(arr):
+def task_assignment(k, tasks):
     pass
 
 
@@ -154,4 +155,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
+    k = 3
+    tasks = [1, 3, 5, 3, 1, 4]
+    expected = [[4, 2], [0, 5], [3, 1]]
+    actual = task_assignment(k, tasks)
+    print(actual)
+    assert actual == expected
