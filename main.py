@@ -142,11 +142,16 @@ tasks_done = [
     'palindrom_check.py',
     'invert_binary_tree.py',
     'bubble_sort.py',
-    'task_assignment.py'
+    'task_assignment.py',
+    'generate_document.py'
 ]
 
 
-def task_assignment(k, tasks):
+def generate_document(characters, document):
+    pass
+
+
+def generate_document1(characters, document):
     pass
 
 
@@ -155,9 +160,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    k = 3
-    tasks = [1, 3, 5, 3, 1, 4]
-    expected = [[4, 2], [0, 5], [3, 1]]
-    actual = task_assignment(k, tasks)
-    print(actual)
-    assert actual == expected
+    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
