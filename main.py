@@ -143,15 +143,16 @@ tasks_done = [
     'invert_binary_tree.py',
     'bubble_sort.py',
     'task_assignment.py',
-    'generate_document.py'
+    'generate_document.py',
+    'powerset.py'
 ]
 
 
-def generate_document(characters, document):
+def powerset(array):
     pass
 
 
-def generate_document1(characters, document):
+def powerset1(array):
     pass
 
 
@@ -160,5 +161,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
-    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    print(powerset([1, 2, 3]))
+    print(powerset1([1, 2, 3]))
+    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
+    assert len(output) == 8
+    assert set([]) in output
+    assert set([1]) in output
+    assert set([2]) in output
+    assert set([1, 2]) in output
+    assert set([3]) in output
+    assert set([1, 3]) in output
+    assert set([2, 3]) in output
+    assert set([1, 2, 3]) in output
