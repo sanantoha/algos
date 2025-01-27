@@ -144,15 +144,16 @@ tasks_done = [
     'bubble_sort.py',
     'task_assignment.py',
     'generate_document.py',
-    'powerset.py'
+    'powerset.py',
+    'permutations.py'
 ]
 
 
-def powerset(array):
+def getPermutations(arr):
     pass
 
 
-def powerset1(array):
+def getPermutations1(arr):
     pass
 
 
@@ -161,15 +162,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(powerset([1, 2, 3]))
-    print(powerset1([1, 2, 3]))
-    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
-    assert len(output) == 8
-    assert set([]) in output
-    assert set([1]) in output
-    assert set([2]) in output
-    assert set([1, 2]) in output
-    assert set([3]) in output
-    assert set([1, 3]) in output
-    assert set([2, 3]) in output
-    assert set([1, 2, 3]) in output
+    perms = getPermutations([1, 2, 3])
+    print(perms)
+    assert len(perms) == 6
+    assert [1, 2, 3] in perms
+    assert [1, 3, 2] in perms
+    assert [2, 1, 3] in perms
+    assert [2, 3, 1] in perms
+    assert [3, 1, 2] in perms
+    assert [3, 2, 1] in perms
+
+    perms1 = getPermutations1([1, 2, 3])
+    print(perms1)
+    assert len(perms1) == 6
+    assert [1, 2, 3] in perms1
+    assert [1, 3, 2] in perms1
+    assert [2, 1, 3] in perms1
+    assert [2, 3, 1] in perms1
+    assert [3, 1, 2] in perms1
+    assert [3, 2, 1] in perms1
