@@ -146,11 +146,16 @@ tasks_done = [
     'generate_document.py',
     'powerset.py',
     'permutations.py',
-    'merge_overlapping_intervals.py'
+    'merge_overlapping_intervals.py',
+    'minimum_waiting_time.py'
 ]
 
 
-def merge_overlapping_intervals(intervals):
+def minimum_waiting_time(arr):
+    pass
+
+
+def minimum_waiting_time1(arr):
     pass
 
 
@@ -159,4 +164,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(merge_overlapping_intervals([[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]])) # [[1, 2], [3, 8], [9, 10]]
+    print(minimum_waiting_time([3, 2, 1, 2, 6]))
+    print(minimum_waiting_time1([3, 2, 1, 2, 6]))
