@@ -147,15 +147,12 @@ tasks_done = [
     'powerset.py',
     'permutations.py',
     'merge_overlapping_intervals.py',
-    'minimum_waiting_time.py'
+    'minimum_waiting_time.py',
+    'min_number_of_coins_for_change.py'
 ]
 
 
-def minimum_waiting_time(arr):
-    pass
-
-
-def minimum_waiting_time1(arr):
+def min_number_of_coins_for_change(n, denoms):
     pass
 
 
@@ -164,5 +161,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(minimum_waiting_time([3, 2, 1, 2, 6]))
-    print(minimum_waiting_time1([3, 2, 1, 2, 6]))
+    print(min_number_of_coins_for_change(7, [1, 5, 10]))
+    assert min_number_of_coins_for_change(7, [1, 5, 10]) == 3
