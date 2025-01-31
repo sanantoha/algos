@@ -148,11 +148,16 @@ tasks_done = [
     'permutations.py',
     'merge_overlapping_intervals.py',
     'minimum_waiting_time.py',
-    'min_number_of_coins_for_change.py'
+    'min_number_of_coins_for_change.py',
+    'first_duplicate_value.py'
 ]
 
 
-def min_number_of_coins_for_change(n, denoms):
+def first_duplicate_value0(arr):
+    pass
+
+
+def first_duplicate_value(arr):
     pass
 
 
@@ -161,5 +166,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(min_number_of_coins_for_change(7, [1, 5, 10]))
-    assert min_number_of_coins_for_change(7, [1, 5, 10]) == 3
+    array = [2, 1, 5, 2, 3, 3, 4]
+    print(first_duplicate_value0(array))
+    print(first_duplicate_value(array))
