@@ -149,15 +149,12 @@ tasks_done = [
     'merge_overlapping_intervals.py',
     'minimum_waiting_time.py',
     'min_number_of_coins_for_change.py',
-    'first_duplicate_value.py'
+    'first_duplicate_value.py',
+    'monotonic_array.py'
 ]
 
 
-def first_duplicate_value0(arr):
-    pass
-
-
-def first_duplicate_value(arr):
+def monotonic_array(arr):
     pass
 
 
@@ -166,6 +163,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [2, 1, 5, 2, 3, 3, 4]
-    print(first_duplicate_value0(array))
-    print(first_duplicate_value(array))
+    print(monotonic_array([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
