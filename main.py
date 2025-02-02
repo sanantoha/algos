@@ -150,11 +150,12 @@ tasks_done = [
     'minimum_waiting_time.py',
     'min_number_of_coins_for_change.py',
     'first_duplicate_value.py',
-    'monotonic_array.py'
+    'monotonic_array.py',
+    'search_in_sorted_matrix.py'
 ]
 
 
-def monotonic_array(arr):
+def searchInSortedMatrix(matrix, target):
     pass
 
 
@@ -163,4 +164,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(monotonic_array([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
+    matrix = [
+        [1, 4, 7, 12, 15, 1000],
+        [2, 5, 19, 31, 32, 1001],
+        [3, 8, 24, 33, 35, 1002],
+        [40, 41, 42, 44, 45, 1003],
+        [99, 100, 103, 106, 128, 1004],
+    ]
+    actual = searchInSortedMatrix(matrix, 44)
+    print(actual)
+    assert actual == [3, 3]
