@@ -151,11 +151,19 @@ tasks_done = [
     'min_number_of_coins_for_change.py',
     'first_duplicate_value.py',
     'monotonic_array.py',
-    'search_in_sorted_matrix.py'
+    'search_in_sorted_matrix.py',
+    'branch_sums.py'
 ]
 
 
-def searchInSortedMatrix(matrix, target):
+from tree.BinaryTree import BinaryTree
+
+
+def branch_sums(root):
+    pass
+
+
+def branch_sums(root):
     pass
 
 
@@ -164,13 +172,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [1, 4, 7, 12, 15, 1000],
-        [2, 5, 19, 31, 32, 1001],
-        [3, 8, 24, 33, 35, 1002],
-        [40, 41, 42, 44, 45, 1003],
-        [99, 100, 103, 106, 128, 1004],
-    ]
-    actual = searchInSortedMatrix(matrix, 44)
-    print(actual)
-    assert actual == [3, 3]
+    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9, 10])
+    print(sorted(branch_sums(tree)) == sorted([15, 16, 18, 10, 11]))
+
+    print(sorted(branch_sums_iter(tree)) == sorted([15, 16, 18, 10, 11]))
