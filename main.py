@@ -156,11 +156,12 @@ tasks_done = [
     'reconstruct_bst.py',
     'common_characters.py',
     'sum_of_linked_lists.py',
-    'selection_sort.py'
+    'selection_sort.py',
+    'longest_peak.py'
 ]
 
 
-def selection_sort(arr):
+def longest_peak(arr):
     pass
 
 
@@ -169,5 +170,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arr = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    print(selection_sort(arr))
+    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
