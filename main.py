@@ -157,11 +157,12 @@ tasks_done = [
     'common_characters.py',
     'sum_of_linked_lists.py',
     'selection_sort.py',
-    'longest_peak.py'
+    'longest_peak.py',
+    'minimum_characters_for_words.py'
 ]
 
 
-def longest_peak(arr):
+def minimumCharactersForWords(words):
     pass
 
 
@@ -170,4 +171,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
+    input = ["this", "that", "did", "deed", "them!", "a"]
+    expected = ["t", "t", "h", "i", "s", "a", "d", "d", "e", "e", "m", "!"]
+    actual = minimumCharactersForWords(input)
+    print(actual)
+    assert actual == expected
