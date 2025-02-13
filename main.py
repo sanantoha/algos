@@ -158,12 +158,44 @@ tasks_done = [
     'sum_of_linked_lists.py',
     'selection_sort.py',
     'longest_peak.py',
-    'minimum_characters_for_words.py'
+    'minimum_characters_for_words.py',
+    'min_heap_construction.py'
 ]
 
 
-def minimumCharactersForWords(words):
-    pass
+class MinHeap:
+    def __init__(self, array):
+        # Do not edit the line below.
+        self.heap = self.buildHeap(array)
+
+
+    def buildHeap(self, array):
+        return None
+
+    def siftDown(self, curr_idx, end_idx, heap):
+        pass
+
+    def siftUp(self, idx, heap):
+        pass
+
+
+    def peek(self):
+        return None
+
+    def remove(self):
+        return None
+
+    def insert(self, value):
+        pass
+
+
+def isMinHeapPropertySatisfied(array):
+    for currentIdx in range(1, len(array)):
+        parentIdx = (currentIdx - 1) // 2
+        if array[parentIdx] > array[currentIdx]:
+            return False
+    return True
+
 
 
 if __name__ == '__main__':
@@ -171,8 +203,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["this", "that", "did", "deed", "them!", "a"]
-    expected = ["t", "t", "h", "i", "s", "a", "d", "d", "e", "e", "m", "!"]
-    actual = minimumCharactersForWords(input)
-    print(actual)
-    assert actual == expected
+    minHeap = MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41])
+    minHeap.insert(76)
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == -5
+    assert minHeap.remove() == -5
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == 2
+    assert minHeap.remove() == 2
+    assert isMinHeapPropertySatisfied(minHeap.heap)
+    assert minHeap.peek() == 6
+    minHeap.insert(87)
+    assert isMinHeapPropertySatisfied(minHeap.heap)
