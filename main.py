@@ -160,11 +160,16 @@ tasks_done = [
     'longest_peak.py',
     'minimum_characters_for_words.py',
     'min_heap_construction.py',
-    'number_of_ways_to_make_change.py'
+    'number_of_ways_to_make_change.py',
+    'three_number_sum.py'
 ]
 
 
-def number_of_ways_to_make_change(n, denoms):
+def three_number_sum(arr, target):
+    pass
+
+
+def three_number_sum1(arr, target):
     pass
 
 
@@ -173,5 +178,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(number_of_ways_to_make_change(6, [1, 5]))
-    assert number_of_ways_to_make_change(6, [1, 5]) == 2
+    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
