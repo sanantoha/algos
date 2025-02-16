@@ -161,15 +161,12 @@ tasks_done = [
     'minimum_characters_for_words.py',
     'min_heap_construction.py',
     'number_of_ways_to_make_change.py',
-    'three_number_sum.py'
+    'three_number_sum.py',
+    'single_cycle_check.py'
 ]
 
 
-def three_number_sum(arr, target):
-    pass
-
-
-def three_number_sum1(arr, target):
+def single_cycle_check(arr):
     pass
 
 
@@ -178,5 +175,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
-    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    array = [2, 3, 1, -4, -4, 2]
+    print(single_cycle_check(array))
+    assert single_cycle_check(array)
