@@ -162,11 +162,16 @@ tasks_done = [
     'min_heap_construction.py',
     'number_of_ways_to_make_change.py',
     'three_number_sum.py',
-    'single_cycle_check.py'
+    'single_cycle_check.py',
+    'get_nth_fib.py'
 ]
 
 
-def single_cycle_check(arr):
+def get_nth_fib(n):
+    pass
+
+
+def get_nth_fib_iter(n):
     pass
 
 
@@ -175,6 +180,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [2, 3, 1, -4, -4, 2]
-    print(single_cycle_check(array))
-    assert single_cycle_check(array)
+    for i in range(1, 10):
+        print(str(i) + "=" + str(get_nth_fib(i)))
+
+    print("===================================")
+
+    for i in range(1, 10):
+        print(str(i) + "=" + str(get_nth_fib_iter(i)))
