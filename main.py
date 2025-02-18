@@ -163,15 +163,13 @@ tasks_done = [
     'number_of_ways_to_make_change.py',
     'three_number_sum.py',
     'single_cycle_check.py',
-    'get_nth_fib.py'
+    'get_nth_fib.py',
+    'phone_number_mnemonic.py'
 ]
 
 
-def get_nth_fib(n):
-    pass
-
-
-def get_nth_fib_iter(n):
+def phoneNumberMnemonics(phoneNumber):
+    letters = ["0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
     pass
 
 
@@ -180,10 +178,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib(i)))
-
-    print("===================================")
-
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib_iter(i)))
+    phoneNumber = "1905"
+    expected = ["1w0j", "1w0k", "1w0l", "1x0j", "1x0k", "1x0l", "1y0j", "1y0k", "1y0l", "1z0j", "1z0k", "1z0l"]
+    actual = phoneNumberMnemonics(phoneNumber)
+    print(actual)
+    assert actual == expected
