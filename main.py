@@ -165,11 +165,12 @@ tasks_done = [
     'single_cycle_check.py',
     'get_nth_fib.py',
     'phone_number_mnemonic.py',
-    'first_non_repeating_character.py'
+    'first_non_repeating_character.py',
+    'class_photos.py'
 ]
 
 
-def first_non_repeating_character(str):
+def class_photos(red, blue):
     pass
 
 
@@ -178,4 +179,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(first_non_repeating_character("abcdcaf"))
+    print(class_photos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5]))
