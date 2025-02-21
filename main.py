@@ -166,11 +166,12 @@ tasks_done = [
     'get_nth_fib.py',
     'phone_number_mnemonic.py',
     'first_non_repeating_character.py',
-    'class_photos.py'
+    'class_photos.py',
+    'kruskals_algorithm.py'
 ]
 
 
-def class_photos(red, blue):
+def kruskalsAlgorithm(graph):
     pass
 
 
@@ -179,4 +180,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(class_photos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5]))
+    input = [
+        [[1, 3], [2, 5]],
+        [[0, 3], [2, 10], [3, 12]],
+        [[0, 5], [1, 10]],
+        [[1, 12]]
+    ]
+
+    expected = [
+        [[1, 3], [2, 5]],
+        [[0, 3], [3, 12]],
+        [[0, 5]],
+        [[1, 12]]
+    ]
+    actual = kruskalsAlgorithm(input)
+    print(actual, "     =    ", expected)
+    assert actual == expected
