@@ -167,11 +167,12 @@ tasks_done = [
     'phone_number_mnemonic.py',
     'first_non_repeating_character.py',
     'class_photos.py',
-    'kruskals_algorithm.py'
+    'kruskals_algorithm.py',
+    'zigzag_traverse.py'
 ]
 
 
-def kruskalsAlgorithm(graph):
+def zigzagTraverse(matrix):
     pass
 
 
@@ -180,19 +181,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [[1, 3], [2, 5]],
-        [[0, 3], [2, 10], [3, 12]],
-        [[0, 5], [1, 10]],
-        [[1, 12]]
-    ]
-
-    expected = [
-        [[1, 3], [2, 5]],
-        [[0, 3], [3, 12]],
-        [[0, 5]],
-        [[1, 12]]
-    ]
-    actual = kruskalsAlgorithm(input)
-    print(actual, "     =    ", expected)
-    assert actual == expected
+    test = [[1, 3, 4, 10], [2, 5, 9, 11], [6, 8, 12, 15], [7, 13, 14, 16]]
+    actual = zigzagTraverse(test)
+    print(actual)
+    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]

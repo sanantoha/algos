@@ -23,7 +23,7 @@ def kruskalsAlgorithm(graph):
         if pv != pu:
             newGraph[v].append([u, w])
             newGraph[u].append([v, w])
-            union(parents, rank, v, u)
+            union(parents, rank, pv, pu)
 
     return newGraph
 
