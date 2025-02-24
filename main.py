@@ -169,15 +169,12 @@ tasks_done = [
     'class_photos.py',
     'kruskals_algorithm.py',
     'zigzag_traverse.py',
-    'find_closest_value_in_bst.py'
+    'find_closest_value_in_bst.py',
+    'product_sum.py'
 ]
 
 
-def find_closest_value_in_bst(root, target):
-    pass
-
-
-def find_closest_value_in_bst1(root, target):
+def product_sum(arr):
     pass
 
 
@@ -186,18 +183,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BST import BST
-
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-    expected = 13
-
-    print(find_closest_value_in_bst(root, 12))
-    print(find_closest_value_in_bst1(root, 12))
+    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
