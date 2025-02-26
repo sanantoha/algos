@@ -170,11 +170,12 @@ tasks_done = [
     'kruskals_algorithm.py',
     'zigzag_traverse.py',
     'find_closest_value_in_bst.py',
-    'product_sum.py'
+    'product_sum.py',
+    'array_of_products.py'
 ]
 
 
-def product_sum(arr):
+def array_of_products(arr):
     pass
 
 
@@ -183,4 +184,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
+    print(array_of_products([1, 2, 3, 4]))
