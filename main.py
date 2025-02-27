@@ -171,11 +171,14 @@ tasks_done = [
     'zigzag_traverse.py',
     'find_closest_value_in_bst.py',
     'product_sum.py',
-    'array_of_products.py'
+    'array_of_products.py',
+    'find_kth_largest_value_in_bst.py'
 ]
 
+from tree.BST import BST
 
-def array_of_products(arr):
+
+def find_kth_largest_value_in_bst(root, k):
     pass
 
 
@@ -184,4 +187,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(array_of_products([1, 2, 3, 4]))
+    root = BST(15)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.left.right = BST(3)
+    root.left.right = BST(5)
+    root.right = BST(20)
+    root.right.left = BST(17)
+    root.right.right = BST(22)
+    k = 3
+    expected = 17
+    actual = find_kth_largest_value_in_bst(root, k)
+    print(actual)
+    assert actual == expected
