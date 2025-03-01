@@ -173,11 +173,14 @@ tasks_done = [
     'product_sum.py',
     'array_of_products.py',
     'find_kth_largest_value_in_bst.py',
-    'kadanes_distance.py'
+    'kadanes_distance.py',
+    'evaluate_expression_tree.py'
 ]
 
 
-def kadanes_distance(arr):
+from tree.BinaryTree import BinaryTree
+
+def evaluateExpressionTree(root):
     pass
 
 
@@ -186,4 +189,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    tree = BinaryTree(-1)
+    tree.left = BinaryTree(-2)
+    tree.left.left = BinaryTree(-4)
+    tree.left.right = BinaryTree(2)
+    tree.left.left.left = BinaryTree(3)
+    tree.left.left.right = BinaryTree(2)
+
+    tree.right = BinaryTree(-3)
+    tree.right.left = BinaryTree(8)
+    tree.right.right = BinaryTree(3)
+    expected = 6
+    actual = evaluateExpressionTree(tree)
+    print(actual)
+    assert actual == expected
