@@ -174,14 +174,22 @@ tasks_done = [
     'array_of_products.py',
     'find_kth_largest_value_in_bst.py',
     'kadanes_distance.py',
-    'evaluate_expression_tree.py'
+    'evaluate_expression_tree.py',
+    'breadth_first_search.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
 
-def evaluateExpressionTree(root):
-    pass
+    def add_child(self, name):
+        self.children.append(Node(name))
+        return self
+
+    def breadth_first_search(self, array):
+        return array
 
 
 if __name__ == '__main__':
@@ -189,17 +197,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(-1)
-    tree.left = BinaryTree(-2)
-    tree.left.left = BinaryTree(-4)
-    tree.left.right = BinaryTree(2)
-    tree.left.left.left = BinaryTree(3)
-    tree.left.left.right = BinaryTree(2)
+    graph = Node("A")
+    graph.add_child("B").add_child("C").add_child("D")
+    graph.children[0].add_child("E").add_child("F")
+    graph.children[2].add_child("G").add_child("H")
+    graph.children[0].children[1].add_child("I").add_child("J")
+    graph.children[2].children[0].add_child("K")
 
-    tree.right = BinaryTree(-3)
-    tree.right.left = BinaryTree(8)
-    tree.right.right = BinaryTree(3)
-    expected = 6
-    actual = evaluateExpressionTree(tree)
-    print(actual)
-    assert actual == expected
+    print(graph.breadth_first_search([]))
+    assert graph.breadth_first_search([]) == ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
