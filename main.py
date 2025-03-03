@@ -175,21 +175,16 @@ tasks_done = [
     'find_kth_largest_value_in_bst.py',
     'kadanes_distance.py',
     'evaluate_expression_tree.py',
-    'breadth_first_search.py'
+    'breadth_first_search.py',
+    'binary_tree_diameter.py'
 ]
 
 
-class Node:
-    def __init__(self, name):
-        self.children = []
-        self.name = name
+from tree.BinaryTree import BinaryTree
 
-    def add_child(self, name):
-        self.children.append(Node(name))
-        return self
 
-    def breadth_first_search(self, array):
-        return array
+def binary_tree_diameter(root):
+    pass
 
 
 if __name__ == '__main__':
@@ -197,12 +192,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    graph = Node("A")
-    graph.add_child("B").add_child("C").add_child("D")
-    graph.children[0].add_child("E").add_child("F")
-    graph.children[2].add_child("G").add_child("H")
-    graph.children[0].children[1].add_child("I").add_child("J")
-    graph.children[2].children[0].add_child("K")
-
-    print(graph.breadth_first_search([]))
-    assert graph.breadth_first_search([]) == ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
+    root = BinaryTree(1)
+    root.left = BinaryTree(3)
+    root.left.left = BinaryTree(7)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.left.left = BinaryTree(9)
+    root.left.right = BinaryTree(4)
+    root.left.right.right = BinaryTree(5)
+    root.left.right.right.right = BinaryTree(6)
+    root.right = BinaryTree(2)
+    expected = 6
+    actual = binary_tree_diameter(root)
+    print(actual)
+    assert actual == expected
