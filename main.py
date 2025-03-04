@@ -176,14 +176,20 @@ tasks_done = [
     'kadanes_distance.py',
     'evaluate_expression_tree.py',
     'breadth_first_search.py',
-    'binary_tree_diameter.py'
+    'binary_tree_diameter.py',
+    'two_number_sum.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
+def two_number_sum0(arr, target):
+    pass
 
 
-def binary_tree_diameter(root):
+def two_number_sum1(arr, target):
+    pass
+
+
+def two_number_sum2(arr, target):
     pass
 
 
@@ -192,16 +198,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(3)
-    root.left.left = BinaryTree(7)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.left.left = BinaryTree(9)
-    root.left.right = BinaryTree(4)
-    root.left.right.right = BinaryTree(5)
-    root.left.right.right.right = BinaryTree(6)
-    root.right = BinaryTree(2)
-    expected = 6
-    actual = binary_tree_diameter(root)
-    print(actual)
-    assert actual == expected
+    print(two_number_sum0([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
