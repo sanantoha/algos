@@ -177,19 +177,12 @@ tasks_done = [
     'evaluate_expression_tree.py',
     'breadth_first_search.py',
     'binary_tree_diameter.py',
-    'two_number_sum.py'
+    'two_number_sum.py',
+    'remove_islands.py'
 ]
 
 
-def two_number_sum0(arr, target):
-    pass
-
-
-def two_number_sum1(arr, target):
-    pass
-
-
-def two_number_sum2(arr, target):
+def remove_islands(matrix):
     pass
 
 
@@ -198,6 +191,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(two_number_sum0([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    input = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 1, 1, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    expected = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 1, 1],
+        [0, 0, 0, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    actual = remove_islands(input)
+    print(actual)
+    assert actual == expected
