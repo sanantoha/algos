@@ -178,11 +178,12 @@ tasks_done = [
     'breadth_first_search.py',
     'binary_tree_diameter.py',
     'two_number_sum.py',
-    'remove_islands.py'
+    'remove_islands.py',
+    'unique_pathsIII.py'
 ]
 
 
-def remove_islands(matrix):
+def uniquePathsIII(grid):
     pass
 
 
@@ -191,22 +192,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [1, 0, 0, 0, 0, 0],
-        [0, 1, 0, 1, 1, 1],
-        [0, 0, 1, 0, 1, 0],
-        [1, 1, 0, 0, 1, 0],
-        [1, 0, 1, 1, 0, 0],
-        [1, 0, 0, 0, 0, 1],
-    ]
-    expected = [
-        [1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 1, 1, 1],
-        [0, 0, 0, 0, 1, 0],
-        [1, 1, 0, 0, 1, 0],
-        [1, 0, 0, 0, 0, 0],
-        [1, 0, 0, 0, 0, 1],
-    ]
-    actual = remove_islands(input)
+    grid = [[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2, -1]]
+    actual = uniquePathsIII(grid)
     print(actual)
-    assert actual == expected
+    assert actual == 2
