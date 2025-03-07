@@ -179,11 +179,12 @@ tasks_done = [
     'binary_tree_diameter.py',
     'two_number_sum.py',
     'remove_islands.py',
-    'unique_pathsIII.py'
+    'unique_pathsIII.py',
+    'transpose_matrix.py'
 ]
 
 
-def uniquePathsIII(grid):
+def transposeMatrix(matrix):
     pass
 
 
@@ -192,7 +193,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    grid = [[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2, -1]]
-    actual = uniquePathsIII(grid)
+    input = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+
+    actual = transposeMatrix(input)
     print(actual)
-    assert actual == 2
+
+    assert actual == expected
