@@ -180,11 +180,12 @@ tasks_done = [
     'two_number_sum.py',
     'remove_islands.py',
     'unique_pathsIII.py',
-    'transpose_matrix.py'
+    'transpose_matrix.py',
+    'longest_palindromic_substring.py'
 ]
 
 
-def transposeMatrix(matrix):
+def longestPalindromicSubstring(input):
     pass
 
 
@@ -193,10 +194,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
-
-    actual = transposeMatrix(input)
+    actual = longestPalindromicSubstring("abaxyzzyxf")
     print(actual)
-
-    assert actual == expected
+    assert actual == "xyzzyx"
