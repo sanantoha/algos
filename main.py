@@ -181,12 +181,27 @@ tasks_done = [
     'remove_islands.py',
     'unique_pathsIII.py',
     'transpose_matrix.py',
-    'longest_palindromic_substring.py'
+    'longest_palindromic_substring.py',
+    'staircase_traversal.py',
+    'suffix_trie_construction.py'
 ]
 
 
-def longestPalindromicSubstring(input):
-    pass
+# Do not edit the class below except for the
+# populateSuffixTrieFrom and contains methods.
+# Feel free to add new properties and methods
+# to the class.
+class SuffixTrie:
+    def __init__(self, string):
+        self.root = {}
+        self.endSymbol = "*"
+        self.populateSuffixTrieFrom(string)
+
+    def populateSuffixTrieFrom(self, string):
+        pass
+
+    def contains(self, string):
+        pass
 
 
 if __name__ == '__main__':
@@ -194,6 +209,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = longestPalindromicSubstring("abaxyzzyxf")
-    print(actual)
-    assert actual == "xyzzyx"
+    trie = SuffixTrie("babc")
+    expected = {
+        "c": {"*": True},
+        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
+        "a": {"b": {"c": {"*": True}}},
+    }
+    assert trie.root == expected
+    assert trie.contains("abc")
