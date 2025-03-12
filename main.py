@@ -183,25 +183,17 @@ tasks_done = [
     'transpose_matrix.py',
     'longest_palindromic_substring.py',
     'staircase_traversal.py',
-    'suffix_trie_construction.py'
+    'suffix_trie_construction.py',
+    'all_paths_source_target.py'
 ]
 
 
-# Do not edit the class below except for the
-# populateSuffixTrieFrom and contains methods.
-# Feel free to add new properties and methods
-# to the class.
-class SuffixTrie:
-    def __init__(self, string):
-        self.root = {}
-        self.endSymbol = "*"
-        self.populateSuffixTrieFrom(string)
+def allPathsSourceTarget(graph):
+    pass
 
-    def populateSuffixTrieFrom(self, string):
-        pass
 
-    def contains(self, string):
-        pass
+def allPathsSourceTarget1(graph):
+    pass
 
 
 if __name__ == '__main__':
@@ -209,11 +201,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    trie = SuffixTrie("babc")
-    expected = {
-        "c": {"*": True},
-        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
-        "a": {"b": {"c": {"*": True}}},
-    }
-    assert trie.root == expected
-    assert trie.contains("abc")
+    print(allPathsSourceTarget([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
+    print(allPathsSourceTarget(
+        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget([[2], [], [1]]))  # [[0, 2]]
+
+    print(allPathsSourceTarget1([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
+    print(allPathsSourceTarget1(
+        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[2], [], [1]]))  # [[0, 2]]
