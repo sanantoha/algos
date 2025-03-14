@@ -184,15 +184,12 @@ tasks_done = [
     'longest_palindromic_substring.py',
     'staircase_traversal.py',
     'suffix_trie_construction.py',
-    'all_paths_source_target.py'
+    'all_paths_source_target.py',
+    'spiral_matrix_traverse.py'
 ]
 
 
-def allPathsSourceTarget(graph):
-    pass
-
-
-def allPathsSourceTarget1(graph):
+def spiral_matrix_traverse(matrix):
     pass
 
 
@@ -201,14 +198,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(allPathsSourceTarget([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
-    print(allPathsSourceTarget(
-        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget([[2], [], [1]]))  # [[0, 2]]
-
-    print(allPathsSourceTarget1([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
-    print(allPathsSourceTarget1(
-        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget1([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget1([[2], [], [1]]))  # [[0, 2]]
+    matrix = [[1, 2, 3, 4],
+              [12, 13, 14, 5],
+              [11, 16, 15, 6],
+              [10, 9, 8, 7]]
+    print(spiral_matrix_traverse(matrix))
