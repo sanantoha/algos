@@ -186,11 +186,14 @@ tasks_done = [
     'suffix_trie_construction.py',
     'all_paths_source_target.py',
     'spiral_matrix_traverse.py',
-    'word_ladder_ii.py'
+    'word_ladder_ii.py',
+    'height_balanced_binary_tree.py'
 ]
 
 
-def findLadders(beginWord, endWord, wordList):
+from tree.BinaryTree import BinaryTree
+
+def height_balanced_binary_tree(root):
     pass
 
 
@@ -199,9 +202,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = findLadders(beginWord, endWord, wordList)
-    print(actual)
-    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.right = BinaryTree(3)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right.right = BinaryTree(6)
+    root.left.right.left = BinaryTree(7)
+    root.left.right.right = BinaryTree(8)
+    expected = True
+    actual = height_balanced_binary_tree(root)
+    assert actual == expected
