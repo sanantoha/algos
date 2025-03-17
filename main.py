@@ -187,13 +187,12 @@ tasks_done = [
     'all_paths_source_target.py',
     'spiral_matrix_traverse.py',
     'word_ladder_ii.py',
-    'height_balanced_binary_tree.py'
+    'height_balanced_binary_tree.py',
+    'move_element_to_end.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-def height_balanced_binary_tree(root):
+def move_element_to_end(arr, to_move):
     pass
 
 
@@ -202,14 +201,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.left.right.left = BinaryTree(7)
-    root.left.right.right = BinaryTree(8)
-    expected = True
-    actual = height_balanced_binary_tree(root)
-    assert actual == expected
+    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
