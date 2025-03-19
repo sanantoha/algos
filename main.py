@@ -189,12 +189,12 @@ tasks_done = [
     'word_ladder_ii.py',
     'height_balanced_binary_tree.py',
     'move_element_to_end.py',
-    'find_pivot_index.py'
+    'find_pivot_index.py',
+    'one_edit.py'
 ]
 
-# The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal
-#   to the sum of all the numbers strictly to the index's right.
-def pivotIndex(arr):
+
+def oneEdit(s1, s2):
     pass
 
 
@@ -203,8 +203,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = pivotIndex([1, 7, 3, 6, 5, 6])
+    stringOne = "hello"
+    stringTwo = "helo"
+    expected = True
+    actual = oneEdit(stringOne, stringTwo)
     print(actual)
-    assert actual == 3
-    assert pivotIndex([1, 2, 3]) == -1
-    assert pivotIndex([2, 1, -1]) == 0
+    assert actual == expected
