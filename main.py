@@ -190,11 +190,16 @@ tasks_done = [
     'height_balanced_binary_tree.py',
     'move_element_to_end.py',
     'find_pivot_index.py',
-    'one_edit.py'
+    'one_edit.py',
+    'longest_increasing_subsequence.py'
 ]
 
 
-def oneEdit(s1, s2):
+def longestIncreasingSubsequence(arr):
+    pass
+
+
+def longestIncreasingSubsequence1(arr):
     pass
 
 
@@ -203,9 +208,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stringOne = "hello"
-    stringTwo = "helo"
-    expected = True
-    actual = oneEdit(stringOne, stringTwo)
+    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
+
+    actual = longestIncreasingSubsequence(input)
     print(actual)
-    assert actual == expected
+    assert actual == [-24, 2, 3, 5, 6, 35]
+
+    actual = longestIncreasingSubsequence1(input)
+    print(actual)
+    assert actual == [-24, 2, 3, 5, 6, 35]
