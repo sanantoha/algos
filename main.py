@@ -191,15 +191,15 @@ tasks_done = [
     'move_element_to_end.py',
     'find_pivot_index.py',
     'one_edit.py',
-    'longest_increasing_subsequence.py'
+    'longest_increasing_subsequence.py',
+    'remove_duplicates_from_linkedlist.py'
 ]
 
 
-def longestIncreasingSubsequence(arr):
-    pass
+from list.LinkedList import LinkedList
 
 
-def longestIncreasingSubsequence1(arr):
+def remove_duplicates_from_linked_list(head):
     pass
 
 
@@ -208,12 +208,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
-
-    actual = longestIncreasingSubsequence(input)
-    print(actual)
-    assert actual == [-24, 2, 3, 5, 6, 35]
-
-    actual = longestIncreasingSubsequence1(input)
-    print(actual)
-    assert actual == [-24, 2, 3, 5, 6, 35]
+    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
+    print(remove_duplicates_from_linked_list(test))
