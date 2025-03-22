@@ -192,14 +192,12 @@ tasks_done = [
     'find_pivot_index.py',
     'one_edit.py',
     'longest_increasing_subsequence.py',
-    'remove_duplicates_from_linkedlist.py'
+    'remove_duplicates_from_linkedlist.py',
+    'semordinal.py'
 ]
 
 
-from list.LinkedList import LinkedList
-
-
-def remove_duplicates_from_linked_list(head):
+def semordnilap(arr):
     pass
 
 
@@ -208,5 +206,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
-    print(remove_duplicates_from_linked_list(test))
+    input = ["desserts", "stressed", "hello"]
+    expected = [["desserts", "stressed"]]
+    actual = semordnilap(input)
+    print(actual)  # [['desserts', 'stressed']]
