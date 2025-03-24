@@ -193,11 +193,12 @@ tasks_done = [
     'one_edit.py',
     'longest_increasing_subsequence.py',
     'remove_duplicates_from_linkedlist.py',
-    'semordinal.py'
+    'semordinal.py',
+    'minimum_passes_of_matrix.py'
 ]
 
 
-def semordnilap(arr):
+def minimum_passes_of_matrix(matrix):
     pass
 
 
@@ -206,7 +207,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["desserts", "stressed", "hello"]
-    expected = [["desserts", "stressed"]]
-    actual = semordnilap(input)
-    print(actual)  # [['desserts', 'stressed']]
+    input = [
+        [0, -1, -3, 2, 0],
+        [1, -2, -5, -1, -3],
+        [3, 0, 0, -4, -1],
+    ]
+    expected = 3
+    actual = minimum_passes_of_matrix(input)
+    print(actual)
+    assert actual == expected
