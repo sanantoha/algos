@@ -194,11 +194,19 @@ tasks_done = [
     'longest_increasing_subsequence.py',
     'remove_duplicates_from_linkedlist.py',
     'semordinal.py',
-    'minimum_passes_of_matrix.py'
+    'minimum_passes_of_matrix.py',
+    'simmetrical_tree.py'
 ]
 
 
-def minimum_passes_of_matrix(matrix):
+from tree.BinaryTree import BinaryTree
+
+
+def symmetricalTreeRec(root):
+    pass
+
+
+def symmetricalTree(root):
     pass
 
 
@@ -207,12 +215,20 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [0, -1, -3, 2, 0],
-        [1, -2, -5, -1, -3],
-        [3, 0, 0, -4, -1],
-    ]
-    expected = 3
-    actual = minimum_passes_of_matrix(input)
+    tree = BinaryTree(10)
+    tree.left = BinaryTree(5)
+    tree.right = BinaryTree(5)
+    tree.left.left = BinaryTree(7)
+    tree.left.right = BinaryTree(9)
+    tree.right.left = BinaryTree(9)
+    tree.right.right = BinaryTree(7)
+
+    expected = True
+
+    actual = symmetricalTreeRec(tree)
+    print(actual)
+    assert actual == expected
+
+    actual = symmetricalTree(tree)
     print(actual)
     assert actual == expected
