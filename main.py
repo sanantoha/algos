@@ -195,18 +195,16 @@ tasks_done = [
     'remove_duplicates_from_linkedlist.py',
     'semordinal.py',
     'minimum_passes_of_matrix.py',
-    'simmetrical_tree.py'
+    'simmetrical_tree.py',
+    'water_area.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def symmetricalTreeRec(root):
+def waterArea(heights):
     pass
 
 
-def symmetricalTree(root):
+def waterArea1(heights):
     pass
 
 
@@ -215,20 +213,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(10)
-    tree.left = BinaryTree(5)
-    tree.right = BinaryTree(5)
-    tree.left.left = BinaryTree(7)
-    tree.left.right = BinaryTree(9)
-    tree.right.left = BinaryTree(9)
-    tree.right.right = BinaryTree(7)
-
-    expected = True
-
-    actual = symmetricalTreeRec(tree)
+    expected = 48
+    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
     print(actual)
-    assert actual == expected
+    print(actual == expected)
 
-    actual = symmetricalTree(tree)
+    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
     print(actual)
-    assert actual == expected
+    print(actual == expected)
