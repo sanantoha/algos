@@ -196,15 +196,12 @@ tasks_done = [
     'semordinal.py',
     'minimum_passes_of_matrix.py',
     'simmetrical_tree.py',
-    'water_area.py'
+    'water_area.py',
+    'disk_stacking.py'
 ]
 
 
-def waterArea(heights):
-    pass
-
-
-def waterArea1(heights):
+def diskStacking(disks):
     pass
 
 
@@ -213,11 +210,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    expected = 48
-    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
+    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
+    actual = diskStacking(input)
     print(actual)
-    print(actual == expected)
-
-    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
-    print(actual)
-    print(actual == expected)
+    assert (actual == expected)
