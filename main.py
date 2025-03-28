@@ -197,11 +197,12 @@ tasks_done = [
     'minimum_passes_of_matrix.py',
     'simmetrical_tree.py',
     'water_area.py',
-    'disk_stacking.py'
+    'disk_stacking.py',
+    'stable_internships.py'
 ]
 
 
-def diskStacking(disks):
+def stableInternships(interns, team):
     pass
 
 
@@ -210,8 +211,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
-    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
-    actual = diskStacking(input)
+    interns = [[0, 1, 2], [0, 2, 1], [1, 2, 0]]
+    teams = [[2, 1, 0], [0, 1, 2], [0, 1, 2]]
+    expected = [[0, 1], [1, 0], [2, 2]]
+    actual = stableInternships(interns, teams)
     print(actual)
-    assert (actual == expected)
+    assert len(actual) == len(expected)
+
+    for match in expected:
+        containsMatch = False
+        for actualMatch in actual:
+            if actualMatch[0] == match[0] and actualMatch[1] == match[1]:
+                containsMatch = True
+        assert containsMatch
