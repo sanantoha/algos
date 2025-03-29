@@ -198,11 +198,20 @@ tasks_done = [
     'simmetrical_tree.py',
     'water_area.py',
     'disk_stacking.py',
-    'stable_internships.py'
+    'stable_internships.py',
+    'find_successor.py'
 ]
 
+# This is an input class. Do not edit.
+class BinaryTree:
+    def __init__(self, value, left=None, right=None, parent=None):
+        self.value = value
+        self.left = left
+        self.right = right
+        self.parent = parent
 
-def stableInternships(interns, team):
+
+def find_successor(root, node):
     pass
 
 
@@ -211,16 +220,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    interns = [[0, 1, 2], [0, 2, 1], [1, 2, 0]]
-    teams = [[2, 1, 0], [0, 1, 2], [0, 1, 2]]
-    expected = [[0, 1], [1, 0], [2, 2]]
-    actual = stableInternships(interns, teams)
-    print(actual)
-    assert len(actual) == len(expected)
-
-    for match in expected:
-        containsMatch = False
-        for actualMatch in actual:
-            if actualMatch[0] == match[0] and actualMatch[1] == match[1]:
-                containsMatch = True
-        assert containsMatch
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.parent = root
+    root.right = BinaryTree(3)
+    root.right.parent = root
+    root.left.left = BinaryTree(4)
+    root.left.left.parent = root.left
+    root.left.right = BinaryTree(5)
+    root.left.right.parent = root.left
+    root.left.left.left = BinaryTree(6)
+    root.left.left.left.parent = root.left.left
+    node = root.left.right
+    expected = root
+    actual = find_successor(root, node)
+    assert actual == expected
