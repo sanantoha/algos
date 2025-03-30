@@ -199,19 +199,16 @@ tasks_done = [
     'water_area.py',
     'disk_stacking.py',
     'stable_internships.py',
-    'find_successor.py'
+    'find_successor.py',
+    'same_bsts.py'
 ]
 
-# This is an input class. Do not edit.
-class BinaryTree:
-    def __init__(self, value, left=None, right=None, parent=None):
-        self.value = value
-        self.left = left
-        self.right = right
-        self.parent = parent
+
+def sameBsts(arr1, arr2):
+    pass
 
 
-def find_successor(root, node):
+def sameBsts1(arr1, arr2):
     pass
 
 
@@ -220,18 +217,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.left.parent = root
-    root.right = BinaryTree(3)
-    root.right.parent = root
-    root.left.left = BinaryTree(4)
-    root.left.left.parent = root.left
-    root.left.right = BinaryTree(5)
-    root.left.right.parent = root.left
-    root.left.left.left = BinaryTree(6)
-    root.left.left.left.parent = root.left.left
-    node = root.left.right
-    expected = root
-    actual = find_successor(root, node)
-    assert actual == expected
+    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
+    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
+    assert sameBsts(arrayOne, arrayTwo)
+
+    assert sameBsts1(arrayOne, arrayTwo)
