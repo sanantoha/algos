@@ -200,15 +200,20 @@ tasks_done = [
     'disk_stacking.py',
     'stable_internships.py',
     'find_successor.py',
-    'same_bsts.py'
+    'same_bsts.py',
+    'min_rewards.py'
 ]
 
 
-def sameBsts(arr1, arr2):
+def minRewards(arr):
     pass
 
 
-def sameBsts1(arr1, arr2):
+def minRewards1(arr):
+    pass
+
+
+def minRewards2(arr):
     pass
 
 
@@ -217,8 +222,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
-    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
-    assert sameBsts(arrayOne, arrayTwo)
+    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
 
-    assert sameBsts1(arrayOne, arrayTwo)
+    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
+
+    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
