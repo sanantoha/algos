@@ -201,19 +201,12 @@ tasks_done = [
     'stable_internships.py',
     'find_successor.py',
     'same_bsts.py',
-    'min_rewards.py'
+    'min_rewards.py',
+    'best_seats.py'
 ]
 
 
-def minRewards(arr):
-    pass
-
-
-def minRewards1(arr):
-    pass
-
-
-def minRewards2(arr):
+def bestSeat(seats):
     pass
 
 
@@ -222,14 +215,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
+    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
+    assert actual == 4
 
-    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
+    actual = bestSeat([1])
+    assert actual == -1
 
-    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
-    print(actual)
-    assert actual == 25
+    actual = bestSeat([1, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 1, 1])
+    assert actual == -1
+
+    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
+    assert actual == 3
