@@ -202,11 +202,12 @@ tasks_done = [
     'find_successor.py',
     'same_bsts.py',
     'min_rewards.py',
-    'best_seats.py'
+    'best_seats.py',
+    'smallest_difference.py'
 ]
 
 
-def bestSeat(seats):
+def smallest_difference(arr1, arr2):
     pass
 
 
@@ -215,23 +216,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
-    assert actual == 4
-
-    actual = bestSeat([1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 1, 1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
-    assert actual == 3
+    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
