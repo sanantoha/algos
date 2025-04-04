@@ -203,11 +203,16 @@ tasks_done = [
     'same_bsts.py',
     'min_rewards.py',
     'best_seats.py',
-    'smallest_difference.py'
+    'smallest_difference.py',
+    'three_number_sort.py'
 ]
 
 
-def smallest_difference(arr1, arr2):
+def threeNumberSort(arr, order):
+    pass
+
+
+def threeNumberSort1(arr, order):
     pass
 
 
@@ -216,4 +221,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
+    array = [1, 0, 0, -1, -1, 0, 1, 1]
+    order = [0, 1, -1]
+    expected = [0, 0, 0, 1, 1, 1, -1, -1]
+
+    actual = threeNumberSort(array, order)
+    print(actual)
+    assert actual == expected
+
+    actual = threeNumberSort1(array, order)
+    print(actual)
+    assert actual == expected
