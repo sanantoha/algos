@@ -204,15 +204,16 @@ tasks_done = [
     'min_rewards.py',
     'best_seats.py',
     'smallest_difference.py',
-    'three_number_sort.py'
+    'three_number_sort.py',
+    'validate_subsequence.py'
 ]
 
 
-def threeNumberSort(arr, order):
+def is_valid_subsequence(arr, subseq):
     pass
 
 
-def threeNumberSort1(arr, order):
+def is_valid_subsequence1(arr, subseq):
     pass
 
 
@@ -221,14 +222,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [1, 0, 0, -1, -1, 0, 1, 1]
-    order = [0, 1, -1]
-    expected = [0, 0, 0, 1, 1, 1, -1, -1]
-
-    actual = threeNumberSort(array, order)
-    print(actual)
-    assert actual == expected
-
-    actual = threeNumberSort1(array, order)
-    print(actual)
-    assert actual == expected
+    array = [5, 1, 22, 25, 6, -1, 8, 10]
+    sequence = [1, 6, -1, 10]
+    print(is_valid_subsequence(array, sequence))
+    print(is_valid_subsequence1(array, sequence))
