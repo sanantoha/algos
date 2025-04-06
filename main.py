@@ -205,15 +205,12 @@ tasks_done = [
     'best_seats.py',
     'smallest_difference.py',
     'three_number_sort.py',
-    'validate_subsequence.py'
+    'validate_subsequence.py',
+    'insertion_sort.py'
 ]
 
 
-def is_valid_subsequence(arr, subseq):
-    pass
-
-
-def is_valid_subsequence1(arr, subseq):
+def insertion_sort(arr):
     pass
 
 
@@ -222,7 +219,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [5, 1, 22, 25, 6, -1, 8, 10]
-    sequence = [1, 6, -1, 10]
-    print(is_valid_subsequence(array, sequence))
-    print(is_valid_subsequence1(array, sequence))
+    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
+    # xs = [5,2,4,1]
+    print(insertion_sort(xs))
