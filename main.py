@@ -206,11 +206,12 @@ tasks_done = [
     'smallest_difference.py',
     'three_number_sort.py',
     'validate_subsequence.py',
-    'insertion_sort.py'
+    'insertion_sort.py',
+    'max_sum_increasing_subsequence.py'
 ]
 
 
-def insertion_sort(arr):
+def maxSumIncreasingSubsequence(arr):
     pass
 
 
@@ -219,6 +220,31 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    # xs = [5,2,4,1]
-    print(insertion_sort(xs))
+    input = [-1, 1]
+    expected = [1, [1]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+
+    input = [10, 70, 20, 30, 50, 11, 30]
+    expected = [110, [10, 20, 30, 50]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+
+    input = [8, 12, 2, 3, 15, 5, 7]
+    expected = [35, [8, 12, 15]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+
+    input = [-5, -4, -3, -2, -1]
+
+    expected = [-1, [-1]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
