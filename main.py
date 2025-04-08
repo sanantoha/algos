@@ -207,11 +207,16 @@ tasks_done = [
     'three_number_sort.py',
     'validate_subsequence.py',
     'insertion_sort.py',
-    'max_sum_increasing_subsequence.py'
+    'max_sum_increasing_subsequence.py',
+    'find_three_largest_numbers.py'
 ]
 
 
-def maxSumIncreasingSubsequence(arr):
+def find_three_largest_numbers(arr):
+    pass
+
+
+def find_three_largest_numbers1(arr):
     pass
 
 
@@ -220,31 +225,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [-1, 1]
-    expected = [1, [1]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
-
-    input = [10, 70, 20, 30, 50, 11, 30]
-    expected = [110, [10, 20, 30, 50]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
-
-    input = [8, 12, 2, 3, 15, 5, 7]
-    expected = [35, [8, 12, 15]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
-
-    input = [-5, -4, -3, -2, -1]
-
-    expected = [-1, [-1]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
+    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
