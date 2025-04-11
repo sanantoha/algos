@@ -210,14 +210,16 @@ tasks_done = [
     'max_sum_increasing_subsequence.py',
     'find_three_largest_numbers.py',
     'zero_sum_subarray.py',
-    'validate_bst.py'
+    'validate_bst.py',
+    'sort_stack.py'
 ]
 
 
-from tree.BST import BST
+def sortStack(arr):
+    pass
 
 
-def validate_bst(root):
+def sortStack1(arr):
     pass
 
 
@@ -226,14 +228,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-    print(validate_bst(root))
-    assert validate_bst(root)
+    input = [-5, 2, -2, 4, 3, 1]
+    expected = [-5, -2, 1, 2, 3, 4]
+
+    actual = sortStack(input)
+    print(actual)
+    assert actual == expected
+
+    actual = sortStack1(input)
+    print(actual)
+    assert actual == expected
