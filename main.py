@@ -211,15 +211,12 @@ tasks_done = [
     'find_three_largest_numbers.py',
     'zero_sum_subarray.py',
     'validate_bst.py',
-    'sort_stack.py'
+    'sort_stack.py',
+    'valid_ip_addresses.py'
 ]
 
 
-def sortStack(arr):
-    pass
-
-
-def sortStack1(arr):
+def validIPAddresses(string):
     pass
 
 
@@ -228,13 +225,20 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [-5, 2, -2, 4, 3, 1]
-    expected = [-5, -2, 1, 2, 3, 4]
-
-    actual = sortStack(input)
-    print(actual)
-    assert actual == expected
-
-    actual = sortStack1(input)
+    input = "1921680"
+    expected = [
+        "1.9.216.80",
+        "1.92.16.80",
+        "1.92.168.0",
+        "19.2.16.80",
+        "19.2.168.0",
+        "19.21.6.80",
+        "19.21.68.0",
+        "19.216.8.0",
+        "192.1.6.80",
+        "192.1.68.0",
+        "192.16.8.0",
+    ]
+    actual = validIPAddresses(input)
     print(actual)
     assert actual == expected
