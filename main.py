@@ -213,11 +213,12 @@ tasks_done = [
     'validate_bst.py',
     'sort_stack.py',
     'valid_ip_addresses.py',
-    'non_constructible_changes.py'
+    'non_constructible_changes.py',
+    'sorted_squared_array.py'
 ]
 
 
-def non_constructible_changes(coins):
+def sorted_squared_array(arr):
     pass
 
 
@@ -226,5 +227,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    coins = [5, 7, 1, 1, 2, 3, 22]
-    print(non_constructible_changes(coins))
+    print(sorted_squared_array([-3, 1, 2, 3, 5, 6, 8, 9]))
