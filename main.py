@@ -214,11 +214,12 @@ tasks_done = [
     'sort_stack.py',
     'valid_ip_addresses.py',
     'non_constructible_changes.py',
-    'sorted_squared_array.py'
+    'sorted_squared_array.py',
+    'tournament_winner.py'
 ]
 
 
-def sorted_squared_array(arr):
+def tournament_winner(competitions, results):
     pass
 
 
@@ -227,4 +228,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(sorted_squared_array([-3, 1, 2, 3, 5, 6, 8, 9]))
+    competitions = [
+        ["HTML", "C#"],
+        ["C#", "Python"],
+        ["Python", "HTML"]
+    ]
+
+    results = [0, 0, 1]
+
+    print(tournament_winner(competitions, results))
