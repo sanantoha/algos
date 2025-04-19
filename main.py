@@ -215,11 +215,14 @@ tasks_done = [
     'valid_ip_addresses.py',
     'non_constructible_changes.py',
     'sorted_squared_array.py',
-    'tournament_winner.py'
+    'tournament_winner.py',
+    'merging_linked_lists.py'
 ]
 
+from list.LinkedList import LinkedList
 
-def tournament_winner(competitions, results):
+
+def mergingLinkedLists(l1, l2):
     pass
 
 
@@ -228,12 +231,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    competitions = [
-        ["HTML", "C#"],
-        ["C#", "Python"],
-        ["Python", "HTML"]
-    ]
+    l1 = LinkedList(1)
+    l1.next = LinkedList(2)
+    l1.next.next = LinkedList(3)
+    l1.next.next.next = LinkedList(4)
 
-    results = [0, 0, 1]
+    l2 = LinkedList(10)
+    l2.next = LinkedList(20)
+    l2.next.next = l1.next.next
 
-    print(tournament_winner(competitions, results))
+    actual = mergingLinkedLists(l1, l2)
+    print(actual)
+    assert actual.getNodesInArray() == [3, 4]
