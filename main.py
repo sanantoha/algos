@@ -216,13 +216,16 @@ tasks_done = [
     'non_constructible_changes.py',
     'sorted_squared_array.py',
     'tournament_winner.py',
-    'merging_linked_lists.py'
+    'merging_linked_lists.py',
+    'levenshtein_distance.py'
 ]
 
-from list.LinkedList import LinkedList
+
+def levenshtein_distance(s1, s2):
+    pass
 
 
-def mergingLinkedLists(l1, l2):
+def levenshtein_distance1(s1, s2):
     pass
 
 
@@ -231,15 +234,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    l1 = LinkedList(1)
-    l1.next = LinkedList(2)
-    l1.next.next = LinkedList(3)
-    l1.next.next.next = LinkedList(4)
-
-    l2 = LinkedList(10)
-    l2.next = LinkedList(20)
-    l2.next.next = l1.next.next
-
-    actual = mergingLinkedLists(l1, l2)
-    print(actual)
-    assert actual.getNodesInArray() == [3, 4]
+    assert levenshtein_distance("abc", "yabd") == 2
+    assert levenshtein_distance1("abc", "yabd") == 2
