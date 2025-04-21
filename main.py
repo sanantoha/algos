@@ -217,15 +217,15 @@ tasks_done = [
     'sorted_squared_array.py',
     'tournament_winner.py',
     'merging_linked_lists.py',
-    'levenshtein_distance.py'
+    'levenshtein_distance.py',
+    'middle_node.py'
 ]
 
 
-def levenshtein_distance(s1, s2):
-    pass
+from list.LinkedList import LinkedList
 
 
-def levenshtein_distance1(s1, s2):
+def middleNode(head):
     pass
 
 
@@ -234,5 +234,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert levenshtein_distance("abc", "yabd") == 2
-    assert levenshtein_distance1("abc", "yabd") == 2
+    list = LinkedList(1)
+    list.next = LinkedList(2)
+    list.next.next = LinkedList(3)
+    list.next.next.next = LinkedList(4)
+
+    res = middleNode(list)
+    print(res)
+    assert res == list.next.next
