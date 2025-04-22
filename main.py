@@ -218,14 +218,12 @@ tasks_done = [
     'tournament_winner.py',
     'merging_linked_lists.py',
     'levenshtein_distance.py',
-    'middle_node.py'
+    'middle_node.py',
+    'number_of_islands.py'
 ]
 
 
-from list.LinkedList import LinkedList
-
-
-def middleNode(head):
+def numberOfIsland(matrix):
     pass
 
 
@@ -234,11 +232,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    list = LinkedList(1)
-    list.next = LinkedList(2)
-    list.next.next = LinkedList(3)
-    list.next.next.next = LinkedList(4)
+    matrix = [
+        [0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0],
+        [1, 1, 0, 1, 1],
+        [0, 0, 0, 1, 1]
+    ]
+    expected = 3
 
-    res = middleNode(list)
-    print(res)
-    assert res == list.next.next
+    actual = numberOfIsland(matrix)
+    print(actual)
+    assert actual == expected
