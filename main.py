@@ -220,18 +220,12 @@ tasks_done = [
     'levenshtein_distance.py',
     'middle_node.py',
     'number_of_islands.py',
-    'node_depths.py'
+    'node_depths.py',
+    'subarray_sort.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def node_depths(root):
-    pass
-
-
-def node_depths1(root):
+def subarraySort(arr):
     pass
 
 
@@ -240,14 +234,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.left.left = BinaryTree(4)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.right = BinaryTree(9)
-    root.left.right = BinaryTree(5)
-    root.right = BinaryTree(3)
-    root.right.left = BinaryTree(6)
-    root.right.right = BinaryTree(7)
-    print(node_depths(root) == 16)
-    print(node_depths1(root) == 16)
+    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [3, 9]
+
+    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
+    print(actual)
+    assert actual == [4, 9]
