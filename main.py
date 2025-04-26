@@ -221,11 +221,12 @@ tasks_done = [
     'middle_node.py',
     'number_of_islands.py',
     'node_depths.py',
-    'subarray_sort.py'
+    'subarray_sort.py',
+    'two_colorable.py'
 ]
 
 
-def subarraySort(arr):
+def twoColorable(graph):
     pass
 
 
@@ -234,10 +235,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
+    input = [
+        [1, 2, 3],
+        [0, 2],
+        [0, 1],
+        [0]
+    ]
+    actual = twoColorable(input)
     print(actual)
-    assert actual == [3, 9]
+    assert not actual
 
-    actual = subarraySort([1, 2, 4, 7, 10, 11, 7, 12, 7, 7, 16, 18, 19])
+    input = [
+        [2],
+        [2, 3],
+        [0, 1],
+        [1]
+    ]
+
+    actual = twoColorable(input)
     print(actual)
-    assert actual == [4, 9]
+    assert actual
