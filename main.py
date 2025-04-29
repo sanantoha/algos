@@ -222,12 +222,25 @@ tasks_done = [
     'number_of_islands.py',
     'node_depths.py',
     'subarray_sort.py',
-    'two_colorable.py'
+    'two_colorable.py',
+    'min_height_bst.py'
 ]
 
 
-def twoColorable(graph):
+from tree.validate_bst import validate_bst
+from tree.bst_traversal import in_order_traverse
+
+
+def min_height_bst(root):
     pass
+
+
+def get_tree_height(tree, height=0):
+    if tree is None:
+        return height
+    left_tree_height = get_tree_height(tree.left, height + 1)
+    right_tree_height = get_tree_height(tree.right, height + 1)
+    return max(left_tree_height, right_tree_height)
 
 
 if __name__ == '__main__':
@@ -235,23 +248,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [1, 2, 3],
-        [0, 2],
-        [0, 1],
-        [0]
-    ]
-    actual = twoColorable(input)
-    print(actual)
-    assert not actual
+    array = [1, 2, 5, 7, 10, 13, 14, 15, 22]
+    tree = min_height_bst(array)
 
-    input = [
-        [2],
-        [2, 3],
-        [0, 1],
-        [1]
-    ]
+    assert validate_bst(tree)
+    assert get_tree_height(tree) == 4
 
-    actual = twoColorable(input)
-    print(actual)
-    assert actual
+    in_order = in_order_traverse(tree, [])
+
+    assert in_order == [1, 2, 5, 7, 10, 13, 14, 15, 22]
