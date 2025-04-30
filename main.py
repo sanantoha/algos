@@ -223,24 +223,17 @@ tasks_done = [
     'node_depths.py',
     'subarray_sort.py',
     'two_colorable.py',
-    'min_height_bst.py'
+    'min_height_bst.py',
+    'missing_numbers.py'
 ]
 
 
-from tree.validate_bst import validate_bst
-from tree.bst_traversal import in_order_traverse
-
-
-def min_height_bst(root):
+def missingNumbers(arr):
     pass
 
 
-def get_tree_height(tree, height=0):
-    if tree is None:
-        return height
-    left_tree_height = get_tree_height(tree.left, height + 1)
-    right_tree_height = get_tree_height(tree.right, height + 1)
-    return max(left_tree_height, right_tree_height)
+def missingNumbers1(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -248,12 +241,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [1, 2, 5, 7, 10, 13, 14, 15, 22]
-    tree = min_height_bst(array)
+    input = [4, 5, 1, 3]
+    expected = [2, 6]
+    actual = missingNumbers(input)
+    print(actual)
+    assert actual == expected
 
-    assert validate_bst(tree)
-    assert get_tree_height(tree) == 4
-
-    in_order = in_order_traverse(tree, [])
-
-    assert in_order == [1, 2, 5, 7, 10, 13, 14, 15, 22]
+    actual = missingNumbers1(input)
+    print(actual)
+    assert actual == expected
