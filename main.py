@@ -224,15 +224,20 @@ tasks_done = [
     'subarray_sort.py',
     'two_colorable.py',
     'min_height_bst.py',
-    'missing_numbers.py'
+    'missing_numbers.py',
+    'numbers_of_ways_to_traverse_graph.py'
 ]
 
 
-def missingNumbers(arr):
+def numbers_of_ways_to_traverse_graph_rec(width, height):
     pass
 
 
-def missingNumbers1(arr):
+def numbers_of_ways_to_traverse_graph(width, height):
+    pass
+
+
+def numbers_of_ways_to_traverse_graph_math(width, height):
     pass
 
 
@@ -241,12 +246,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [4, 5, 1, 3]
-    expected = [2, 6]
-    actual = missingNumbers(input)
-    print(actual)
-    assert actual == expected
-
-    actual = missingNumbers1(input)
-    print(actual)
-    assert actual == expected
+    assert numbers_of_ways_to_traverse_graph_rec(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph_math(4, 3) == 10
