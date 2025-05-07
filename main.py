@@ -225,19 +225,12 @@ tasks_done = [
     'two_colorable.py',
     'min_height_bst.py',
     'missing_numbers.py',
-    'numbers_of_ways_to_traverse_graph.py'
+    'numbers_of_ways_to_traverse_graph.py',
+    'sunset_views.py'
 ]
 
 
-def numbers_of_ways_to_traverse_graph_rec(width, height):
-    pass
-
-
-def numbers_of_ways_to_traverse_graph(width, height):
-    pass
-
-
-def numbers_of_ways_to_traverse_graph_math(width, height):
+def sunsetViews(buildings, direction):
     pass
 
 
@@ -246,6 +239,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert numbers_of_ways_to_traverse_graph_rec(4, 3) == 10
-    assert numbers_of_ways_to_traverse_graph(4, 3) == 10
-    assert numbers_of_ways_to_traverse_graph_math(4, 3) == 10
+    buildings = [3, 5, 4, 4, 3, 1, 3, 2]
+    direction = "EAST"
+    expected = [1, 3, 6, 7]
+    actual = sunsetViews(buildings, direction)
+    print(actual)
+    assert actual == expected
+
+    direction = "WEST"
+    expected = [0, 1]
+    actual = sunsetViews(buildings, direction)
+    print(actual)
+    assert actual == expected
