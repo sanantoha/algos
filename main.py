@@ -226,11 +226,12 @@ tasks_done = [
     'min_height_bst.py',
     'missing_numbers.py',
     'numbers_of_ways_to_traverse_graph.py',
-    'sunset_views.py'
+    'sunset_views.py',
+    'word_ladder.py'
 ]
 
 
-def sunsetViews(buildings, direction):
+def ladderLength(beginWord, endWord, wordList):
     pass
 
 
@@ -239,15 +240,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    buildings = [3, 5, 4, 4, 3, 1, 3, 2]
-    direction = "EAST"
-    expected = [1, 3, 6, 7]
-    actual = sunsetViews(buildings, direction)
+    beginWord = "hit"
+    endWord = "cog"
+    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
+    actual = ladderLength(beginWord, endWord, wordList)
     print(actual)
-    assert actual == expected
-
-    direction = "WEST"
-    expected = [0, 1]
-    actual = sunsetViews(buildings, direction)
-    print(actual)
-    assert actual == expected
+    assert actual == 5
