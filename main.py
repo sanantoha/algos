@@ -227,11 +227,12 @@ tasks_done = [
     'missing_numbers.py',
     'numbers_of_ways_to_traverse_graph.py',
     'sunset_views.py',
-    'word_ladder.py'
+    'word_ladder.py',
+    'optimal_freelancing.py'
 ]
 
 
-def ladderLength(beginWord, endWord, wordList):
+def optimalFreelancing(jobs):
     pass
 
 
@@ -240,9 +241,41 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = ladderLength(beginWord, endWord, wordList)
+    input = [{"deadline": 1, "payment": 1}]
+    actual = optimalFreelancing(input)
     print(actual)
-    assert actual == 5
+    assert actual == 1
+
+    input = [
+        {
+            "deadline": 2,
+            "payment": 2
+        },
+        {
+            "deadline": 4,
+            "payment": 3
+        },
+        {
+            "deadline": 5,
+            "payment": 1
+        },
+        {
+            "deadline": 7,
+            "payment": 2
+        },
+        {
+            "deadline": 3,
+            "payment": 1
+        },
+        {
+            "deadline": 3,
+            "payment": 2
+        },
+        {
+            "deadline": 1,
+            "payment": 3
+        }
+    ]
+    actual = optimalFreelancing(input)
+    print(actual)
+    assert actual == 13
