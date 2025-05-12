@@ -228,12 +228,17 @@ tasks_done = [
     'numbers_of_ways_to_traverse_graph.py',
     'sunset_views.py',
     'word_ladder.py',
-    'optimal_freelancing.py'
+    'optimal_freelancing.py',
+    'cycle_in_graph.py'
 ]
 
 
-def optimalFreelancing(jobs):
-    pass
+def cycle_in_graph(graph):
+    return False
+
+
+def cycle_in_graph1(graph):
+    return False
 
 
 if __name__ == '__main__':
@@ -241,41 +246,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [{"deadline": 1, "payment": 1}]
-    actual = optimalFreelancing(input)
+    input = [[1, 3], [2, 3, 4], [0], [], [2, 5], []]
+    expected = True
+    actual = cycle_in_graph(input)
     print(actual)
-    assert actual == 1
+    assert actual == expected
 
-    input = [
-        {
-            "deadline": 2,
-            "payment": 2
-        },
-        {
-            "deadline": 4,
-            "payment": 3
-        },
-        {
-            "deadline": 5,
-            "payment": 1
-        },
-        {
-            "deadline": 7,
-            "payment": 2
-        },
-        {
-            "deadline": 3,
-            "payment": 1
-        },
-        {
-            "deadline": 3,
-            "payment": 2
-        },
-        {
-            "deadline": 1,
-            "payment": 3
-        }
-    ]
-    actual = optimalFreelancing(input)
+    actual = cycle_in_graph1(input)
     print(actual)
-    assert actual == 13
+    assert actual == expected
