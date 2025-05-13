@@ -229,16 +229,33 @@ tasks_done = [
     'sunset_views.py',
     'word_ladder.py',
     'optimal_freelancing.py',
-    'cycle_in_graph.py'
+    'cycle_in_graph.py',
+    'get_youngest_common_ancestor.py'
 ]
 
 
-def cycle_in_graph(graph):
-    return False
+# This is an input class. Do not edit.
+class AncestralTree:
+    def __init__(self, name):
+        self.name = name
+        self.ancestor = None
 
 
-def cycle_in_graph1(graph):
-    return False
+class AncestralTree(AncestralTree):
+    def addDescendants(self, *descendants):
+        for descendant in descendants:
+            descendant.ancestor = self
+
+
+def new_trees():
+    ancestralTrees = {}
+    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+        ancestralTrees[letter] = AncestralTree(letter)
+    return ancestralTrees
+
+
+def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
+    pass
 
 
 if __name__ == '__main__':
@@ -246,12 +263,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[1, 3], [2, 3, 4], [0], [], [2, 5], []]
-    expected = True
-    actual = cycle_in_graph(input)
-    print(actual)
-    assert actual == expected
+    trees = new_trees()
+    trees["A"].addDescendants(trees["B"], trees["C"])
+    trees["B"].addDescendants(trees["D"], trees["E"])
+    trees["D"].addDescendants(trees["H"], trees["I"])
+    trees["C"].addDescendants(trees["F"], trees["G"])
 
-    actual = cycle_in_graph1(input)
-    print(actual)
-    assert actual == expected
+    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
+    assert yca == trees["B"]
