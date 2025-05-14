@@ -230,31 +230,12 @@ tasks_done = [
     'word_ladder.py',
     'optimal_freelancing.py',
     'cycle_in_graph.py',
-    'get_youngest_common_ancestor.py'
+    'get_youngest_common_ancestor.py',
+    'binary_search.py'
 ]
 
 
-# This is an input class. Do not edit.
-class AncestralTree:
-    def __init__(self, name):
-        self.name = name
-        self.ancestor = None
-
-
-class AncestralTree(AncestralTree):
-    def addDescendants(self, *descendants):
-        for descendant in descendants:
-            descendant.ancestor = self
-
-
-def new_trees():
-    ancestralTrees = {}
-    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-        ancestralTrees[letter] = AncestralTree(letter)
-    return ancestralTrees
-
-
-def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
+def binary_search(arr, target):
     pass
 
 
@@ -263,11 +244,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    trees = new_trees()
-    trees["A"].addDescendants(trees["B"], trees["C"])
-    trees["B"].addDescendants(trees["D"], trees["E"])
-    trees["D"].addDescendants(trees["H"], trees["I"])
-    trees["C"].addDescendants(trees["F"], trees["G"])
-
-    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
-    assert yca == trees["B"]
+    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
+    print(binary_search(array, 60))
