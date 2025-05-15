@@ -231,11 +231,12 @@ tasks_done = [
     'optimal_freelancing.py',
     'cycle_in_graph.py',
     'get_youngest_common_ancestor.py',
-    'binary_search.py'
+    'binary_search.py',
+    'caesar_cipher_encryptor.py'
 ]
 
 
-def binary_search(arr, target):
+def caesar_cipher_encryptor(src, key):
     pass
 
 
@@ -244,5 +245,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
-    print(binary_search(array, 60))
+    print(caesar_cipher_encryptor("xyz", 2) == "zab")
+    print(caesar_cipher_encryptor("abc", 52) == "abc")
