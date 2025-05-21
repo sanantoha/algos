@@ -233,11 +233,21 @@ tasks_done = [
     'get_youngest_common_ancestor.py',
     'binary_search.py',
     'caesar_cipher_encryptor.py',
-    'river_sizes.py'
+    'river_sizes.py',
+    'group_anagrams.py'
 ]
 
 
-def river_sizes(matrix):
+def compare(expected, output):
+    if len(expected) == 0:
+        assert output == expected
+        return
+    assert len(expected) == len(output)
+    for group in expected:
+        assert sorted(group) in output
+
+
+def groupAnagrams(words):
     pass
 
 
@@ -246,18 +256,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    # test_input = [[1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 0, 1, 0, 1], [1, 0, 1, 0, 1], [1, 0, 1, 1, 0]]
-    test_input = [
-        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
-        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
-        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
-        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
-        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
-    ]
+    words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
+    expected = [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
+    output = list(map(lambda x: sorted(x), groupAnagrams(words)))
+    # expected = list(map(lambda x: sorted(x), expected))
 
-    expected = [1, 1, 2, 2, 5, 21]
-    # expected = [1, 2, 2, 2, 5]
-
-    actual = sorted(river_sizes(test_input))
-    print(actual)
-    assert actual == expected
+    print(output)
+    print(expected)
+    compare(expected, output)
