@@ -236,12 +236,43 @@ tasks_done = [
     'river_sizes.py',
     'group_anagrams.py',
     'depth_first_search.py',
-    'knapsack_problem.py'
+    'knapsack_problem.py',
+    'min_max_stack_construction.py'
 ]
 
 
-def knapsackProblem(items, capacity):
-    pass
+
+# Feel free to add new properties and methods to the class.
+class MinMaxStack:
+
+    def __init__(self):
+        self.stack = []
+
+
+    def peek(self):
+        return -1
+
+
+    def pop(self):
+        return -1
+
+
+    def push(self, number):
+        pass
+
+
+    def getMin(self):
+        return -1
+
+
+    def getMax(self):
+        return -1
+
+
+def testMinMaxPeek(min, max, peek, stack):
+    assert stack.getMin() == min
+    assert stack.getMax() == max
+    assert stack.peek() == peek
 
 
 if __name__ == '__main__':
@@ -249,9 +280,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    items = [[1, 2], [4, 3], [5, 6], [6, 7]]
-    capacity = 10
-    expected = [10, [1, 3]]
-    actual = knapsackProblem(items, capacity)
-    print(actual)
-    assert actual == expected
+    stack = MinMaxStack()
+    stack.push(5)
+    testMinMaxPeek(5, 5, 5, stack)
+    stack.push(7)
+    testMinMaxPeek(5, 7, 7, stack)
+    stack.push(2)
+    testMinMaxPeek(2, 7, 2, stack)
+    assert stack.pop() == 2
+    assert stack.pop() == 7
+    testMinMaxPeek(5, 5, 5, stack)
