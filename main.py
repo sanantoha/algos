@@ -1,4 +1,5 @@
 import collections
+import math
 import random
 
 tasks = [
@@ -237,42 +238,13 @@ tasks_done = [
     'group_anagrams.py',
     'depth_first_search.py',
     'knapsack_problem.py',
-    'min_max_stack_construction.py'
+    'min_max_stack_construction.py',
+    'tandem_bicycle.py'
 ]
 
 
-
-# Feel free to add new properties and methods to the class.
-class MinMaxStack:
-
-    def __init__(self):
-        self.stack = []
-
-
-    def peek(self):
-        return -1
-
-
-    def pop(self):
-        return -1
-
-
-    def push(self, number):
-        pass
-
-
-    def getMin(self):
-        return -1
-
-
-    def getMax(self):
-        return -1
-
-
-def testMinMaxPeek(min, max, peek, stack):
-    assert stack.getMin() == min
-    assert stack.getMax() == max
-    assert stack.peek() == peek
+def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
+    pass
 
 
 if __name__ == '__main__':
@@ -280,13 +252,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stack = MinMaxStack()
-    stack.push(5)
-    testMinMaxPeek(5, 5, 5, stack)
-    stack.push(7)
-    testMinMaxPeek(5, 7, 7, stack)
-    stack.push(2)
-    testMinMaxPeek(2, 7, 2, stack)
-    assert stack.pop() == 2
-    assert stack.pop() == 7
-    testMinMaxPeek(5, 5, 5, stack)
+    print(
+        tandem_bicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True)
+    )
