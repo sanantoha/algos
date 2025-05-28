@@ -239,11 +239,12 @@ tasks_done = [
     'depth_first_search.py',
     'knapsack_problem.py',
     'min_max_stack_construction.py',
-    'tandem_bicycle.py'
+    'tandem_bicycle.py',
+    'reverse_words_in_string.py'
 ]
 
 
-def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
+def reverseWordsInString(data):
     pass
 
 
@@ -252,6 +253,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(
-        tandem_bicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True)
-    )
+    input = "AlgoExpert is the best!"
+    expected = "best! the is AlgoExpert"
+    actual = reverseWordsInString(input)
+    print(actual)
+    assert actual == expected
