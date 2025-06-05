@@ -249,6 +249,9 @@ tasks_done = [
 def largestRange(arr):
     pass
 
+def largestRange1(arr):
+    pass
+
 
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
