@@ -241,11 +241,12 @@ tasks_done = [
     'min_max_stack_construction.py',
     'tandem_bicycle.py',
     'reverse_words_in_string.py',
-    'blackjack_probability.py'
+    'blackjack_probability.py',
+    'largest_range.py'
 ]
 
 
-def blackjackProbability(target, startingHand):
+def largestRange(arr):
     pass
 
 
@@ -254,30 +255,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = blackjackProbability(21, 15)
+    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
+    actual = largestRange(input)
     print(actual)
-    assert actual == 0.45
+    assert actual == [0, 7]
 
-    actual = blackjackProbability(21, 21)
+    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
+    actual = largestRange(input)
     print(actual)
-    assert actual == 0
+    assert actual == [10, 19]
 
-    actual = blackjackProbability(21, 20)
+    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
+    actual = largestRange1(input)
     print(actual)
-    assert actual == 0
+    assert actual == [0, 7]
 
-    actual = blackjackProbability(21, 17)
+    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
+    actual = largestRange1(input)
     print(actual)
-    assert actual == 0
-
-    actual = blackjackProbability(21, 12)
-    print(actual)
-    assert actual == 0.268
-
-    actual = blackjackProbability(21, 5)
-    print(actual)
-    assert actual == 0.295
-
-    actual = blackjackProbability(30, 25)
-    print(actual)
-    assert actual == 0.5
+    assert actual == [10, 19]
