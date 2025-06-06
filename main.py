@@ -242,14 +242,34 @@ tasks_done = [
     'tandem_bicycle.py',
     'reverse_words_in_string.py',
     'blackjack_probability.py',
-    'largest_range.py'
+    'largest_range.py',
+    'bst_traversal.py'
 ]
 
+from tree.BST import BST
 
-def largestRange(arr):
+
+def pre_order_traverse(root, arr):
     pass
 
-def largestRange1(arr):
+
+def pre_order_traverse_iter(root, arr):
+    pass
+
+
+def in_order_traverse(root, arr):
+    pass
+
+
+def in_order_traverse_iter(root, arr):
+    pass
+
+
+def post_order_traverse(root, arr):
+    pass
+
+
+def post_order_traverse_iter(root, arr):
     pass
 
 
@@ -258,22 +278,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-    actual = largestRange(input)
-    print(actual)
-    assert actual == [0, 7]
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.right = BST(22)
 
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange(input)
-    print(actual)
-    assert actual == [10, 19]
+    in_order = [1, 2, 5, 5, 10, 15, 22]
+    pre_order = [10, 5, 2, 1, 5, 15, 22]
+    post_order = [1, 2, 5, 5, 22, 15, 10]
 
-    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [0, 7]
+    assert pre_order_traverse(root, []) == pre_order
+    assert pre_order_traverse_iter(root, []) == pre_order
 
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [10, 19]
+    assert in_order_traverse(root, []) == in_order
+    assert in_order_traverse_iter(root, []) == in_order
+
+    assert post_order_traverse(root, []) == post_order
+    assert post_order_traverse_iter(root, []) == post_order
