@@ -246,30 +246,8 @@ tasks_done = [
     'bst_traversal.py'
 ]
 
-from tree.BST import BST
 
-
-def pre_order_traverse(root, arr):
-    pass
-
-
-def pre_order_traverse_iter(root, arr):
-    pass
-
-
-def in_order_traverse(root, arr):
-    pass
-
-
-def in_order_traverse_iter(root, arr):
-    pass
-
-
-def post_order_traverse(root, arr):
-    pass
-
-
-def post_order_traverse_iter(root, arr):
+def majorityElement(arr):
     pass
 
 
@@ -278,23 +256,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.right = BST(22)
+    input = [1, 2, 3, 2, 2, 1, 2]
+    expected = 2
+    actual = majorityElement(input)
+    print(actual)
+    assert actual == expected
 
-    in_order = [1, 2, 5, 5, 10, 15, 22]
-    pre_order = [10, 5, 2, 1, 5, 15, 22]
-    post_order = [1, 2, 5, 5, 22, 15, 10]
-
-    assert pre_order_traverse(root, []) == pre_order
-    assert pre_order_traverse_iter(root, []) == pre_order
-
-    assert in_order_traverse(root, []) == in_order
-    assert in_order_traverse_iter(root, []) == in_order
-
-    assert post_order_traverse(root, []) == post_order
-    assert post_order_traverse_iter(root, []) == post_order
+    input = [3, 3, 1]
+    expected = 3
+    actual = majorityElement(input)
+    print(actual)
+    assert actual == expected
