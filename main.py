@@ -243,12 +243,23 @@ tasks_done = [
     'reverse_words_in_string.py',
     'blackjack_probability.py',
     'largest_range.py',
-    'bst_traversal.py'
+    'bst_traversal.py',
+    'union_find.py'
 ]
 
 
-def majorityElement(arr):
-    pass
+class UnionFind:
+    def __init__(self):
+        pass
+
+    def createSet(self, v):
+        pass
+
+    def union(self, v, u):
+        pass
+
+    def find(self, v):
+        pass
 
 
 if __name__ == '__main__':
@@ -256,14 +267,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [1, 2, 3, 2, 2, 1, 2]
-    expected = 2
-    actual = majorityElement(input)
-    print(actual)
-    assert actual == expected
-
-    input = [3, 3, 1]
-    expected = 3
-    actual = majorityElement(input)
-    print(actual)
-    assert actual == expected
+    unionFind = UnionFind()
+    assert unionFind.find(1) == None
+    unionFind.createSet(1)
+    assert unionFind.find(1) == 1
+    unionFind.createSet(5)
+    assert unionFind.find(1) == 1
+    assert unionFind.find(5) == 5
+    unionFind.union(5, 1)
+    assert unionFind.find(5) == unionFind.find(1)
