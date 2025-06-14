@@ -244,22 +244,25 @@ tasks_done = [
     'blackjack_probability.py',
     'largest_range.py',
     'bst_traversal.py',
-    'union_find.py'
+    'union_find.py',
+    'find_nodes_distance_k.py'
 ]
 
 
-class UnionFind:
-    def __init__(self):
-        pass
+# This is an input class. Do not edit.
+class BinaryTree:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
 
-    def createSet(self, v):
-        pass
 
-    def union(self, v, u):
-        pass
+def findNodesDistanceK(tree, target, k):
+    pass
 
-    def find(self, v):
-        pass
+
+def findNodesDistanceK1(tree, target, k):
+    pass
 
 
 if __name__ == '__main__':
@@ -267,12 +270,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    unionFind = UnionFind()
-    assert unionFind.find(1) == None
-    unionFind.createSet(1)
-    assert unionFind.find(1) == 1
-    unionFind.createSet(5)
-    assert unionFind.find(1) == 1
-    assert unionFind.find(5) == 5
-    unionFind.union(5, 1)
-    assert unionFind.find(5) == unionFind.find(1)
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.right = BinaryTree(3)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right.right = BinaryTree(6)
+    root.right.right.left = BinaryTree(7)
+    root.right.right.right = BinaryTree(8)
+    target = 3
+    k = 2
+    expected = [2, 7, 8]
+    actual = findNodesDistanceK(root, target, k)
+    print(actual)
+    actual.sort()
+    assert actual == expected
+
+    actual = findNodesDistanceK1(root, target, k)
+    print(actual)
+    actual.sort()
+    assert actual == expected
