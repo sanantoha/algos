@@ -245,23 +245,12 @@ tasks_done = [
     'largest_range.py',
     'bst_traversal.py',
     'union_find.py',
-    'find_nodes_distance_k.py'
+    'find_nodes_distance_k.py',
+    'best_digits.py'
 ]
 
 
-# This is an input class. Do not edit.
-class BinaryTree:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
-
-
-def findNodesDistanceK(tree, target, k):
-    pass
-
-
-def findNodesDistanceK1(tree, target, k):
+def bestDigits(number, numDigits):
     pass
 
 
@@ -270,23 +259,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.right.right.left = BinaryTree(7)
-    root.right.right.right = BinaryTree(8)
-    target = 3
-    k = 2
-    expected = [2, 7, 8]
-    actual = findNodesDistanceK(root, target, k)
-    print(actual)
-    actual.sort()
-    assert actual == expected
+    number = "462839"
+    numDigits = 2
 
-    actual = findNodesDistanceK1(root, target, k)
+    actual = bestDigits(number, numDigits)
     print(actual)
-    actual.sort()
-    assert actual == expected
+    assert actual == "6839"
+
+    actual = bestDigits("648239", numDigits)
+    print(actual)
+    assert actual == "8239"
+
+    actual = bestDigits("988762", numDigits)
+    print(actual)
+    assert actual == "9887"
