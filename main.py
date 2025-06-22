@@ -247,36 +247,50 @@ tasks_done = [
     'union_find.py',
     'find_nodes_distance_k.py',
     'best_digits.py',
-    'max_sum_in_binary_tree.py'
+    'max_sum_in_binary_tree.py',
+    'remove_kth_node_from_end.py'
 ]
 
 
-class BinaryTree:
+# This is an input class. Do not edit.
+class LinkedList:
     def __init__(self, value):
         self.value = value
-        self.left = None
-        self.right = None
+        self.next = None
 
-    def insert(self, values, i=0):
-        if i >= len(values):
-            return
-        queue = [self]
-        while len(queue) > 0:
-            current = queue.pop(0)
-            if current.left is None:
-                current.left = BinaryTree(values[i])
-                break
-            queue.append(current.left)
-            if current.right is None:
-                current.right = BinaryTree(values[i])
-                break
-            queue.append(current.right)
-        self.insert(values, i + 1)
+
+class StartLinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+linkedListClass = StartLinkedList
+# if hasattr(program, "LinkedList"):
+#     linkedListClass = program.LinkedList
+
+class LinkedList(linkedListClass):
+    def addMany(self, values):
+        current = self
+        while current.next is not None:
+            current = current.next
+        for value in values:
+            current.next = LinkedList(value)
+            current = current.next
         return self
 
+    def getNodesInArray(self):
+        nodes = []
+        current = self
+        while current is not None:
+            nodes.append(current.value)
+            current = current.next
+        return nodes
 
-def maxPathSum(root):
+
+def remove_kth_node_from_end(head, k):
     pass
+
 
 
 if __name__ == '__main__':
@@ -284,7 +298,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = BinaryTree(1).insert([2, 3, 4, 5, 6, 7])
-    actual = maxPathSum(test)
-    print(actual)
-    assert actual == 18
+    test = LinkedList(0).addMany([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    expected = LinkedList(0).addMany([1, 2, 3, 4, 5, 7, 8, 9])
+    remove_kth_node_from_end(test, 4)
+    print(test.getNodesInArray())
+    assert test.getNodesInArray() == expected.getNodesInArray()
