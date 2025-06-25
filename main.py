@@ -249,11 +249,16 @@ tasks_done = [
     'best_digits.py',
     'max_sum_in_binary_tree.py',
     'remove_kth_node_from_end.py',
-    'median_of_two_sorted_arrays.py'
+    'median_of_two_sorted_arrays.py',
+    'valid_starting_city.py'
 ]
 
 
-def medianOfTwoSortedArrays(arr1, arr2):
+def valid_starting_city(distances, fuel, mpg):
+    pass
+
+
+def valid_starting_city1(distances, fuel, mpg):
     pass
 
 
@@ -262,12 +267,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arrayOne = [1, 3, 4, 5]
-    arrayTwo = [2, 3, 6, 7]
-    actual = medianOfTwoSortedArrays(arrayOne, arrayTwo)
+    distances = [5, 25, 15, 10, 15]
+    fuel = [1, 2, 1, 0, 3]
+    mpg = 10
+    expected = 4
+    actual = valid_starting_city(distances, fuel, mpg)
     print(actual)
-    assert actual == 3.5
+    assert actual == expected
 
-    actual = medianOfTwoSortedArrays([6, 7, 8, 9], [1, 3, 4, 5])
-    print(actual)
-    assert actual == 5.5
+    actual1 = valid_starting_city1(distances, fuel, mpg)
+    print(actual1)
+    assert actual1 == expected
