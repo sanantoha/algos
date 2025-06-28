@@ -255,7 +255,11 @@ tasks_done = [
 ]
 
 
-def majorityElement(arr)
+def max_subset_sum_no_adjucent(arr):
+    pass
+
+
+def max_subset_sum_no_adjucent1(arr):
     pass
 
 
@@ -264,14 +268,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [1, 2, 3, 2, 2, 1, 2]
-    expected = 2
-    actual = majorityElement(input)
-    print(actual)
-    assert actual == expected
+    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
 
-    input = [3, 3, 1]
-    expected = 3
-    actual = majorityElement(input)
-    print(actual)
-    assert actual == expected
+    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
+    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
