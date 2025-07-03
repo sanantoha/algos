@@ -252,78 +252,13 @@ tasks_done = [
     'median_of_two_sorted_arrays.py',
     'valid_starting_city.py',
     'majority_element.py',
-    'linked_list_construction.py'
+    'linked_list_construction.py',
+    'apartment_hunting.py'
 ]
 
 
-# This is an input class. Do not edit.
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.prev = None
-        self.next = None
-
-
-# Feel free to add new properties and methods to the class.
-class DoublyLinkedList:
-    def __init__(self):
-        pass
-
-    def setHead(self, node):
-        pass
-
-    def setTail(self, node):
-        pass
-
-
-    def insertBefore(self, node, nodeToInsert):
-        pass
-
-
-    def insertAfter(self, node, nodeToInsert):
-        pass
-
-
-    def insertAtPosition(self, position, nodeToInsert):
-        pass
-
-
-    def removeNodesWithValue(self, value):
-        pass
-
-
-    def remove(self, node):
-        pass
-
-
-    def containsNodeWithValue(self, value):
-        return False
-
-    def removeBindings(self, node):
-        pass
-
-
-def bindNodes(nodeOne, nodeTwo):
-    nodeOne.next = nodeTwo
-    nodeTwo.prev = nodeOne
-
-
-def getNodeValuesTailToHead(linkedList):
-    values = []
-    node = linkedList.tail
-    while node is not None:
-        values.append(node.value)
-        node = node.prev
-    return values
-
-
-def getNodeValuesHeadToTail(linkedList):
-    values = []
-    node = linkedList.head
-    while node is not None:
-        values.append(node.value)
-        node = node.next
-    return values
+def apartmentHunting(blocks, reqs):
+    pass
 
 
 if __name__ == '__main__':
@@ -331,78 +266,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    linkedList = DoublyLinkedList()
-    one = Node(1)
-    two = Node(2)
-    three = Node(3)
-    # three2 = Node(3)
-    # three3 = Node(3)
-    four = Node(4)
-    five = Node(5)
-    six = Node(6)
-
-    linkedList.setHead(one)
-    linkedList.insertAfter(one, two)
-    linkedList.insertAfter(two, three)
-    linkedList.insertAfter(three, four)
-    linkedList.insertAfter(four, five)
-    linkedList.insertAfter(five, six)
-    seven = Node(7)
-    linkedList.insertAfter(six, seven)
-    print(getNodeValuesHeadToTail(linkedList))
-
-    linkedList.insertAtPosition(7, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    linkedList.insertAtPosition(1, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    linkedList.insertAtPosition(2, one)
-    print(getNodeValuesHeadToTail(linkedList))
-
-    linkedList.insertAtPosition(3, one)
-    print(getNodeValuesHeadToTail(linkedList))
-
-    linkedList.insertAtPosition(4, one)
-    print(getNodeValuesHeadToTail(linkedList))
-
-    linkedList.insertAtPosition(5, one)
-    print(getNodeValuesHeadToTail(linkedList))
-
-    linkedList.insertAtPosition(6, one)
-    print(getNodeValuesHeadToTail(linkedList))
-    # bindNodes(one, two)
-    # bindNodes(two, three)
-    # bindNodes(three, four)
-    # bindNodes(four, five)
-    # linkedList.head = one
-    # linkedList.tail = five
-    #
-    # linkedList.setHead(four)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 2, 3, 5]
-    # assert getNodeValuesTailToHead(linkedList) == [5, 3, 2, 1, 4]
-    #
-    # linkedList.setTail(six)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 2, 3, 5, 6]
-    # assert getNodeValuesTailToHead(linkedList) == [6, 5, 3, 2, 1, 4]
-    #
-    # linkedList.insertBefore(six, three)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 2, 5, 3, 6]
-    # assert getNodeValuesTailToHead(linkedList) == [6, 3, 5, 2, 1, 4]
-    #
-    # linkedList.insertAfter(six, three2)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 2, 5, 3, 6, 3]
-    # assert getNodeValuesTailToHead(linkedList) == [3, 6, 3, 5, 2, 1, 4]
-    #
-    # linkedList.insertAtPosition(1, three3)
-    # assert getNodeValuesHeadToTail(linkedList) == [3, 4, 1, 2, 5, 3, 6, 3]
-    # assert getNodeValuesTailToHead(linkedList) == [3, 6, 3, 5, 2, 1, 4, 3]
-    #
-    # linkedList.removeNodesWithValue(3)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 2, 5, 6]
-    # assert getNodeValuesTailToHead(linkedList) == [6, 5, 2, 1, 4]
-    #
-    # linkedList.remove(two)
-    # assert getNodeValuesHeadToTail(linkedList) == [4, 1, 5, 6]
-    # assert getNodeValuesTailToHead(linkedList) == [6, 5, 1, 4]
-    #
-    # assert linkedList.containsNodeWithValue(5)
+    blocks = [
+        {"gym": False, "school": True, "store": False},
+        {"gym": True, "school": False, "store": False},
+        {"gym": True, "school": True, "store": False},
+        {"gym": False, "school": True, "store": False},
+        {"gym": False, "school": True, "store": True},
+    ]
+    reqs = ["gym", "school", "store"]
+    assert apartmentHunting(blocks, reqs) == 3
 
