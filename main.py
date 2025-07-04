@@ -253,11 +253,12 @@ tasks_done = [
     'valid_starting_city.py',
     'majority_element.py',
     'linked_list_construction.py',
-    'apartment_hunting.py'
+    'apartment_hunting.py',
+    'a_star_algorithm.py'
 ]
 
 
-def apartmentHunting(blocks, reqs):
+def a_star_algorithm(start_row, start_col, end_row, end_col, graph):
     pass
 
 
@@ -266,13 +267,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    blocks = [
-        {"gym": False, "school": True, "store": False},
-        {"gym": True, "school": False, "store": False},
-        {"gym": True, "school": True, "store": False},
-        {"gym": False, "school": True, "store": False},
-        {"gym": False, "school": True, "store": True},
-    ]
-    reqs = ["gym", "school", "store"]
-    assert apartmentHunting(blocks, reqs) == 3
+    start_row = 0
+    start_col = 1
+    end_row = 4
+    end_col = 3
+    graph = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0], [1, 0, 1, 1, 1], [0, 0, 0, 0, 0]]
+    expected = [[0, 1], [0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [4, 2], [4, 3]]
+    actual = a_star_algorithm(start_row, start_col, end_row, end_col, graph)
+    print(actual)
+    assert actual == expected
 
