@@ -254,12 +254,17 @@ tasks_done = [
     'majority_element.py',
     'linked_list_construction.py',
     'apartment_hunting.py',
-    'a_star_algorithm.py'
+    'a_star_algorithm.py',
+    'lagest_island.py'
 ]
 
 
-def a_star_algorithm(start_row, start_col, end_row, end_col, graph):
-    pass
+def largestIsland(matrix):
+    return 0
+
+
+def largestIsland1(matrix):
+    return 0
 
 
 if __name__ == '__main__':
@@ -267,13 +272,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    start_row = 0
-    start_col = 1
-    end_row = 4
-    end_col = 3
-    graph = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0], [1, 0, 1, 1, 1], [0, 0, 0, 0, 0]]
-    expected = [[0, 1], [0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [4, 2], [4, 3]]
-    actual = a_star_algorithm(start_row, start_col, end_row, end_col, graph)
+    matrix = [
+        [1, 0, 1, 0, 0],
+        [0, 0, 1, 1, 0],
+        [0, 1, 1, 1, 1],
+        [1, 0, 1, 0, 0]
+    ]
+    expected = 8
+
+    actual = largestIsland(matrix)
+    print(actual)
+    assert actual == expected
+
+    actual = largestIsland1(matrix)
     print(actual)
     assert actual == expected
 
