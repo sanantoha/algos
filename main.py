@@ -259,12 +259,12 @@ tasks_done = [
 ]
 
 
-def largestIsland(matrix):
-    return 0
+def longestCommonSubsequence(str1, str2):
+    return []
 
 
-def largestIsland1(matrix):
-    return 0
+def longestCommonSubsequence1(str1, str2):
+    return []
 
 
 if __name__ == '__main__':
@@ -272,19 +272,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [1, 0, 1, 0, 0],
-        [0, 0, 1, 1, 0],
-        [0, 1, 1, 1, 1],
-        [1, 0, 1, 0, 0]
-    ]
-    expected = 8
+    output = longestCommonSubsequence("ZXVVYZW", "XKYKZPW")
+    print(output)
+    assert output == ["X", "Y", "Z", "W"]
 
-    actual = largestIsland(matrix)
-    print(actual)
-    assert actual == expected
-
-    actual = largestIsland1(matrix)
-    print(actual)
-    assert actual == expected
+    output = longestCommonSubsequence1("ZXVVYZW", "XKYKZPW")
+    print(output)
+    assert output == ["X", "Y", "Z", "W"]
 
