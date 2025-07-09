@@ -255,16 +255,17 @@ tasks_done = [
     'linked_list_construction.py',
     'apartment_hunting.py',
     'a_star_algorithm.py',
-    'lagest_island.py'
+    'lagest_island.py',
+    'max_subset_sum_no_adjucent.py'
 ]
 
 
-def longestCommonSubsequence(str1, str2):
-    return []
+def max_subset_sum_no_adjucent(arr):
+    pass
 
 
-def longestCommonSubsequence1(str1, str2):
-    return []
+def max_subset_sum_no_adjucent1(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -272,11 +273,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = longestCommonSubsequence("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
+    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
 
-    output = longestCommonSubsequence1("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
+    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
+    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
 
