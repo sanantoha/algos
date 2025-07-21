@@ -133,163 +133,16 @@ tasks = [
 ]
 
 tasks_done = [
-    'run_length_encoding.py',
-    'four_number_sum.py',
-    'validate_tree_nodes.py',
-    'balanced_brackets.py',
-    'next_greater_element.py',
-    'merge_binary_trees.py',
-    'reverse_polish_notation.py',
-    'palindrom_check.py',
-    'invert_binary_tree.py',
-    'bubble_sort.py',
-    'task_assignment.py',
-    'generate_document.py',
-    'powerset.py',
-    'permutations.py',
-    'merge_overlapping_intervals.py',
-    'minimum_waiting_time.py',
-    'min_number_of_coins_for_change.py',
-    'first_duplicate_value.py',
-    'monotonic_array.py',
-    'search_in_sorted_matrix.py',
-    'branch_sums.py',
-    'reconstruct_bst.py',
-    'common_characters.py',
-    'sum_of_linked_lists.py',
-    'selection_sort.py',
-    'longest_peak.py',
-    'minimum_characters_for_words.py',
-    'min_heap_construction.py',
-    'number_of_ways_to_make_change.py',
-    'three_number_sum.py',
-    'single_cycle_check.py',
-    'get_nth_fib.py',
-    'phone_number_mnemonic.py',
-    'first_non_repeating_character.py',
-    'class_photos.py',
-    'kruskals_algorithm.py',
-    'zigzag_traverse.py',
-    'find_closest_value_in_bst.py',
-    'product_sum.py',
-    'array_of_products.py',
-    'find_kth_largest_value_in_bst.py',
-    'kadanes_distance.py',
-    'evaluate_expression_tree.py',
-    'breadth_first_search.py',
-    'binary_tree_diameter.py',
-    'two_number_sum.py',
-    'remove_islands.py',
-    'unique_pathsIII.py',
-    'transpose_matrix.py',
-    'longest_palindromic_substring.py',
-    'staircase_traversal.py',
-    'suffix_trie_construction.py',
-    'all_paths_source_target.py',
-    'spiral_matrix_traverse.py',
-    'word_ladder_ii.py',
-    'height_balanced_binary_tree.py',
-    'move_element_to_end.py',
-    'find_pivot_index.py',
-    'one_edit.py',
-    'longest_increasing_subsequence.py',
-    'remove_duplicates_from_linkedlist.py',
-    'semordinal.py',
-    'minimum_passes_of_matrix.py',
-    'simmetrical_tree.py',
-    'water_area.py',
-    'disk_stacking.py',
-    'stable_internships.py',
-    'find_successor.py',
-    'same_bsts.py',
-    'min_rewards.py',
-    'best_seats.py',
-    'smallest_difference.py',
-    'three_number_sort.py',
-    'validate_subsequence.py',
-    'insertion_sort.py',
-    'max_sum_increasing_subsequence.py',
-    'find_three_largest_numbers.py',
-    'zero_sum_subarray.py',
-    'validate_bst.py',
-    'sort_stack.py',
-    'valid_ip_addresses.py',
-    'non_constructible_changes.py',
-    'sorted_squared_array.py',
-    'tournament_winner.py',
-    'merging_linked_lists.py',
-    'levenshtein_distance.py',
-    'middle_node.py',
-    'number_of_islands.py',
-    'node_depths.py',
-    'subarray_sort.py',
-    'two_colorable.py',
-    'min_height_bst.py',
-    'missing_numbers.py',
-    'numbers_of_ways_to_traverse_graph.py',
-    'sunset_views.py',
-    'word_ladder.py',
-    'optimal_freelancing.py',
-    'cycle_in_graph.py',
-    'get_youngest_common_ancestor.py',
-    'binary_search.py',
-    'caesar_cipher_encryptor.py',
-    'river_sizes.py',
-    'group_anagrams.py',
-    'depth_first_search.py',
-    'knapsack_problem.py',
-    'min_max_stack_construction.py',
-    'tandem_bicycle.py',
-    'reverse_words_in_string.py',
-    'blackjack_probability.py',
-    'largest_range.py',
-    'bst_traversal.py',
-    'union_find.py',
-    'find_nodes_distance_k.py',
-    'best_digits.py',
-    'max_sum_in_binary_tree.py',
-    'remove_kth_node_from_end.py',
-    'median_of_two_sorted_arrays.py',
-    'valid_starting_city.py',
-    'majority_element.py',
-    'linked_list_construction.py',
-    'apartment_hunting.py',
-    'a_star_algorithm.py',
-    'lagest_island.py',
-    'max_subset_sum_no_adjucent.py',
-    'longest_common_subsequence.py',
-    'bst_construction.py',
-    'serialize_and_deserialize_n_ary_tree.py'
+    'find_three_largest_numbers.py'
 ]
 
 
-class Node(object):
-    def __init__(self, val=None, children=None):
-        self.val = val
-        self.children = children
-
-    def __repr__(self):
-        return f"Node({self.val} {self.children})"
+def find_three_largest_numbers(arr):
+    pass
 
 
-class Codec:
-
-    def serialize(self, root):
-        pass
-
-
-    def deserialize(self, data):
-        pass
-
-
-class Codec1:
-
-    def serialize(self, root):
-        pass
-
-
-    def deserialize(self, data):
-        pass
+def find_three_largest_numbers1(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -297,19 +150,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = Node(11, [Node(33, [Node(55), Node(6666)]), Node(22), Node(30)])
-    print(root)
-    codec = Codec()
-    str = codec.serialize(root)
-    print(str)
-
-    tree = codec.deserialize(str)
-    print(tree)
-
-    codec1 = Codec1()
-    str = codec1.serialize(root)
-    print(str)
-
-    tree = codec1.deserialize(str)
-    print(tree)
+    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
 
