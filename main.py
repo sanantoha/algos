@@ -133,15 +133,16 @@ tasks = [
 ]
 
 tasks_done = [
-    'find_three_largest_numbers.py'
+    'find_three_largest_numbers.py',
+    'valid_starting_city.py'
 ]
 
 
-def find_three_largest_numbers(arr):
+def valid_starting_city(distances, fuel, mpg):
     pass
 
 
-def find_three_largest_numbers1(arr):
+def valid_starting_city1(distances, fuel, mpg):
     pass
 
 
@@ -150,6 +151,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
-    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    distances = [5, 25, 15, 10, 15]
+    fuel = [1, 2, 1, 0, 3]
+    mpg = 10
+    expected = 4
+    actual = valid_starting_city(distances, fuel, mpg)
+    print(actual)
+    assert actual == expected
+
+    actual1 = valid_starting_city1(distances, fuel, mpg)
+    print(actual1)
+    assert actual1 == expected
 
