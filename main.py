@@ -134,15 +134,12 @@ tasks = [
 
 tasks_done = [
     'find_three_largest_numbers.py',
-    'valid_starting_city.py'
+    'valid_starting_city.py',
+    'majority_element.py'
 ]
 
 
-def valid_starting_city(distances, fuel, mpg):
-    pass
-
-
-def valid_starting_city1(distances, fuel, mpg):
+def majorityElement(arr):
     pass
 
 
@@ -151,15 +148,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    distances = [5, 25, 15, 10, 15]
-    fuel = [1, 2, 1, 0, 3]
-    mpg = 10
-    expected = 4
-    actual = valid_starting_city(distances, fuel, mpg)
+    input = [1, 2, 3, 2, 2, 1, 2]
+    expected = 2
+    actual = majorityElement(input)
     print(actual)
     assert actual == expected
 
-    actual1 = valid_starting_city1(distances, fuel, mpg)
-    print(actual1)
-    assert actual1 == expected
+    input = [3, 3, 1]
+    expected = 3
+    actual = majorityElement(input)
+    print(actual)
+    assert actual == expected
 
