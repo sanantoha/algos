@@ -135,11 +135,12 @@ tasks = [
 tasks_done = [
     'find_three_largest_numbers.py',
     'valid_starting_city.py',
-    'majority_element.py'
+    'majority_element.py',
+    'best_seats.py'
 ]
 
 
-def majorityElement(arr):
+def bestSeat(arr):
     pass
 
 
@@ -148,15 +149,24 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [1, 2, 3, 2, 2, 1, 2]
-    expected = 2
-    actual = majorityElement(input)
-    print(actual)
-    assert actual == expected
+    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
+    assert actual == 4
 
-    input = [3, 3, 1]
-    expected = 3
-    actual = majorityElement(input)
-    print(actual)
-    assert actual == expected
+    actual = bestSeat([1])
+    assert actual == -1
+
+    actual = bestSeat([1, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 1, 1])
+    assert actual == -1
+
+    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
+    assert actual == 3
 
