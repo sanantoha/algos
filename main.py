@@ -136,11 +136,12 @@ tasks_done = [
     'find_three_largest_numbers.py',
     'valid_starting_city.py',
     'majority_element.py',
-    'best_seats.py'
+    'best_seats.py',
+    'best_digits.py'
 ]
 
 
-def bestSeat(arr):
+def bestDigits(number, numDigits):
     pass
 
 
@@ -149,24 +150,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
-    assert actual == 4
+    number = "462839"
+    numDigits = 2
 
-    actual = bestSeat([1])
-    assert actual == -1
+    actual = bestDigits(number, numDigits)
+    print(actual)
+    assert actual == "6839"
 
-    actual = bestSeat([1, 0, 1])
-    assert actual == 1
+    actual = bestDigits("648239", numDigits)
+    print(actual)
+    assert actual == "8239"
 
-    actual = bestSeat([1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 1, 1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
-    assert actual == 3
+    actual = bestDigits("988762", numDigits)
+    print(actual)
+    assert actual == "9887"
 
