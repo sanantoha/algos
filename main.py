@@ -137,11 +137,16 @@ tasks_done = [
     'valid_starting_city.py',
     'majority_element.py',
     'best_seats.py',
-    'best_digits.py'
+    'best_digits.py',
+    'permutations.py'
 ]
 
 
-def bestDigits(number, numDigits):
+def getPermutations(arr):
+    pass
+
+
+def getPermutations1(arr):
     pass
 
 
@@ -150,18 +155,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    number = "462839"
-    numDigits = 2
+    perms = getPermutations([1, 2, 3])
+    print(perms)
+    assert len(perms) == 6
+    assert [1, 2, 3] in perms
+    assert [1, 3, 2] in perms
+    assert [2, 1, 3] in perms
+    assert [2, 3, 1] in perms
+    assert [3, 1, 2] in perms
+    assert [3, 2, 1] in perms
 
-    actual = bestDigits(number, numDigits)
-    print(actual)
-    assert actual == "6839"
-
-    actual = bestDigits("648239", numDigits)
-    print(actual)
-    assert actual == "8239"
-
-    actual = bestDigits("988762", numDigits)
-    print(actual)
-    assert actual == "9887"
+    perms1 = getPermutations1([1, 2, 3])
+    print(perms1)
+    assert len(perms1) == 6
+    assert [1, 2, 3] in perms1
+    assert [1, 3, 2] in perms1
+    assert [2, 1, 3] in perms1
+    assert [2, 3, 1] in perms1
+    assert [3, 1, 2] in perms1
+    assert [3, 2, 1] in perms1
 
