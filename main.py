@@ -138,15 +138,12 @@ tasks_done = [
     'majority_element.py',
     'best_seats.py',
     'best_digits.py',
-    'permutations.py'
+    'permutations.py',
+    'longest_peak.py'
 ]
 
 
-def getPermutations(arr):
-    pass
-
-
-def getPermutations1(arr):
+def longest_peak(arr):
     pass
 
 
@@ -155,23 +152,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    perms = getPermutations([1, 2, 3])
-    print(perms)
-    assert len(perms) == 6
-    assert [1, 2, 3] in perms
-    assert [1, 3, 2] in perms
-    assert [2, 1, 3] in perms
-    assert [2, 3, 1] in perms
-    assert [3, 1, 2] in perms
-    assert [3, 2, 1] in perms
-
-    perms1 = getPermutations1([1, 2, 3])
-    print(perms1)
-    assert len(perms1) == 6
-    assert [1, 2, 3] in perms1
-    assert [1, 3, 2] in perms1
-    assert [2, 1, 3] in perms1
-    assert [2, 3, 1] in perms1
-    assert [3, 1, 2] in perms1
-    assert [3, 2, 1] in perms1
+    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
 
