@@ -139,12 +139,18 @@ tasks_done = [
     'best_seats.py',
     'best_digits.py',
     'permutations.py',
-    'longest_peak.py'
+    'longest_peak.py',
+    'lagest_island.py'
 ]
 
 
-def longest_peak(arr):
+def largestIsland(matrix):
     pass
+
+
+def largestIsland1(matrix):
+    pass
+
 
 
 if __name__ == '__main__':
@@ -152,5 +158,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
+    matrix = [
+        [1, 0, 1, 0, 0],
+        [0, 0, 1, 1, 0],
+        [0, 1, 1, 1, 1],
+        [1, 0, 1, 0, 0]
+    ]
+    expected = 8
+
+    actual = largestIsland(matrix)
+    print(actual)
+    assert actual == expected
+
+    actual = largestIsland1(matrix)
+    print(actual)
+    assert actual == expected
 
