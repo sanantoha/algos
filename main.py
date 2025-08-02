@@ -140,17 +140,13 @@ tasks_done = [
     'best_digits.py',
     'permutations.py',
     'longest_peak.py',
-    'lagest_island.py'
+    'lagest_island.py',
+    'monotonic_array.py'
 ]
 
 
-def largestIsland(matrix):
+def monotonic_array(arr):
     pass
-
-
-def largestIsland1(matrix):
-    pass
-
 
 
 if __name__ == '__main__':
@@ -158,19 +154,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [1, 0, 1, 0, 0],
-        [0, 0, 1, 1, 0],
-        [0, 1, 1, 1, 1],
-        [1, 0, 1, 0, 0]
-    ]
-    expected = 8
-
-    actual = largestIsland(matrix)
-    print(actual)
-    assert actual == expected
-
-    actual = largestIsland1(matrix)
-    print(actual)
-    assert actual == expected
+    print(monotonic_array([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
 
