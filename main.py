@@ -141,11 +141,16 @@ tasks_done = [
     'permutations.py',
     'longest_peak.py',
     'lagest_island.py',
-    'monotonic_array.py'
+    'monotonic_array.py',
+    'find_closest_value_in_bst.py'
 ]
 
 
-def monotonic_array(arr):
+def find_closest_value_in_bst(root, target):
+    pass
+
+
+def find_closest_value_in_bst1(root, target):
     pass
 
 
@@ -154,5 +159,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(monotonic_array([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
+    from tree.BST import BST
+
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+    expected = 13
+
+    print(find_closest_value_in_bst(root, 12))
+    print(find_closest_value_in_bst1(root, 12))
 
