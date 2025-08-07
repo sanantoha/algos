@@ -160,7 +160,6 @@ class DoublyLinkedList:
         self.head = None
         self.tail = None
 
-    # O(1) time | O(1) space
     def setHead(self, node):
         pass
 
@@ -241,22 +240,28 @@ if __name__ == '__main__':
     linkedList.insertAfter(six, seven)
     print(getNodeValuesHeadToTail(linkedList))
 
+    linkedList.insertBefore(seven, one)
+    print(getNodeValuesHeadToTail(linkedList))
+
+    print(linkedList.containsNodeWithValue(1))
+    print(linkedList.containsNodeWithValue(101))
+
     linkedList.insertAtPosition(7, one)
     print(getNodeValuesHeadToTail(linkedList))
     linkedList.insertAtPosition(1, one)
     print(getNodeValuesHeadToTail(linkedList))
     linkedList.insertAtPosition(2, one)
     print(getNodeValuesHeadToTail(linkedList))
-
+    #
     linkedList.insertAtPosition(3, one)
     print(getNodeValuesHeadToTail(linkedList))
-
+    #
     linkedList.insertAtPosition(4, one)
     print(getNodeValuesHeadToTail(linkedList))
-
+    #
     linkedList.insertAtPosition(5, one)
     print(getNodeValuesHeadToTail(linkedList))
-
+    #
     linkedList.insertAtPosition(6, one)
     print(getNodeValuesHeadToTail(linkedList))
     # bindNodes(one, two)
