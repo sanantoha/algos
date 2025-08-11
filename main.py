@@ -150,7 +150,8 @@ tasks_done = [
 
 class MinHeap:
     def __init__(self, array):
-        pass
+        # Do not edit the line below.
+        self.heap = self.buildHeap(array)
 
     def buildHeap(self, array):
         return array
