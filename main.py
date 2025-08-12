@@ -144,37 +144,13 @@ tasks_done = [
     'monotonic_array.py',
     'find_closest_value_in_bst.py',
     'linked_list_construction.py',
-    'min_heap_construction.py'
+    'min_heap_construction.py',
+    'number_of_islands.py'
 ]
 
 
-class MinHeap:
-    def __init__(self, array):
-        # Do not edit the line below.
-        self.heap = self.buildHeap(array)
-
-    def buildHeap(self, array):
-        return array
-
-    def siftDown(self, curr_idx, end_idx, heap):
-        pass
-
-    def siftUp(self, idx, heap):
-        pass
-
-    def remove(self):
-        return -1
-
-    def insert(self, value):
-        pass
-
-
-def isMinHeapPropertySatisfied(array):
-    for currentIdx in range(1, len(array)):
-        parentIdx = (currentIdx - 1) // 2
-        if array[parentIdx] > array[currentIdx]:
-            return False
-    return True
+def numberOfIsland(matrix):
+    pass
 
 
 if __name__ == '__main__':
@@ -182,16 +158,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    minHeap = MinHeap([48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41])
-    minHeap.insert(76)
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == -5
-    assert minHeap.remove() == -5
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == 2
-    assert minHeap.remove() == 2
-    assert isMinHeapPropertySatisfied(minHeap.heap)
-    assert minHeap.peek() == 6
-    minHeap.insert(87)
-    assert isMinHeapPropertySatisfied(minHeap.heap)
+    matrix = [
+        [0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0],
+        [1, 1, 0, 1, 1],
+        [0, 0, 0, 1, 1]
+    ]
+    expected = 3
+
+    actual = numberOfIsland(matrix)
+    print(actual)
+    assert actual == expected
 
