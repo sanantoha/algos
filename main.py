@@ -130,6 +130,7 @@ tasks = [
     'blackjack_probability.py',
     'number_of_islands.py',
     'lagest_island.py',
+    'subtree_of_another_tree.py',
 ]
 
 tasks_done = [
