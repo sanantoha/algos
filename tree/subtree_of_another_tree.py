@@ -1,8 +1,46 @@
 from BinaryTree import BinaryTree
 
 
+# O(n * m) time | O(n) space
 def is_subtree(root, sub_root):
+
+    stack = [root]
+
+    while stack:
+        curr = stack.pop()
+
+        if not curr:
+            continue
+
+        if is_same_tree(curr, sub_root):
+            return True
+
+        stack.append(curr.right)
+        stack.append(curr.left)
+
     return False
+
+
+def is_same_tree(t1, t2):
+    stack = [t1, t2]
+
+    while stack:
+        c1 = stack.pop()
+        c2 = stack.pop()
+
+        if not c1 and not c2:
+            continue
+        if not c1 or not c2:
+            return False
+        if c1.value != c2.value:
+            return False
+
+        stack.append(c1.left)
+        stack.append(c2.left)
+        stack.append(c1.right)
+        stack.append(c2.right)
+
+    return True
 
 
 if __name__ == '__main__':
@@ -29,7 +67,7 @@ if __name__ == '__main__':
 
     res = is_subtree(root2, sub_tree)
     print(res)  # False
-    assert res
+    assert not res
 
     root3 = BinaryTree(4)
     root3.left = BinaryTree(4)
