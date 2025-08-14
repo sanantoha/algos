@@ -146,11 +146,16 @@ tasks_done = [
     'find_closest_value_in_bst.py',
     'linked_list_construction.py',
     'min_heap_construction.py',
-    'number_of_islands.py'
+    'number_of_islands.py',
+    'three_number_sort.py'
 ]
 
 
-def numberOfIsland(matrix):
+def threeNumberSort(arr, order):
+    pass
+
+
+def threeNumberSort1(arr, order):
     pass
 
 
@@ -159,15 +164,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0],
-        [1, 1, 0, 1, 1],
-        [0, 0, 0, 1, 1]
-    ]
-    expected = 3
+    array = [1, 0, 0, -1, -1, 0, 1, 1]
+    order = [0, 1, -1]
+    expected = [0, 0, 0, 1, 1, 1, -1, -1]
 
-    actual = numberOfIsland(matrix)
+    actual = threeNumberSort(array, order)
+    print(actual)
+    assert actual == expected
+
+    actual = threeNumberSort1(array, order)
     print(actual)
     assert actual == expected
 
