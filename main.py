@@ -147,15 +147,16 @@ tasks_done = [
     'linked_list_construction.py',
     'min_heap_construction.py',
     'number_of_islands.py',
-    'three_number_sort.py'
+    'three_number_sort.py',
+    'get_nth_fib.py'
 ]
 
 
-def threeNumberSort(arr, order):
+def get_nth_fib(n):
     pass
 
 
-def threeNumberSort1(arr, order):
+def get_nth_fib_iter(n):
     pass
 
 
@@ -164,15 +165,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [1, 0, 0, -1, -1, 0, 1, 1]
-    order = [0, 1, -1]
-    expected = [0, 0, 0, 1, 1, 1, -1, -1]
+    for i in range(1, 10):
+        print(str(i) + "=" + str(get_nth_fib(i)))
 
-    actual = threeNumberSort(array, order)
-    print(actual)
-    assert actual == expected
+    print("===================================")
 
-    actual = threeNumberSort1(array, order)
-    print(actual)
-    assert actual == expected
+    for i in range(1, 10):
+        print(str(i) + "=" + str(get_nth_fib_iter(i)))
 
