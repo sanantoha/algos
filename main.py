@@ -131,6 +131,7 @@ tasks = [
     'number_of_islands.py',
     'lagest_island.py',
     'subtree_of_another_tree.py',
+    'valid_anagram.py'
 ]
 
 tasks_done = [
