@@ -149,15 +149,16 @@ tasks_done = [
     'min_heap_construction.py',
     'number_of_islands.py',
     'three_number_sort.py',
-    'get_nth_fib.py'
+    'get_nth_fib.py',
+    'largest_range.py'
 ]
 
 
-def get_nth_fib(n):
+def largestRange(arr):
     pass
 
 
-def get_nth_fib_iter(n):
+def largestRange1(arr):
     pass
 
 
@@ -166,11 +167,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib(i)))
+    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
+    actual = largestRange(input)
+    print(actual)
+    assert actual == [0, 7]
 
-    print("===================================")
+    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
+    actual = largestRange(input)
+    print(actual)
+    assert actual == [10, 19]
 
-    for i in range(1, 10):
-        print(str(i) + "=" + str(get_nth_fib_iter(i)))
+    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
+    actual = largestRange1(input)
+    print(actual)
+    assert actual == [0, 7]
+
+    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
+    actual = largestRange1(input)
+    print(actual)
+    assert actual == [10, 19]
 
