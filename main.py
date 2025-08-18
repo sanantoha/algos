@@ -150,15 +150,20 @@ tasks_done = [
     'number_of_islands.py',
     'three_number_sort.py',
     'get_nth_fib.py',
-    'largest_range.py'
+    'largest_range.py',
+    'numbers_of_ways_to_traverse_graph.py'
 ]
 
 
-def largestRange(arr):
+def numbers_of_ways_to_traverse_graph_rec(weight, height):
     pass
 
 
-def largestRange1(arr):
+def numbers_of_ways_to_traverse_graph(weight, height):
+    pass
+
+
+def numbers_of_ways_to_traverse_graph_math(weight, height):
     pass
 
 
@@ -167,23 +172,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-    actual = largestRange(input)
-    print(actual)
-    assert actual == [0, 7]
-
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange(input)
-    print(actual)
-    assert actual == [10, 19]
-
-    input = [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [0, 7]
-
-    input = [19, -1, 18, 17, 2, 10, 3, 12, 5, 16, 4, 11, 8, 7, 6, 15, 12, 12, 2, 1, 6, 13, 14]
-    actual = largestRange1(input)
-    print(actual)
-    assert actual == [10, 19]
-
+    assert numbers_of_ways_to_traverse_graph_rec(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph_math(4, 3) == 10
