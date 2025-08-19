@@ -131,7 +131,9 @@ tasks = [
     'number_of_islands.py',
     'lagest_island.py',
     'subtree_of_another_tree.py',
-    'valid_anagram.py'
+    'valid_anagram.py',
+    'pow.py',
+    'sqrt.py',
 ]
 
 tasks_done = [
@@ -151,20 +153,22 @@ tasks_done = [
     'three_number_sort.py',
     'get_nth_fib.py',
     'largest_range.py',
-    'numbers_of_ways_to_traverse_graph.py'
+    'numbers_of_ways_to_traverse_graph.py',
+    'group_anagrams.py'
 ]
 
 
-def numbers_of_ways_to_traverse_graph_rec(weight, height):
-    pass
+def groupAnagrams(words):
+    return []
 
 
-def numbers_of_ways_to_traverse_graph(weight, height):
-    pass
-
-
-def numbers_of_ways_to_traverse_graph_math(weight, height):
-    pass
+def compare(expected, output):
+    if len(expected) == 0:
+        assert output == expected
+        return
+    assert len(expected) == len(output)
+    for group in expected:
+        assert sorted(group) in output
 
 
 if __name__ == '__main__':
@@ -172,6 +176,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert numbers_of_ways_to_traverse_graph_rec(4, 3) == 10
-    assert numbers_of_ways_to_traverse_graph(4, 3) == 10
-    assert numbers_of_ways_to_traverse_graph_math(4, 3) == 10
+    words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
+    expected = [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
+    output = list(map(lambda x: sorted(x), groupAnagrams(words)))
+    # expected = list(map(lambda x: sorted(x), expected))
+
+    print(output)
+    print(expected)
+    compare(expected, output)
