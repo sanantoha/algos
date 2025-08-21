@@ -154,12 +154,13 @@ tasks_done = [
     'get_nth_fib.py',
     'largest_range.py',
     'numbers_of_ways_to_traverse_graph.py',
-    'group_anagrams.py'
+    'group_anagrams.py',
+    'word_ladder_ii.py'
 ]
 
 
-def groupAnagrams(words):
-    return []
+def findLadders(beginWord, endWord, wordList):
+    pass
 
 
 def compare(expected, output):
@@ -176,11 +177,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
-    expected = [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
-    output = list(map(lambda x: sorted(x), groupAnagrams(words)))
-    # expected = list(map(lambda x: sorted(x), expected))
-
-    print(output)
-    print(expected)
-    compare(expected, output)
+    beginWord = "hit"
+    endWord = "cog"
+    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
+    actual = findLadders(beginWord, endWord, wordList)
+    print(actual)
+    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
