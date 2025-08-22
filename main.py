@@ -155,21 +155,17 @@ tasks_done = [
     'largest_range.py',
     'numbers_of_ways_to_traverse_graph.py',
     'group_anagrams.py',
-    'word_ladder_ii.py'
+    'word_ladder_ii.py',
+    'levenshtein_distance.py'
 ]
 
 
-def findLadders(beginWord, endWord, wordList):
+def levenshtein_distance(s1, s2):
     pass
 
 
-def compare(expected, output):
-    if len(expected) == 0:
-        assert output == expected
-        return
-    assert len(expected) == len(output)
-    for group in expected:
-        assert sorted(group) in output
+def levenshtein_distance1(s1, s2):
+    pass
 
 
 if __name__ == '__main__':
@@ -177,9 +173,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = findLadders(beginWord, endWord, wordList)
-    print(actual)
-    assert actual == [["hit", "hot", "dot", "dog", "cog"], ["hit", "hot", "lot", "log", "cog"]]
+    assert levenshtein_distance("abc", "yabd") == 2
+    assert levenshtein_distance1("abc", "yabd") == 2
