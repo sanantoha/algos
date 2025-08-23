@@ -134,6 +134,7 @@ tasks = [
     'valid_anagram.py',
     'pow.py',
     'sqrt.py',
+    'relative_sort_array.py',
 ]
 
 tasks_done = [
