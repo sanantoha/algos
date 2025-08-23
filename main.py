@@ -156,16 +156,21 @@ tasks_done = [
     'numbers_of_ways_to_traverse_graph.py',
     'group_anagrams.py',
     'word_ladder_ii.py',
-    'levenshtein_distance.py'
+    'levenshtein_distance.py',
+    'four_number_sum.py'
 ]
 
 
-def levenshtein_distance(s1, s2):
+def fourNumberSum(arr, target):
     pass
 
 
-def levenshtein_distance1(s1, s2):
+def fourNumberSum1(arr, target):
     pass
+
+
+def sortAndStringify(array):
+    return ",".join(sorted(list(map(lambda x: str(x), array))))
 
 
 if __name__ == '__main__':
@@ -173,5 +178,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert levenshtein_distance("abc", "yabd") == 2
-    assert levenshtein_distance1("abc", "yabd") == 2
+    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
+    output = list(map(sortAndStringify, output))
+    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    assert len(output) == 2
+    for quadruplet in quadruplets:
+        assert sortAndStringify(quadruplet) in output
+
+    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
+    print(output)
+    output = list(map(sortAndStringify, output))
+    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
+    assert len(output) == 2
+    for quadruplet in quadruplets:
+        assert sortAndStringify(quadruplet) in output
