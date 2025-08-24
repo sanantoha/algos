@@ -158,20 +158,16 @@ tasks_done = [
     'group_anagrams.py',
     'word_ladder_ii.py',
     'levenshtein_distance.py',
-    'four_number_sum.py'
+    'four_number_sum.py',
+    'evaluate_expression_tree.py'
 ]
 
 
-def fourNumberSum(arr, target):
+from tree.BinaryTree import BinaryTree
+
+
+def evaluateExpressionTree(root):
     pass
-
-
-def fourNumberSum1(arr, target):
-    pass
-
-
-def sortAndStringify(array):
-    return ",".join(sorted(list(map(lambda x: str(x), array))))
 
 
 if __name__ == '__main__':
@@ -179,17 +175,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = fourNumberSum([7, 6, 4, -1, 1, 2], 16)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    tree = BinaryTree(-1)
+    tree.left = BinaryTree(-2)
+    tree.left.left = BinaryTree(-4)
+    tree.left.right = BinaryTree(2)
+    tree.left.left.left = BinaryTree(3)
+    tree.left.left.right = BinaryTree(2)
 
-    output = fourNumberSum1([7, 6, 4, -1, 1, 2], 16)
-    print(output)
-    output = list(map(sortAndStringify, output))
-    quadruplets = [[7, 6, 4, -1], [7, 6, 1, 2]]
-    assert len(output) == 2
-    for quadruplet in quadruplets:
-        assert sortAndStringify(quadruplet) in output
+    tree.right = BinaryTree(-3)
+    tree.right.left = BinaryTree(8)
+    tree.right.right = BinaryTree(3)
+    expected = 6
+    actual = evaluateExpressionTree(tree)
+    print(actual)
+    assert actual == expected
