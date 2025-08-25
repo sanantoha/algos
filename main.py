@@ -159,14 +159,12 @@ tasks_done = [
     'word_ladder_ii.py',
     'levenshtein_distance.py',
     'four_number_sum.py',
-    'evaluate_expression_tree.py'
+    'evaluate_expression_tree.py',
+    'transpose_matrix.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def evaluateExpressionTree(root):
+def transposeMatrix(matrix):
     pass
 
 
@@ -175,17 +173,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(-1)
-    tree.left = BinaryTree(-2)
-    tree.left.left = BinaryTree(-4)
-    tree.left.right = BinaryTree(2)
-    tree.left.left.left = BinaryTree(3)
-    tree.left.left.right = BinaryTree(2)
+    input = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 
-    tree.right = BinaryTree(-3)
-    tree.right.left = BinaryTree(8)
-    tree.right.right = BinaryTree(3)
-    expected = 6
-    actual = evaluateExpressionTree(tree)
+    actual = transposeMatrix(input)
     print(actual)
+
     assert actual == expected
