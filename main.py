@@ -162,11 +162,19 @@ tasks_done = [
     'evaluate_expression_tree.py',
     'transpose_matrix.py',
     'breadth_first_search.py',
-    'bubble_sort.py'
+    'bubble_sort.py',
+    'simmetrical_tree.py'
 ]
 
 
-def bubble_sort(arr):
+from tree.BinaryTree import BinaryTree
+
+
+def symmetricalTreeRec(root):
+    pass
+
+
+def symmetricalTree(root):
     pass
 
 
@@ -175,4 +183,20 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
+    tree = BinaryTree(10)
+    tree.left = BinaryTree(5)
+    tree.right = BinaryTree(5)
+    tree.left.left = BinaryTree(7)
+    tree.left.right = BinaryTree(9)
+    tree.right.left = BinaryTree(9)
+    tree.right.right = BinaryTree(7)
+
+    expected = True
+
+    actual = symmetricalTreeRec(tree)
+    print(actual)
+    assert actual == expected
+
+    actual = symmetricalTree(tree)
+    print(actual)
+    assert actual == expected
