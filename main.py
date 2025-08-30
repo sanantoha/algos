@@ -164,35 +164,13 @@ tasks_done = [
     'breadth_first_search.py',
     'bubble_sort.py',
     'simmetrical_tree.py',
-    'min_max_stack_construction.py'
+    'min_max_stack_construction.py',
+    'smallest_difference.py'
 ]
 
 
-class MinMaxStack:
-
-    def __init__(self):
-        pass
-
-    def peek(self):
-        return None
-
-    def pop(self):
-        return None
-
-    def push(self, value):
-        pass
-
-    def getMax(self):
-        return None
-
-    def getMin(self):
-        return None
-
-
-def testMinMaxPeek(min, max, peek, stack):
-    assert stack.getMin() == min
-    assert stack.getMax() == max
-    assert stack.peek() == peek
+def smallest_difference(arr1, arr2):
+    pass
 
 
 if __name__ == '__main__':
@@ -200,13 +178,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stack = MinMaxStack()
-    stack.push(5)
-    testMinMaxPeek(5, 5, 5, stack)
-    stack.push(7)
-    testMinMaxPeek(5, 7, 7, stack)
-    stack.push(2)
-    testMinMaxPeek(2, 7, 2, stack)
-    assert stack.pop() == 2
-    assert stack.pop() == 7
-    testMinMaxPeek(5, 5, 5, stack)
+    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
