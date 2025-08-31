@@ -165,11 +165,12 @@ tasks_done = [
     'bubble_sort.py',
     'simmetrical_tree.py',
     'min_max_stack_construction.py',
-    'smallest_difference.py'
+    'smallest_difference.py',
+    'minimum_passes_of_matrix.py'
 ]
 
 
-def smallest_difference(arr1, arr2):
+def minimum_passes_of_matrix(matrix):
     pass
 
 
@@ -178,4 +179,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(smallest_difference([-1, 5, 10, 20, 28, 3], [26, 134, 135, 15, 17]))  # [28, 26]
+    input = [
+        [0, -1, -3, 2, 0],
+        [1, -2, -5, -1, -3],
+        [3, 0, 0, -4, -1],
+    ]
+    expected = 3
+    actual = minimum_passes_of_matrix(input)
+    print(actual)
+    assert actual == expected
