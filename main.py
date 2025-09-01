@@ -166,11 +166,12 @@ tasks_done = [
     'simmetrical_tree.py',
     'min_max_stack_construction.py',
     'smallest_difference.py',
-    'minimum_passes_of_matrix.py'
+    'minimum_passes_of_matrix.py',
+    'disk_stacking.py'
 ]
 
 
-def minimum_passes_of_matrix(matrix):
+def diskStacking(disks):
     pass
 
 
@@ -179,12 +180,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [0, -1, -3, 2, 0],
-        [1, -2, -5, -1, -3],
-        [3, 0, 0, -4, -1],
-    ]
-    expected = 3
-    actual = minimum_passes_of_matrix(input)
+    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
+    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
+    actual = diskStacking(input)
     print(actual)
-    assert actual == expected
+    assert (actual == expected)
