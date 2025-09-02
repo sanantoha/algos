@@ -167,12 +167,31 @@ tasks_done = [
     'min_max_stack_construction.py',
     'smallest_difference.py',
     'minimum_passes_of_matrix.py',
-    'disk_stacking.py'
+    'disk_stacking.py',
+    'find_successor.py'
 ]
 
 
-def diskStacking(disks):
+# This is an input class. Do not edit.
+class BinaryTree:
+    def __init__(self, value, left=None, right=None, parent=None):
+        self.value = value
+        self.left = left
+        self.right = right
+        self.parent = parent
+
+
+def find_successor(tree, node):
     pass
+
+
+#                   1
+#                /    \
+#              2        3
+#           /   \
+#         4      5
+#       /
+#     6
 
 
 if __name__ == '__main__':
@@ -180,8 +199,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[2, 1, 2], [3, 2, 3], [2, 2, 8], [2, 3, 4], [1, 3, 1], [4, 4, 5]]
-    expected = [[2, 1, 2], [3, 2, 3], [4, 4, 5]]
-    actual = diskStacking(input)
-    print(actual)
-    assert (actual == expected)
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.parent = root
+    root.right = BinaryTree(3)
+    root.right.parent = root
+    root.left.left = BinaryTree(4)
+    root.left.left.parent = root.left
+    root.left.right = BinaryTree(5)
+    root.left.right.parent = root.left
+    root.left.left.left = BinaryTree(6)
+    root.left.left.left.parent = root.left.left
+    node = root.left.right
+    expected = root
+    actual = find_successor(root, node)
+    assert actual == expected
