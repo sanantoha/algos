@@ -168,30 +168,13 @@ tasks_done = [
     'smallest_difference.py',
     'minimum_passes_of_matrix.py',
     'disk_stacking.py',
-    'find_successor.py'
+    'find_successor.py',
+    'subtree_of_another_tree.py'
 ]
 
 
-# This is an input class. Do not edit.
-class BinaryTree:
-    def __init__(self, value, left=None, right=None, parent=None):
-        self.value = value
-        self.left = left
-        self.right = right
-        self.parent = parent
-
-
-def find_successor(tree, node):
+def is_subtree(root, sub_root):
     pass
-
-
-#                   1
-#                /    \
-#              2        3
-#           /   \
-#         4      5
-#       /
-#     6
 
 
 if __name__ == '__main__':
@@ -199,18 +182,39 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.left.parent = root
-    root.right = BinaryTree(3)
-    root.right.parent = root
-    root.left.left = BinaryTree(4)
-    root.left.left.parent = root.left
-    root.left.right = BinaryTree(5)
-    root.left.right.parent = root.left
-    root.left.left.left = BinaryTree(6)
-    root.left.left.left.parent = root.left.left
-    node = root.left.right
-    expected = root
-    actual = find_successor(root, node)
-    assert actual == expected
+    root1 = BinaryTree(3)
+    root1.left = BinaryTree(4)
+    root1.left.left = BinaryTree(1)
+    root1.left.right = BinaryTree(2)
+    root1.right = BinaryTree(5)
+
+    sub_tree = BinaryTree(4)
+    sub_tree.left = BinaryTree(1)
+    sub_tree.right = BinaryTree(2)
+
+    res = is_subtree(root1, sub_tree)
+    print(res)  # True
+    assert res
+
+    root2 = BinaryTree(3)
+    root2.left = BinaryTree(4)
+    root2.left.left = BinaryTree(1)
+    root2.left.right = BinaryTree(2)
+    root2.left.right.left = BinaryTree(0)
+    root2.right = BinaryTree(5)
+
+    res = is_subtree(root2, sub_tree)
+    print(res)  # False
+    assert not res
+
+    root3 = BinaryTree(4)
+    root3.left = BinaryTree(4)
+    root3.left.left = BinaryTree(4)
+    root3.left.left.left = BinaryTree(4)
+    root3.left.left.left.left = BinaryTree(4)
+    root3.left.left.left.left.left = BinaryTree(1)
+    root3.left.left.left.left.right = BinaryTree(2)
+
+    res = is_subtree(root3, sub_tree)
+    print(res)  # True
+    assert res
