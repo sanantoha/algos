@@ -172,6 +172,7 @@ tasks_done = [
     'subtree_of_another_tree.py'
 ]
 
+from tree.BinaryTree import BinaryTree
 
 def is_subtree(root, sub_root):
     pass
