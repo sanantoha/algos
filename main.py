@@ -170,11 +170,20 @@ tasks_done = [
     'disk_stacking.py',
     'find_successor.py',
     'subtree_of_another_tree.py',
-    'array_of_products.py'
+    'array_of_products.py',
+    'relative_sort_array.py'
 ]
 
 
-def array_of_products(arr):
+def relative_sort_array(arr1, arr2):
+    pass
+
+
+def relative_sort_array_hashmap(arr1, arr2):
+    pass
+
+
+def relative_sort_array_counting_sort(arr1, arr2):
     pass
 
 
@@ -183,4 +192,32 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(array_of_products([1, 2, 3, 4]))
+    arr1 = [2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19]
+    arr2 = [2, 1, 4, 3, 9, 6]
+
+    res = relative_sort_array(arr1, arr2)
+    res1 = relative_sort_array_hashmap(arr1, arr2)
+    res2 = relative_sort_array_counting_sort(arr1, arr2)
+
+    print(res)
+    print(res1)
+    print(res2)
+    assert res == [2, 2, 2, 1, 4, 3, 3, 9, 6, 7, 19]
+    assert res1 == [2, 2, 2, 1, 4, 3, 3, 9, 6, 7, 19]
+    assert res2 == [2, 2, 2, 1, 4, 3, 3, 9, 6, 7, 19]
+
+    # ==========================================
+
+    arr1 = [28, 6, 22, 8, 44, 17]
+    arr2 = [22, 28, 8, 6]
+
+    res = relative_sort_array(arr1, arr2)
+    res1 = relative_sort_array_hashmap(arr1, arr2)
+    res2 = relative_sort_array_counting_sort(arr1, arr2)
+
+    print(res)
+    print(res1)
+    print(res2)
+    assert res == [22, 28, 8, 6, 17, 44]
+    assert res1 == [22, 28, 8, 6, 17, 44]
+    assert res2 == [22, 28, 8, 6, 17, 44]
