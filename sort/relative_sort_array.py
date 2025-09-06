@@ -1,5 +1,5 @@
 
-# O(a1 * a2 + d * log(d)) time | O(a1) space
+# O(a1 * a2 + d * log(d)) time | O(a1 + a2) space
 def relative_sort_array(arr1, arr2):
     cnt = [0 for _ in range(len(arr2))]
 
