@@ -172,23 +172,16 @@ tasks_done = [
     'subtree_of_another_tree.py',
     'array_of_products.py',
     'relative_sort_array.py',
-    'staircase_traversal.py'
+    'staircase_traversal.py',
+    'next_greater_element.py'
 ]
 
 
-def staircaseTraversal(height, weight):
+def nextGreaterElement(arr):
     pass
 
 
-def staircaseTraversalMemo(height, weight):
-    pass
-
-
-def staircaseTraversalIter(height, weight):
-    pass
-
-
-def staircaseTraversalWindow(height, weight):
+def nextGreaterElement1(arr):
     pass
 
 
@@ -197,21 +190,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stairs = 4
-    maxSteps = 2
-    expected = 5
-    actual = staircaseTraversal(stairs, maxSteps)
+    input = [2, 5, -3, -4, 6, 7, 2]
+    expected = [5, 6, 6, 6, 7, -1, 5]
+    actual = nextGreaterElement(input)
     print(actual)
     assert actual == expected
 
-    actual = staircaseTraversalMemo(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalIter(stairs, maxSteps)
-    print(actual)
-    assert actual == expected
-
-    actual = staircaseTraversalWindow(stairs, maxSteps)
+    actual = nextGreaterElement1(input)
     print(actual)
     assert actual == expected
