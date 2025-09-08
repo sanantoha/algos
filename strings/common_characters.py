@@ -24,7 +24,7 @@ def commonCharacters(strings):
 
 
 if __name__ == '__main__':
-    input = ["abc", "bcdc", "bad"]
+    input = ["abc", "bcdc", "badca"]
     expected = ["b", "c"]
     actual = commonCharacters(input)
     actual.sort()

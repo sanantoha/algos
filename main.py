@@ -173,15 +173,12 @@ tasks_done = [
     'array_of_products.py',
     'relative_sort_array.py',
     'staircase_traversal.py',
-    'next_greater_element.py'
+    'next_greater_element.py',
+    'common_characters.py'
 ]
 
 
-def nextGreaterElement(arr):
-    pass
-
-
-def nextGreaterElement1(arr):
+def common_characters(words):
     pass
 
 
@@ -190,12 +187,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [2, 5, -3, -4, 6, 7, 2]
-    expected = [5, 6, 6, 6, 7, -1, 5]
-    actual = nextGreaterElement(input)
-    print(actual)
-    assert actual == expected
-
-    actual = nextGreaterElement1(input)
+    input = ["abc", "bcdc", "badca"]
+    expected = ["b", "c"]
+    actual = common_characters(input)
+    actual.sort()
     print(actual)
     assert actual == expected
