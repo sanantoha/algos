@@ -174,11 +174,23 @@ tasks_done = [
     'relative_sort_array.py',
     'staircase_traversal.py',
     'next_greater_element.py',
-    'common_characters.py'
+    'common_characters.py',
+    'node_depths.py'
 ]
 
 
-def common_characters(words):
+from tree.BinaryTree import BinaryTree
+
+
+def node_depths(root):
+    pass
+
+
+def node_depths1(root):
+    pass
+
+
+def node_depths2(root):
     pass
 
 
@@ -187,9 +199,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["abc", "bcdc", "badca"]
-    expected = ["b", "c"]
-    actual = common_characters(input)
-    actual.sort()
-    print(actual)
-    assert actual == expected
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.right = BinaryTree(9)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    root.right.left = BinaryTree(6)
+    root.right.right = BinaryTree(7)
+    print(node_depths(root) == 16)
+    print(node_depths1(root) == 16)
+    print(node_depths2(root) == 16)
