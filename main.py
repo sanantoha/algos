@@ -175,22 +175,16 @@ tasks_done = [
     'staircase_traversal.py',
     'next_greater_element.py',
     'common_characters.py',
-    'node_depths.py'
+    'node_depths.py',
+    'generate_document.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def node_depths(root):
+def generate_document(characters, document):
     pass
 
 
-def node_depths1(root):
-    pass
-
-
-def node_depths2(root):
+def generate_document1(characters, document):
     pass
 
 
@@ -199,15 +193,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.left.left = BinaryTree(4)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.right = BinaryTree(9)
-    root.left.right = BinaryTree(5)
-    root.right = BinaryTree(3)
-    root.right.left = BinaryTree(6)
-    root.right.right = BinaryTree(7)
-    print(node_depths(root) == 16)
-    print(node_depths1(root) == 16)
-    print(node_depths2(root) == 16)
+    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
