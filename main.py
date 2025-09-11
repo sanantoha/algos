@@ -176,15 +176,18 @@ tasks_done = [
     'next_greater_element.py',
     'common_characters.py',
     'node_depths.py',
-    'generate_document.py'
+    'generate_document.py',
+    'find_nodes_distance_k.py'
 ]
 
+from tree.BinaryTree import BinaryTree
 
-def generate_document(characters, document):
+
+def findNodesDistanceK(root, target, k):
     pass
 
 
-def generate_document1(characters, document):
+def findNodesDistanceK1(root, target, k):
     pass
 
 
@@ -193,5 +196,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
-    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.right = BinaryTree(3)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right.right = BinaryTree(6)
+    root.right.right.left = BinaryTree(7)
+    root.right.right.right = BinaryTree(8)
+    target = 3
+    k = 2
+    expected = [2, 7, 8]
+    actual = findNodesDistanceK(root, target, k)
+    print(actual)
+    actual.sort()
+    assert actual == expected
+
+    actual = findNodesDistanceK1(root, target, k)
+    print(actual)
+    actual.sort()
+    assert actual == expected
