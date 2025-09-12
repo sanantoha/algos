@@ -177,17 +177,12 @@ tasks_done = [
     'common_characters.py',
     'node_depths.py',
     'generate_document.py',
-    'find_nodes_distance_k.py'
+    'find_nodes_distance_k.py',
+    'tournament_winner.py'
 ]
 
-from tree.BinaryTree import BinaryTree
 
-
-def findNodesDistanceK(root, target, k):
-    pass
-
-
-def findNodesDistanceK1(root, target, k):
+def tournament_winner(competitions, results):
     pass
 
 
@@ -196,23 +191,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.right.right.left = BinaryTree(7)
-    root.right.right.right = BinaryTree(8)
-    target = 3
-    k = 2
-    expected = [2, 7, 8]
-    actual = findNodesDistanceK(root, target, k)
-    print(actual)
-    actual.sort()
-    assert actual == expected
+    competitions = [
+        ["HTML", "C#"],
+        ["C#", "Python"],
+        ["Python", "HTML"]
+    ]
 
-    actual = findNodesDistanceK1(root, target, k)
-    print(actual)
-    actual.sort()
-    assert actual == expected
+    results = [0, 0, 1]
+
+    print(tournament_winner(competitions, results))
