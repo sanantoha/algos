@@ -178,11 +178,12 @@ tasks_done = [
     'node_depths.py',
     'generate_document.py',
     'find_nodes_distance_k.py',
-    'tournament_winner.py'
+    'tournament_winner.py',
+    'selection_sort.py'
 ]
 
 
-def tournament_winner(competitions, results):
+def selection_sort(arr):
     pass
 
 
@@ -191,12 +192,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    competitions = [
-        ["HTML", "C#"],
-        ["C#", "Python"],
-        ["Python", "HTML"]
-    ]
-
-    results = [0, 0, 1]
-
-    print(tournament_winner(competitions, results))
+    arr = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
+    print(selection_sort(arr))
