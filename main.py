@@ -179,11 +179,17 @@ tasks_done = [
     'generate_document.py',
     'find_nodes_distance_k.py',
     'tournament_winner.py',
-    'selection_sort.py'
+    'selection_sort.py',
+    'palindrom_check.py',
+    'binary_search.py'
 ]
 
 
-def selection_sort(arr):
+def is_palindrome(s):
+    pass
+
+
+def binary_search(arr, target):
     pass
 
 
@@ -192,5 +198,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arr = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    print(selection_sort(arr))
+    print(is_palindrome("abcdcba"))
+
+    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
+    print(binary_search(array, 60))
