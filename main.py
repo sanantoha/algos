@@ -182,18 +182,12 @@ tasks_done = [
     'selection_sort.py',
     'palindrom_check.py',
     'binary_search.py',
-    'height_balanced_binary_tree.py'
+    'height_balanced_binary_tree.py',
+    'knapsack_problem.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def height_balanced_binary_tree(root):
-    pass
-
-
-def height_balanced_binary_tree1(root):
+def knapsack_problem(items, capacity):
     pass
 
 
@@ -202,17 +196,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.right = BinaryTree(3)
-    root.left.left = BinaryTree(4)
-    root.left.right = BinaryTree(5)
-    root.right.right = BinaryTree(6)
-    root.left.right.left = BinaryTree(7)
-    root.left.right.right = BinaryTree(8)
-    expected = True
-    actual = height_balanced_binary_tree(root)
+    items = [[1, 2], [4, 3], [5, 6], [6, 7]] # [value, weight]
+    capacity = 10
+    expected = [10, [1, 3]]
+    actual = knapsack_problem(items, capacity)
+    print(actual)
     assert actual == expected
-
-    actual1 = height_balanced_binary_tree1(root)
-    assert actual1 == expected
