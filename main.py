@@ -183,11 +183,12 @@ tasks_done = [
     'palindrom_check.py',
     'binary_search.py',
     'height_balanced_binary_tree.py',
-    'knapsack_problem.py'
+    'knapsack_problem.py',
+    'river_sizes.py'
 ]
 
 
-def knapsack_problem(items, capacity):
+def river_sizes(matrix):
     pass
 
 
@@ -196,9 +197,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    items = [[1, 2], [4, 3], [5, 6], [6, 7]] # [value, weight]
-    capacity = 10
-    expected = [10, [1, 3]]
-    actual = knapsack_problem(items, capacity)
+    # test_input = [[1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 0, 1, 0, 1], [1, 0, 1, 0, 1], [1, 0, 1, 1, 0]]
+    test_input = [
+        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
+        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
+        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
+        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
+        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
+    ]
+
+    expected = [1, 1, 2, 2, 5, 21]
+    # expected = [1, 2, 2, 2, 5]
+
+    actual = sorted(river_sizes(test_input))
     print(actual)
     assert actual == expected
