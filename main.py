@@ -184,11 +184,12 @@ tasks_done = [
     'binary_search.py',
     'height_balanced_binary_tree.py',
     'knapsack_problem.py',
-    'river_sizes.py'
+    'river_sizes.py',
+    'find_pivot_index.py'
 ]
 
 
-def river_sizes(matrix):
+def pivot_index(arr):
     pass
 
 
@@ -197,18 +198,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    # test_input = [[1, 0, 0, 1, 0], [1, 0, 1, 0, 0], [0, 0, 1, 0, 1], [1, 0, 1, 0, 1], [1, 0, 1, 1, 0]]
-    test_input = [
-        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
-        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
-        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
-        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
-        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
-    ]
-
-    expected = [1, 1, 2, 2, 5, 21]
-    # expected = [1, 2, 2, 2, 5]
-
-    actual = sorted(river_sizes(test_input))
+    actual = pivot_index([1, 7, 3, 6, 5, 6])
     print(actual)
-    assert actual == expected
+    assert actual == 3
+    assert pivot_index([1, 2, 3]) == -1
+    assert pivot_index([2, 1, -1]) == 0
