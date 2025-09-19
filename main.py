@@ -185,11 +185,12 @@ tasks_done = [
     'height_balanced_binary_tree.py',
     'knapsack_problem.py',
     'river_sizes.py',
-    'find_pivot_index.py'
+    'find_pivot_index.py',
+    'zigzag_traverse.py',
 ]
 
 
-def pivot_index(arr):
+def zigzag_traverse(matrix):
     pass
 
 
@@ -198,8 +199,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = pivot_index([1, 7, 3, 6, 5, 6])
+    test = [[1, 3, 4, 10], [2, 5, 9, 11], [6, 8, 12, 15], [7, 13, 14, 16]]
+    actual = zigzag_traverse(test)
     print(actual)
-    assert actual == 3
-    assert pivot_index([1, 2, 3]) == -1
-    assert pivot_index([2, 1, -1]) == 0
+    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
