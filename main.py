@@ -188,13 +188,11 @@ tasks_done = [
     'find_pivot_index.py',
     'zigzag_traverse.py',
     'invert_binary_tree.py',
+    'valid_anagram.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def invert_binary_tree(root):
+def is_anagram(s, t):
     pass
 
 
@@ -203,12 +201,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
-    inverted_tree = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
-    invert_binary_tree(tree)
-    assert tree.__eq__(inverted_tree)
+    res = is_anagram("anagram", "nagaram")
+    print(res)
+    assert res
 
-    tree1 = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9])
-    inverted_tree1 = BinaryTree(1).inverted_insert([2, 3, 4, 5, 6, 7, 8, 9])
-    invert_binary_tree_iter(tree1)
-    assert tree1.__eq__(inverted_tree1)
+    res = is_anagram("rat", "cat")
+    print(not res)
+    assert not res
