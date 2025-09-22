@@ -188,11 +188,12 @@ tasks_done = [
     'find_pivot_index.py',
     'zigzag_traverse.py',
     'invert_binary_tree.py',
-    'valid_anagram.py'
+    'valid_anagram.py',
+    'longest_palindromic_substring.py'
 ]
 
 
-def is_anagram(s, t):
+def longestPalindromicSubstring(str):
     pass
 
 
@@ -201,10 +202,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    res = is_anagram("anagram", "nagaram")
-    print(res)
-    assert res
-
-    res = is_anagram("rat", "cat")
-    print(not res)
-    assert not res
+    actual = longestPalindromicSubstring("abaxyzzyxf")
+    print(actual)
+    assert actual == "xyzzyx"
