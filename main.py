@@ -189,11 +189,12 @@ tasks_done = [
     'zigzag_traverse.py',
     'invert_binary_tree.py',
     'valid_anagram.py',
-    'longest_palindromic_substring.py'
+    'longest_palindromic_substring.py',
+    'number_of_ways_to_make_change.py'
 ]
 
 
-def longestPalindromicSubstring(str):
+def number_of_ways_to_make_change(n, denoms):
     pass
 
 
@@ -202,6 +203,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = longestPalindromicSubstring("abaxyzzyxf")
-    print(actual)
-    assert actual == "xyzzyx"
+    print(number_of_ways_to_make_change(6, [1, 5]))
+    assert number_of_ways_to_make_change(6, [1, 5]) == 2
