@@ -190,11 +190,12 @@ tasks_done = [
     'invert_binary_tree.py',
     'valid_anagram.py',
     'longest_palindromic_substring.py',
-    'number_of_ways_to_make_change.py'
+    'number_of_ways_to_make_change.py',
+    'one_edit.py',
 ]
 
 
-def number_of_ways_to_make_change(n, denoms):
+def oneEdit(s1, s2):
     pass
 
 
@@ -203,5 +204,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(number_of_ways_to_make_change(6, [1, 5]))
-    assert number_of_ways_to_make_change(6, [1, 5]) == 2
+    stringOne = "hello"
+    stringTwo = "helo"
+    expected = True
+    actual = oneEdit(stringOne, stringTwo)
+    print(actual)
+    assert actual == expected
