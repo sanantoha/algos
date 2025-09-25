@@ -192,10 +192,15 @@ tasks_done = [
     'longest_palindromic_substring.py',
     'number_of_ways_to_make_change.py',
     'one_edit.py',
+    'validate_subsequence.py',
 ]
 
 
-def oneEdit(s1, s2):
+def is_valid_subsequence(arr, seq):
+    pass
+
+
+def is_valid_subsequence1(arr, seq):
     pass
 
 
@@ -204,9 +209,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stringOne = "hello"
-    stringTwo = "helo"
-    expected = True
-    actual = oneEdit(stringOne, stringTwo)
-    print(actual)
-    assert actual == expected
+    array = [5, 1, 22, 25, 6, -1, 8, 10]
+    sequence = [1, 6, -1, 10]
+    print(is_valid_subsequence(array, sequence))
+    print(is_valid_subsequence1(array, sequence))
