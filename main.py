@@ -193,14 +193,11 @@ tasks_done = [
     'number_of_ways_to_make_change.py',
     'one_edit.py',
     'validate_subsequence.py',
+    'median_of_two_sorted_arrays.py'
 ]
 
 
-def is_valid_subsequence(arr, seq):
-    pass
-
-
-def is_valid_subsequence1(arr, seq):
+def medianOfTwoSortedArrays(arr1, arr2):
     pass
 
 
@@ -209,7 +206,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [5, 1, 22, 25, 6, -1, 8, 10]
-    sequence = [1, 6, -1, 10]
-    print(is_valid_subsequence(array, sequence))
-    print(is_valid_subsequence1(array, sequence))
+    arrayOne = [1, 3, 4, 5]
+    arrayTwo = [2, 3, 6, 7]
+    actual = medianOfTwoSortedArrays(arrayOne, arrayTwo)
+    print(actual)
+    assert actual == 3.5
+
+    actual = medianOfTwoSortedArrays([6, 7, 8, 9], [1, 3, 4, 5])
+    print(actual)
+    assert actual == 5.5
