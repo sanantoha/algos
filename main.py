@@ -194,11 +194,12 @@ tasks_done = [
     'one_edit.py',
     'validate_subsequence.py',
     'median_of_two_sorted_arrays.py',
-    'sorted_squared_array.py'
+    'sorted_squared_array.py',
+    'tandem_bicycle.py'
 ]
 
 
-def sorted_squared_array1(arr):
+def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
     pass
 
 
@@ -207,4 +208,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(sorted_squared_array1([-3, 1, 2, 3, 5, 6, 8, 9]))
+    print(
+        tandem_bicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True)
+    )
