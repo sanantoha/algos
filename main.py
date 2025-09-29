@@ -195,11 +195,12 @@ tasks_done = [
     'validate_subsequence.py',
     'median_of_two_sorted_arrays.py',
     'sorted_squared_array.py',
-    'tandem_bicycle.py'
+    'tandem_bicycle.py',
+    'sunset_views.py'
 ]
 
 
-def tandem_bicycle(red_shirt_speed, blue_shirt_speed, fastest):
+def sunsetViews(buildings, direction):
     pass
 
 
@@ -208,6 +209,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(
-        tandem_bicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], True)
-    )
+    buildings = [3, 5, 4, 4, 3, 1, 3, 2]
+    direction = "EAST"
+    expected = [1, 3, 6, 7]
+    actual = sunsetViews(buildings, direction)
+    print(actual)
+    assert actual == expected
+
+    direction = "WEST"
+    expected = [0, 1]
+    actual = sunsetViews(buildings, direction)
+    print(actual)
+    assert actual == expected
