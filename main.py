@@ -196,11 +196,36 @@ tasks_done = [
     'median_of_two_sorted_arrays.py',
     'sorted_squared_array.py',
     'tandem_bicycle.py',
-    'sunset_views.py'
+    'sunset_views.py',
+    'max_sum_in_binary_tree.py'
 ]
 
 
-def sunsetViews(buildings, direction):
+class BinaryTree:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+    def insert(self, values, i=0):
+        if i >= len(values):
+            return
+        queue = [self]
+        while len(queue) > 0:
+            current = queue.pop(0)
+            if current.left is None:
+                current.left = BinaryTree(values[i])
+                break
+            queue.append(current.left)
+            if current.right is None:
+                current.right = BinaryTree(values[i])
+                break
+            queue.append(current.right)
+        self.insert(values, i + 1)
+        return self
+
+
+def maxPathSum(tree):
     pass
 
 
@@ -209,15 +234,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    buildings = [3, 5, 4, 4, 3, 1, 3, 2]
-    direction = "EAST"
-    expected = [1, 3, 6, 7]
-    actual = sunsetViews(buildings, direction)
+    test = BinaryTree(1).insert([2, 3, 4, 5, 6, 7])
+    actual = maxPathSum(test)
     print(actual)
-    assert actual == expected
-
-    direction = "WEST"
-    expected = [0, 1]
-    actual = sunsetViews(buildings, direction)
-    print(actual)
-    assert actual == expected
+    assert actual == 18
