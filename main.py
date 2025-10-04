@@ -200,15 +200,12 @@ tasks_done = [
     'max_sum_in_binary_tree.py',
     'subarray_sort.py',
     'sum_of_linked_lists.py',
-    'missing_numbers.py'
+    'missing_numbers.py',
+    'semordinal.py'
 ]
 
 
-def missingNumbers(arr):
-    pass
-
-
-def missingNumbers1(arr):
+def semordnilap(arr):
     pass
 
 
@@ -217,12 +214,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [4, 5, 1, 3]
-    expected = [2, 6]
-    actual = missingNumbers(input)
-    print(actual)
-    assert actual == expected
-
-    actual = missingNumbers1(input)
-    print(actual)
-    assert actual == expected
+    input = ["desserts", "stressed", "hello"]
+    expected = [["desserts", "stressed"]]
+    actual = semordnilap(input)
+    print(actual)  # [['desserts', 'stressed']]
