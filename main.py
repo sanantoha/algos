@@ -201,11 +201,12 @@ tasks_done = [
     'subarray_sort.py',
     'sum_of_linked_lists.py',
     'missing_numbers.py',
-    'semordinal.py'
+    'semordinal.py',
+    'run_length_encoding.py'
 ]
 
 
-def semordnilap(arr):
+def run_length_encoding(src):
     pass
 
 
@@ -214,7 +215,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["desserts", "stressed", "hello"]
-    expected = [["desserts", "stressed"]]
-    actual = semordnilap(input)
-    print(actual)  # [['desserts', 'stressed']]
+    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
