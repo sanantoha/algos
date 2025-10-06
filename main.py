@@ -202,11 +202,12 @@ tasks_done = [
     'sum_of_linked_lists.py',
     'missing_numbers.py',
     'semordinal.py',
-    'run_length_encoding.py'
+    'run_length_encoding.py',
+    'remove_islands.py'
 ]
 
 
-def run_length_encoding(src):
+def remove_islands(matrix):
     pass
 
 
@@ -215,4 +216,22 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(run_length_encoding("AAAAAAAAAAAAABBCCCCDD") == "9A4A2B4C2D")
+    input = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 1, 1, 1],
+        [0, 0, 1, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 1, 1, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    expected = [
+        [1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 1, 1],
+        [0, 0, 0, 0, 1, 0],
+        [1, 1, 0, 0, 1, 0],
+        [1, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0, 0, 1],
+    ]
+    actual = remove_islands(input)
+    print(actual)
+    assert actual == expected
