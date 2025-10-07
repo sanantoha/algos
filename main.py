@@ -203,11 +203,12 @@ tasks_done = [
     'missing_numbers.py',
     'semordinal.py',
     'run_length_encoding.py',
-    'remove_islands.py'
+    'remove_islands.py',
+    'kruskals_algorithm.py'
 ]
 
 
-def remove_islands(matrix):
+def kruskals_algorithm(graph):
     pass
 
 
@@ -217,21 +218,18 @@ if __name__ == '__main__':
     print(remain)
 
     input = [
-        [1, 0, 0, 0, 0, 0],
-        [0, 1, 0, 1, 1, 1],
-        [0, 0, 1, 0, 1, 0],
-        [1, 1, 0, 0, 1, 0],
-        [1, 0, 1, 1, 0, 0],
-        [1, 0, 0, 0, 0, 1],
+        [[1, 3], [2, 5]],
+        [[0, 3], [2, 10], [3, 12]],
+        [[0, 5], [1, 10]],
+        [[1, 12]]
     ]
+
     expected = [
-        [1, 0, 0, 0, 0, 0],
-        [0, 0, 0, 1, 1, 1],
-        [0, 0, 0, 0, 1, 0],
-        [1, 1, 0, 0, 1, 0],
-        [1, 0, 0, 0, 0, 0],
-        [1, 0, 0, 0, 0, 1],
+        [[1, 3], [2, 5]],
+        [[0, 3], [3, 12]],
+        [[0, 5]],
+        [[1, 12]]
     ]
-    actual = remove_islands(input)
-    print(actual)
+    actual = kruskals_algorithm(input)
+    print(actual, "     =    ", expected)
     assert actual == expected
