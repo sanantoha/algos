@@ -204,12 +204,34 @@ tasks_done = [
     'semordinal.py',
     'run_length_encoding.py',
     'remove_islands.py',
-    'kruskals_algorithm.py'
+    'kruskals_algorithm.py',
+    'get_youngest_common_ancestor.py'
 ]
 
 
-def kruskals_algorithm(graph):
-    pass
+# This is an input class. Do not edit.
+class AncestralTree:
+    def __init__(self, name):
+        self.name = name
+        self.ancestor = None
+
+
+class AncestralTree(AncestralTree):
+    def addDescendants(self, *descendants):
+        for descendant in descendants:
+            descendant.ancestor = self
+
+
+def new_trees():
+    ancestralTrees = {}
+    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+        ancestralTrees[letter] = AncestralTree(letter)
+    return ancestralTrees
+
+
+# O(h) time | O(1) space
+def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
+    return None
 
 
 if __name__ == '__main__':
@@ -217,19 +239,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [
-        [[1, 3], [2, 5]],
-        [[0, 3], [2, 10], [3, 12]],
-        [[0, 5], [1, 10]],
-        [[1, 12]]
-    ]
+    trees = new_trees()
+    trees["A"].addDescendants(trees["B"], trees["C"])
+    trees["B"].addDescendants(trees["D"], trees["E"])
+    trees["D"].addDescendants(trees["H"], trees["I"])
+    trees["C"].addDescendants(trees["F"], trees["G"])
 
-    expected = [
-        [[1, 3], [2, 5]],
-        [[0, 3], [3, 12]],
-        [[0, 5]],
-        [[1, 12]]
-    ]
-    actual = kruskals_algorithm(input)
-    print(actual, "     =    ", expected)
-    assert actual == expected
+    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
+    assert yca == trees["B"]
