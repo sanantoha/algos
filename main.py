@@ -206,11 +206,16 @@ tasks_done = [
     'remove_islands.py',
     'kruskals_algorithm.py',
     'get_youngest_common_ancestor.py',
-    'word_ladder.py'
+    'word_ladder.py',
+    'kadanes_distance.py'
 ]
 
 
-def ladderLength(beginWord, endWord, wordList):
+def kadanes_distance(arr):
+    pass
+
+
+def kadanes_distance1(arr):
     pass
 
 
@@ -219,9 +224,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    beginWord = "hit"
-    endWord = "cog"
-    wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
-    actual = ladderLength(beginWord, endWord, wordList)
-    print(actual)
-    assert actual == 5
+    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    assert kadanes_distance1([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
