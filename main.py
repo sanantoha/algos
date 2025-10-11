@@ -207,15 +207,32 @@ tasks_done = [
     'kruskals_algorithm.py',
     'get_youngest_common_ancestor.py',
     'word_ladder.py',
-    'kadanes_distance.py'
+    'kadanes_distance.py',
+    'bst_traversal.py'
 ]
 
 
-def kadanes_distance(arr):
+def pre_order_traverse(root, arr):
     pass
 
 
-def kadanes_distance1(arr):
+def pre_order_traverse_iter(root, arr):
+    pass
+
+
+def in_order_traverse(root, arr):
+    pass
+
+
+def in_order_traverse_iter(root, arr):
+    pass
+
+
+def post_order_traverse(root, arr):
+    pass
+
+
+def post_order_traverse_iter(root, arr):
     pass
 
 
@@ -224,5 +241,25 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
-    assert kadanes_distance1([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    from tree.BST import BST
+
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.right = BST(22)
+
+    in_order = [1, 2, 5, 5, 10, 15, 22]
+    pre_order = [10, 5, 2, 1, 5, 15, 22]
+    post_order = [1, 2, 5, 5, 22, 15, 10]
+
+    assert pre_order_traverse(root, []) == pre_order
+    assert pre_order_traverse_iter(root, []) == pre_order
+
+    assert in_order_traverse(root, []) == in_order
+    assert in_order_traverse_iter(root, []) == in_order
+
+    assert post_order_traverse(root, []) == post_order
+    assert post_order_traverse_iter(root, []) == post_order
