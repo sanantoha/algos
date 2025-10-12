@@ -208,31 +208,15 @@ tasks_done = [
     'get_youngest_common_ancestor.py',
     'word_ladder.py',
     'kadanes_distance.py',
-    'bst_traversal.py'
+    'bst_traversal.py',
+    'merging_linked_lists.py'
 ]
 
 
-def pre_order_traverse(root, arr):
-    pass
+from list.LinkedList import LinkedList
 
 
-def pre_order_traverse_iter(root, arr):
-    pass
-
-
-def in_order_traverse(root, arr):
-    pass
-
-
-def in_order_traverse_iter(root, arr):
-    pass
-
-
-def post_order_traverse(root, arr):
-    pass
-
-
-def post_order_traverse_iter(root, arr):
+def mergingLinkedLists(l1, l2):
     pass
 
 
@@ -241,25 +225,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BST import BST
+    l1 = LinkedList(1)
+    l1.next = LinkedList(2)
+    l1.next.next = LinkedList(3)
+    l1.next.next.next = LinkedList(4)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.right = BST(22)
+    l2 = LinkedList(10)
+    l2.next = LinkedList(20)
+    l2.next.next = l1.next.next
 
-    in_order = [1, 2, 5, 5, 10, 15, 22]
-    pre_order = [10, 5, 2, 1, 5, 15, 22]
-    post_order = [1, 2, 5, 5, 22, 15, 10]
-
-    assert pre_order_traverse(root, []) == pre_order
-    assert pre_order_traverse_iter(root, []) == pre_order
-
-    assert in_order_traverse(root, []) == in_order
-    assert in_order_traverse_iter(root, []) == in_order
-
-    assert post_order_traverse(root, []) == post_order
-    assert post_order_traverse_iter(root, []) == post_order
+    actual = mergingLinkedLists(l1, l2)
+    print(actual)
+    assert actual.getNodesInArray() == [3, 4]
