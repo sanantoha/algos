@@ -209,14 +209,16 @@ tasks_done = [
     'word_ladder.py',
     'kadanes_distance.py',
     'bst_traversal.py',
-    'merging_linked_lists.py'
+    'merging_linked_lists.py',
+    'max_subset_sum_no_adjucent.py'
 ]
 
 
-from list.LinkedList import LinkedList
+def max_subset_sum_no_adjucent(arr):
+    pass
 
 
-def mergingLinkedLists(l1, l2):
+def max_subset_sum_no_adjucent1(arr):
     pass
 
 
@@ -225,15 +227,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    l1 = LinkedList(1)
-    l1.next = LinkedList(2)
-    l1.next.next = LinkedList(3)
-    l1.next.next.next = LinkedList(4)
+    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
 
-    l2 = LinkedList(10)
-    l2.next = LinkedList(20)
-    l2.next.next = l1.next.next
-
-    actual = mergingLinkedLists(l1, l2)
-    print(actual)
-    assert actual.getNodesInArray() == [3, 4]
+    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
+    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
