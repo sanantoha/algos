@@ -210,15 +210,16 @@ tasks_done = [
     'kadanes_distance.py',
     'bst_traversal.py',
     'merging_linked_lists.py',
-    'max_subset_sum_no_adjucent.py'
+    'max_subset_sum_no_adjucent.py',
+    'three_number_sum.py'
 ]
 
 
-def max_subset_sum_no_adjucent(arr):
+def three_number_sum(arr, target):
     pass
 
 
-def max_subset_sum_no_adjucent1(arr):
+def three_number_sum1(arr, target):
     pass
 
 
@@ -227,7 +228,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
-
-    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
-    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
+    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
