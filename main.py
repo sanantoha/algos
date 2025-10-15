@@ -211,15 +211,16 @@ tasks_done = [
     'bst_traversal.py',
     'merging_linked_lists.py',
     'max_subset_sum_no_adjucent.py',
-    'three_number_sum.py'
+    'three_number_sum.py',
+    'water_area.py'
 ]
 
 
-def three_number_sum(arr, target):
+def waterArea(heights):
     pass
 
 
-def three_number_sum1(arr, target):
+def waterArea1(heights):
     pass
 
 
@@ -228,5 +229,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(three_number_sum([12, 3, 1, 2, -6, 5, -8, 6], 0))
-    print(three_number_sum1([12, 3, 1, 2, -6, 5, -8, 6], 0))
+    expected = 48
+    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    print(actual)
+    print(actual == expected)
+
+    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    print(actual)
+    print(actual == expected)
