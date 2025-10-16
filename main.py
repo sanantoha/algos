@@ -212,15 +212,12 @@ tasks_done = [
     'merging_linked_lists.py',
     'max_subset_sum_no_adjucent.py',
     'three_number_sum.py',
-    'water_area.py'
+    'water_area.py',
+    'caesar_cipher_encryptor.py'
 ]
 
 
-def waterArea(heights):
-    pass
-
-
-def waterArea1(heights):
+def caesar_cipher_encryptor(str, key):
     pass
 
 
@@ -229,11 +226,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    expected = 48
-    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
-    print(actual)
-    print(actual == expected)
-
-    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
-    print(actual)
-    print(actual == expected)
+    print(caesar_cipher_encryptor("xyz", 2) == "zab")
+    print(caesar_cipher_encryptor("abc", 52) == "abc")
