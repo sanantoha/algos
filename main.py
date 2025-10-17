@@ -213,11 +213,12 @@ tasks_done = [
     'max_subset_sum_no_adjucent.py',
     'three_number_sum.py',
     'water_area.py',
-    'caesar_cipher_encryptor.py'
+    'caesar_cipher_encryptor.py',
+    'zero_sum_subarray.py'
 ]
 
 
-def caesar_cipher_encryptor(str, key):
+def zeroSumSubarray(arr):
     pass
 
 
@@ -226,5 +227,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(caesar_cipher_encryptor("xyz", 2) == "zab")
-    print(caesar_cipher_encryptor("abc", 52) == "abc")
+    input = [4, 2, -1, -1, 3]
+    expected = True
+    actual = zeroSumSubarray(input)
+    print(actual)
+    assert actual == expected
