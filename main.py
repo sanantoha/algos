@@ -214,11 +214,15 @@ tasks_done = [
     'three_number_sum.py',
     'water_area.py',
     'caesar_cipher_encryptor.py',
-    'zero_sum_subarray.py'
+    'zero_sum_subarray.py',
+    'validate_bst.py'
 ]
 
 
-def zeroSumSubarray(arr):
+from tree.BST import BST
+
+
+def validate_bst(root):
     pass
 
 
@@ -227,8 +231,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [4, 2, -1, -1, 3]
-    expected = True
-    actual = zeroSumSubarray(input)
-    print(actual)
-    assert actual == expected
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+    print(validate_bst(root))
+    assert validate_bst(root)
