@@ -215,14 +215,16 @@ tasks_done = [
     'water_area.py',
     'caesar_cipher_encryptor.py',
     'zero_sum_subarray.py',
-    'validate_bst.py'
+    'validate_bst.py',
+    'all_paths_source_target.py'
 ]
 
 
-from tree.BST import BST
+def allPathsSourceTarget(graph):
+    pass
 
 
-def validate_bst(root):
+def allPathsSourceTarget1(graph):
     pass
 
 
@@ -231,14 +233,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-    print(validate_bst(root))
-    assert validate_bst(root)
+    print(allPathsSourceTarget([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
+    print(allPathsSourceTarget(
+        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget([[2], [], [1]]))  # [[0, 2]]
+
+    print(allPathsSourceTarget1([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
+    print(allPathsSourceTarget1(
+        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
+    print(allPathsSourceTarget1([[2], [], [1]]))  # [[0, 2]]
