@@ -216,15 +216,12 @@ tasks_done = [
     'caesar_cipher_encryptor.py',
     'zero_sum_subarray.py',
     'validate_bst.py',
-    'all_paths_source_target.py'
+    'all_paths_source_target.py',
+    'pow.py'
 ]
 
 
-def allPathsSourceTarget(graph):
-    pass
-
-
-def allPathsSourceTarget1(graph):
+def pow(x, n):
     pass
 
 
@@ -233,14 +230,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(allPathsSourceTarget([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
-    print(allPathsSourceTarget(
-        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget([[2], [], [1]]))  # [[0, 2]]
-
-    print(allPathsSourceTarget1([[1, 2], [3], [3], []]))  # [[0, 2, 3], [0, 1, 3]]
-    print(allPathsSourceTarget1(
-        [[4, 3, 1], [3, 2, 4], [3], [4], []]))  # [[0, 1, 4], [0, 1, 2, 3, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget1([[4, 3, 1], [3, 2, 4], [], [4], []]))  # [[0, 1, 4], [0, 1, 3, 4], [0, 3, 4], [0, 4]]
-    print(allPathsSourceTarget1([[2], [], [1]]))  # [[0, 2]]
+    assert pow(4, 2) == 16
+    assert pow(2, 4) == 16
+    assert pow(2.0, -2) == 0.25
+    assert pow(2.1, 3) == 9.261000000000001
