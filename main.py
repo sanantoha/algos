@@ -217,11 +217,19 @@ tasks_done = [
     'zero_sum_subarray.py',
     'validate_bst.py',
     'all_paths_source_target.py',
-    'pow.py'
+    'pow.py',
+    'branch_sums.py'
 ]
 
 
-def pow(x, n):
+from tree.BinaryTree import BinaryTree
+
+
+def branch_sums(root):
+    pass
+
+
+def branch_sums_iter(root):
     pass
 
 
@@ -230,7 +238,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert pow(4, 2) == 16
-    assert pow(2, 4) == 16
-    assert pow(2.0, -2) == 0.25
-    assert pow(2.1, 3) == 9.261000000000001
+    tree = BinaryTree(1).insert([2, 3, 4, 5, 6, 7, 8, 9, 10])
+    print(sorted(branch_sums(tree)) == sorted([15, 16, 18, 10, 11]))
+
+    print(sorted(branch_sums_iter(tree)) == sorted([15, 16, 18, 10, 11]))
