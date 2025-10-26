@@ -221,12 +221,23 @@ tasks_done = [
     'branch_sums.py',
     'depth_first_search.py',
     'validate_tree_nodes.py',
-    'search_in_sorted_matrix.py'
+    'search_in_sorted_matrix.py',
+    'min_height_bst.py'
 ]
 
+from tree.validate_bst import validate_bst
 
-def searchInSortedMatrix(matrix, target):
+
+def min_height_bst(root):
     pass
+
+
+def get_tree_height(tree, height=0):
+    if tree is None:
+        return height
+    left_tree_height = get_tree_height(tree.left, height + 1)
+    right_tree_height = get_tree_height(tree.right, height + 1)
+    return max(left_tree_height, right_tree_height)
 
 
 if __name__ == '__main__':
@@ -234,13 +245,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [1, 4, 7, 12, 15, 1000],
-        [2, 5, 19, 31, 32, 1001],
-        [3, 8, 24, 33, 35, 1002],
-        [40, 41, 42, 44, 45, 1003],
-        [99, 100, 103, 106, 128, 1004],
-    ]
-    actual = searchInSortedMatrix(matrix, 44)
-    print(actual)
-    assert actual == [3, 3]
+    array = [1, 2, 5, 7, 10, 13, 14, 15, 22]
+    tree = min_height_bst(array)
+
+    assert validate_bst(tree)
+    assert get_tree_height(tree) == 4
+
+    in_order = in_order_traverse(tree, [])
+
+    assert in_order == [1, 2, 5, 7, 10, 13, 14, 15, 22]
