@@ -223,18 +223,12 @@ tasks_done = [
     'validate_tree_nodes.py',
     'search_in_sorted_matrix.py',
     'min_height_bst.py',
-    'reconstruct_bst.py'
+    'reconstruct_bst.py',
+    'first_non_repeating_character.py'
 ]
 
 
-from tree.BST import BST
-
-
-def reconstruct_bst(pre_order):
-    pass
-
-
-def reconstruct_bst1(pre_order):
+def first_non_repeating_character(str):
     pass
 
 
@@ -252,21 +246,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    pre_order_traversal_values = [10, 4, 2, 1, 3, 17, 19, 18]
-    tree = BST(10)
-    tree.left = BST(4)
-    tree.left.left = BST(2)
-    tree.left.left.left = BST(1)
-    tree.left.right = BST(3)
-    tree.right = BST(17)
-    tree.right.right = BST(19)
-    tree.right.right.left = BST(18)
-    expected = get_dfs_order(tree, [])
-
-    actual = reconstruct_bst(pre_order_traversal_values)
-    actual_dfs_order = get_dfs_order(actual, [])
-    assert actual_dfs_order == expected
-
-    actual1 = reconstruct_bst1(pre_order_traversal_values)
-    actual_dfs_order1 = get_dfs_order(actual1, [])
-    assert actual_dfs_order1 == expected
+    print(first_non_repeating_character("abcdcaf"))
