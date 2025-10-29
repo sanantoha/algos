@@ -135,6 +135,7 @@ tasks = [
     'pow.py',
     'sqrt.py',
     'relative_sort_array.py',
+    'rotting_oranges.py'
 ]
 
 tasks_done = [
@@ -224,21 +225,13 @@ tasks_done = [
     'search_in_sorted_matrix.py',
     'min_height_bst.py',
     'reconstruct_bst.py',
-    'first_non_repeating_character.py'
+    'first_non_repeating_character.py',
+    'product_sum.py'
 ]
 
 
-def first_non_repeating_character(str):
+def product_sum(arr):
     pass
-
-
-def get_dfs_order(node, values):
-    if node is None:
-        return
-    values.append(node.value)
-    get_dfs_order(node.left, values)
-    get_dfs_order(node.right, values)
-    return values
 
 
 if __name__ == '__main__':
@@ -246,4 +239,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(first_non_repeating_character("abcdcaf"))
+    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
