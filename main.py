@@ -226,11 +226,14 @@ tasks_done = [
     'min_height_bst.py',
     'reconstruct_bst.py',
     'first_non_repeating_character.py',
-    'product_sum.py'
+    'product_sum.py',
+    'binary_tree_diameter.py'
 ]
 
 
-def product_sum(arr):
+from tree.BinaryTree import BinaryTree
+
+def binary_tree_diameter(root):
     pass
 
 
@@ -239,4 +242,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(product_sum([5, 2, [7, -1], 3, [6, [-13, 8], 4]]) == 12)
+    root = BinaryTree(1)
+    root.left = BinaryTree(3)
+    root.left.left = BinaryTree(7)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.left.left = BinaryTree(9)
+    root.left.right = BinaryTree(4)
+    root.left.right.right = BinaryTree(5)
+    root.left.right.right.right = BinaryTree(6)
+    root.right = BinaryTree(2)
+    expected = 6
+    actual = binary_tree_diameter(root)
+    print(actual)
+    assert actual == expected
