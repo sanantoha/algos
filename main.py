@@ -227,13 +227,12 @@ tasks_done = [
     'reconstruct_bst.py',
     'first_non_repeating_character.py',
     'product_sum.py',
-    'binary_tree_diameter.py'
+    'binary_tree_diameter.py',
+    'minimum_characters_for_words.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-def binary_tree_diameter(root):
+def minimumCharactersForWords(words):
     pass
 
 
@@ -242,16 +241,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(3)
-    root.left.left = BinaryTree(7)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.left.left = BinaryTree(9)
-    root.left.right = BinaryTree(4)
-    root.left.right.right = BinaryTree(5)
-    root.left.right.right.right = BinaryTree(6)
-    root.right = BinaryTree(2)
-    expected = 6
-    actual = binary_tree_diameter(root)
+    input = ["this", "that", "did", "deed", "them!", "a"]
+    expected = ["t", "t", "h", "i", "s", "a", "d", "d", "e", "e", "m", "!"]
+    actual = minimumCharactersForWords(input)
     print(actual)
     assert actual == expected
