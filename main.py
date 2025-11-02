@@ -229,11 +229,12 @@ tasks_done = [
     'product_sum.py',
     'binary_tree_diameter.py',
     'minimum_characters_for_words.py',
-    'task_assignment.py'
+    'task_assignment.py',
+    'two_colorable.py'
 ]
 
 
-def task_assignment(k, tasks):
+def twoColorable(edges):
     pass
 
 
@@ -242,9 +243,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    k = 3
-    tasks = [1, 3, 5, 3, 1, 4]
-    expected = [[4, 2], [0, 5], [3, 1]]
-    actual = task_assignment(k, tasks)
+    input = [
+        [1, 2, 3],
+        [0, 2],
+        [0, 1],
+        [0]
+    ]
+    actual = twoColorable(input)
     print(actual)
-    assert actual == expected
+    assert not actual
+
+    input = [
+        [2],
+        [2, 3],
+        [0, 1],
+        [1]
+    ]
+
+    actual = twoColorable(input)
+    print(actual)
+    assert actual
