@@ -232,11 +232,12 @@ tasks_done = [
     'task_assignment.py',
     'two_colorable.py',
     'phone_number_mnemonic.py',
-    'class_photos.py'
+    'class_photos.py',
+    'insertion_sort.py'
 ]
 
 
-def class_photos(red_shirt_heights, blue_shirt_heights):
+def insertion_sort(arr):
     pass
 
 
@@ -245,4 +246,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(class_photos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5]))
+    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
+    # xs = [5,2,4,1]
+    print(insertion_sort(xs))
