@@ -233,11 +233,16 @@ tasks_done = [
     'two_colorable.py',
     'phone_number_mnemonic.py',
     'class_photos.py',
-    'insertion_sort.py'
+    'insertion_sort.py',
+    'balanced_brackets.py'
 ]
 
 
-def insertion_sort(arr):
+def balancedBrackets(src):
+    pass
+
+
+def balancedBrackets1(src):
     pass
 
 
@@ -246,6 +251,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
-    # xs = [5,2,4,1]
-    print(insertion_sort(xs))
+    assert balancedBrackets("(a)")
+    assert balancedBrackets("([])")
+    assert balancedBrackets("([])(){}(())()()")
+
+    assert balancedBrackets1("(a)")
+    assert balancedBrackets1("([])")
+    assert balancedBrackets1("([])(){}(())()()")
