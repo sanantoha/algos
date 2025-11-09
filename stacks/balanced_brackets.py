@@ -21,6 +21,7 @@ def balancedBrackets(string):
     return not stack
 
 
+# O(n) time | O(n) space
 def balancedBrackets1(string):
     if string is None or len(string) == 0:
         return True
