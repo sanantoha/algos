@@ -235,18 +235,12 @@ tasks_done = [
     'class_photos.py',
     'insertion_sort.py',
     'balanced_brackets.py',
-    'merge_binary_trees.py'
+    'merge_binary_trees.py',
+    'max_sum_increasing_subsequence.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def mergeBinaryTrees(t1, t2):
-    pass
-
-
-def mergeBinaryTreesIter(t1, t2):
+def maxSumIncreasingSubsequence(arr):
     pass
 
 
@@ -255,46 +249,31 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree1 = BinaryTree(1)
-    tree1.left = BinaryTree(3)
-    tree1.left.left = BinaryTree(7)
-    tree1.left.right = BinaryTree(4)
-    tree1.right = BinaryTree(2)
+    input = [-1, 1]
+    expected = [1, [1]]
 
-    tree2 = BinaryTree(1)
-    tree2.left = BinaryTree(5)
-    tree2.left.left = BinaryTree(2)
-    tree2.right = BinaryTree(9)
-    tree2.right.left = BinaryTree(7)
-    tree2.right.right = BinaryTree(6)
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
 
-    actual = mergeBinaryTrees(tree1, tree2)
-    assert actual.value == 2
-    assert actual.left.value == 8
-    assert actual.left.left.value == 9
-    assert actual.left.right.value == 4
-    assert actual.right.value == 11
-    assert actual.right.left.value == 7
-    assert actual.right.right.value == 6
+    input = [10, 70, 20, 30, 50, 11, 30]
+    expected = [110, [10, 20, 30, 50]]
 
-    tree3 = BinaryTree(1)
-    tree3.left = BinaryTree(3)
-    tree3.left.left = BinaryTree(7)
-    tree3.left.right = BinaryTree(4)
-    tree3.right = BinaryTree(2)
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
 
-    tree4 = BinaryTree(1)
-    tree4.left = BinaryTree(5)
-    tree4.left.left = BinaryTree(2)
-    tree4.right = BinaryTree(9)
-    tree4.right.left = BinaryTree(7)
-    tree4.right.right = BinaryTree(6)
+    input = [8, 12, 2, 3, 15, 5, 7]
+    expected = [35, [8, 12, 15]]
 
-    actual = mergeBinaryTreesIter(tree3, tree4)
-    assert actual.value == 2
-    assert actual.left.value == 8
-    assert actual.left.left.value == 9
-    assert actual.left.right.value == 4
-    assert actual.right.value == 11
-    assert actual.right.left.value == 7
-    assert actual.right.right.value == 6
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
+
+    input = [-5, -4, -3, -2, -1]
+
+    expected = [-1, [-1]]
+
+    actual = maxSumIncreasingSubsequence(input)
+    print(actual)
+    assert actual == expected
