@@ -236,11 +236,12 @@ tasks_done = [
     'insertion_sort.py',
     'balanced_brackets.py',
     'merge_binary_trees.py',
-    'max_sum_increasing_subsequence.py'
+    'max_sum_increasing_subsequence.py',
+    'min_number_of_coins_for_change.py'
 ]
 
 
-def maxSumIncreasingSubsequence(arr):
+def min_number_of_coins_for_change(n, denoms):
     pass
 
 
@@ -249,31 +250,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [-1, 1]
-    expected = [1, [1]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
-
-    input = [10, 70, 20, 30, 50, 11, 30]
-    expected = [110, [10, 20, 30, 50]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
-
-    input = [8, 12, 2, 3, 15, 5, 7]
-    expected = [35, [8, 12, 15]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
-
-    input = [-5, -4, -3, -2, -1]
-
-    expected = [-1, [-1]]
-
-    actual = maxSumIncreasingSubsequence(input)
-    print(actual)
-    assert actual == expected
+    print(min_number_of_coins_for_change(7, [1, 5, 10]))
+    assert min_number_of_coins_for_change(7, [1, 5, 10]) == 3
