@@ -238,11 +238,12 @@ tasks_done = [
     'balanced_brackets.py',
     'merge_binary_trees.py',
     'max_sum_increasing_subsequence.py',
-    'min_number_of_coins_for_change.py'
+    'min_number_of_coins_for_change.py',
+    'reverse_words_in_string.py'
 ]
 
 
-def min_number_of_coins_for_change(n, denoms):
+def reverseWordsInString(src):
     pass
 
 
@@ -251,5 +252,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(min_number_of_coins_for_change(7, [1, 5, 10]))
-    assert min_number_of_coins_for_change(7, [1, 5, 10]) == 3
+    input = "AlgoExpert is the best!"
+    expected = "best! the is AlgoExpert"
+    actual = reverseWordsInString(input)
+    print(actual)
+    assert actual == expected
