@@ -239,11 +239,12 @@ tasks_done = [
     'merge_binary_trees.py',
     'max_sum_increasing_subsequence.py',
     'min_number_of_coins_for_change.py',
-    'reverse_words_in_string.py'
+    'reverse_words_in_string.py',
+    'optimal_freelancing.py'
 ]
 
 
-def reverseWordsInString(src):
+def optimalFreelancing(jobs):
     pass
 
 
@@ -252,8 +253,41 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = "AlgoExpert is the best!"
-    expected = "best! the is AlgoExpert"
-    actual = reverseWordsInString(input)
+    input = [{"deadline": 1, "payment": 1}]
+    actual = optimalFreelancing(input)
     print(actual)
-    assert actual == expected
+    assert actual == 1
+
+    input = [
+        {
+            "deadline": 2,
+            "payment": 2
+        },
+        {
+            "deadline": 4,
+            "payment": 3
+        },
+        {
+            "deadline": 5,
+            "payment": 1
+        },
+        {
+            "deadline": 7,
+            "payment": 2
+        },
+        {
+            "deadline": 3,
+            "payment": 1
+        },
+        {
+            "deadline": 3,
+            "payment": 2
+        },
+        {
+            "deadline": 1,
+            "payment": 3
+        }
+    ]
+    actual = optimalFreelancing(input)
+    print(actual)
+    assert actual == 13
