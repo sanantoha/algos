@@ -240,11 +240,16 @@ tasks_done = [
     'max_sum_increasing_subsequence.py',
     'min_number_of_coins_for_change.py',
     'reverse_words_in_string.py',
-    'optimal_freelancing.py'
+    'optimal_freelancing.py',
+    'minimum_waiting_time.py'
 ]
 
 
-def optimalFreelancing(jobs):
+def minimum_waiting_time(queries):
+    pass
+
+
+def minimum_waiting_time1(queries):
     pass
 
 
@@ -253,41 +258,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [{"deadline": 1, "payment": 1}]
-    actual = optimalFreelancing(input)
-    print(actual)
-    assert actual == 1
-
-    input = [
-        {
-            "deadline": 2,
-            "payment": 2
-        },
-        {
-            "deadline": 4,
-            "payment": 3
-        },
-        {
-            "deadline": 5,
-            "payment": 1
-        },
-        {
-            "deadline": 7,
-            "payment": 2
-        },
-        {
-            "deadline": 3,
-            "payment": 1
-        },
-        {
-            "deadline": 3,
-            "payment": 2
-        },
-        {
-            "deadline": 1,
-            "payment": 3
-        }
-    ]
-    actual = optimalFreelancing(input)
-    print(actual)
-    assert actual == 13
+    print(minimum_waiting_time([3, 2, 1, 2, 6]))
+    print(minimum_waiting_time1([3, 2, 1, 2, 6]))
