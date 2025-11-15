@@ -241,15 +241,12 @@ tasks_done = [
     'min_number_of_coins_for_change.py',
     'reverse_words_in_string.py',
     'optimal_freelancing.py',
-    'minimum_waiting_time.py'
+    'minimum_waiting_time.py',
+    'spiral_matrix_traverse.py'
 ]
 
 
-def minimum_waiting_time(queries):
-    pass
-
-
-def minimum_waiting_time1(queries):
+def spiral_matrix_traverse(matrix):
     pass
 
 
@@ -258,5 +255,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(minimum_waiting_time([3, 2, 1, 2, 6]))
-    print(minimum_waiting_time1([3, 2, 1, 2, 6]))
+    matrix = [[1, 2, 3, 4],
+              [12, 13, 14, 5],
+              [11, 16, 15, 6],
+              [10, 9, 8, 7]]
+    print(spiral_matrix_traverse(matrix))
