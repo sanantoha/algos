@@ -242,11 +242,12 @@ tasks_done = [
     'reverse_words_in_string.py',
     'optimal_freelancing.py',
     'minimum_waiting_time.py',
-    'spiral_matrix_traverse.py'
+    'spiral_matrix_traverse.py',
+    'sqrt.py'
 ]
 
 
-def spiral_matrix_traverse(matrix):
+def sqrt(n):
     pass
 
 
@@ -255,8 +256,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [[1, 2, 3, 4],
-              [12, 13, 14, 5],
-              [11, 16, 15, 6],
-              [10, 9, 8, 7]]
-    print(spiral_matrix_traverse(matrix))
+    assert sqrt(4) == 2
+    assert sqrt(5) == 2
+    assert sqrt(6) == 2
+    assert sqrt(7) == 2
+    assert sqrt(8) == 2
+    assert sqrt(16) == 4
