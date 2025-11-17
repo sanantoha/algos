@@ -243,11 +243,16 @@ tasks_done = [
     'optimal_freelancing.py',
     'minimum_waiting_time.py',
     'spiral_matrix_traverse.py',
-    'sqrt.py'
+    'sqrt.py',
+    'powerset.py'
 ]
 
 
-def sqrt(n):
+def powerset(arr):
+    pass
+
+
+def powerset1(arr):
     pass
 
 
@@ -256,9 +261,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert sqrt(4) == 2
-    assert sqrt(5) == 2
-    assert sqrt(6) == 2
-    assert sqrt(7) == 2
-    assert sqrt(8) == 2
-    assert sqrt(16) == 4
+    print(powerset([1, 2, 3]))
+    print(powerset1([1, 2, 3]))
+    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
+    assert len(output) == 8
+    assert set([]) in output
+    assert set([1]) in output
+    assert set([2]) in output
+    assert set([1, 2]) in output
+    assert set([3]) in output
+    assert set([1, 3]) in output
+    assert set([2, 3]) in output
+    assert set([1, 2, 3]) in output
