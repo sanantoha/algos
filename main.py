@@ -244,15 +244,12 @@ tasks_done = [
     'minimum_waiting_time.py',
     'spiral_matrix_traverse.py',
     'sqrt.py',
-    'powerset.py'
+    'powerset.py',
+    'unique_pathsIII.py'
 ]
 
 
-def powerset(arr):
-    pass
-
-
-def powerset1(arr):
+def uniquePathsIII(grid):
     pass
 
 
@@ -261,15 +258,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(powerset([1, 2, 3]))
-    print(powerset1([1, 2, 3]))
-    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
-    assert len(output) == 8
-    assert set([]) in output
-    assert set([1]) in output
-    assert set([2]) in output
-    assert set([1, 2]) in output
-    assert set([3]) in output
-    assert set([1, 3]) in output
-    assert set([2, 3]) in output
-    assert set([1, 2, 3]) in output
+    grid = [[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2, -1]]
+    actual = uniquePathsIII(grid)
+    print(actual)
+    assert actual == 2
