@@ -245,11 +245,15 @@ tasks_done = [
     'spiral_matrix_traverse.py',
     'sqrt.py',
     'powerset.py',
-    'unique_pathsIII.py'
+    'unique_pathsIII.py',
+    'remove_duplicates_from_linkedlist.py'
 ]
 
 
-def uniquePathsIII(grid):
+from list.LinkedList import LinkedList
+
+
+def remove_duplicates_from_linked_list(head):
     pass
 
 
@@ -258,7 +262,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    grid = [[1, 0, 0, 0], [0, 0, 0, 0], [0, 0, 2, -1]]
-    actual = uniquePathsIII(grid)
-    print(actual)
-    assert actual == 2
+    test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
+    print(remove_duplicates_from_linked_list(test))
