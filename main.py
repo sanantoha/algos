@@ -247,14 +247,12 @@ tasks_done = [
     'powerset.py',
     'unique_pathsIII.py',
     'remove_duplicates_from_linkedlist.py',
-    'find_kth_largest_value_in_bst.py'
+    'find_kth_largest_value_in_bst.py',
+    'single_cycle_check.py'
 ]
 
 
-from tree.BST import BST
-
-
-def find_kth_largest_value_in_bst(root, k):
+def single_cycle_check(arr):
     pass
 
 
@@ -263,17 +261,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(15)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.left.right = BST(3)
-    root.left.right = BST(5)
-    root.right = BST(20)
-    root.right.left = BST(17)
-    root.right.right = BST(22)
-    k = 3
-    expected = 17
-    actual = find_kth_largest_value_in_bst(root, k)
-    print(actual)
-    assert actual == expected
+    array = [2, 3, 1, -4, -4, 2]
+    print(single_cycle_check(array))
+    assert single_cycle_check(array)
