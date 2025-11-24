@@ -248,11 +248,12 @@ tasks_done = [
     'unique_pathsIII.py',
     'remove_duplicates_from_linkedlist.py',
     'find_kth_largest_value_in_bst.py',
-    'single_cycle_check.py'
+    'single_cycle_check.py',
+    'first_duplicate_value.py'
 ]
 
 
-def single_cycle_check(arr):
+def first_duplicate_value(arr):
     pass
 
 
@@ -261,6 +262,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [2, 3, 1, -4, -4, 2]
-    print(single_cycle_check(array))
-    assert single_cycle_check(array)
+    array = [2, 1, 5, 2, 3, 3, 4]
+    print(first_duplicate_value(array))
