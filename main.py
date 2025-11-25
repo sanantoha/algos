@@ -249,11 +249,12 @@ tasks_done = [
     'remove_duplicates_from_linkedlist.py',
     'find_kth_largest_value_in_bst.py',
     'single_cycle_check.py',
-    'first_duplicate_value.py'
+    'first_duplicate_value.py',
+    'merge_overlapping_intervals.py'
 ]
 
 
-def first_duplicate_value(arr):
+def merge_overlapping_intervals(intervals):
     pass
 
 
@@ -262,5 +263,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [2, 1, 5, 2, 3, 3, 4]
-    print(first_duplicate_value(array))
+    print(merge_overlapping_intervals([[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]])) # [[1, 2], [3, 8], [9, 10]]
