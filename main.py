@@ -250,11 +250,15 @@ tasks_done = [
     'find_kth_largest_value_in_bst.py',
     'single_cycle_check.py',
     'first_duplicate_value.py',
-    'merge_overlapping_intervals.py'
+    'merge_overlapping_intervals.py',
+    'middle_node.py'
 ]
 
 
-def merge_overlapping_intervals(intervals):
+from list.LinkedList import LinkedList
+
+
+def middleNode(head):
     pass
 
 
@@ -263,4 +267,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(merge_overlapping_intervals([[1, 2], [3, 5], [4, 7], [6, 8], [9, 10]])) # [[1, 2], [3, 8], [9, 10]]
+    list = LinkedList(1)
+    list.next = LinkedList(2)
+    list.next.next = LinkedList(3)
+    list.next.next.next = LinkedList(4)
+
+    res = middleNode(list)
+    print(res)
+    assert res == list.next.next
