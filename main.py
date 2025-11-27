@@ -251,14 +251,12 @@ tasks_done = [
     'single_cycle_check.py',
     'first_duplicate_value.py',
     'merge_overlapping_intervals.py',
-    'middle_node.py'
+    'middle_node.py',
+    'reverse_polish_notation.py'
 ]
 
 
-from list.LinkedList import LinkedList
-
-
-def middleNode(head):
+def reversePolishNotation(arr):
     pass
 
 
@@ -267,11 +265,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    list = LinkedList(1)
-    list.next = LinkedList(2)
-    list.next.next = LinkedList(3)
-    list.next.next.next = LinkedList(4)
-
-    res = middleNode(list)
-    print(res)
-    assert res == list.next.next
+    input = ["3", "2", "+", "7", "*"]
+    expected = 35
+    actual = reversePolishNotation(input)
+    print(actual)
+    assert actual == expected
