@@ -252,11 +252,12 @@ tasks_done = [
     'first_duplicate_value.py',
     'merge_overlapping_intervals.py',
     'middle_node.py',
-    'reverse_polish_notation.py'
+    'reverse_polish_notation.py',
+    'zero_one_matrix.py'
 ]
 
 
-def reversePolishNotation(arr):
+def update_matrix(matrix):
     pass
 
 
@@ -265,8 +266,30 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["3", "2", "+", "7", "*"]
-    expected = 35
-    actual = reversePolishNotation(input)
-    print(actual)
-    assert actual == expected
+    input0 = [
+        [0, 0, 0],
+        [0, 1, 0],
+        [0, 0, 0],
+    ]
+
+    res = update_matrix(input0)
+    print(res)
+    assert res == [
+        [0, 0, 0],
+        [0, 1, 0],
+        [0, 0, 0],
+    ]
+
+    input1 = [
+        [0, 0, 0],
+        [0, 1, 0],
+        [1, 1, 1],
+    ]
+
+    res = update_matrix(input1)
+    print(res)
+    assert res == [
+        [0, 0, 0],
+        [0, 1, 0],
+        [1, 2, 1],
+    ]
