@@ -253,12 +253,28 @@ tasks_done = [
     'merge_overlapping_intervals.py',
     'middle_node.py',
     'reverse_polish_notation.py',
-    'zero_one_matrix.py'
+    'zero_one_matrix.py',
+    'union_find.py'
 ]
 
 
-def update_matrix(matrix):
-    pass
+class UnionFind:
+
+
+    def __init__(self):
+        pass
+
+
+    def createSet(self, value):
+        pass
+
+
+    def find(self, value):
+        pass
+
+
+    def union(self, valueOne, valueTwo):
+        pass
 
 
 if __name__ == '__main__':
@@ -266,30 +282,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input0 = [
-        [0, 0, 0],
-        [0, 1, 0],
-        [0, 0, 0],
-    ]
-
-    res = update_matrix(input0)
-    print(res)
-    assert res == [
-        [0, 0, 0],
-        [0, 1, 0],
-        [0, 0, 0],
-    ]
-
-    input1 = [
-        [0, 0, 0],
-        [0, 1, 0],
-        [1, 1, 1],
-    ]
-
-    res = update_matrix(input1)
-    print(res)
-    assert res == [
-        [0, 0, 0],
-        [0, 1, 0],
-        [1, 2, 1],
-    ]
+    unionFind = UnionFind()
+    assert unionFind.find(1) == None
+    unionFind.createSet(1)
+    assert unionFind.find(1) == 1
+    unionFind.createSet(5)
+    assert unionFind.find(1) == 1
+    assert unionFind.find(5) == 5
+    unionFind.union(5, 1)
+    assert unionFind.find(5) == unionFind.find(1)
