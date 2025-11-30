@@ -254,27 +254,13 @@ tasks_done = [
     'middle_node.py',
     'reverse_polish_notation.py',
     'zero_one_matrix.py',
-    'union_find.py'
+    'union_find.py',
+    'a_star_algorithm.py'
 ]
 
 
-class UnionFind:
-
-
-    def __init__(self):
-        pass
-
-
-    def createSet(self, value):
-        pass
-
-
-    def find(self, value):
-        pass
-
-
-    def union(self, valueOne, valueTwo):
-        pass
+def a_star_algorithm(start_row, start_col, end_row, end_col, graph):
+    pass
 
 
 if __name__ == '__main__':
@@ -282,12 +268,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    unionFind = UnionFind()
-    assert unionFind.find(1) == None
-    unionFind.createSet(1)
-    assert unionFind.find(1) == 1
-    unionFind.createSet(5)
-    assert unionFind.find(1) == 1
-    assert unionFind.find(5) == 5
-    unionFind.union(5, 1)
-    assert unionFind.find(5) == unionFind.find(1)
+    start_row = 0
+    start_col = 1
+    end_row = 4
+    end_col = 3
+    graph = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0], [1, 0, 1, 1, 1], [0, 0, 0, 0, 0]]
+    expected = [[0, 1], [0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [4, 2], [4, 3]]
+    actual = a_star_algorithm(start_row, start_col, end_row, end_col, graph)
+    print(actual)
+    assert actual == expected
