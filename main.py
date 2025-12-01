@@ -255,11 +255,12 @@ tasks_done = [
     'reverse_polish_notation.py',
     'zero_one_matrix.py',
     'union_find.py',
-    'a_star_algorithm.py'
+    'a_star_algorithm.py',
+    'valid_ip_addresses.py'
 ]
 
 
-def a_star_algorithm(start_row, start_col, end_row, end_col, graph):
+def validIPAddresses(string):
     pass
 
 
@@ -268,12 +269,20 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    start_row = 0
-    start_col = 1
-    end_row = 4
-    end_col = 3
-    graph = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 0, 0, 0, 0], [1, 0, 1, 1, 1], [0, 0, 0, 0, 0]]
-    expected = [[0, 1], [0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [4, 2], [4, 3]]
-    actual = a_star_algorithm(start_row, start_col, end_row, end_col, graph)
+    input = "1921680"
+    expected = [
+        "1.9.216.80",
+        "1.92.16.80",
+        "1.92.168.0",
+        "19.2.16.80",
+        "19.2.168.0",
+        "19.21.6.80",
+        "19.21.68.0",
+        "19.216.8.0",
+        "192.1.6.80",
+        "192.1.68.0",
+        "192.16.8.0",
+    ]
+    actual = validIPAddresses(input)
     print(actual)
     assert actual == expected
