@@ -261,11 +261,12 @@ tasks_done = [
     'valid_ip_addresses.py',
     'cycle_in_graph.py',
     'remove_kth_node_from_end.py',
-    'non_constructible_changes.py'
+    'non_constructible_changes.py',
+    'stable_internships.py'
 ]
 
 
-def non_constructible_changes(coins):
+def stableInternships(interns, teams):
     pass
 
 
@@ -274,5 +275,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    coins = [5, 7, 1, 1, 2, 3, 22]
-    print(non_constructible_changes(coins))
+    interns = [[0, 1, 2], [0, 2, 1], [1, 2, 0]]
+    teams = [[2, 1, 0], [0, 1, 2], [0, 1, 2]]
+    expected = [[0, 1], [1, 0], [2, 2]]
+    actual = stableInternships(interns, teams)
+    print(actual)
+    assert len(actual) == len(expected)
+
+    for match in expected:
+        containsMatch = False
+        for actualMatch in actual:
+            if actualMatch[0] == match[0] and actualMatch[1] == match[1]:
+                containsMatch = True
+        assert containsMatch
