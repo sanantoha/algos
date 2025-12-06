@@ -262,11 +262,20 @@ tasks_done = [
     'cycle_in_graph.py',
     'remove_kth_node_from_end.py',
     'non_constructible_changes.py',
-    'stable_internships.py'
+    'stable_internships.py',
+    'min_rewards.py'
 ]
 
 
-def stableInternships(interns, teams):
+def minRewards(arr):
+    pass
+
+
+def minRewards1(arr):
+    pass
+
+
+def minRewards2(arr):
     pass
 
 
@@ -275,16 +284,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    interns = [[0, 1, 2], [0, 2, 1], [1, 2, 0]]
-    teams = [[2, 1, 0], [0, 1, 2], [0, 1, 2]]
-    expected = [[0, 1], [1, 0], [2, 2]]
-    actual = stableInternships(interns, teams)
+    actual = minRewards([8, 4, 2, 1, 3, 6, 7, 9, 5])
     print(actual)
-    assert len(actual) == len(expected)
+    assert actual == 25
 
-    for match in expected:
-        containsMatch = False
-        for actualMatch in actual:
-            if actualMatch[0] == match[0] and actualMatch[1] == match[1]:
-                containsMatch = True
-        assert containsMatch
+    actual = minRewards1([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
+
+    actual = minRewards2([8, 4, 2, 1, 3, 6, 7, 9, 5])
+    print(actual)
+    assert actual == 25
