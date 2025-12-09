@@ -264,11 +264,16 @@ tasks_done = [
     'non_constructible_changes.py',
     'stable_internships.py',
     'min_rewards.py',
-    'blackjack_probability.py'
+    'blackjack_probability.py',
+    'longest_increasing_subsequence.py'
 ]
 
 
-def blackjackProbability(target, startHand):
+def longestIncreasingSubsequence(arr):
+    pass
+
+
+def longestIncreasingSubsequence1(arr):
     pass
 
 
@@ -277,30 +282,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = blackjackProbability(21, 15)
-    print(actual)
-    assert actual == 0.45
+    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
 
-    actual = blackjackProbability(21, 21)
+    actual = longestIncreasingSubsequence(input)
     print(actual)
-    assert actual == 0
+    assert actual == [-24, 2, 3, 5, 6, 35]
 
-    actual = blackjackProbability(21, 20)
+    actual = longestIncreasingSubsequence1(input)
     print(actual)
-    assert actual == 0
-
-    actual = blackjackProbability(21, 17)
-    print(actual)
-    assert actual == 0
-
-    actual = blackjackProbability(21, 12)
-    print(actual)
-    assert actual == 0.268
-
-    actual = blackjackProbability(21, 5)
-    print(actual)
-    assert actual == 0.295
-
-    actual = blackjackProbability(30, 25)
-    print(actual)
-    assert actual == 0.5
+    assert actual == [-24, 2, 3, 5, 6, 35]
