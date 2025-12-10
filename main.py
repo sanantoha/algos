@@ -265,15 +265,12 @@ tasks_done = [
     'stable_internships.py',
     'min_rewards.py',
     'blackjack_probability.py',
-    'longest_increasing_subsequence.py'
+    'longest_increasing_subsequence.py',
+    'rotting_oranges.py'
 ]
 
 
-def longestIncreasingSubsequence(arr):
-    pass
-
-
-def longestIncreasingSubsequence1(arr):
+def oranges_rotting(grid):
     pass
 
 
@@ -282,12 +279,44 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [5, 7, -24, 12, 10, 2, 3, 12, 5, 6, 35]
+    # 0 - no orange, empty cell
+    # 1 - orange is fresh
+    # 2 - orange is rotten
+    grid = [
+        [2, 1, 1],
+        [1, 1, 0],
+        [0, 1, 1]
+    ]
+    res = oranges_rotting(grid)
+    print(res)
+    assert res == 4
 
-    actual = longestIncreasingSubsequence(input)
-    print(actual)
-    assert actual == [-24, 2, 3, 5, 6, 35]
+    grid = [
+        [2, 1, 1],
+        [0, 1, 1],
+        [1, 0, 1]
+    ]
+    res = oranges_rotting(grid)
+    print(res)
+    assert res == -1
 
-    actual = longestIncreasingSubsequence1(input)
-    print(actual)
-    assert actual == [-24, 2, 3, 5, 6, 35]
+    grid = [
+        [0, 2]
+    ]
+    res = oranges_rotting(grid)
+    print(res)
+    assert res == 0
+
+    grid = [
+        [0]
+    ]
+    res = oranges_rotting(grid)
+    print(res)
+    assert res == 0
+
+    grid = [
+        [1]
+    ]
+    res = oranges_rotting(grid)
+    print(res)
+    assert res == -1
