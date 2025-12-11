@@ -266,57 +266,19 @@ tasks_done = [
     'min_rewards.py',
     'blackjack_probability.py',
     'longest_increasing_subsequence.py',
-    'rotting_oranges.py'
+    'rotting_oranges.py',
+    'two_number_sum.py'
 ]
 
 
-def oranges_rotting(grid):
+def two_number_sum(arr, target):
+    pass
+
+
+def two_number_sum1(arr, target):
     pass
 
 
 if __name__ == '__main__':
-    remain = list(set(tasks) - set(tasks_done))
-    random.shuffle(remain)
-    print(remain)
-
-    # 0 - no orange, empty cell
-    # 1 - orange is fresh
-    # 2 - orange is rotten
-    grid = [
-        [2, 1, 1],
-        [1, 1, 0],
-        [0, 1, 1]
-    ]
-    res = oranges_rotting(grid)
-    print(res)
-    assert res == 4
-
-    grid = [
-        [2, 1, 1],
-        [0, 1, 1],
-        [1, 0, 1]
-    ]
-    res = oranges_rotting(grid)
-    print(res)
-    assert res == -1
-
-    grid = [
-        [0, 2]
-    ]
-    res = oranges_rotting(grid)
-    print(res)
-    assert res == 0
-
-    grid = [
-        [0]
-    ]
-    res = oranges_rotting(grid)
-    print(res)
-    assert res == 0
-
-    grid = [
-        [1]
-    ]
-    res = oranges_rotting(grid)
-    print(res)
-    assert res == -1
+    print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
