@@ -267,18 +267,40 @@ tasks_done = [
     'blackjack_probability.py',
     'longest_increasing_subsequence.py',
     'rotting_oranges.py',
-    'two_number_sum.py'
+    'two_number_sum.py',
+    'suffix_trie_construction.py'
 ]
 
 
-def two_number_sum(arr, target):
-    pass
+# Do not edit the class below except for the
+# populateSuffixTrieFrom and contains methods.
+# Feel free to add new properties and methods
+# to the class.
+class SuffixTrie:
+    def __init__(self, string):
+        self.root = {}
+        self.endSymbol = "*"
+        self.populateSuffixTrieFrom(string)
 
 
-def two_number_sum1(arr, target):
-    pass
+    def populateSuffixTrieFrom(self, string):
+        pass
+
+
+    def contains(self, string):
+        pass
 
 
 if __name__ == '__main__':
-    print(two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    remain = list(set(tasks) - set(tasks_done))
+    random.shuffle(remain)
+    print(remain)
+
+    trie = SuffixTrie("babc")
+    expected = {
+        "c": {"*": True},
+        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
+        "a": {"b": {"c": {"*": True}}},
+    }
+    assert trie.root == expected
+    assert trie.contains("abc")
