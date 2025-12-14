@@ -268,27 +268,13 @@ tasks_done = [
     'longest_increasing_subsequence.py',
     'rotting_oranges.py',
     'two_number_sum.py',
-    'suffix_trie_construction.py'
+    'suffix_trie_construction.py',
+    'apartment_hunting.py'
 ]
 
 
-# Do not edit the class below except for the
-# populateSuffixTrieFrom and contains methods.
-# Feel free to add new properties and methods
-# to the class.
-class SuffixTrie:
-    def __init__(self, string):
-        self.root = {}
-        self.endSymbol = "*"
-        self.populateSuffixTrieFrom(string)
-
-
-    def populateSuffixTrieFrom(self, string):
-        pass
-
-
-    def contains(self, string):
-        pass
+def apartmentHunting(blocks, reqs):
+    pass
 
 
 if __name__ == '__main__':
@@ -296,11 +282,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    trie = SuffixTrie("babc")
-    expected = {
-        "c": {"*": True},
-        "b": {"c": {"*": True}, "a": {"b": {"c": {"*": True}}}},
-        "a": {"b": {"c": {"*": True}}},
-    }
-    assert trie.root == expected
-    assert trie.contains("abc")
+    blocks = [
+        {"gym": False, "school": True, "store": False},
+        {"gym": True, "school": False, "store": False},
+        {"gym": True, "school": True, "store": False},
+        {"gym": False, "school": True, "store": False},
+        {"gym": False, "school": True, "store": True},
+    ]
+    reqs = ["gym", "school", "store"]
+    assert apartmentHunting(blocks, reqs) == 3
