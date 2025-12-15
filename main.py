@@ -269,11 +269,17 @@ tasks_done = [
     'rotting_oranges.py',
     'two_number_sum.py',
     'suffix_trie_construction.py',
-    'apartment_hunting.py'
+    'apartment_hunting.py',
+    'sort_stack.py'
 ]
 
 
-def apartmentHunting(blocks, reqs):
+def sortStack(stack):
+    pass
+
+
+
+def sortStack1(stack):
     pass
 
 
@@ -282,12 +288,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    blocks = [
-        {"gym": False, "school": True, "store": False},
-        {"gym": True, "school": False, "store": False},
-        {"gym": True, "school": True, "store": False},
-        {"gym": False, "school": True, "store": False},
-        {"gym": False, "school": True, "store": True},
-    ]
-    reqs = ["gym", "school", "store"]
-    assert apartmentHunting(blocks, reqs) == 3
+    input = [-5, 2, -2, 4, 3, 1]
+    expected = [-5, -2, 1, 2, 3, 4]
+
+    actual = sortStack(input)
+    print(actual)
+    assert actual == expected
+
+    actual = sortStack1(input)
+    print(actual)
+    assert actual == expected
