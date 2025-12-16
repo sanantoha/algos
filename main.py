@@ -4,6 +4,8 @@ from collections import deque
 import math
 import random
 
+from stacks.sort_stack import insertInSortedOrder
+
 tasks = [
     'apartment_hunting.py',
     'array_of_products.py',
