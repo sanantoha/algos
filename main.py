@@ -272,16 +272,16 @@ tasks_done = [
     'two_number_sum.py',
     'suffix_trie_construction.py',
     'apartment_hunting.py',
-    'sort_stack.py'
+    'sort_stack.py',
+    'same_bsts.py'
 ]
 
 
-def sortStack(stack):
+def sameBsts(arr1, arr2):
     pass
 
 
-
-def sortStack1(stack):
+def sameBsts1(arr1, arr2):
     pass
 
 
@@ -290,13 +290,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [-5, 2, -2, 4, 3, 1]
-    expected = [-5, -2, 1, 2, 3, 4]
+    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
+    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
+    assert sameBsts(arrayOne, arrayTwo)
 
-    actual = sortStack(input)
-    print(actual)
-    assert actual == expected
-
-    actual = sortStack1(input)
-    print(actual)
-    assert actual == expected
+    assert sameBsts1(arrayOne, arrayTwo)
