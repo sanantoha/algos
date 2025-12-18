@@ -277,11 +277,11 @@ tasks_done = [
 ]
 
 
-def sameBsts(arr1, arr2):
+def longestCommonSubsequence(s1, s2):
     pass
 
 
-def sameBsts1(arr1, arr2):
+def longestCommonSubsequence1(s1, s2):
     pass
 
 
@@ -290,8 +290,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    arrayOne = [10, 15, 8, 12, 94, 81, 5, 2, 11]
-    arrayTwo = [10, 8, 5, 15, 2, 12, 11, 94, 81]
-    assert sameBsts(arrayOne, arrayTwo)
+    output = longestCommonSubsequence("ZXVVYZW", "XKYKZPW")
+    print(output)
+    assert output == ["X", "Y", "Z", "W"]
 
-    assert sameBsts1(arrayOne, arrayTwo)
+    output = longestCommonSubsequence1("ZXVVYZW", "XKYKZPW")
+    print(output)
+    assert output == ["X", "Y", "Z", "W"]
