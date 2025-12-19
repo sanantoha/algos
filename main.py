@@ -273,16 +273,40 @@ tasks_done = [
     'suffix_trie_construction.py',
     'apartment_hunting.py',
     'sort_stack.py',
-    'same_bsts.py'
+    'same_bsts.py',
+    'longest_common_subsequence.py',
+    'serialize_and_deserialize_n_ary_tree.py'
 ]
 
 
-def longestCommonSubsequence(s1, s2):
-    pass
+class Node(object):
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+
+    def __repr__(self):
+        return f"Node({self.val} {self.children})"
 
 
-def longestCommonSubsequence1(s1, s2):
-    pass
+class Codec:
+
+    def serialize(self, root):
+        return ""
+
+
+    def deserialize(self, data):
+        return None
+
+
+class Codec1:
+
+    def serialize(self, root):
+
+        return ""
+
+
+    def deserialize(self, data):
+        return None
 
 
 if __name__ == '__main__':
@@ -290,10 +314,18 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    output = longestCommonSubsequence("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
+    root = Node(11, [Node(33, [Node(55), Node(6666)]), Node(22), Node(30)])
+    print(root)
+    codec = Codec()
+    str = codec.serialize(root)
+    print(str)
 
-    output = longestCommonSubsequence1("ZXVVYZW", "XKYKZPW")
-    print(output)
-    assert output == ["X", "Y", "Z", "W"]
+    tree = codec.deserialize(str)
+    print(tree)
+
+    codec1 = Codec1()
+    str = codec1.serialize(root)
+    print(str)
+
+    tree = codec1.deserialize(str)
+    print(tree)
