@@ -275,83 +275,13 @@ tasks_done = [
     'sort_stack.py',
     'same_bsts.py',
     'longest_common_subsequence.py',
-    'serialize_and_deserialize_n_ary_tree.py'
+    'serialize_and_deserialize_n_ary_tree.py',
+    'move_element_to_end.py'
 ]
 
 
-class Node(object):
-    def __init__(self, val=None, children=None):
-        self.val = val
-        self.children = children
-
-    def __repr__(self):
-        return f"Node({self.val} {self.children})"
-
-
-class Indexer:
-    def __init__(self, idx):
-        self.idx = idx
-
-class Codec:
-
-    def serialize(self, root):
-
-        def helper(root, indexer, parentIdx, res):
-            if not root:
-                return
-
-            res.append(chr(indexer.idx + 48))
-            res.append(chr(root.val + 48))
-            res.append(chr(parentIdx + 48) if parentIdx else 'N')
-
-            parentIdx = indexer.idx
-            for child in root.children if root.children else []:
-                indexer.idx += 1
-                helper(child, indexer, parentIdx, res)
-
-
-        res = []
-
-        helper(root, Indexer(1), None, res)
-
-        return "".join(res)
-
-
-    def deserialize(self, data):
-
-        def helper(data):
-            nodes_and_parents = {}
-
-            for i in range(0, len(data), 3):
-                idx = ord(data[i]) - 48
-                val = ord(data[i + 1]) - 48
-
-                nodes_and_parents[idx] = Node(val, [])
-
-            for i in range(3, len(data), 3):
-                idx = ord(data[i]) - 48
-                parentIdx = ord(data[i + 2]) - 48
-                node = nodes_and_parents[idx]
-                parent = nodes_and_parents[parentIdx]
-                parent.children.append(node)
-
-            return nodes_and_parents[ord(data[0]) - 48]
-
-
-        if not data:
-            return None
-        return helper(data)
-
-
-class Codec1:
-
-    def serialize(self, root):
-
-        return ""
-
-
-    def deserialize(self, data):
-        return None
+def move_element_to_end(arr, to_move):
+    pass
 
 
 if __name__ == '__main__':
@@ -359,18 +289,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = Node(11, [Node(33, [Node(55), Node(6666)]), Node(22), Node(30)])
-    print(root)
-    codec = Codec()
-    str = codec.serialize(root)
-    print(str)
-
-    tree = codec.deserialize(str)
-    print(tree)
-
-    codec1 = Codec1()
-    str = codec1.serialize(root)
-    print(str)
-
-    tree = codec1.deserialize(str)
-    print(tree)
+    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
