@@ -292,12 +292,43 @@ class BST:
         self.right = right
 
 
+    # O(log(n)) time | O(log(n)) space
+    # O(n) time | O(n) space
     def insert_rec(self, value):
-        pass
+        if value < self.value:
+            if self.left:
+                self.left.insert_rec(value)
+            else:
+                self.left = BST(value)
+        else:
+            if self.right:
+                self.right.insert_rec(value)
+            else:
+                self.right = BST(value)
+
+        return self
 
 
+    # O(log(n)) time | O(1) space
+    # O(n) time | O(1) space
     def insert(self, value):
-        pass
+        curr = self
+
+        while curr:
+            if value < curr.value:
+                if curr.left:
+                    curr = curr.left
+                else:
+                    curr.left = BST(value)
+                    break
+            else:
+                if curr.right:
+                    curr = curr.right
+                else:
+                    curr.right = BST(value)
+                    break
+
+        return self
 
 
     def contains(self, value):
