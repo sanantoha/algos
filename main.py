@@ -331,12 +331,34 @@ class BST:
         return self
 
 
+    # O(log(n)) time | O(1) space
+    # O(n) time | O(1) space
     def contains(self, value):
-        pass
+        curr = self
 
+        while curr:
+            if curr.value == value:
+                return True
+            elif curr.value < value:
+                curr = curr.right
+            else:
+                curr = curr.left
 
+        return False
+
+    # O(log(n)) time | O(log(n)) space
+    # O(n) time | O(n) space
     def contains_rec(self, value):
-        pass
+        if self.value == value:
+            return True
+        elif self.value < value:
+            if not self.right:
+                return False
+            return self.right.contains_rec(value)
+        else:
+            if not self.left:
+                return False
+            return self.left.contains_rec(value)
 
 
     def remove(self, value, parent_node=None):
@@ -364,6 +386,7 @@ if __name__ == '__main__':
 
     root.insert(12)
     assert (root.right.left.left.value == 12)
+    assert root.contains(12)
 
     # root.remove(10)
     # assert (not root.contains(10))
@@ -383,6 +406,7 @@ if __name__ == '__main__':
 
     root1.insert_rec(12)
     assert (root1.right.left.left.value == 12)
+    assert root1.contains_rec(12)
 
     # root1.remove_rec(10)
     # assert (not root1.contains_rec(10))
