@@ -364,8 +364,45 @@ class BST:
     def remove(self, value, parent_node=None):
         pass
 
+    # O(log(n)) time | O(log(n)) space
+    # O(n) time | O(n) space
     def remove_rec(self, value, parent_node=None):
-        pass
+        if self.value < value:
+            if not self.left:
+                return self.left.remove_rec(value, self)
+        elif self.value > value:
+            if not self.right:
+                return self.right.remove_rec(value, self)
+        else:
+            if self.left and self.right:
+                self.value = self.right.get_min_value()
+                self.right.remove_rec(self.value, self)
+            elif not parent_node:
+                if self.left:
+                    self.value = self.left.value
+                    self.right = self.left.right
+                    self.left = self.left.left
+                elif self.right:
+                    self.value = self.right.value
+                    self.left = self.right.left
+                    self.right = self.right.right
+                else:
+                    pass
+
+            elif parent_node.left == self:
+                parent_node.left = self.left if self.left else self.right
+            elif parent_node.right == self:
+                parent_node.right = self.left if self.left else self.right
+
+        return self
+
+
+    def get_min_value(self):
+        curr = self
+        while curr.left:
+            curr = curr.left
+
+        return curr.value
 
 
 
@@ -408,8 +445,8 @@ if __name__ == '__main__':
     assert (root1.right.left.left.value == 12)
     assert root1.contains_rec(12)
 
-    # root1.remove_rec(10)
-    # assert (not root1.contains_rec(10))
-    # assert (root1.value == 12)
-    #
-    # assert (root1.contains_rec(15))
+    root1.remove_rec(10)
+    assert (not root1.contains_rec(10))
+    assert (root1.value == 12)
+
+    assert (root1.contains_rec(15))
