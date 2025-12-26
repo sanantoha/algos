@@ -144,266 +144,16 @@ tasks = [
 ]
 
 tasks_done = [
-    'find_three_largest_numbers.py',
-    'valid_starting_city.py',
-    'majority_element.py',
-    'best_seats.py',
-    'best_digits.py',
-    'permutations.py',
-    'longest_peak.py',
-    'lagest_island.py',
-    'monotonic_array.py',
-    'find_closest_value_in_bst.py',
-    'linked_list_construction.py',
-    'min_heap_construction.py',
-    'number_of_islands.py',
-    'three_number_sort.py',
-    'get_nth_fib.py',
-    'largest_range.py',
-    'numbers_of_ways_to_traverse_graph.py',
-    'group_anagrams.py',
-    'word_ladder_ii.py',
-    'levenshtein_distance.py',
-    'four_number_sum.py',
-    'evaluate_expression_tree.py',
-    'transpose_matrix.py',
-    'breadth_first_search.py',
-    'bubble_sort.py',
-    'simmetrical_tree.py',
-    'min_max_stack_construction.py',
-    'smallest_difference.py',
-    'minimum_passes_of_matrix.py',
-    'disk_stacking.py',
-    'find_successor.py',
-    'subtree_of_another_tree.py',
-    'array_of_products.py',
-    'relative_sort_array.py',
-    'staircase_traversal.py',
-    'next_greater_element.py',
-    'common_characters.py',
-    'node_depths.py',
-    'generate_document.py',
-    'find_nodes_distance_k.py',
-    'tournament_winner.py',
-    'selection_sort.py',
-    'palindrom_check.py',
-    'binary_search.py',
-    'height_balanced_binary_tree.py',
-    'knapsack_problem.py',
-    'river_sizes.py',
-    'find_pivot_index.py',
-    'zigzag_traverse.py',
-    'invert_binary_tree.py',
-    'valid_anagram.py',
-    'longest_palindromic_substring.py',
-    'number_of_ways_to_make_change.py',
-    'one_edit.py',
-    'validate_subsequence.py',
-    'median_of_two_sorted_arrays.py',
-    'sorted_squared_array.py',
-    'tandem_bicycle.py',
-    'sunset_views.py',
-    'max_sum_in_binary_tree.py',
-    'subarray_sort.py',
-    'sum_of_linked_lists.py',
-    'missing_numbers.py',
-    'semordinal.py',
-    'run_length_encoding.py',
-    'remove_islands.py',
-    'kruskals_algorithm.py',
-    'get_youngest_common_ancestor.py',
-    'word_ladder.py',
-    'kadanes_distance.py',
-    'bst_traversal.py',
-    'merging_linked_lists.py',
-    'max_subset_sum_no_adjucent.py',
-    'three_number_sum.py',
-    'water_area.py',
-    'caesar_cipher_encryptor.py',
-    'zero_sum_subarray.py',
-    'validate_bst.py',
-    'all_paths_source_target.py',
-    'pow.py',
-    'branch_sums.py',
-    'depth_first_search.py',
-    'validate_tree_nodes.py',
-    'search_in_sorted_matrix.py',
-    'min_height_bst.py',
-    'reconstruct_bst.py',
-    'first_non_repeating_character.py',
-    'product_sum.py',
-    'binary_tree_diameter.py',
-    'minimum_characters_for_words.py',
-    'task_assignment.py',
-    'two_colorable.py',
-    'phone_number_mnemonic.py',
-    'class_photos.py',
-    'insertion_sort.py',
-    'balanced_brackets.py',
-    'merge_binary_trees.py',
-    'max_sum_increasing_subsequence.py',
-    'min_number_of_coins_for_change.py',
-    'reverse_words_in_string.py',
-    'optimal_freelancing.py',
-    'minimum_waiting_time.py',
-    'spiral_matrix_traverse.py',
-    'sqrt.py',
-    'powerset.py',
-    'unique_pathsIII.py',
-    'remove_duplicates_from_linkedlist.py',
-    'find_kth_largest_value_in_bst.py',
-    'single_cycle_check.py',
-    'first_duplicate_value.py',
-    'merge_overlapping_intervals.py',
-    'middle_node.py',
-    'reverse_polish_notation.py',
-    'zero_one_matrix.py',
-    'union_find.py',
-    'a_star_algorithm.py',
-    'valid_ip_addresses.py',
-    'cycle_in_graph.py',
-    'remove_kth_node_from_end.py',
-    'non_constructible_changes.py',
-    'stable_internships.py',
-    'min_rewards.py',
-    'blackjack_probability.py',
-    'longest_increasing_subsequence.py',
-    'rotting_oranges.py',
-    'two_number_sum.py',
-    'suffix_trie_construction.py',
-    'apartment_hunting.py',
-    'sort_stack.py',
-    'same_bsts.py',
-    'longest_common_subsequence.py',
-    'serialize_and_deserialize_n_ary_tree.py',
-    'move_element_to_end.py',
-    'bst_construction.py'
+    'powerset.py'
 ]
 
 
-# Do not edit the class below except for
-# the insert, contains, and remove methods.
-# Feel free to add new properties and methods
-# to the class.
-class BST:
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
+def powerset(arr):
+    pass
 
 
-    # O(log(n)) time | O(log(n)) space
-    # O(n) time | O(n) space
-    def insert_rec(self, value):
-        if value < self.value:
-            if self.left:
-                self.left.insert_rec(value)
-            else:
-                self.left = BST(value)
-        else:
-            if self.right:
-                self.right.insert_rec(value)
-            else:
-                self.right = BST(value)
-
-        return self
-
-
-    # O(log(n)) time | O(1) space
-    # O(n) time | O(1) space
-    def insert(self, value):
-        curr = self
-
-        while curr:
-            if value < curr.value:
-                if curr.left:
-                    curr = curr.left
-                else:
-                    curr.left = BST(value)
-                    break
-            else:
-                if curr.right:
-                    curr = curr.right
-                else:
-                    curr.right = BST(value)
-                    break
-
-        return self
-
-
-    # O(log(n)) time | O(1) space
-    # O(n) time | O(1) space
-    def contains(self, value):
-        curr = self
-
-        while curr:
-            if curr.value == value:
-                return True
-            elif curr.value < value:
-                curr = curr.right
-            else:
-                curr = curr.left
-
-        return False
-
-    # O(log(n)) time | O(log(n)) space
-    # O(n) time | O(n) space
-    def contains_rec(self, value):
-        if self.value == value:
-            return True
-        elif self.value < value:
-            if not self.right:
-                return False
-            return self.right.contains_rec(value)
-        else:
-            if not self.left:
-                return False
-            return self.left.contains_rec(value)
-
-
-    def remove(self, value, parent_node=None):
-        pass
-
-    # O(log(n)) time | O(log(n)) space
-    # O(n) time | O(n) space
-    def remove_rec(self, value, parent_node=None):
-        if self.value < value:
-            if not self.left:
-                return self.left.remove_rec(value, self)
-        elif self.value > value:
-            if not self.right:
-                return self.right.remove_rec(value, self)
-        else:
-            if self.left and self.right:
-                self.value = self.right.get_min_value()
-                self.right.remove_rec(self.value, self)
-            elif not parent_node:
-                if self.left:
-                    self.value = self.left.value
-                    self.right = self.left.right
-                    self.left = self.left.left
-                elif self.right:
-                    self.value = self.right.value
-                    self.left = self.right.left
-                    self.right = self.right.right
-                else:
-                    pass
-
-            elif parent_node.left == self:
-                parent_node.left = self.left if self.left else self.right
-            elif parent_node.right == self:
-                parent_node.right = self.left if self.left else self.right
-
-        return self
-
-
-    def get_min_value(self):
-        curr = self
-        while curr.left:
-            curr = curr.left
-
-        return curr.value
-
+def powerset1(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -411,42 +161,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-
-    root.insert(12)
-    assert (root.right.left.left.value == 12)
-    assert root.contains(12)
-
-    # root.remove(10)
-    # assert (not root.contains(10))
-    # assert (root.value == 12)
-    #
-    # assert (root.contains(15))
-
-    root1 = BST(10)
-    root1.left = BST(5)
-    root1.left.left = BST(2)
-    root1.left.left.left = BST(1)
-    root1.left.right = BST(5)
-    root1.right = BST(15)
-    root1.right.left = BST(13)
-    root1.right.left.right = BST(14)
-    root1.right.right = BST(22)
-
-    root1.insert_rec(12)
-    assert (root1.right.left.left.value == 12)
-    assert root1.contains_rec(12)
-
-    root1.remove_rec(10)
-    assert (not root1.contains_rec(10))
-    assert (root1.value == 12)
-
-    assert (root1.contains_rec(15))
+    print(powerset([1, 2, 3]))
+    print(powerset1([1, 2, 3]))
+    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
+    assert len(output) == 8
+    assert set([]) in output
+    assert set([1]) in output
+    assert set([2]) in output
+    assert set([1, 2]) in output
+    assert set([3]) in output
+    assert set([1, 3]) in output
+    assert set([2, 3]) in output
+    assert set([1, 2, 3]) in output
