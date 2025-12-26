@@ -140,7 +140,8 @@ tasks = [
     'sqrt.py',
     'relative_sort_array.py',
     'rotting_oranges.py',
-    'zero_one_matrix.py'
+    'zero_one_matrix.py',
+    'course_schedule.py'
 ]
 
 tasks_done = [
