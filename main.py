@@ -145,15 +145,12 @@ tasks = [
 ]
 
 tasks_done = [
-    'powerset.py'
+    'powerset.py',
+    'river_sizes.py'
 ]
 
 
-def powerset(arr):
-    pass
-
-
-def powerset1(arr):
+def river_sizes(matrix):
     pass
 
 
@@ -162,15 +159,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(powerset([1, 2, 3]))
-    print(powerset1([1, 2, 3]))
-    output = list(map(lambda x: set(x), powerset([1, 2, 3])))
-    assert len(output) == 8
-    assert set([]) in output
-    assert set([1]) in output
-    assert set([2]) in output
-    assert set([1, 2]) in output
-    assert set([3]) in output
-    assert set([1, 3]) in output
-    assert set([2, 3]) in output
-    assert set([1, 2, 3]) in output
+    test_input = [
+        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
+        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
+        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
+        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
+        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
+    ]
+
+    expected = [1, 1, 2, 2, 5, 21]
+    # expected = [1, 2, 2, 2, 5]
+
+    actual = sorted(river_sizes(test_input))
+    print(actual)
+    assert actual == expected
