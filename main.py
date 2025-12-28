@@ -141,7 +141,8 @@ tasks = [
     'relative_sort_array.py',
     'rotting_oranges.py',
     'zero_one_matrix.py',
-    'course_schedule.py'
+    'course_schedule.py',
+    'find_kth_largest_value_in_bst.py'
 ]
 
 tasks_done = [
@@ -149,8 +150,10 @@ tasks_done = [
     'river_sizes.py'
 ]
 
+from tree.BST import BST
 
-def river_sizes(matrix):
+
+def find_kth_largest_value_in_bst(root):
     pass
 
 
@@ -159,17 +162,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test_input = [
-        [1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0],
-        [1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0],
-        [0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1],
-        [1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0],
-        [1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]
-    ]
-
-    expected = [1, 1, 2, 2, 5, 21]
-    # expected = [1, 2, 2, 2, 5]
-
-    actual = sorted(river_sizes(test_input))
+    root = BST(15)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.left.right = BST(3)
+    root.left.right = BST(5)
+    root.right = BST(20)
+    root.right.left = BST(17)
+    root.right.right = BST(22)
+    k = 3
+    expected = 17
+    actual = find_kth_largest_value_in_bst(root, k)
     print(actual)
     assert actual == expected

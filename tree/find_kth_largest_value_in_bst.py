@@ -1,5 +1,5 @@
 
-from BST import BST
+from tree.BST import BST
 
 # O(n) time | O(1) space
 def find_kth_largest_value_in_bst(tree, k):
