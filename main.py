@@ -147,13 +147,13 @@ tasks = [
 
 tasks_done = [
     'powerset.py',
-    'river_sizes.py'
+    'river_sizes.py',
+    'find_kth_largest_value_in_bst.py',
+    'bubble_sort.py'
 ]
 
-from tree.BST import BST
 
-
-def find_kth_largest_value_in_bst(root):
+def bubble_sort(arr):
     pass
 
 
@@ -162,17 +162,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BST(15)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.left.right = BST(3)
-    root.left.right = BST(5)
-    root.right = BST(20)
-    root.right.left = BST(17)
-    root.right.right = BST(22)
-    k = 3
-    expected = 17
-    actual = find_kth_largest_value_in_bst(root, k)
-    print(actual)
-    assert actual == expected
+    print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
