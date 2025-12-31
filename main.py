@@ -142,7 +142,8 @@ tasks = [
     'rotting_oranges.py',
     'zero_one_matrix.py',
     'course_schedule.py',
-    'find_kth_largest_value_in_bst.py'
+    'find_kth_largest_value_in_bst.py',
+    'number_of_ways_to_make_change.py'
 ]
 
 tasks_done = [
@@ -157,9 +158,16 @@ def bubble_sort(arr):
     pass
 
 
+def number_of_ways_to_make_change(n, denoms):
+    pass
+
+
 if __name__ == '__main__':
     remain = list(set(tasks) - set(tasks_done))
     random.shuffle(remain)
     print(remain)
 
     print(bubble_sort([8, 5, 2, 9, 5, 6, 3]))
+
+    print(number_of_ways_to_make_change(6, [1, 5]))
+    assert number_of_ways_to_make_change(6, [1, 5]) == 2
