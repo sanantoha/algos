@@ -152,12 +152,16 @@ tasks_done = [
     'find_kth_largest_value_in_bst.py',
     'bubble_sort.py',
     'number_of_ways_to_make_change.py',
-    'phone_number_mnemonic.py'
+    'phone_number_mnemonic.py',
+    'find_three_largest_numbers.py'
 ]
 
 
-def phoneNumberMnemonics(phoneNumber):
-    letters = ["0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
+def find_three_largest_numbers(arr):
+    pass
+
+
+def find_three_largest_numbers1(arr):
     pass
 
 
@@ -166,8 +170,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    phoneNumber = "1905"
-    expected = ["1w0j", "1w0k", "1w0l", "1x0j", "1x0k", "1x0l", "1y0j", "1y0k", "1y0l", "1z0j", "1z0k", "1z0l"]
-    actual = phoneNumberMnemonics(phoneNumber)
-    print(actual)
-    assert actual == expected
+    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
