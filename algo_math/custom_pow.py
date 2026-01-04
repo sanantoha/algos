@@ -1,6 +1,6 @@
 
 # O(log(n)) time | O(log(n)) space
-def pow(x, n):
+def calc_pow(x, n):
     if n == 0:
         return 1
     if n == 1:
@@ -16,7 +16,7 @@ def pow(x, n):
 
 
 if __name__ == '__main__':
-    assert pow(4, 2) == 16
-    assert pow(2, 4) == 16
-    assert pow(2.0, -2) == 0.25
-    assert pow(2.1, 3) == 9.261000000000001
+    assert calc_pow(4, 2) == 16
+    assert calc_pow(2, 4) == 16
+    assert calc_pow(2.0, -2) == 0.25
+    assert calc_pow(2.1, 3) == 9.261000000000001

@@ -136,7 +136,7 @@ tasks = [
     'lagest_island.py',
     'subtree_of_another_tree.py',
     'valid_anagram.py',
-    'pow.py',
+    'custom_pow.py',
     'sqrt.py',
     'relative_sort_array.py',
     'rotting_oranges.py',
@@ -153,15 +153,12 @@ tasks_done = [
     'bubble_sort.py',
     'number_of_ways_to_make_change.py',
     'phone_number_mnemonic.py',
-    'find_three_largest_numbers.py'
+    'find_three_largest_numbers.py',
+    'custom_pow.py'
 ]
 
 
-def find_three_largest_numbers(arr):
-    pass
-
-
-def find_three_largest_numbers1(arr):
+def pow(x, n):
     pass
 
 
@@ -170,5 +167,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(find_three_largest_numbers([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
-    print(find_three_largest_numbers1([141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]) == [18, 141, 541])
+    assert pow(4, 2) == 16
+    assert pow(2, 4) == 16
+    assert pow(2.0, -2) == 0.25
+    assert pow(2.1, 3) == 9.261000000000001
