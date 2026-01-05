@@ -1,10 +1,4 @@
-import collections
-from collections import deque
-
-import math
 import random
-
-from stacks.sort_stack import insertInSortedOrder
 
 tasks = [
     'apartment_hunting.py',
