@@ -1,6 +1,6 @@
 
 # O(w * h) time | O(w * h) space
-def numberOfIsland(matrix):
+def number_of_island(matrix):
     if not matrix:
         return -1
 
@@ -59,6 +59,6 @@ if __name__ == '__main__':
     ]
     expected = 3
 
-    actual = numberOfIsland(matrix)
+    actual = number_of_island(matrix)
     print(actual)
     assert actual == expected

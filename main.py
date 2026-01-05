@@ -154,11 +154,12 @@ tasks_done = [
     'number_of_ways_to_make_change.py',
     'phone_number_mnemonic.py',
     'find_three_largest_numbers.py',
-    'custom_pow.py'
+    'custom_pow.py',
+    'number_of_islands.py'
 ]
 
 
-def pow(x, n):
+def number_of_island(matrix):
     pass
 
 
@@ -167,7 +168,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert pow(4, 2) == 16
-    assert pow(2, 4) == 16
-    assert pow(2.0, -2) == 0.25
-    assert pow(2.1, 3) == 9.261000000000001
+    matrix = [
+        [0, 0, 0, 0, 1],
+        [1, 1, 0, 0, 0],
+        [1, 1, 0, 1, 1],
+        [0, 0, 0, 1, 1]
+    ]
+    expected = 3
+
+    actual = number_of_island(matrix)
+    print(actual)
+    assert actual == expected
