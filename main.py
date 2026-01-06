@@ -149,11 +149,12 @@ tasks_done = [
     'phone_number_mnemonic.py',
     'find_three_largest_numbers.py',
     'custom_pow.py',
-    'number_of_islands.py'
+    'number_of_islands.py',
+    'knapsack_problem.py'
 ]
 
 
-def number_of_island(matrix):
+def knapsack_problem(items, capacity):
     pass
 
 
@@ -162,14 +163,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    matrix = [
-        [0, 0, 0, 0, 1],
-        [1, 1, 0, 0, 0],
-        [1, 1, 0, 1, 1],
-        [0, 0, 0, 1, 1]
-    ]
-    expected = 3
-
-    actual = number_of_island(matrix)
+    items = [[1, 2], [4, 3], [5, 6], [6, 7]]
+    capacity = 10
+    expected = [10, [1, 3]]
+    actual = knapsack_problem(items, capacity)
     print(actual)
     assert actual == expected

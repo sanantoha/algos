@@ -1,6 +1,6 @@
 
 # O(n * c) time | O(n * c) space
-def knapsackProblem(items, capacity):
+def knapsack_problem(items, capacity):
     if items is None or len(items) == 0 or capacity <= 0:
         return [0, []]
 
@@ -41,6 +41,6 @@ if __name__ == '__main__':
     items = [[1, 2], [4, 3], [5, 6], [6, 7]]
     capacity = 10
     expected = [10, [1, 3]]
-    actual = knapsackProblem(items, capacity)
+    actual = knapsack_problem(items, capacity)
     print(actual)
     assert actual == expected
