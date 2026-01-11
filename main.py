@@ -152,10 +152,15 @@ tasks_done = [
     'number_of_islands.py',
     'knapsack_problem.py',
     'first_non_repeating_character.py',
+    'generate_document.py'
 ]
 
 
-def first_non_repeating_character(string):
+def generate_document(characters, document):
+    pass
+
+
+def generate_document1(characters, document):
     pass
 
 
@@ -164,4 +169,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(first_non_repeating_character("abcdcaf") == 1)
+    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
