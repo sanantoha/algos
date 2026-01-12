@@ -152,16 +152,18 @@ tasks_done = [
     'number_of_islands.py',
     'knapsack_problem.py',
     'first_non_repeating_character.py',
-    'generate_document.py'
+    'generate_document.py',
+    'water_area.py'
 ]
 
 
-def generate_document(characters, document):
+def waterArea(arr):
     pass
 
 
-def generate_document1(characters, document):
+def waterArea1(arr):
     pass
+
 
 
 if __name__ == '__main__':
@@ -169,5 +171,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(generate_document("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
-    print(generate_document1("Bste!hetsi ogEAxpelrt x ", "AlgoExpert is the Best!"))
+    expected = 48
+    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    print(actual)
+    print(actual == expected)
+
+    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
+    print(actual)
+    print(actual == expected)
