@@ -153,17 +153,13 @@ tasks_done = [
     'knapsack_problem.py',
     'first_non_repeating_character.py',
     'generate_document.py',
-    'water_area.py'
+    'water_area.py',
+    'semordinal.py'
 ]
 
 
-def waterArea(arr):
+def semordnilap(words):
     pass
-
-
-def waterArea1(arr):
-    pass
-
 
 
 if __name__ == '__main__':
@@ -171,11 +167,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    expected = 48
-    actual = waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
-    print(actual)
-    print(actual == expected)
-
-    actual = waterArea1([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3])
-    print(actual)
-    print(actual == expected)
+    input = ["desserts", "stressed", "hello"]
+    expected = [["desserts", "stressed"]]
+    actual = semordnilap(input)
+    print(actual)  # [['desserts', 'stressed']]
