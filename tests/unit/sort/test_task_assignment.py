@@ -1,0 +1,10 @@
+from sort.task_assignment import task_assignment
+
+
+def test_task_assignment():
+    k = 3
+    tasks = [1, 3, 5, 3, 1, 4]
+    expected = [[4, 2], [0, 5], [3, 1]]
+    actual = task_assignment(k, tasks)
+    print(actual)
+    assert actual == expected

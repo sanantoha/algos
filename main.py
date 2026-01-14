@@ -154,11 +154,12 @@ tasks_done = [
     'first_non_repeating_character.py',
     'generate_document.py',
     'water_area.py',
-    'semordinal.py'
+    'semordinal.py',
+    'task_assignment.py'
 ]
 
 
-def semordnilap(words):
+def task_assignment(k, tasks):
     pass
 
 
@@ -167,7 +168,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["desserts", "stressed", "hello"]
-    expected = [["desserts", "stressed"]]
-    actual = semordnilap(input)
-    print(actual)  # [['desserts', 'stressed']]
+    k = 3
+    tasks = [1, 3, 5, 3, 1, 4]
+    expected = [[4, 2], [0, 5], [3, 1]]
+    actual = task_assignment(k, tasks)
+    print(actual)
+    assert actual == expected
