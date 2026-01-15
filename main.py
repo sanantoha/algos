@@ -155,11 +155,20 @@ tasks_done = [
     'generate_document.py',
     'water_area.py',
     'semordinal.py',
-    'task_assignment.py'
+    'task_assignment.py',
+    'find_closest_value_in_bst.py'
 ]
 
 
-def task_assignment(k, tasks):
+def find_closest_value_in_bst(root, target):
+    pass
+
+
+def find_closest_value_in_bst1(root, target):
+    pass
+
+
+def find_closest_value_in_bst2(root, target):
     pass
 
 
@@ -168,9 +177,19 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    k = 3
-    tasks = [1, 3, 5, 3, 1, 4]
-    expected = [[4, 2], [0, 5], [3, 1]]
-    actual = task_assignment(k, tasks)
-    print(actual)
-    assert actual == expected
+    from tree.BST import BST
+
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+    expected = 13
+
+    print(find_closest_value_in_bst(root, 12))
+    print(find_closest_value_in_bst1(root, 12))
+    print(find_closest_value_in_bst2(root, 12))
