@@ -156,19 +156,20 @@ tasks_done = [
     'water_area.py',
     'semordinal.py',
     'task_assignment.py',
-    'find_closest_value_in_bst.py'
+    'find_closest_value_in_bst.py',
+    'numbers_of_ways_to_traverse_graph.py'
 ]
 
 
-def find_closest_value_in_bst(root, target):
+def numbers_of_ways_to_traverse_graph_rec(width, height):
     pass
 
 
-def find_closest_value_in_bst1(root, target):
+def numbers_of_ways_to_traverse_graph(width, height):
     pass
 
 
-def find_closest_value_in_bst2(root, target):
+def numbers_of_ways_to_traverse_graph_math(width, height):
     pass
 
 
@@ -177,19 +178,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    from tree.BST import BST
-
-    root = BST(10)
-    root.left = BST(5)
-    root.left.left = BST(2)
-    root.left.left.left = BST(1)
-    root.left.right = BST(5)
-    root.right = BST(15)
-    root.right.left = BST(13)
-    root.right.left.right = BST(14)
-    root.right.right = BST(22)
-    expected = 13
-
-    print(find_closest_value_in_bst(root, 12))
-    print(find_closest_value_in_bst1(root, 12))
-    print(find_closest_value_in_bst2(root, 12))
+    assert numbers_of_ways_to_traverse_graph_rec(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph(4, 3) == 10
+    assert numbers_of_ways_to_traverse_graph_math(4, 3) == 10
