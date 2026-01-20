@@ -1,7 +1,7 @@
 
-from validate_bst import validate_bst
-from bst_traversal import in_order_traverse
-from BST import BST
+from tree.validate_bst import validate_bst
+from tree.bst_traversal import in_order_traverse
+from tree.BST import BST
 
 
 # O(n) time | O(n) space

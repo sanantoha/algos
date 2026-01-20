@@ -1,6 +1,9 @@
 import random
 
 from dynamic.numbers_of_ways_to_traverse_graph import factorial
+from tree.bst_traversal import in_order_traverse
+from tree.min_height_bst import get_tree_height
+from tree.validate_bst import validate_bst
 
 tasks = [
     'apartment_hunting.py',
@@ -164,10 +167,7 @@ tasks_done = [
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def is_subtree(root, sub_tree):
+def min_height_bst(arr):
     pass
 
 
@@ -176,39 +176,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root1 = BinaryTree(3)
-    root1.left = BinaryTree(4)
-    root1.left.left = BinaryTree(1)
-    root1.left.right = BinaryTree(2)
-    root1.right = BinaryTree(5)
+    array = [1, 2, 5, 7, 10, 13, 14, 15, 22]
+    tree = min_height_bst(array)
 
-    sub_tree = BinaryTree(4)
-    sub_tree.left = BinaryTree(1)
-    sub_tree.right = BinaryTree(2)
+    assert validate_bst(tree)
+    assert get_tree_height(tree) == 4
 
-    res = is_subtree(root1, sub_tree)
-    print(res)  # True
-    assert res
+    in_order = in_order_traverse(tree, [])
 
-    root2 = BinaryTree(3)
-    root2.left = BinaryTree(4)
-    root2.left.left = BinaryTree(1)
-    root2.left.right = BinaryTree(2)
-    root2.left.right.left = BinaryTree(0)
-    root2.right = BinaryTree(5)
-
-    res = is_subtree(root2, sub_tree)
-    print(res)  # False
-    assert not res
-
-    root3 = BinaryTree(4)
-    root3.left = BinaryTree(4)
-    root3.left.left = BinaryTree(4)
-    root3.left.left.left = BinaryTree(4)
-    root3.left.left.left.left = BinaryTree(4)
-    root3.left.left.left.left.left = BinaryTree(1)
-    root3.left.left.left.left.right = BinaryTree(2)
-
-    res = is_subtree(root3, sub_tree)
-    print(res)  # True
-    assert res
+    assert in_order == [1, 2, 5, 7, 10, 13, 14, 15, 22]
