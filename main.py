@@ -1,9 +1,6 @@
 import random
 
-from dynamic.numbers_of_ways_to_traverse_graph import factorial
-from tree.bst_traversal import in_order_traverse
-from tree.min_height_bst import get_tree_height
-from tree.validate_bst import validate_bst
+from tree.BST import BST
 
 tasks = [
     'apartment_hunting.py',
@@ -163,11 +160,13 @@ tasks_done = [
     'task_assignment.py',
     'find_closest_value_in_bst.py',
     'numbers_of_ways_to_traverse_graph.py',
-    'subtree_of_another_tree.py'
+    'subtree_of_another_tree.py',
+    'min_height_bst.py',
+    'validate_bst.py'
 ]
 
 
-def min_height_bst(arr):
+def validate_bst(root):
     pass
 
 
@@ -176,12 +175,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [1, 2, 5, 7, 10, 13, 14, 15, 22]
-    tree = min_height_bst(array)
-
-    assert validate_bst(tree)
-    assert get_tree_height(tree) == 4
-
-    in_order = in_order_traverse(tree, [])
-
-    assert in_order == [1, 2, 5, 7, 10, 13, 14, 15, 22]
+    root = BST(10)
+    root.left = BST(5)
+    root.left.left = BST(2)
+    root.left.left.left = BST(1)
+    root.left.right = BST(5)
+    root.right = BST(15)
+    root.right.left = BST(13)
+    root.right.left.right = BST(14)
+    root.right.right = BST(22)
+    print(validate_bst(root))
+    assert validate_bst(root)
