@@ -1,4 +1,5 @@
 import random
+from functools import reduce
 
 from tree.BST import BST
 
@@ -163,12 +164,23 @@ tasks_done = [
     'subtree_of_another_tree.py',
     'min_height_bst.py',
     'validate_bst.py',
-    'common_characters.py'
+    'common_characters.py',
+    'breadth_first_search.py'
 ]
 
 
-def commonCharacters(words):
-    pass
+class Node:
+    def __init__(self, name):
+        self.children = []
+        self.name = name
+
+    def add_child(self, name):
+        self.children.append(Node(name))
+        return self
+
+    # O(v + e) time | O(v) space
+    def breadth_first_search(self, array):
+        pass
 
 
 if __name__ == '__main__':
@@ -176,9 +188,12 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = ["abc", "bcdc", "badca"]
-    expected = ["b", "c"]
-    actual = commonCharacters(input)
-    actual.sort()
-    print(actual)
-    assert actual == expected
+    graph = Node("A")
+    graph.add_child("B").add_child("C").add_child("D")
+    graph.children[0].add_child("E").add_child("F")
+    graph.children[2].add_child("G").add_child("H")
+    graph.children[0].children[1].add_child("I").add_child("J")
+    graph.children[2].children[0].add_child("K")
+
+    print(graph.breadth_first_search([]))
+    assert graph.breadth_first_search([]) == ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
