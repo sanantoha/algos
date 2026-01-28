@@ -166,12 +166,24 @@ tasks_done = [
     'validate_bst.py',
     'common_characters.py',
     'breadth_first_search.py',
-    'monotonic_array.py'
+    'monotonic_array.py',
+    'node_depths.py'
 ]
 
 
-def monotonic_array(arr):
-    return False
+from tree.BinaryTree import BinaryTree
+
+
+def node_depths(root):
+    pass
+
+
+def node_depths1(root):
+    pass
+
+
+def node_depths2(root):
+    pass
 
 
 if __name__ == '__main__':
@@ -179,4 +191,15 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(monotonic_array([-1, -5, -10, -1100, -1100, -1101, -1102, -9001]))
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.right = BinaryTree(9)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    root.right.left = BinaryTree(6)
+    root.right.right = BinaryTree(7)
+    print(node_depths(root) == 16)
+    print(node_depths1(root) == 16)
+    print(node_depths2(root) == 16)
