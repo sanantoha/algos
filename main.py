@@ -167,22 +167,12 @@ tasks_done = [
     'common_characters.py',
     'breadth_first_search.py',
     'monotonic_array.py',
-    'node_depths.py'
+    'node_depths.py',
+    'one_edit.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def node_depths(root):
-    pass
-
-
-def node_depths1(root):
-    pass
-
-
-def node_depths2(root):
+def oneEdit(s1, s2):
     pass
 
 
@@ -191,15 +181,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(2)
-    root.left.left = BinaryTree(4)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.right = BinaryTree(9)
-    root.left.right = BinaryTree(5)
-    root.right = BinaryTree(3)
-    root.right.left = BinaryTree(6)
-    root.right.right = BinaryTree(7)
-    print(node_depths(root) == 16)
-    print(node_depths1(root) == 16)
-    print(node_depths2(root) == 16)
+    stringOne = "hello"
+    stringTwo = "helo"
+    expected = True
+    actual = oneEdit(stringOne, stringTwo)
+    print(actual)
+    assert actual == expected
