@@ -168,11 +168,15 @@ tasks_done = [
     'breadth_first_search.py',
     'monotonic_array.py',
     'node_depths.py',
-    'one_edit.py'
+    'one_edit.py',
+    'evaluate_expression_tree.py'
 ]
 
 
-def oneEdit(s1, s2):
+from tree.BinaryTree import BinaryTree
+
+
+def evaluateExpressionTree(root):
     pass
 
 
@@ -181,9 +185,17 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stringOne = "hello"
-    stringTwo = "helo"
-    expected = True
-    actual = oneEdit(stringOne, stringTwo)
+    tree = BinaryTree(-1)
+    tree.left = BinaryTree(-2)
+    tree.left.left = BinaryTree(-4)
+    tree.left.right = BinaryTree(2)
+    tree.left.left.left = BinaryTree(3)
+    tree.left.left.right = BinaryTree(2)
+
+    tree.right = BinaryTree(-3)
+    tree.right.left = BinaryTree(8)
+    tree.right.right = BinaryTree(3)
+    expected = 6
+    actual = evaluateExpressionTree(tree)
     print(actual)
     assert actual == expected
