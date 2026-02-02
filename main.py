@@ -169,14 +169,12 @@ tasks_done = [
     'monotonic_array.py',
     'node_depths.py',
     'one_edit.py',
-    'evaluate_expression_tree.py'
+    'evaluate_expression_tree.py',
+    'sqrt.py'
 ]
 
 
-from tree.BinaryTree import BinaryTree
-
-
-def evaluateExpressionTree(root):
+def sqrt(n):
     pass
 
 
@@ -185,17 +183,9 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    tree = BinaryTree(-1)
-    tree.left = BinaryTree(-2)
-    tree.left.left = BinaryTree(-4)
-    tree.left.right = BinaryTree(2)
-    tree.left.left.left = BinaryTree(3)
-    tree.left.left.right = BinaryTree(2)
-
-    tree.right = BinaryTree(-3)
-    tree.right.left = BinaryTree(8)
-    tree.right.right = BinaryTree(3)
-    expected = 6
-    actual = evaluateExpressionTree(tree)
-    print(actual)
-    assert actual == expected
+    assert sqrt(4) == 2
+    assert sqrt(5) == 2
+    assert sqrt(6) == 2
+    assert sqrt(7) == 2
+    assert sqrt(8) == 2
+    assert sqrt(16) == 4
