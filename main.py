@@ -170,11 +170,16 @@ tasks_done = [
     'node_depths.py',
     'one_edit.py',
     'evaluate_expression_tree.py',
-    'sqrt.py'
+    'sqrt.py',
+    'kadanes_distance.py'
 ]
 
 
-def sqrt(n):
+def kadanes_distance(arr):
+    pass
+
+
+def kadanes_distance1(arr):
     pass
 
 
@@ -183,9 +188,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert sqrt(4) == 2
-    assert sqrt(5) == 2
-    assert sqrt(6) == 2
-    assert sqrt(7) == 2
-    assert sqrt(8) == 2
-    assert sqrt(16) == 4
+    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    assert kadanes_distance1([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
