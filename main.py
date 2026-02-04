@@ -171,16 +171,23 @@ tasks_done = [
     'one_edit.py',
     'evaluate_expression_tree.py',
     'sqrt.py',
-    'kadanes_distance.py'
+    'kadanes_distance.py',
+    'group_anagrams.py'
 ]
 
 
-def kadanes_distance(arr):
+def groupAnagrams(words):
     pass
 
 
-def kadanes_distance1(arr):
-    pass
+
+def compare(expected, output):
+    if len(expected) == 0:
+        assert output == expected
+        return
+    assert len(expected) == len(output)
+    for group in expected:
+        assert sorted(group) in output
 
 
 if __name__ == '__main__':
@@ -188,5 +195,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert kadanes_distance([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
-    assert kadanes_distance1([3, 5, -9, 1, 3, -2, 3, 4, 7, 2, -9, 6, 3, 1, -5, 4]) == 19
+    words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
+    expected = [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
+    output = list(map(lambda x: sorted(x), groupAnagrams(words)))
+    expected = list(map(lambda x: sorted(x), expected))
+
+    print(output)
+    print(expected)
+    compare(expected, output)
