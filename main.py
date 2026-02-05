@@ -172,22 +172,21 @@ tasks_done = [
     'evaluate_expression_tree.py',
     'sqrt.py',
     'kadanes_distance.py',
-    'group_anagrams.py'
+    'group_anagrams.py',
+    'relative_sort_array.py'
 ]
 
 
-def groupAnagrams(words):
+def relative_sort_array(arr1, arr2):
     pass
 
 
+def relative_sort_array_hashmap(arr1, arr2):
+    pass
 
-def compare(expected, output):
-    if len(expected) == 0:
-        assert output == expected
-        return
-    assert len(expected) == len(output)
-    for group in expected:
-        assert sorted(group) in output
+
+def relative_sort_array_counting_sort(arr1, arr2):
+    pass
 
 
 if __name__ == '__main__':
@@ -195,11 +194,32 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    words = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
-    expected = [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"], ["foo"]]
-    output = list(map(lambda x: sorted(x), groupAnagrams(words)))
-    expected = list(map(lambda x: sorted(x), expected))
+    arr1 = [2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19]
+    arr2 = [2, 1, 4, 3, 9, 6]
 
-    print(output)
-    print(expected)
-    compare(expected, output)
+    res = relative_sort_array(arr1, arr2)
+    res1 = relative_sort_array_hashmap(arr1, arr2)
+    res2 = relative_sort_array_counting_sort(arr1, arr2)
+
+    print(res)
+    print(res1)
+    print(res2)
+    assert res == [2, 2, 2, 1, 4, 3, 3, 9, 6, 7, 19]
+    assert res1 == [2, 2, 2, 1, 4, 3, 3, 9, 6, 7, 19]
+    assert res2 == [2, 2, 2, 1, 4, 3, 3, 9, 6, 7, 19]
+
+    # ==========================================
+
+    arr1 = [28, 6, 22, 8, 44, 17]
+    arr2 = [22, 28, 8, 6]
+
+    res = relative_sort_array(arr1, arr2)
+    res1 = relative_sort_array_hashmap(arr1, arr2)
+    res2 = relative_sort_array_counting_sort(arr1, arr2)
+
+    print(res)
+    print(res1)
+    print(res2)
+    assert res == [22, 28, 8, 6, 17, 44]
+    assert res1 == [22, 28, 8, 6, 17, 44]
+    assert res2 == [22, 28, 8, 6, 17, 44]
