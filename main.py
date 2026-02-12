@@ -175,28 +175,19 @@ tasks_done = [
     'group_anagrams.py',
     'relative_sort_array.py',
     'two_colorable.py',
-    'depth_first_search.py'
+    'depth_first_search.py',
+    'caesar_cipher_encryptor.py'
 ]
 
 
-class Node:
-    def __init__(self, name):
-        self.children = []
-        self.name = name
-
-    def add_child(self, name):
-        self.children.append(Node(name))
-        return self
-
-    def depth_first_search(self, array):
-        return array
+def caesar_cipher_encryptor(string, key):
+    pass
 
 
 if __name__ == '__main__':
-    graph = Node("A")
-    graph.add_child("B").add_child("C").add_child("D")
-    graph.children[0].add_child("E").add_child("F")
-    graph.children[2].add_child("G").add_child("H")
-    graph.children[0].children[1].add_child("I").add_child("J")
-    graph.children[2].children[0].add_child("K")
-    assert graph.depth_first_search([]) == ["A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H"]
+    remain = list(set(tasks) - set(tasks_done))
+    random.shuffle(remain)
+    print(remain)
+
+    print(caesar_cipher_encryptor("xyz", 2) == "zab")
+    print(caesar_cipher_encryptor("abc", 52) == "abc")
