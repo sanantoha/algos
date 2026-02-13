@@ -176,11 +176,12 @@ tasks_done = [
     'relative_sort_array.py',
     'two_colorable.py',
     'depth_first_search.py',
-    'caesar_cipher_encryptor.py'
+    'caesar_cipher_encryptor.py',
+    'zigzag_traverse.py'
 ]
 
 
-def caesar_cipher_encryptor(string, key):
+def zigzagTraverse(matrix):
     pass
 
 
@@ -189,5 +190,7 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(caesar_cipher_encryptor("xyz", 2) == "zab")
-    print(caesar_cipher_encryptor("abc", 52) == "abc")
+    test = [[1, 3, 4, 10], [2, 5, 9, 11], [6, 8, 12, 15], [7, 13, 14, 16]]
+    actual = zigzagTraverse(test)
+    print(actual)
+    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
