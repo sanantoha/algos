@@ -177,11 +177,12 @@ tasks_done = [
     'two_colorable.py',
     'depth_first_search.py',
     'caesar_cipher_encryptor.py',
-    'zigzag_traverse.py'
+    'zigzag_traverse.py',
+    'best_seats.py'
 ]
 
 
-def zigzagTraverse(matrix):
+def bestSeat(arr):
     pass
 
 
@@ -190,7 +191,23 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    test = [[1, 3, 4, 10], [2, 5, 9, 11], [6, 8, 12, 15], [7, 13, 14, 16]]
-    actual = zigzagTraverse(test)
-    print(actual)
-    assert actual == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
+    assert actual == 4
+
+    actual = bestSeat([1])
+    assert actual == -1
+
+    actual = bestSeat([1, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 1, 1])
+    assert actual == -1
+
+    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
+    assert actual == 1
+
+    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
+    assert actual == 3
