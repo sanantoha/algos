@@ -182,7 +182,11 @@ tasks_done = [
 ]
 
 
-def bestSeat(arr):
+def threeNumberSort(arr, order):
+    pass
+
+
+def threeNumberSort1(arr, order):
     pass
 
 
@@ -191,23 +195,14 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    actual = bestSeat([1, 0, 1, 0, 0, 0, 1])
-    assert actual == 4
+    array = [1, 0, 0, -1, -1, 0, 1, 1]
+    order = [0, 1, -1]
+    expected = [0, 0, 0, 1, 1, 1, -1, -1]
 
-    actual = bestSeat([1])
-    assert actual == -1
+    actual = threeNumberSort(array, order)
+    print(actual)
+    assert actual == expected
 
-    actual = bestSeat([1, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 1, 1])
-    assert actual == -1
-
-    actual = bestSeat([1, 0, 0, 1, 0, 0, 1])
-    assert actual == 1
-
-    actual = bestSeat([1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1])
-    assert actual == 3
+    actual = threeNumberSort1(array, order)
+    print(actual)
+    assert actual == expected
