@@ -178,15 +178,14 @@ tasks_done = [
     'depth_first_search.py',
     'caesar_cipher_encryptor.py',
     'zigzag_traverse.py',
-    'best_seats.py'
+    'best_seats.py',
+    'binary_tree_diameter.py'
 ]
 
-
-def threeNumberSort(arr, order):
-    pass
+from tree.BinaryTree import BinaryTree
 
 
-def threeNumberSort1(arr, order):
+def binary_tree_diameter(tree):
     pass
 
 
@@ -195,14 +194,16 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [1, 0, 0, -1, -1, 0, 1, 1]
-    order = [0, 1, -1]
-    expected = [0, 0, 0, 1, 1, 1, -1, -1]
-
-    actual = threeNumberSort(array, order)
-    print(actual)
-    assert actual == expected
-
-    actual = threeNumberSort1(array, order)
+    root = BinaryTree(1)
+    root.left = BinaryTree(3)
+    root.left.left = BinaryTree(7)
+    root.left.left.left = BinaryTree(8)
+    root.left.left.left.left = BinaryTree(9)
+    root.left.right = BinaryTree(4)
+    root.left.right.right = BinaryTree(5)
+    root.left.right.right.right = BinaryTree(6)
+    root.right = BinaryTree(2)
+    expected = 6
+    actual = binary_tree_diameter(root)
     print(actual)
     assert actual == expected

@@ -1,5 +1,5 @@
 
-from BinaryTree import BinaryTree
+from tree.BinaryTree import BinaryTree
 
 
 def get_tree_info(tree):
