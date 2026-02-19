@@ -179,13 +179,12 @@ tasks_done = [
     'caesar_cipher_encryptor.py',
     'zigzag_traverse.py',
     'best_seats.py',
-    'binary_tree_diameter.py'
+    'binary_tree_diameter.py',
+    'class_photos.py'
 ]
 
-from tree.BinaryTree import BinaryTree
 
-
-def binary_tree_diameter(tree):
+def class_photos(red_arr, blue_arr):
     pass
 
 
@@ -194,16 +193,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    root = BinaryTree(1)
-    root.left = BinaryTree(3)
-    root.left.left = BinaryTree(7)
-    root.left.left.left = BinaryTree(8)
-    root.left.left.left.left = BinaryTree(9)
-    root.left.right = BinaryTree(4)
-    root.left.right.right = BinaryTree(5)
-    root.left.right.right.right = BinaryTree(6)
-    root.right = BinaryTree(2)
-    expected = 6
-    actual = binary_tree_diameter(root)
-    print(actual)
-    assert actual == expected
+    print(class_photos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5]))
