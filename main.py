@@ -180,11 +180,16 @@ tasks_done = [
     'zigzag_traverse.py',
     'best_seats.py',
     'binary_tree_diameter.py',
-    'class_photos.py'
+    'class_photos.py',
+    'first_duplicate_value.py'
 ]
 
 
-def class_photos(red_arr, blue_arr):
+def first_duplicate_value0(arr):
+    pass
+
+
+def first_duplicate_value(arr):
     pass
 
 
@@ -193,4 +198,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(class_photos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5]))
+    array = [2, 1, 5, 2, 3, 3, 4]
+    print(first_duplicate_value0(array))
+    print(first_duplicate_value(array))
