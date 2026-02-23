@@ -181,16 +181,44 @@ tasks_done = [
     'best_seats.py',
     'binary_tree_diameter.py',
     'class_photos.py',
-    'first_duplicate_value.py'
+    'first_duplicate_value.py',
+    'min_max_stack_construction.py'
 ]
 
 
-def first_duplicate_value0(arr):
-    pass
+# Feel free to add new properties and methods to the class.
+class MinMaxStack:
+
+    def __init__(self):
+        None
 
 
-def first_duplicate_value(arr):
-    pass
+    def peek(self):
+        pass
+
+
+    def pop(self):
+        pass
+
+
+    def push(self, number):
+        pass
+
+
+    def getMin(self):
+        pass
+
+
+    def getMax(self):
+        pass
+
+
+
+def testMinMaxPeek(min, max, peek, stack):
+    assert stack.getMin() == min
+    assert stack.getMax() == max
+    assert stack.peek() == peek
+
 
 
 if __name__ == '__main__':
@@ -198,6 +226,13 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [2, 1, 5, 2, 3, 3, 4]
-    print(first_duplicate_value0(array))
-    print(first_duplicate_value(array))
+    stack = MinMaxStack()
+    stack.push(5)
+    testMinMaxPeek(5, 5, 5, stack)
+    stack.push(7)
+    testMinMaxPeek(5, 7, 7, stack)
+    stack.push(2)
+    testMinMaxPeek(2, 7, 2, stack)
+    assert stack.pop() == 2
+    assert stack.pop() == 7
+    testMinMaxPeek(5, 5, 5, stack)
