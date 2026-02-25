@@ -45,20 +45,20 @@ class MinMaxStack:
         return self.stack[len(self.stack) - 1].max
 
 
-def testMinMaxPeek(min, max, peek, stack):
-    assert stack.getMin() == min
-    assert stack.getMax() == max
+def checkMinMaxPeek(min_val, max_val, peek, stack):
+    assert stack.getMin() == min_val
+    assert stack.getMax() == max_val
     assert stack.peek() == peek
 
 
 if __name__ == '__main__':
     stack = MinMaxStack()
     stack.push(5)
-    testMinMaxPeek(5, 5, 5, stack)
+    checkMinMaxPeek(5, 5, 5, stack)
     stack.push(7)
-    testMinMaxPeek(5, 7, 7, stack)
+    checkMinMaxPeek(5, 7, 7, stack)
     stack.push(2)
-    testMinMaxPeek(2, 7, 2, stack)
+    checkMinMaxPeek(2, 7, 2, stack)
     assert stack.pop() == 2
     assert stack.pop() == 7
-    testMinMaxPeek(5, 5, 5, stack)
+    checkMinMaxPeek(5, 5, 5, stack)

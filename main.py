@@ -182,43 +182,13 @@ tasks_done = [
     'binary_tree_diameter.py',
     'class_photos.py',
     'first_duplicate_value.py',
-    'min_max_stack_construction.py'
+    'min_max_stack_construction.py',
+    'single_cycle_check.py'
 ]
 
 
-# Feel free to add new properties and methods to the class.
-class MinMaxStack:
-
-    def __init__(self):
-        None
-
-
-    def peek(self):
-        pass
-
-
-    def pop(self):
-        pass
-
-
-    def push(self, number):
-        pass
-
-
-    def getMin(self):
-        pass
-
-
-    def getMax(self):
-        pass
-
-
-
-def testMinMaxPeek(min, max, peek, stack):
-    assert stack.getMin() == min
-    assert stack.getMax() == max
-    assert stack.peek() == peek
-
+def single_cycle_check(arr):
+    pass
 
 
 if __name__ == '__main__':
@@ -226,13 +196,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    stack = MinMaxStack()
-    stack.push(5)
-    testMinMaxPeek(5, 5, 5, stack)
-    stack.push(7)
-    testMinMaxPeek(5, 7, 7, stack)
-    stack.push(2)
-    testMinMaxPeek(2, 7, 2, stack)
-    assert stack.pop() == 2
-    assert stack.pop() == 7
-    testMinMaxPeek(5, 5, 5, stack)
+    array = [2, 3, 1, -4, -4, 2]
+    print(single_cycle_check(array))
+    assert single_cycle_check(array)
