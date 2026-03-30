@@ -184,15 +184,12 @@ tasks_done = [
     'first_duplicate_value.py',
     'min_max_stack_construction.py',
     'single_cycle_check.py',
-    'max_subset_sum_no_adjucent.py'
+    'max_subset_sum_no_adjucent.py',
+    'longest_peak.py'
 ]
 
 
-def max_subset_sum_no_adjucent(arr):
-    pass
-
-
-def max_subset_sum_no_adjucent1(arr):
+def longest_peak(arr):
     pass
 
 
@@ -201,7 +198,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    assert max_subset_sum_no_adjucent([75, 105, 120, 75, 90, 135]) == 330
-
-    assert max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]) == 330
-    print(max_subset_sum_no_adjucent1([75, 105, 120, 75, 90, 135]))
+    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
