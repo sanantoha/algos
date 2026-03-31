@@ -185,11 +185,46 @@ tasks_done = [
     'min_max_stack_construction.py',
     'single_cycle_check.py',
     'max_subset_sum_no_adjucent.py',
-    'longest_peak.py'
+    'longest_peak.py',
+    'remove_kth_node_from_end.py'
 ]
 
 
-def longest_peak(arr):
+# This is an input class. Do not edit.
+class LinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class StartLinkedList:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+linkedListClass = StartLinkedList
+
+class LinkedList(linkedListClass):
+    def addMany(self, values):
+        current = self
+        while current.next is not None:
+            current = current.next
+        for value in values:
+            current.next = LinkedList(value)
+            current = current.next
+        return self
+
+    def getNodesInArray(self):
+        nodes = []
+        current = self
+        while current is not None:
+            nodes.append(current.value)
+            current = current.next
+        return nodes
+
+
+
+def remove_kth_node_from_end(head, k):
     pass
 
 
@@ -198,4 +233,8 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(longest_peak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]))
+    test = LinkedList(0).addMany([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    expected = LinkedList(0).addMany([1, 2, 3, 4, 5, 7, 8, 9])
+    remove_kth_node_from_end(test, 4)
+    print(test.getNodesInArray())
+    assert test.getNodesInArray() == expected.getNodesInArray()
