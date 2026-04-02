@@ -1,7 +1,5 @@
 import random
-from functools import reduce
-
-from tree.BST import BST
+from collections import deque
 
 tasks = [
     'apartment_hunting.py',
@@ -187,11 +185,12 @@ tasks_done = [
     'max_subset_sum_no_adjucent.py',
     'longest_peak.py',
     'remove_kth_node_from_end.py',
-    'zero_one_matrix.py'
+    'zero_one_matrix.py',
+    'transpose_matrix.py'
 ]
 
 
-def update_matrix(matrix):
+def transposeMatrix(matrix):
     pass
 
 
@@ -200,30 +199,10 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input0 = [
-        [0, 0, 0],
-        [0, 1, 0],
-        [0, 0, 0],
-    ]
+    input = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 
-    res = update_matrix(input0)
-    print(res)
-    assert res == [
-        [0, 0, 0],
-        [0, 1, 0],
-        [0, 0, 0],
-    ]
+    actual = transposeMatrix(input)
+    print(actual)
 
-    input1 = [
-        [0, 0, 0],
-        [0, 1, 0],
-        [1, 1, 1],
-    ]
-
-    res = update_matrix(input1)
-    print(res)
-    assert res == [
-        [0, 0, 0],
-        [0, 1, 0],
-        [1, 2, 1],
-    ]
+    assert actual == expected
