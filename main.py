@@ -186,11 +186,33 @@ tasks_done = [
     'longest_peak.py',
     'remove_kth_node_from_end.py',
     'zero_one_matrix.py',
-    'transpose_matrix.py'
+    'transpose_matrix.py',
+    'get_youngest_common_ancestor.py'
 ]
 
 
-def transposeMatrix(matrix):
+# This is an input class. Do not edit.
+class AncestralTree:
+    def __init__(self, name):
+        self.name = name
+        self.ancestor = None
+
+
+class AncestralTree(AncestralTree):
+    def addDescendants(self, *descendants):
+        for descendant in descendants:
+            descendant.ancestor = self
+
+
+def new_trees():
+    ancestralTrees = {}
+    for letter in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+        ancestralTrees[letter] = AncestralTree(letter)
+    return ancestralTrees
+
+
+
+def get_youngest_common_ancestor(top_ancestor, descendant_one, descendant_two):
     pass
 
 
@@ -199,10 +221,11 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    input = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+    trees = new_trees()
+    trees["A"].addDescendants(trees["B"], trees["C"])
+    trees["B"].addDescendants(trees["D"], trees["E"])
+    trees["D"].addDescendants(trees["H"], trees["I"])
+    trees["C"].addDescendants(trees["F"], trees["G"])
 
-    actual = transposeMatrix(input)
-    print(actual)
-
-    assert actual == expected
+    yca = get_youngest_common_ancestor(trees["A"], trees["E"], trees["I"])
+    assert yca == trees["B"]
