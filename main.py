@@ -188,15 +188,12 @@ tasks_done = [
     'zero_one_matrix.py',
     'transpose_matrix.py',
     'get_youngest_common_ancestor.py',
-    'permutations.py'
+    'permutations.py',
+    'move_element_to_end.py'
 ]
 
 
-def getPermutations(arr):
-    pass
-
-
-def getPermutations1(arr):
+def move_element_to_end(arr, target):
     pass
 
 
@@ -205,22 +202,4 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    perms = getPermutations([1, 2, 3])
-    print(perms)
-    assert len(perms) == 6
-    assert [1, 2, 3] in perms
-    assert [1, 3, 2] in perms
-    assert [2, 1, 3] in perms
-    assert [2, 3, 1] in perms
-    assert [3, 1, 2] in perms
-    assert [3, 2, 1] in perms
-
-    perms1 = getPermutations1([1, 2, 3])
-    print(perms1)
-    assert len(perms1) == 6
-    assert [1, 2, 3] in perms1
-    assert [1, 3, 2] in perms1
-    assert [2, 1, 3] in perms1
-    assert [2, 3, 1] in perms1
-    assert [3, 1, 2] in perms1
-    assert [3, 2, 1] in perms1
+    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
