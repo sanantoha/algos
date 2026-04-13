@@ -189,11 +189,12 @@ tasks_done = [
     'transpose_matrix.py',
     'get_youngest_common_ancestor.py',
     'permutations.py',
-    'move_element_to_end.py'
+    'move_element_to_end.py',
+    'binary_search.py'
 ]
 
 
-def move_element_to_end(arr, target):
+def binary_search(arr, target):
     pass
 
 
@@ -202,4 +203,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(move_element_to_end([2, 1, 2, 2, 2, 3, 4, 2], 2))
+    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
+    print(binary_search(array, 60))
