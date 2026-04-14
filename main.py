@@ -190,11 +190,16 @@ tasks_done = [
     'get_youngest_common_ancestor.py',
     'permutations.py',
     'move_element_to_end.py',
-    'binary_search.py'
+    'binary_search.py',
+    'two_number_sum.py'
 ]
 
 
-def binary_search(arr, target):
+def two_number_sum1(array, target_sum):
+    pass
+
+
+def two_number_sum2(array, target_sum):
     pass
 
 
@@ -203,5 +208,5 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    array = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
-    print(binary_search(array, 60))
+    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
