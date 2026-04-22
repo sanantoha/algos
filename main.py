@@ -191,15 +191,12 @@ tasks_done = [
     'permutations.py',
     'move_element_to_end.py',
     'binary_search.py',
-    'two_number_sum.py'
+    'two_number_sum.py',
+    'insertion_sort.py'
 ]
 
 
-def two_number_sum1(array, target_sum):
-    pass
-
-
-def two_number_sum2(array, target_sum):
+def insertion_sort(arr):
     pass
 
 
@@ -208,5 +205,6 @@ if __name__ == '__main__':
     random.shuffle(remain)
     print(remain)
 
-    print(two_number_sum1([3, 5, -4, 8, 11, 1, -1, 6], 10))
-    print(two_number_sum2([3, 5, -4, 8, 11, 1, -1, 6], 10))
+    xs = [9, 8, 1, 5, 6, 7, 8, 3, 9, 7, 5, 3]
+    # xs = [5,2,4,1]
+    print(insertion_sort(xs))
